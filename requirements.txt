@@ -1,0 +1,18 @@
+# TR-Core Requirements
+# Python 3.10+
+
+# Core (no external dependencies required for basic operation)
+
+# Development & Testing
+pytest>=7.0.0
+pytest-cov>=4.0.0
+
+# Code quality
+black>=23.0.0
+flake8>=6.0.0
+mypy>=1.0.0
+ruff>=0.1.0
+
+# Optional visualization
+matplotlib>=3.5.0
+numpy>=1.21.0
