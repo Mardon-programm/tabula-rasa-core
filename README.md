@@ -1,10 +1,18 @@
 # TR-Core: Tabula Rasa Developmental Cognitive Agent
 
-A complete research demonstration of autonomous continual learning, world model formation, and metacognition without pretrained neural weights.
+TR-Core is an **experimental developmental cognitive architecture** investigating how non-pretrained systems can build and adapt internal world models from experience — without pretrained neural weights, pre-trained embeddings, or LLMs.
+
+It is a *research instrument*, not a claim about AGI: the goal is to run controlled experiments on whether a persistent agent can perceive, predict, adapt, remember, and model its own limits, and to characterize *which mechanisms actually matter*.
+
+## Research Question
+
+> Can a non-pretrained cognitive architecture detect changes in environmental dynamics and adapt its internal transition model using prediction error and experience-driven learning — and which of its mechanisms (memory, curiosity, self-model, adaptation) contribute to that?
+
+The null hypothesis is explicitly on the table: on a sufficiently simple environment, a plain adaptive transition learner may match the full architecture. This is treated as a valid (and informative) result, not a failure.
 
 ## Overview
 
-TR-Core is an experimental developmental cognitive architecture designed to investigate whether a persistent agent can autonomously:
+TR-Core is designed to investigate whether a persistent agent can autonomously:
 
 - **Perceive** complex environments through sensory substrates
 - **Learn** state transitions and build an internal world model
@@ -279,12 +287,14 @@ and recovery steps (first sustained correct streak after drift).
 **Interpretation (honest):**
 - TR-Core detects and recovers from drift (PostDrift 0.30 vs Static 1.00, Random 0.68),
   and `enable_adaptation` is essential (without it, accuracy collapses to 0).
-- On the current trivial 3-state environment, a simple recency-adaptive learner matches
-  full TR-Core (0.175 / 0.300 / 0.825 / 18), and the ablation shows no additional value
-  from memory, curiosity, or self-model.
-- This indicates the current sandbox is too simple to exercise the cognitive mechanisms;
-  a richer / continuous environment is required to test whether they confer an
-  adaptation advantage beyond plain transition learning.
+- **Finding (v1, 3-state environment):** a simple recency-adaptive learner matches full
+  TR-Core (0.175 / 0.300 / 0.825 / 18), and the ablation shows no additional value from
+  memory, curiosity, or self-model on this task.
+- This is a valid scientific result, not a failure: it establishes that **on a trivial
+  discrete environment, plain transition learning is sufficient**. It also motivates the
+  next experiment — a continuous / partially-observable / noisy environment (v2) whose
+  `state(t+1) = F(state(t), action, hidden_context)` design requires history and context,
+  where memory and the other mechanisms may matter.
 
 **World-model fix enabling recovery:** `WorldModel` now uses recency-weighted transition
 probabilities (`recency=0.9` default). Competing transitions decay with each observation
@@ -404,9 +414,9 @@ For a fully developed system, we target:
 | Concept Drift Detection | <20 steps | Fast drift identification |
 | Knowledge Coverage | >80% | Explores most of environment |
 
-## Research Questions
+## Sub-Questions
 
-TR-Core addresses fundamental research questions:
+Under the primary research question above, TR-Core explores the following sub-questions:
 
 1. **Can agents autonomously build world models through interaction?**
 2. **How can systems balance learning new knowledge with retaining old?**
@@ -504,6 +514,7 @@ Key papers informing this architecture:
 
 ---
 
-**Status**: Research Prototype (v1.0)
+**Status**: Experimental research architecture (v1.0)
+**Scope**: Controlled experiments on non-pretrained world-model learning and adaptation
 **Last Updated**: 2026
 **Maintained by**: [Your Team]
