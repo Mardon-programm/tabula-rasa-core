@@ -99,11 +99,22 @@ tabula_rasa_core/
 │   ├── metrics.py            # Metric collection
 │   ├── experiments.py        # Benchmark definitions
 │   ├── runner.py             # Experiment runner
+│   ├── baselines.py          # Random/Static/Adaptive baselines
+│   ├── benchmark.py          # Multi-seed concept-drift benchmark + ablation
 │   └── __init__.py
 │
 ├── persistence/              # State persistence
 │   ├── storage.py            # Checkpointing
 │   └── __init__.py
+│
+├── web/                      # Interactive Streamlit dashboard
+│   ├── app.py                # Research + Demo modes
+│   ├── state.py              # CognitiveStateTracker (live state extraction)
+│   ├── viz.py                # Plotly/NetworkX visualizations
+│   └── __init__.py
+│
+├── results/                  # Exported metrics & benchmark reports
+│   └── benchmark_report.json
 │
 ├── tests/                    # Test suite
 │   ├── test_substrate.py
@@ -137,6 +148,7 @@ Comprehensive representation of environment structure.
 - Entity tracking with properties
 - Relation modeling
 - State transition statistics
+- **Recency-weighted transition probabilities** (forgives superseded rules after drift)
 - Causal link discovery
 - Uncertainty quantification (epistemic, aleatoric, model)
 
@@ -207,6 +219,76 @@ results = runner.run_all_standard_experiments()
 runner.print_summary()
 runner.save_report()
 ```
+
+## Interactive Web Dashboard
+
+A Streamlit dashboard that runs `TabulaRasaCore` live and streams its **actual internal
+state** to the UI. Nothing is scripted or mocked — every chart, gauge, and graph edge is
+read directly from the running core after each step.
+
+```bash
+streamlit run web/app.py
+```
+
+Two modes:
+
+- **Research Mode** — step-by-step control (`Run` / `Pause` / `Step` / `Reset` /
+  `Inject Drift` / `Export JSON`) with live Prediction Error, Cognitive Graph,
+  Accuracy, Memory, Uncertainty, Environment, Semantic Memory, Self-Model, and a
+  streaming Event Log.
+- **Demo Mode** — one-click `START EXPERIMENT`: watch the agent learn an environment
+  from scratch, hit concept drift, adapt, and discover new stable patterns.
+
+## Concept-Drift Benchmark (`experiments/benchmark.py`)
+
+A rigorous, reproducible comparison of TR-Core against baselines under concept drift:
+
+```
+20 seeds × (Random, Static, Adaptive, TR-Core + 4 ablations) × 120 steps, drift at step 60
+```
+
+```bash
+python experiments/benchmark.py            # defaults: 20 seeds, 120 steps, drift @ 60
+python experiments/benchmark.py --seeds 10 --steps 200 --drift 80
+```
+
+**Baselines** (`experiments/baselines.py`):
+- `Random` — no prediction, no learning (floor).
+- `Static` — learns a fixed model, cannot adapt after drift.
+- `Adaptive` — recency-weighted transition learner (strong, honest baseline).
+
+**Ablation flags** on `TabulaRasaCore`: `enable_memory`, `enable_curiosity`,
+`enable_self_model`, `enable_adaptation` — disable components one at a time.
+
+**Metrics**: mean error (overall / pre-drift / post-drift), cumulative error, accuracy,
+and recovery steps (first sustained correct streak after drift).
+
+### Key result (20 seeds, drift @ 60)
+
+| Model | MeanErr | PostDrift | Accuracy | Recovery |
+|-------|---------|-----------|----------|----------|
+| Random | 0.677 | 0.682 | 0.323 | 24 |
+| Static | 0.525 | 1.000 | 0.475 | never |
+| Adaptive | 0.175 | 0.300 | 0.825 | 18 |
+| **TR-Core (Full)** | **0.175** | **0.300** | **0.825** | **18** |
+| TR-Core − Memory | 0.175 | 0.300 | 0.825 | 18 |
+| TR-Core − Curiosity | 0.175 | 0.300 | 0.825 | 18 |
+| TR-Core − Self-model | 0.175 | 0.300 | 0.825 | 18 |
+| TR-Core − Adaptation | 1.000 | 1.000 | 0.000 | never |
+
+**Interpretation (honest):**
+- TR-Core detects and recovers from drift (PostDrift 0.30 vs Static 1.00, Random 0.68),
+  and `enable_adaptation` is essential (without it, accuracy collapses to 0).
+- On the current trivial 3-state environment, a simple recency-adaptive learner matches
+  full TR-Core (0.175 / 0.300 / 0.825 / 18), and the ablation shows no additional value
+  from memory, curiosity, or self-model.
+- This indicates the current sandbox is too simple to exercise the cognitive mechanisms;
+  a richer / continuous environment is required to test whether they confer an
+  adaptation advantage beyond plain transition learning.
+
+**World-model fix enabling recovery:** `WorldModel` now uses recency-weighted transition
+probabilities (`recency=0.9` default). Competing transitions decay with each observation
+so the model forgets superseded rules after drift instead of keeping them at equal weight.
 
 ### Available Experiments
 
@@ -366,8 +448,11 @@ TR-Core addresses fundamental research questions:
 git clone https://github.com/user/tabula_rasa_core.git
 cd tabula_rasa_core
 
-# No external dependencies needed (uses Python stdlib only)
-# Optional: install dev tools
+# Core runtime uses Python stdlib only.
+# Web dashboard requires a few extras (see requirements.txt):
+pip install streamlit plotly networkx
+
+# Dev / test tools:
 pip install pytest pytest-cov black flake8 mypy
 ```
 
@@ -420,5 +505,5 @@ Key papers informing this architecture:
 ---
 
 **Status**: Research Prototype (v1.0)
-**Last Updated**: 2024
+**Last Updated**: 2026
 **Maintained by**: [Your Team]
