@@ -16,3 +16,8 @@ ruff>=0.1.0
 # Optional visualization
 matplotlib>=3.5.0
 numpy>=1.21.0
+
+# Interactive web dashboard (app.py)
+streamlit>=1.30.0
+plotly>=5.18.0
+networkx>=3.0.0

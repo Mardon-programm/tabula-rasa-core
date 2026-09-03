@@ -63,7 +63,16 @@ class TabulaRasaCore:
     - Developmental stages (progressive capability emergence)
     """
 
-    def __init__(self, seed: int = 42, enable_metrics: bool = True, verbose: bool = False) -> None:
+    def __init__(
+        self,
+        seed: int = 42,
+        enable_metrics: bool = True,
+        verbose: bool = False,
+        enable_memory: bool = True,
+        enable_curiosity: bool = True,
+        enable_self_model: bool = True,
+        enable_adaptation: bool = True,
+    ) -> None:
         """
         Initialize TR-Core agent.
         
@@ -71,10 +80,18 @@ class TabulaRasaCore:
             seed: Random seed for reproducibility
             enable_metrics: Whether to collect metrics
             verbose: Print detailed logs
+            enable_memory: Enable episodic + semantic memory & consolidation (ablation)
+            enable_curiosity: Enable curiosity-driven exploration (ablation)
+            enable_self_model: Enable self-model / metacognition (ablation)
+            enable_adaptation: Enable error-driven adaptation & drift detection (ablation)
         """
         self.seed = seed
         self.enable_metrics = enable_metrics
         self.verbose = verbose
+        self.enable_memory = enable_memory
+        self.enable_curiosity = enable_curiosity
+        self.enable_self_model = enable_self_model
+        self.enable_adaptation = enable_adaptation
         self.step_count = 0
         self.episode_count = 0
         self.total_reward = 0.0
@@ -295,7 +312,7 @@ class TabulaRasaCore:
             )
             self.evaluate_prediction(prediction_obj, actual_next_state, step_start)
         
-        if self.previous_action:
+        if self.enable_adaptation and self.previous_action:
             self.world_model.observe_transition(
                 env_observation,
                 self.previous_action,
@@ -305,39 +322,41 @@ class TabulaRasaCore:
             self.brain.decay()
         
         concept_drift_signal = self.prediction_engine.concept_drift_signal()
-        if prediction_error:
+        if self.enable_adaptation and prediction_error:
             self.adapt(prediction_error, concept_drift_signal)
         
         prediction_error_mag = prediction_error.magnitude if prediction_error else 0.0
         prediction_surprise = prediction_error.surprise if prediction_error else 0.0
         
-        self.memory_episodic.store(
-            timestamp=step_start,
-            state=env_observation,
-            action=self.previous_action or "START",
-            next_state=actual_next_state,
-            reward=reward,
-            prediction_error=prediction_error_mag,
-            surprise=prediction_surprise,
-        )
+        if self.enable_memory:
+            self.memory_episodic.store(
+                timestamp=step_start,
+                state=env_observation,
+                action=self.previous_action or "START",
+                next_state=actual_next_state,
+                reward=reward,
+                prediction_error=prediction_error_mag,
+                surprise=prediction_surprise,
+            )
+            
+            self.consolidation.step()
+            self.consolidate_memory()
         
-        self.consolidation.step()
-        self.consolidate_memory()
-        
-        self.self_model.update_metrics(
-            prediction_accuracy=self.prediction_engine.accuracy(),
-            graph_size=len(self.brain._nodes),
-            uncertainty=concept_drift_signal,
-            exploration_rate=self.curiosity_engine.novelty(self.current_state),
-            planning_success=0.7,
-        )
+        if self.enable_self_model:
+            self.self_model.update_metrics(
+                prediction_accuracy=self.prediction_engine.accuracy(),
+                graph_size=len(self.brain._nodes),
+                uncertainty=concept_drift_signal,
+                exploration_rate=self.curiosity_engine.novelty(self.current_state),
+                planning_success=0.7,
+            )
         
         self.development.record_stage_transition(
             self.current_state,
             self.self_model.estimated_knowledge()
         )
         
-        if self.self_model.should_explore():
+        if self.enable_self_model and self.enable_curiosity and self.self_model.should_explore():
             self.previous_action = self.explore()
         else:
             plan = self.plan()

@@ -43,7 +43,8 @@ class Uncertainty:
 
 class WorldModel:
 
-    def __init__(self) -> None:
+    def __init__(self, *, recency: float = 0.9) -> None:
+        self.recency = recency
         self._entities: dict[str, Entity] = {}
         self._relations: list[Relation] = []
         self._transitions: dict[tuple[str, str, str], Transition] = {}
@@ -56,6 +57,11 @@ class WorldModel:
         
         # Observation statistics
         self._state_visits: dict[str, int] = {}
+
+        # Recency-weighted transition weights: keyed by (from, action, to).
+        # Decays on each observation of the parent (from, action) so that
+        # superseded transitions are gradually forgotten after concept drift.
+        self._transition_weights: dict[tuple[str, str, str], float] = {}
         self._transition_counts: dict[tuple[str, str], int] = {}
 
     def add_entity(
@@ -99,9 +105,23 @@ class WorldModel:
         transition = self._transitions[key]
         transition.observations += 1
         
-        transition.probability = transition.observations / (
-            self._state_visits[from_state] + 1e-6
-        )
+        # Recency-weighted probabilities: decay competing transitions under the
+        # same (from_state, action), then boost the observed target. This lets
+        # the transition model forget superseded rules after concept drift.
+        for (fs, ac, ts), weight in list(self._transition_weights.items()):
+            if fs == from_state and ac == action:
+                self._transition_weights[(fs, ac, ts)] = weight * self.recency
+        self._transition_weights[key] = self._transition_weights.get(key, 0.0) + 1.0
+
+        total_weight = sum(
+            w
+            for (fs, ac, _), w in self._transition_weights.items()
+            if fs == from_state and ac == action
+        ) + 1e-6
+
+        for (fs, ac, ts), weight in self._transition_weights.items():
+            if fs == from_state and ac == action and (fs, ac, ts) in self._transitions:
+                self._transitions[(fs, ac, ts)].probability = weight / total_weight
         
         if from_state not in self._causal_links:
             self._causal_links[from_state] = set()
