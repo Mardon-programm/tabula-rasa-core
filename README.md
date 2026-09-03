@@ -4,6 +4,8 @@ TR-Core is an **experimental developmental cognitive architecture** investigatin
 
 It is a *research instrument*, not a claim about AGI: the goal is to run controlled experiments on whether a persistent agent can perceive, predict, adapt, remember, and model its own limits, and to characterize *which mechanisms actually matter*.
 
+> See [`PROJECT_OVERVIEW.md`](PROJECT_OVERVIEW.md) for a short pitch / project-home summary.
+
 ## Research Question
 
 > Can a non-pretrained cognitive architecture detect changes in environmental dynamics and adapt its internal transition model using prediction error and experience-driven learning — and which of its mechanisms (memory, curiosity, self-model, adaptation) contribute to that?
