@@ -1,0 +1,2498 @@
+[
+  {
+    "seed": 1,
+    "train_size": 2400,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 1001,
+        "transfer": {
+          "t1": 0.6,
+          "t2": 0.8666666666666667,
+          "t3": 0.575
+        },
+        "overall": 0.69375,
+        "balanced": 0.5083820662768032,
+        "axis_balanced": {
+          "t1": 0.5019230769230769,
+          "t2": 0.7083333333333334,
+          "t3": 0.3958333333333333
+        },
+        "known_acc": 0.8583333333333333,
+        "n_rules": 37
+      },
+      "ValueLogReg": {
+        "config": "ValueLogReg",
+        "seed": 1001,
+        "transfer": {
+          "t1": 0.4666666666666667,
+          "t2": 0.8,
+          "t3": 0.45
+        },
+        "overall": 0.5875,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.7833333333333333,
+        "n_rules": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 1001,
+        "transfer": {
+          "t1": 0.6333333333333333,
+          "t2": 0.8,
+          "t3": 0.925
+        },
+        "overall": 0.76875,
+        "balanced": 0.618421052631579,
+        "axis_balanced": {
+          "t1": 0.6153846153846154,
+          "t2": 0.5,
+          "t3": 0.8333333333333334
+        },
+        "known_acc": 1.0,
+        "n_rules": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 1001,
+        "transfer": {
+          "t1": 0.4666666666666667,
+          "t2": 0.8,
+          "t3": 0.45
+        },
+        "overall": 0.5875,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 1.0,
+        "n_rules": 0
+      },
+      "ValueDList": {
+        "config": "ValueDList",
+        "seed": 1001,
+        "transfer": {
+          "t1": 0.4666666666666667,
+          "t2": 0.8,
+          "t3": 0.45
+        },
+        "overall": 0.5875,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.7833333333333333,
+        "n_rules": 0
+      },
+      "chance": {
+        "overall": 0.21217649620505163,
+        "balanced": 0.21217649620505163
+      },
+      "ceiling": {
+        "overall": 1.0,
+        "balanced": 1.0
+      }
+    }
+  },
+  {
+    "seed": 2,
+    "train_size": 2400,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 1002,
+        "transfer": {
+          "t1": 0.6333333333333333,
+          "t2": 0.7333333333333333,
+          "t3": 0.4
+        },
+        "overall": 0.6125,
+        "balanced": 0.3784722222222222,
+        "axis_balanced": {
+          "t1": 0.3576923076923077,
+          "t2": 0.6363636363636364,
+          "t3": 0.393939393939394
+        },
+        "known_acc": 0.6833333333333333,
+        "n_rules": 31
+      },
+      "ValueLogReg": {
+        "config": "ValueLogReg",
+        "seed": 1002,
+        "transfer": {
+          "t1": 0.55,
+          "t2": 0.6333333333333333,
+          "t3": 0.375
+        },
+        "overall": 0.5375,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.6416666666666667,
+        "n_rules": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 1002,
+        "transfer": {
+          "t1": 0.55,
+          "t2": 0.6333333333333333,
+          "t3": 0.85
+        },
+        "overall": 0.65625,
+        "balanced": 0.4542572463768116,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.8181818181818182
+        },
+        "known_acc": 1.0,
+        "n_rules": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 1002,
+        "transfer": {
+          "t1": 0.55,
+          "t2": 0.6333333333333333,
+          "t3": 0.375
+        },
+        "overall": 0.5375,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.9583333333333334,
+        "n_rules": 0
+      },
+      "ValueDList": {
+        "config": "ValueDList",
+        "seed": 1002,
+        "transfer": {
+          "t1": 0.55,
+          "t2": 0.6333333333333333,
+          "t3": 0.375
+        },
+        "overall": 0.5375,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.6416666666666667,
+        "n_rules": 0
+      },
+      "chance": {
+        "overall": 0.19991199490693928,
+        "balanced": 0.19991199490693928
+      },
+      "ceiling": {
+        "overall": 1.0,
+        "balanced": 1.0
+      }
+    }
+  },
+  {
+    "seed": 3,
+    "train_size": 2400,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 1003,
+        "transfer": {
+          "t1": 0.6166666666666667,
+          "t2": 0.8666666666666667,
+          "t3": 0.575
+        },
+        "overall": 0.7,
+        "balanced": 0.43835227272727273,
+        "axis_balanced": {
+          "t1": 0.4182615629984051,
+          "t2": 0.6111111111111112,
+          "t3": 0.6025641025641025
+        },
+        "known_acc": 0.8,
+        "n_rules": 27
+      },
+      "ValueLogReg": {
+        "config": "ValueLogReg",
+        "seed": 1003,
+        "transfer": {
+          "t1": 0.45,
+          "t2": 0.85,
+          "t3": 0.475
+        },
+        "overall": 0.60625,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.7333333333333333,
+        "n_rules": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 1003,
+        "transfer": {
+          "t1": 0.6333333333333333,
+          "t2": 0.85,
+          "t3": 0.475
+        },
+        "overall": 0.675,
+        "balanced": 0.39943181818181817,
+        "axis_balanced": {
+          "t1": 0.6435406698564593,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 1.0,
+        "n_rules": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 1003,
+        "transfer": {
+          "t1": 0.45,
+          "t2": 0.85,
+          "t3": 0.475
+        },
+        "overall": 0.60625,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 1.0,
+        "n_rules": 0
+      },
+      "ValueDList": {
+        "config": "ValueDList",
+        "seed": 1003,
+        "transfer": {
+          "t1": 0.45,
+          "t2": 0.85,
+          "t3": 0.475
+        },
+        "overall": 0.60625,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.7333333333333333,
+        "n_rules": 0
+      },
+      "chance": {
+        "overall": 0.2324522610121837,
+        "balanced": 0.2324522610121837
+      },
+      "ceiling": {
+        "overall": 1.0,
+        "balanced": 1.0
+      }
+    }
+  },
+  {
+    "seed": 4,
+    "train_size": 2400,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 1004,
+        "transfer": {
+          "t1": 0.6,
+          "t2": 0.8166666666666667,
+          "t3": 0.65
+        },
+        "overall": 0.69375,
+        "balanced": 0.4357692307692308,
+        "axis_balanced": {
+          "t1": 0.5254901960784314,
+          "t2": 0.59375,
+          "t3": 0.5083333333333333
+        },
+        "known_acc": 0.8833333333333333,
+        "n_rules": 24
+      },
+      "ValueLogReg": {
+        "config": "ValueLogReg",
+        "seed": 1004,
+        "transfer": {
+          "t1": 0.5,
+          "t2": 0.7333333333333333,
+          "t3": 0.55
+        },
+        "overall": 0.6,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.7916666666666666,
+        "n_rules": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 1004,
+        "transfer": {
+          "t1": 0.7833333333333333,
+          "t2": 0.7333333333333333,
+          "t3": 0.85
+        },
+        "overall": 0.78125,
+        "balanced": 0.5769230769230769,
+        "axis_balanced": {
+          "t1": 0.5,
+          "t2": 0.5,
+          "t3": 0.7999999999999999
+        },
+        "known_acc": 1.0,
+        "n_rules": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 1004,
+        "transfer": {
+          "t1": 0.5,
+          "t2": 0.7333333333333333,
+          "t3": 0.55
+        },
+        "overall": 0.6,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.9833333333333333,
+        "n_rules": 0
+      },
+      "ValueDList": {
+        "config": "ValueDList",
+        "seed": 1004,
+        "transfer": {
+          "t1": 0.5,
+          "t2": 0.7333333333333333,
+          "t3": 0.55
+        },
+        "overall": 0.6,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.7916666666666666,
+        "n_rules": 0
+      },
+      "chance": {
+        "overall": 0.2522916666666667,
+        "balanced": 0.2522916666666667
+      },
+      "ceiling": {
+        "overall": 1.0,
+        "balanced": 1.0
+      }
+    }
+  },
+  {
+    "seed": 5,
+    "train_size": 2400,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 1005,
+        "transfer": {
+          "t1": 0.6,
+          "t2": 0.8,
+          "t3": 0.7
+        },
+        "overall": 0.7,
+        "balanced": 0.37466032608695654,
+        "axis_balanced": {
+          "t1": 0.5,
+          "t2": 0.6153846153846154,
+          "t3": 0.5222222222222223
+        },
+        "known_acc": 0.85,
+        "n_rules": 24
+      },
+      "ValueLogReg": {
+        "config": "ValueLogReg",
+        "seed": 1005,
+        "transfer": {
+          "t1": 0.4666666666666667,
+          "t2": 0.7833333333333333,
+          "t3": 0.575
+        },
+        "overall": 0.6125,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.7833333333333333,
+        "n_rules": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 1005,
+        "transfer": {
+          "t1": 0.5666666666666667,
+          "t2": 0.7833333333333333,
+          "t3": 0.575
+        },
+        "overall": 0.65,
+        "balanced": 0.3526785714285714,
+        "axis_balanced": {
+          "t1": 0.55,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 1.0,
+        "n_rules": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 1005,
+        "transfer": {
+          "t1": 0.4666666666666667,
+          "t2": 0.7833333333333333,
+          "t3": 0.575
+        },
+        "overall": 0.6125,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.9833333333333333,
+        "n_rules": 0
+      },
+      "ValueDList": {
+        "config": "ValueDList",
+        "seed": 1005,
+        "transfer": {
+          "t1": 0.4666666666666667,
+          "t2": 0.7833333333333333,
+          "t3": 0.575
+        },
+        "overall": 0.6125,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.7833333333333333,
+        "n_rules": 0
+      },
+      "chance": {
+        "overall": 0.19752384649511978,
+        "balanced": 0.19752384649511978
+      },
+      "ceiling": {
+        "overall": 1.0,
+        "balanced": 1.0
+      }
+    }
+  },
+  {
+    "seed": 6,
+    "train_size": 2400,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 1006,
+        "transfer": {
+          "t1": 0.8,
+          "t2": 0.7833333333333333,
+          "t3": 0.575
+        },
+        "overall": 0.7375,
+        "balanced": 0.46590038314176246,
+        "axis_balanced": {
+          "t1": 0.5,
+          "t2": 0.6111111111111112,
+          "t3": 0.44358974358974357
+        },
+        "known_acc": 0.825,
+        "n_rules": 25
+      },
+      "ValueLogReg": {
+        "config": "ValueLogReg",
+        "seed": 1006,
+        "transfer": {
+          "t1": 0.5833333333333334,
+          "t2": 0.7,
+          "t3": 0.425
+        },
+        "overall": 0.5875,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.3333333333333333,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.7083333333333334,
+        "n_rules": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 1006,
+        "transfer": {
+          "t1": 0.65,
+          "t2": 0.7,
+          "t3": 0.575
+        },
+        "overall": 0.65,
+        "balanced": 0.3381226053639847,
+        "axis_balanced": {
+          "t1": 0.46527777777777773,
+          "t2": 0.5,
+          "t3": 0.4871794871794872
+        },
+        "known_acc": 1.0,
+        "n_rules": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 1006,
+        "transfer": {
+          "t1": 0.5833333333333334,
+          "t2": 0.7,
+          "t3": 0.425
+        },
+        "overall": 0.5875,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.3333333333333333,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.9083333333333333,
+        "n_rules": 0
+      },
+      "ValueDList": {
+        "config": "ValueDList",
+        "seed": 1006,
+        "transfer": {
+          "t1": 0.5833333333333334,
+          "t2": 0.7,
+          "t3": 0.425
+        },
+        "overall": 0.5875,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.3333333333333333,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.7083333333333334,
+        "n_rules": 0
+      },
+      "chance": {
+        "overall": 0.2772873019754898,
+        "balanced": 0.2772873019754898
+      },
+      "ceiling": {
+        "overall": 1.0,
+        "balanced": 1.0
+      }
+    }
+  },
+  {
+    "seed": 7,
+    "train_size": 2400,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 1007,
+        "transfer": {
+          "t1": 0.7,
+          "t2": 0.7833333333333333,
+          "t3": 0.7
+        },
+        "overall": 0.73125,
+        "balanced": 0.4610805860805861,
+        "axis_balanced": {
+          "t1": 0.2857142857142857,
+          "t2": 0.631578947368421,
+          "t3": 0.4588744588744589
+        },
+        "known_acc": 0.8333333333333334,
+        "n_rules": 30
+      },
+      "ValueLogReg": {
+        "config": "ValueLogReg",
+        "seed": 1007,
+        "transfer": {
+          "t1": 0.6166666666666667,
+          "t2": 0.6833333333333333,
+          "t3": 0.55
+        },
+        "overall": 0.625,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.725,
+        "n_rules": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 1007,
+        "transfer": {
+          "t1": 0.6166666666666667,
+          "t2": 0.6833333333333333,
+          "t3": 0.825
+        },
+        "overall": 0.69375,
+        "balanced": 0.46153846153846156,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.6666666666666666
+        },
+        "known_acc": 1.0,
+        "n_rules": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 1007,
+        "transfer": {
+          "t1": 0.6166666666666667,
+          "t2": 0.6833333333333333,
+          "t3": 0.55
+        },
+        "overall": 0.625,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.975,
+        "n_rules": 0
+      },
+      "ValueDList": {
+        "config": "ValueDList",
+        "seed": 1007,
+        "transfer": {
+          "t1": 0.6166666666666667,
+          "t2": 0.6833333333333333,
+          "t3": 0.55
+        },
+        "overall": 0.625,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.725,
+        "n_rules": 0
+      },
+      "chance": {
+        "overall": 0.2608699633699634,
+        "balanced": 0.2608699633699634
+      },
+      "ceiling": {
+        "overall": 1.0,
+        "balanced": 1.0
+      }
+    }
+  },
+  {
+    "seed": 8,
+    "train_size": 2400,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 1008,
+        "transfer": {
+          "t1": 0.5666666666666667,
+          "t2": 0.8,
+          "t3": 0.7
+        },
+        "overall": 0.6875,
+        "balanced": 0.44301263252876155,
+        "axis_balanced": {
+          "t1": 0.5722222222222222,
+          "t2": 0.5625,
+          "t3": 0.3846153846153846
+        },
+        "known_acc": 0.8083333333333333,
+        "n_rules": 17
+      },
+      "ValueLogReg": {
+        "config": "ValueLogReg",
+        "seed": 1008,
+        "transfer": {
+          "t1": 0.43333333333333335,
+          "t2": 0.7333333333333333,
+          "t3": 0.55
+        },
+        "overall": 0.575,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.7416666666666667,
+        "n_rules": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 1008,
+        "transfer": {
+          "t1": 0.5833333333333334,
+          "t2": 0.7333333333333333,
+          "t3": 0.675
+        },
+        "overall": 0.6625,
+        "balanced": 0.45553237085495146,
+        "axis_balanced": {
+          "t1": 0.575,
+          "t2": 0.5,
+          "t3": 0.4615384615384615
+        },
+        "known_acc": 1.0,
+        "n_rules": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 1008,
+        "transfer": {
+          "t1": 0.43333333333333335,
+          "t2": 0.7333333333333333,
+          "t3": 0.55
+        },
+        "overall": 0.575,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.9916666666666667,
+        "n_rules": 0
+      },
+      "ValueDList": {
+        "config": "ValueDList",
+        "seed": 1008,
+        "transfer": {
+          "t1": 0.43333333333333335,
+          "t2": 0.7333333333333333,
+          "t3": 0.55
+        },
+        "overall": 0.575,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.7416666666666667,
+        "n_rules": 0
+      },
+      "chance": {
+        "overall": 0.3334416284977295,
+        "balanced": 0.3334416284977295
+      },
+      "ceiling": {
+        "overall": 1.0,
+        "balanced": 1.0
+      }
+    }
+  },
+  {
+    "seed": 9,
+    "train_size": 2400,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 1009,
+        "transfer": {
+          "t1": 0.55,
+          "t2": 0.75,
+          "t3": 0.7
+        },
+        "overall": 0.6625,
+        "balanced": 0.4517204301075269,
+        "axis_balanced": {
+          "t1": 0.3833333333333333,
+          "t2": 0.59375,
+          "t3": 0.45555555555555555
+        },
+        "known_acc": 0.8166666666666667,
+        "n_rules": 25
+      },
+      "ValueLogReg": {
+        "config": "ValueLogReg",
+        "seed": 1009,
+        "transfer": {
+          "t1": 0.45,
+          "t2": 0.7333333333333333,
+          "t3": 0.6
+        },
+        "overall": 0.59375,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.775,
+        "n_rules": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 1009,
+        "transfer": {
+          "t1": 0.6166666666666667,
+          "t2": 0.7333333333333333,
+          "t3": 0.725
+        },
+        "overall": 0.6875,
+        "balanced": 0.48888888888888893,
+        "axis_balanced": {
+          "t1": 0.41666666666666663,
+          "t2": 0.5,
+          "t3": 0.6111111111111112
+        },
+        "known_acc": 1.0,
+        "n_rules": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 1009,
+        "transfer": {
+          "t1": 0.45,
+          "t2": 1.0,
+          "t3": 0.6
+        },
+        "overall": 0.69375,
+        "balanced": 0.3790322580645161,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 1.0,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.95,
+        "n_rules": 0
+      },
+      "ValueDList": {
+        "config": "ValueDList",
+        "seed": 1009,
+        "transfer": {
+          "t1": 0.45,
+          "t2": 0.7333333333333333,
+          "t3": 0.6
+        },
+        "overall": 0.59375,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.775,
+        "n_rules": 0
+      },
+      "chance": {
+        "overall": 0.26632333521976986,
+        "balanced": 0.26632333521976986
+      },
+      "ceiling": {
+        "overall": 1.0,
+        "balanced": 1.0
+      }
+    }
+  },
+  {
+    "seed": 10,
+    "train_size": 2400,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 1010,
+        "transfer": {
+          "t1": 0.5333333333333333,
+          "t2": 0.8666666666666667,
+          "t3": 0.75
+        },
+        "overall": 0.7125,
+        "balanced": 0.4330346475507766,
+        "axis_balanced": {
+          "t1": 0.4431818181818182,
+          "t2": 0.6363636363636364,
+          "t3": 0.5231481481481481
+        },
+        "known_acc": 0.8416666666666667,
+        "n_rules": 29
+      },
+      "ValueLogReg": {
+        "config": "ValueLogReg",
+        "seed": 1010,
+        "transfer": {
+          "t1": 0.3333333333333333,
+          "t2": 0.8166666666666667,
+          "t3": 0.575
+        },
+        "overall": 0.575,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.7833333333333333,
+        "n_rules": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 1010,
+        "transfer": {
+          "t1": 0.6666666666666666,
+          "t2": 0.8166666666666667,
+          "t3": 0.6
+        },
+        "overall": 0.70625,
+        "balanced": 0.42652329749103945,
+        "axis_balanced": {
+          "t1": 0.5028409090909091,
+          "t2": 0.5,
+          "t3": 0.3703703703703704
+        },
+        "known_acc": 1.0,
+        "n_rules": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 1010,
+        "transfer": {
+          "t1": 0.3333333333333333,
+          "t2": 0.8166666666666667,
+          "t3": 0.575
+        },
+        "overall": 0.575,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.9416666666666667,
+        "n_rules": 0
+      },
+      "ValueDList": {
+        "config": "ValueDList",
+        "seed": 1010,
+        "transfer": {
+          "t1": 0.3333333333333333,
+          "t2": 0.8166666666666667,
+          "t3": 0.575
+        },
+        "overall": 0.575,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.7833333333333333,
+        "n_rules": 0
+      },
+      "chance": {
+        "overall": 0.23247948158537218,
+        "balanced": 0.23247948158537218
+      },
+      "ceiling": {
+        "overall": 1.0,
+        "balanced": 1.0
+      }
+    }
+  },
+  {
+    "seed": 11,
+    "train_size": 2400,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 1011,
+        "transfer": {
+          "t1": 0.5833333333333334,
+          "t2": 0.7833333333333333,
+          "t3": 0.575
+        },
+        "overall": 0.65625,
+        "balanced": 0.48838141025641024,
+        "axis_balanced": {
+          "t1": 0.5305555555555556,
+          "t2": 0.5333333333333333,
+          "t3": 0.5297619047619048
+        },
+        "known_acc": 0.7916666666666666,
+        "n_rules": 24
+      },
+      "ValueLogReg": {
+        "config": "ValueLogReg",
+        "seed": 1011,
+        "transfer": {
+          "t1": 0.5166666666666667,
+          "t2": 0.75,
+          "t3": 0.45
+        },
+        "overall": 0.5875,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.7666666666666667,
+        "n_rules": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 1011,
+        "transfer": {
+          "t1": 0.6166666666666667,
+          "t2": 0.75,
+          "t3": 0.875
+        },
+        "overall": 0.73125,
+        "balanced": 0.4639423076923077,
+        "axis_balanced": {
+          "t1": 0.3333333333333333,
+          "t2": 0.5,
+          "t3": 0.7916666666666666
+        },
+        "known_acc": 1.0,
+        "n_rules": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 1011,
+        "transfer": {
+          "t1": 0.5166666666666667,
+          "t2": 0.75,
+          "t3": 0.45
+        },
+        "overall": 0.5875,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.9833333333333333,
+        "n_rules": 0
+      },
+      "ValueDList": {
+        "config": "ValueDList",
+        "seed": 1011,
+        "transfer": {
+          "t1": 0.5166666666666667,
+          "t2": 0.75,
+          "t3": 0.45
+        },
+        "overall": 0.5875,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.7666666666666667,
+        "n_rules": 0
+      },
+      "chance": {
+        "overall": 0.21858803873431532,
+        "balanced": 0.21858803873431532
+      },
+      "ceiling": {
+        "overall": 1.0,
+        "balanced": 1.0
+      }
+    }
+  },
+  {
+    "seed": 12,
+    "train_size": 2400,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 1012,
+        "transfer": {
+          "t1": 0.7166666666666667,
+          "t2": 0.8166666666666667,
+          "t3": 0.65
+        },
+        "overall": 0.7375,
+        "balanced": 0.4847727272727273,
+        "axis_balanced": {
+          "t1": 0.5054945054945055,
+          "t2": 0.6666666666666666,
+          "t3": 0.4166666666666667
+        },
+        "known_acc": 0.825,
+        "n_rules": 24
+      },
+      "ValueLogReg": {
+        "config": "ValueLogReg",
+        "seed": 1012,
+        "transfer": {
+          "t1": 0.55,
+          "t2": 0.8,
+          "t3": 0.6
+        },
+        "overall": 0.65625,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.3333333333333333,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.7916666666666666,
+        "n_rules": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 1012,
+        "transfer": {
+          "t1": 0.7333333333333333,
+          "t2": 0.8,
+          "t3": 0.675
+        },
+        "overall": 0.74375,
+        "balanced": 0.40636363636363637,
+        "axis_balanced": {
+          "t1": 0.5989010989010989,
+          "t2": 0.5,
+          "t3": 0.4583333333333333
+        },
+        "known_acc": 1.0,
+        "n_rules": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 1012,
+        "transfer": {
+          "t1": 0.55,
+          "t2": 0.8,
+          "t3": 0.6
+        },
+        "overall": 0.65625,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.3333333333333333,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.975,
+        "n_rules": 0
+      },
+      "ValueDList": {
+        "config": "ValueDList",
+        "seed": 1012,
+        "transfer": {
+          "t1": 0.55,
+          "t2": 0.8,
+          "t3": 0.6
+        },
+        "overall": 0.65625,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.3333333333333333,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.7916666666666666,
+        "n_rules": 0
+      },
+      "chance": {
+        "overall": 0.2558712121212121,
+        "balanced": 0.2558712121212121
+      },
+      "ceiling": {
+        "overall": 1.0,
+        "balanced": 1.0
+      }
+    }
+  },
+  {
+    "seed": 13,
+    "train_size": 2400,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 1013,
+        "transfer": {
+          "t1": 0.6166666666666667,
+          "t2": 0.8666666666666667,
+          "t3": 0.725
+        },
+        "overall": 0.7375,
+        "balanced": 0.41119528619528617,
+        "axis_balanced": {
+          "t1": 0.3287878787878788,
+          "t2": 0.5909090909090909,
+          "t3": 0.4305555555555556
+        },
+        "known_acc": 0.85,
+        "n_rules": 24
+      },
+      "ValueLogReg": {
+        "config": "ValueLogReg",
+        "seed": 1013,
+        "transfer": {
+          "t1": 0.5,
+          "t2": 0.8166666666666667,
+          "t3": 0.5
+        },
+        "overall": 0.61875,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.775,
+        "n_rules": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 1013,
+        "transfer": {
+          "t1": 0.5,
+          "t2": 0.8833333333333333,
+          "t3": 0.825
+        },
+        "overall": 0.725,
+        "balanced": 0.4621212121212121,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.6818181818181819,
+          "t3": 0.75
+        },
+        "known_acc": 1.0,
+        "n_rules": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 1013,
+        "transfer": {
+          "t1": 0.5,
+          "t2": 0.8166666666666667,
+          "t3": 0.5
+        },
+        "overall": 0.61875,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.9583333333333334,
+        "n_rules": 0
+      },
+      "ValueDList": {
+        "config": "ValueDList",
+        "seed": 1013,
+        "transfer": {
+          "t1": 0.5,
+          "t2": 0.8166666666666667,
+          "t3": 0.5
+        },
+        "overall": 0.61875,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.775,
+        "n_rules": 0
+      },
+      "chance": {
+        "overall": 0.24305555555555555,
+        "balanced": 0.24305555555555555
+      },
+      "ceiling": {
+        "overall": 1.0,
+        "balanced": 1.0
+      }
+    }
+  },
+  {
+    "seed": 14,
+    "train_size": 2400,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 1014,
+        "transfer": {
+          "t1": 0.5666666666666667,
+          "t2": 0.8166666666666667,
+          "t3": 0.625
+        },
+        "overall": 0.675,
+        "balanced": 0.3782894736842105,
+        "axis_balanced": {
+          "t1": 0.3568181818181818,
+          "t2": 0.6428571428571428,
+          "t3": 0.3703703703703704
+        },
+        "known_acc": 0.725,
+        "n_rules": 28
+      },
+      "ValueLogReg": {
+        "config": "ValueLogReg",
+        "seed": 1014,
+        "transfer": {
+          "t1": 0.4666666666666667,
+          "t2": 0.7666666666666667,
+          "t3": 0.625
+        },
+        "overall": 0.61875,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.6583333333333333,
+        "n_rules": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 1014,
+        "transfer": {
+          "t1": 0.4666666666666667,
+          "t2": 0.7666666666666667,
+          "t3": 0.625
+        },
+        "overall": 0.61875,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 1.0,
+        "n_rules": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 1014,
+        "transfer": {
+          "t1": 0.4666666666666667,
+          "t2": 0.7666666666666667,
+          "t3": 0.625
+        },
+        "overall": 0.61875,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.9833333333333333,
+        "n_rules": 0
+      },
+      "ValueDList": {
+        "config": "ValueDList",
+        "seed": 1014,
+        "transfer": {
+          "t1": 0.4666666666666667,
+          "t2": 0.7666666666666667,
+          "t3": 0.625
+        },
+        "overall": 0.61875,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.6583333333333333,
+        "n_rules": 0
+      },
+      "chance": {
+        "overall": 0.2632006151742994,
+        "balanced": 0.2632006151742994
+      },
+      "ceiling": {
+        "overall": 1.0,
+        "balanced": 1.0
+      }
+    }
+  },
+  {
+    "seed": 15,
+    "train_size": 2400,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 1015,
+        "transfer": {
+          "t1": 0.5,
+          "t2": 0.8666666666666667,
+          "t3": 0.7
+        },
+        "overall": 0.6875,
+        "balanced": 0.4147578347578348,
+        "axis_balanced": {
+          "t1": 0.45416666666666666,
+          "t2": 0.6785714285714286,
+          "t3": 0.5714285714285714
+        },
+        "known_acc": 0.825,
+        "n_rules": 25
+      },
+      "ValueLogReg": {
+        "config": "ValueLogReg",
+        "seed": 1015,
+        "transfer": {
+          "t1": 0.38333333333333336,
+          "t2": 0.7666666666666667,
+          "t3": 0.65
+        },
+        "overall": 0.59375,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.7833333333333333,
+        "n_rules": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 1015,
+        "transfer": {
+          "t1": 0.48333333333333334,
+          "t2": 0.7666666666666667,
+          "t3": 1.0
+        },
+        "overall": 0.71875,
+        "balanced": 0.5648148148148148,
+        "axis_balanced": {
+          "t1": 0.5,
+          "t2": 0.5,
+          "t3": 1.0
+        },
+        "known_acc": 1.0,
+        "n_rules": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 1015,
+        "transfer": {
+          "t1": 0.38333333333333336,
+          "t2": 0.7666666666666667,
+          "t3": 0.65
+        },
+        "overall": 0.59375,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.975,
+        "n_rules": 0
+      },
+      "ValueDList": {
+        "config": "ValueDList",
+        "seed": 1015,
+        "transfer": {
+          "t1": 0.38333333333333336,
+          "t2": 0.7666666666666667,
+          "t3": 0.65
+        },
+        "overall": 0.59375,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.7833333333333333,
+        "n_rules": 0
+      },
+      "chance": {
+        "overall": 0.2700899685110212,
+        "balanced": 0.2700899685110212
+      },
+      "ceiling": {
+        "overall": 1.0,
+        "balanced": 1.0
+      }
+    }
+  },
+  {
+    "seed": 16,
+    "train_size": 2400,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 1016,
+        "transfer": {
+          "t1": 0.6166666666666667,
+          "t2": 0.7833333333333333,
+          "t3": 0.6
+        },
+        "overall": 0.675,
+        "balanced": 0.45231481481481484,
+        "axis_balanced": {
+          "t1": 0.41666666666666663,
+          "t2": 0.6666666666666666,
+          "t3": 0.468013468013468
+        },
+        "known_acc": 0.825,
+        "n_rules": 28
+      },
+      "ValueLogReg": {
+        "config": "ValueLogReg",
+        "seed": 1016,
+        "transfer": {
+          "t1": 0.48333333333333334,
+          "t2": 0.7,
+          "t3": 0.5
+        },
+        "overall": 0.56875,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.8083333333333333,
+        "n_rules": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 1016,
+        "transfer": {
+          "t1": 0.5833333333333334,
+          "t2": 0.7,
+          "t3": 0.55
+        },
+        "overall": 0.61875,
+        "balanced": 0.32407407407407407,
+        "axis_balanced": {
+          "t1": 0.3333333333333333,
+          "t2": 0.5,
+          "t3": 0.40740740740740744
+        },
+        "known_acc": 1.0,
+        "n_rules": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 1016,
+        "transfer": {
+          "t1": 0.48333333333333334,
+          "t2": 0.7,
+          "t3": 0.5
+        },
+        "overall": 0.56875,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 1.0,
+        "n_rules": 0
+      },
+      "ValueDList": {
+        "config": "ValueDList",
+        "seed": 1016,
+        "transfer": {
+          "t1": 0.48333333333333334,
+          "t2": 0.7,
+          "t3": 0.5
+        },
+        "overall": 0.56875,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.8083333333333333,
+        "n_rules": 0
+      },
+      "chance": {
+        "overall": 0.25815527065527066,
+        "balanced": 0.25815527065527066
+      },
+      "ceiling": {
+        "overall": 1.0,
+        "balanced": 1.0
+      }
+    }
+  },
+  {
+    "seed": 17,
+    "train_size": 2400,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 1017,
+        "transfer": {
+          "t1": 0.6666666666666666,
+          "t2": 0.8333333333333334,
+          "t3": 0.6
+        },
+        "overall": 0.7125,
+        "balanced": 0.45664667666166914,
+        "axis_balanced": {
+          "t1": 0.6586538461538461,
+          "t2": 0.59375,
+          "t3": 0.4358974358974359
+        },
+        "known_acc": 0.825,
+        "n_rules": 30
+      },
+      "ValueLogReg": {
+        "config": "ValueLogReg",
+        "seed": 1017,
+        "transfer": {
+          "t1": 0.48333333333333334,
+          "t2": 0.7333333333333333,
+          "t3": 0.5
+        },
+        "overall": 0.58125,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.7333333333333333,
+        "n_rules": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 1017,
+        "transfer": {
+          "t1": 0.6166666666666667,
+          "t2": 0.7333333333333333,
+          "t3": 0.5
+        },
+        "overall": 0.63125,
+        "balanced": 0.325712143928036,
+        "axis_balanced": {
+          "t1": 0.39302884615384615,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 1.0,
+        "n_rules": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 1017,
+        "transfer": {
+          "t1": 0.48333333333333334,
+          "t2": 0.7333333333333333,
+          "t3": 0.5
+        },
+        "overall": 0.58125,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.9666666666666667,
+        "n_rules": 0
+      },
+      "ValueDList": {
+        "config": "ValueDList",
+        "seed": 1017,
+        "transfer": {
+          "t1": 0.48333333333333334,
+          "t2": 0.7333333333333333,
+          "t3": 0.5
+        },
+        "overall": 0.58125,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.7333333333333333,
+        "n_rules": 0
+      },
+      "chance": {
+        "overall": 0.26446857216553016,
+        "balanced": 0.26446857216553016
+      },
+      "ceiling": {
+        "overall": 1.0,
+        "balanced": 1.0
+      }
+    }
+  },
+  {
+    "seed": 18,
+    "train_size": 2400,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 1018,
+        "transfer": {
+          "t1": 0.8,
+          "t2": 0.8833333333333333,
+          "t3": 0.625
+        },
+        "overall": 0.7875,
+        "balanced": 0.5293560606060606,
+        "axis_balanced": {
+          "t1": 0.34545454545454546,
+          "t2": 0.5833333333333334,
+          "t3": 0.5538461538461539
+        },
+        "known_acc": 0.85,
+        "n_rules": 23
+      },
+      "ValueLogReg": {
+        "config": "ValueLogReg",
+        "seed": 1018,
+        "transfer": {
+          "t1": 0.6166666666666667,
+          "t2": 0.8,
+          "t3": 0.55
+        },
+        "overall": 0.66875,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.7916666666666666,
+        "n_rules": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 1018,
+        "transfer": {
+          "t1": 0.8,
+          "t2": 0.8,
+          "t3": 0.625
+        },
+        "overall": 0.75625,
+        "balanced": 0.4537878787878788,
+        "axis_balanced": {
+          "t1": 0.7136363636363636,
+          "t2": 0.5,
+          "t3": 0.5333333333333333
+        },
+        "known_acc": 1.0,
+        "n_rules": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 1018,
+        "transfer": {
+          "t1": 0.6166666666666667,
+          "t2": 0.8,
+          "t3": 0.55
+        },
+        "overall": 0.66875,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.9916666666666667,
+        "n_rules": 0
+      },
+      "ValueDList": {
+        "config": "ValueDList",
+        "seed": 1018,
+        "transfer": {
+          "t1": 0.6166666666666667,
+          "t2": 0.8,
+          "t3": 0.55
+        },
+        "overall": 0.66875,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.7916666666666666,
+        "n_rules": 0
+      },
+      "chance": {
+        "overall": 0.23189606343811953,
+        "balanced": 0.23189606343811953
+      },
+      "ceiling": {
+        "overall": 1.0,
+        "balanced": 1.0
+      }
+    }
+  },
+  {
+    "seed": 19,
+    "train_size": 2400,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 1019,
+        "transfer": {
+          "t1": 0.5166666666666667,
+          "t2": 0.8166666666666667,
+          "t3": 0.725
+        },
+        "overall": 0.68125,
+        "balanced": 0.36276223776223776,
+        "axis_balanced": {
+          "t1": 0.4597902097902098,
+          "t2": 0.5666666666666667,
+          "t3": 0.48148148148148145
+        },
+        "known_acc": 0.7333333333333333,
+        "n_rules": 21
+      },
+      "ValueLogReg": {
+        "config": "ValueLogReg",
+        "seed": 1019,
+        "transfer": {
+          "t1": 0.4166666666666667,
+          "t2": 0.75,
+          "t3": 0.55
+        },
+        "overall": 0.575,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.6666666666666666,
+        "n_rules": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 1019,
+        "transfer": {
+          "t1": 0.5333333333333333,
+          "t2": 0.75,
+          "t3": 0.725
+        },
+        "overall": 0.6625,
+        "balanced": 0.40664335664335666,
+        "axis_balanced": {
+          "t1": 0.3986013986013986,
+          "t2": 0.5,
+          "t3": 0.5925925925925926
+        },
+        "known_acc": 1.0,
+        "n_rules": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 1019,
+        "transfer": {
+          "t1": 0.4166666666666667,
+          "t2": 0.75,
+          "t3": 0.55
+        },
+        "overall": 0.575,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 1.0,
+        "n_rules": 0
+      },
+      "ValueDList": {
+        "config": "ValueDList",
+        "seed": 1019,
+        "transfer": {
+          "t1": 0.4166666666666667,
+          "t2": 0.75,
+          "t3": 0.55
+        },
+        "overall": 0.575,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.6666666666666666,
+        "n_rules": 0
+      },
+      "chance": {
+        "overall": 0.22319854058984492,
+        "balanced": 0.22319854058984492
+      },
+      "ceiling": {
+        "overall": 1.0,
+        "balanced": 1.0
+      }
+    }
+  },
+  {
+    "seed": 20,
+    "train_size": 2400,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 1020,
+        "transfer": {
+          "t1": 0.55,
+          "t2": 0.7833333333333333,
+          "t3": 0.55
+        },
+        "overall": 0.6375,
+        "balanced": 0.4145320197044335,
+        "axis_balanced": {
+          "t1": 0.4567307692307692,
+          "t2": 0.75,
+          "t3": 0.5047619047619047
+        },
+        "known_acc": 0.8583333333333333,
+        "n_rules": 29
+      },
+      "ValueLogReg": {
+        "config": "ValueLogReg",
+        "seed": 1020,
+        "transfer": {
+          "t1": 0.45,
+          "t2": 0.7333333333333333,
+          "t3": 0.4
+        },
+        "overall": 0.54375,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.8,
+        "n_rules": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 1020,
+        "transfer": {
+          "t1": 0.45,
+          "t2": 0.7333333333333333,
+          "t3": 0.65
+        },
+        "overall": 0.60625,
+        "balanced": 0.4285714285714286,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.6666666666666666
+        },
+        "known_acc": 1.0,
+        "n_rules": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 1020,
+        "transfer": {
+          "t1": 0.45,
+          "t2": 0.7333333333333333,
+          "t3": 0.4
+        },
+        "overall": 0.54375,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.9833333333333333,
+        "n_rules": 0
+      },
+      "ValueDList": {
+        "config": "ValueDList",
+        "seed": 1020,
+        "transfer": {
+          "t1": 0.45,
+          "t2": 0.7333333333333333,
+          "t3": 0.4
+        },
+        "overall": 0.54375,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.8,
+        "n_rules": 0
+      },
+      "chance": {
+        "overall": 0.36867816091954025,
+        "balanced": 0.36867816091954025
+      },
+      "ceiling": {
+        "overall": 1.0,
+        "balanced": 1.0
+      }
+    }
+  },
+  {
+    "seed": 21,
+    "train_size": 2400,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 1021,
+        "transfer": {
+          "t1": 0.7,
+          "t2": 0.8,
+          "t3": 0.675
+        },
+        "overall": 0.73125,
+        "balanced": 0.449802371541502,
+        "axis_balanced": {
+          "t1": 0.40865384615384615,
+          "t2": 0.5588235294117647,
+          "t3": 0.39999999999999997
+        },
+        "known_acc": 0.8583333333333333,
+        "n_rules": 23
+      },
+      "ValueLogReg": {
+        "config": "ValueLogReg",
+        "seed": 1021,
+        "transfer": {
+          "t1": 0.6333333333333333,
+          "t2": 0.7166666666666667,
+          "t3": 0.6
+        },
+        "overall": 0.65625,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.7833333333333333,
+        "n_rules": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 1021,
+        "transfer": {
+          "t1": 0.85,
+          "t2": 0.7166666666666667,
+          "t3": 0.6
+        },
+        "overall": 0.7375,
+        "balanced": 0.3922924901185771,
+        "axis_balanced": {
+          "t1": 0.5615384615384615,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 1.0,
+        "n_rules": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 1021,
+        "transfer": {
+          "t1": 0.6333333333333333,
+          "t2": 0.7166666666666667,
+          "t3": 0.6
+        },
+        "overall": 0.65625,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.975,
+        "n_rules": 0
+      },
+      "ValueDList": {
+        "config": "ValueDList",
+        "seed": 1021,
+        "transfer": {
+          "t1": 0.6333333333333333,
+          "t2": 0.7166666666666667,
+          "t3": 0.6
+        },
+        "overall": 0.65625,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.7833333333333333,
+        "n_rules": 0
+      },
+      "chance": {
+        "overall": 0.29864483342744214,
+        "balanced": 0.29864483342744214
+      },
+      "ceiling": {
+        "overall": 1.0,
+        "balanced": 1.0
+      }
+    }
+  },
+  {
+    "seed": 22,
+    "train_size": 2400,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 1022,
+        "transfer": {
+          "t1": 0.7166666666666667,
+          "t2": 0.75,
+          "t3": 0.625
+        },
+        "overall": 0.70625,
+        "balanced": 0.3873626373626374,
+        "axis_balanced": {
+          "t1": 0.43258928571428573,
+          "t2": 0.6842105263157895,
+          "t3": 0.5555555555555555
+        },
+        "known_acc": 0.7583333333333333,
+        "n_rules": 40
+      },
+      "ValueLogReg": {
+        "config": "ValueLogReg",
+        "seed": 1022,
+        "transfer": {
+          "t1": 0.5333333333333333,
+          "t2": 0.6833333333333333,
+          "t3": 0.475
+        },
+        "overall": 0.575,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.675,
+        "n_rules": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 1022,
+        "transfer": {
+          "t1": 0.7333333333333333,
+          "t2": 0.6833333333333333,
+          "t3": 0.875
+        },
+        "overall": 0.75,
+        "balanced": 0.5810439560439561,
+        "axis_balanced": {
+          "t1": 0.6294642857142857,
+          "t2": 0.5,
+          "t3": 0.8148148148148149
+        },
+        "known_acc": 1.0,
+        "n_rules": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 1022,
+        "transfer": {
+          "t1": 0.5333333333333333,
+          "t2": 0.6833333333333333,
+          "t3": 0.475
+        },
+        "overall": 0.575,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.975,
+        "n_rules": 0
+      },
+      "ValueDList": {
+        "config": "ValueDList",
+        "seed": 1022,
+        "transfer": {
+          "t1": 0.5333333333333333,
+          "t2": 0.6833333333333333,
+          "t3": 0.475
+        },
+        "overall": 0.575,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.675,
+        "n_rules": 0
+      },
+      "chance": {
+        "overall": 0.27675585284280935,
+        "balanced": 0.27675585284280935
+      },
+      "ceiling": {
+        "overall": 1.0,
+        "balanced": 1.0
+      }
+    }
+  },
+  {
+    "seed": 23,
+    "train_size": 2400,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 1023,
+        "transfer": {
+          "t1": 0.6666666666666666,
+          "t2": 0.8,
+          "t3": 0.6
+        },
+        "overall": 0.7,
+        "balanced": 0.4777173913043478,
+        "axis_balanced": {
+          "t1": 0.35,
+          "t2": 0.6,
+          "t3": 0.5367965367965368
+        },
+        "known_acc": 0.8333333333333334,
+        "n_rules": 31
+      },
+      "ValueLogReg": {
+        "config": "ValueLogReg",
+        "seed": 1023,
+        "transfer": {
+          "t1": 0.5333333333333333,
+          "t2": 0.75,
+          "t3": 0.55
+        },
+        "overall": 0.61875,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.7416666666666667,
+        "n_rules": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 1023,
+        "transfer": {
+          "t1": 0.6833333333333333,
+          "t2": 0.75,
+          "t3": 0.95
+        },
+        "overall": 0.775,
+        "balanced": 0.628804347826087,
+        "axis_balanced": {
+          "t1": 0.6416666666666667,
+          "t2": 0.5,
+          "t3": 0.9047619047619048
+        },
+        "known_acc": 1.0,
+        "n_rules": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 1023,
+        "transfer": {
+          "t1": 0.5333333333333333,
+          "t2": 0.75,
+          "t3": 0.55
+        },
+        "overall": 0.61875,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.9916666666666667,
+        "n_rules": 0
+      },
+      "ValueDList": {
+        "config": "ValueDList",
+        "seed": 1023,
+        "transfer": {
+          "t1": 0.5333333333333333,
+          "t2": 0.75,
+          "t3": 0.55
+        },
+        "overall": 0.61875,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.7416666666666667,
+        "n_rules": 0
+      },
+      "chance": {
+        "overall": 0.279685441370224,
+        "balanced": 0.279685441370224
+      },
+      "ceiling": {
+        "overall": 1.0,
+        "balanced": 1.0
+      }
+    }
+  },
+  {
+    "seed": 24,
+    "train_size": 2400,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 1024,
+        "transfer": {
+          "t1": 0.6333333333333333,
+          "t2": 0.85,
+          "t3": 0.7
+        },
+        "overall": 0.73125,
+        "balanced": 0.48382505175983437,
+        "axis_balanced": {
+          "t1": 0.42118055555555556,
+          "t2": 0.6071428571428571,
+          "t3": 0.5396825396825397
+        },
+        "known_acc": 0.7583333333333333,
+        "n_rules": 29
+      },
+      "ValueLogReg": {
+        "config": "ValueLogReg",
+        "seed": 1024,
+        "transfer": {
+          "t1": 0.5,
+          "t2": 0.7666666666666667,
+          "t3": 0.525
+        },
+        "overall": 0.60625,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.7416666666666667,
+        "n_rules": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 1024,
+        "transfer": {
+          "t1": 0.6666666666666666,
+          "t2": 0.7666666666666667,
+          "t3": 0.825
+        },
+        "overall": 0.74375,
+        "balanced": 0.4464285714285714,
+        "axis_balanced": {
+          "t1": 0.40625,
+          "t2": 0.5,
+          "t3": 0.6666666666666666
+        },
+        "known_acc": 1.0,
+        "n_rules": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 1024,
+        "transfer": {
+          "t1": 0.5,
+          "t2": 0.7666666666666667,
+          "t3": 0.525
+        },
+        "overall": 0.60625,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.9583333333333334,
+        "n_rules": 0
+      },
+      "ValueDList": {
+        "config": "ValueDList",
+        "seed": 1024,
+        "transfer": {
+          "t1": 0.5,
+          "t2": 0.7666666666666667,
+          "t3": 0.525
+        },
+        "overall": 0.60625,
+        "balanced": 0.25,
+        "axis_balanced": {
+          "t1": 0.25,
+          "t2": 0.5,
+          "t3": 0.3333333333333333
+        },
+        "known_acc": 0.7416666666666667,
+        "n_rules": 0
+      },
+      "chance": {
+        "overall": 0.27484738852959384,
+        "balanced": 0.27484738852959384
+      },
+      "ceiling": {
+        "overall": 1.0,
+        "balanced": 1.0
+      }
+    }
+  }
+]

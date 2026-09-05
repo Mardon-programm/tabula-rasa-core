@@ -140,3 +140,86 @@ known retention и developmental рост подтверждают «разви�
 
 Все данные и отчёты: `results/experiment_main.json`, `results/experiment_replication.json`,
 `results/developmental_*.json`, `results/report_*.json`, `results/trace_full_seed1.json`.
+
+---
+
+# Addendum — Phase 1 (honest compositional comparison)
+
+## Цель Фазы 1
+
+Устранить три недостатка v0.1, найденные при профессиональной ревизии:
+1. **Метка агента vs oracle**: исходная метрика оценивала `success|выбранное действие`, а не
+   правильность против oracle — появлялась возможность «подстройки под свою политику».
+2. **Несправедливый baseline**: DecisionList v0.1 обучался на oracle-метках
+   (`oracle_action(ctx)`), чего агент не видит.
+3. **Класcовый дисбаланс** test-наборов (approach = 57%), из-за чего константный «always
+   approach» тривиально давал 0.569.
+
+## Протокол Фазы 1
+
+- **Единый честный опыт**: все learners получают одинаковые триалы
+  `(context, uniform-random action, oracle outcome)`; oracle-метки никому не раскрываются.
+- **Композициональные сплиты** (T1/T2/T3) сохранены — test-контексты не пересекаются с train
+  по полным комбинациям атрибутов.
+- **Primary-метрика = balanced accuracy** (macro per-class recall): floor у константных
+  стратегий = 0.25, ceiling = 1.0.
+- **Базилайны (numpy, без sklearn)**: ValueLogReg (logistic value-classifier), ValuekNN,
+  ValueTree (CART), ValueDList (честный decision list без oracle). Все обучены на том же
+  uniform-опыте. Trainer-агент bp — тот же BehavioralProgram.
+- Train=2400 (осн. study), N=24 main + replication; sample-complexity на train_source=1200,
+  дроби 0.1/0.25/0.5/1.0, N=8.
+- Код: `experiments/compositional_experiment.py`,
+  `experiments/compositional_baselines.py`.
+
+## Результаты (balanced accuracy, N=24)
+
+| конфиг | main | replication |
+|---|---|---|
+| **full_bp** | **0.441** | **0.431** |
+| ValuekNN | 0.446 | 0.507 |
+| ValueTree | 0.255 | 0.256 |
+| ValueLogReg | 0.250 | 0.250 |
+| ValueDList | 0.250 | 0.250 |
+| chance | 0.258 | 0.242 |
+
+### Парные (full_bp vs …), paired permutation, Holm
+
+| сравнение | main d / dz / p | rep d / dz / p |
+|---|---|---|
+| vs ValueLogReg | +0.191 / 4.32 / <0.0001 | +0.181 / 3.38 / <0.0001 |
+| vs ValueDList | +0.191 / 4.32 / <0.0001 | +0.181 / 3.38 / <0.0001 |
+| vs ValueTree | +0.186 / 3.69 / <0.0001 | +0.175 / 2.51 / <0.0001 |
+| vs chance | +0.183 / 3.17 / <0.0001 | +0.190 / 2.74 / <0.0001 |
+| vs ValuekNN | −0.005 / −0.05 / n.s. | −0.076 / −0.65 / 0.004 |
+
+### Sample-complexity (balanced vs фракция train, train_source=1200, N=8)
+
+| frac (train) | bp (main/rep) | kNN (main/rep) |
+|---|---|---|
+| 0.1 (120) | 0.294 / 0.309 | 0.256 / 0.316 |
+| 0.25 (300) | 0.349 / 0.350 | 0.271 / 0.308 |
+| 0.5 (600) | 0.362 / 0.414 | 0.336 / 0.403 |
+| 1.0 (1200) | 0.400 / 0.426 | 0.419 / 0.463 |
+
+Tree/LR везде ≈ 0.25–0.30 (застревают).
+
+## Выводы Фазы 1
+
+1. **full_bp ≫ дискриминативные/символьные базилайны** (Logistic, Tree, DecisionList) на
+   compositional transfer: dz 2.5–4.3, p<0.0001 в обеих репликациях. Индукция поведенческой
+   программы — не эквивалент разделяющей поверхности или табличного решающего списка на этом
+   опыте.
+2. **full_bp ≈ kNN** (непараметрическая память): в main паритет (p=0.79), в replication kNN
+   выше (0.507 vs 0.431, p=0.004). Глобальная индукция правил не превосходит локальную память
+   на asymptote.
+3. **Sample-efficiency**: bp обгоняет kNN при малых объёмах опыта (0.1–0.5), kNN обгоняет при
+   больших (1.0). Это bias-variance trade-off: индукция даёт больше обобщения там, где данных
+   мало, но не добирает asymptote непараметрического сглаживания. Ключевое содержательное
+   отличие bp — **интерпретируемость и provenance** (трассируемые правила), а не чистый topline.
+4. **Гипотеза superiority над непараметрической памятью НЕ подтверждена** (vs kNN). Для пользы
+   «lab-level» нужен rescue: либо задача, где непараметрика не масштабируется (редкие правила,
+   редкие значения), либо где выигрыш от композиции операций (COMPOSE/SPECIALIZE) проявляется —
+   тот путь, что намечен в Фазе 3.
+
+Данные: `results/compositional_main.json`, `results/compositional_replication.json`,
+`results/complexity_main.json`, `results/complexity_replication.json`.

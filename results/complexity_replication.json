@@ -1,0 +1,586 @@
+[
+  {
+    "seed": 1,
+    "curves": {
+      "0.1": {
+        "overall": 0.64375,
+        "balanced": 0.41865079365079366,
+        "known_acc": 0.8166666666666667,
+        "baselines": {
+          "ValueLogReg": 0.25,
+          "ValuekNN": 0.35714285714285715,
+          "ValueTree": 0.25,
+          "ValueDList": 0.25
+        },
+        "baselines_overall": {
+          "ValueLogReg": 0.525,
+          "ValuekNN": 0.6,
+          "ValueTree": 0.525,
+          "ValueDList": 0.525
+        }
+      },
+      "0.25": {
+        "overall": 0.625,
+        "balanced": 0.4801587301587302,
+        "known_acc": 0.7833333333333333,
+        "baselines": {
+          "ValueLogReg": 0.25,
+          "ValuekNN": 0.3055555555555556,
+          "ValueTree": 0.25,
+          "ValueDList": 0.25
+        },
+        "baselines_overall": {
+          "ValueLogReg": 0.525,
+          "ValuekNN": 0.575,
+          "ValueTree": 0.525,
+          "ValueDList": 0.525
+        }
+      },
+      "0.5": {
+        "overall": 0.60625,
+        "balanced": 0.3412698412698413,
+        "known_acc": 0.7666666666666667,
+        "baselines": {
+          "ValueLogReg": 0.25,
+          "ValuekNN": 0.3214285714285714,
+          "ValueTree": 0.25,
+          "ValueDList": 0.25
+        },
+        "baselines_overall": {
+          "ValueLogReg": 0.525,
+          "ValuekNN": 0.575,
+          "ValueTree": 0.525,
+          "ValueDList": 0.525
+        }
+      },
+      "1.0": {
+        "overall": 0.625,
+        "balanced": 0.4801587301587302,
+        "known_acc": 0.7833333333333333,
+        "baselines": {
+          "ValueLogReg": 0.25,
+          "ValuekNN": 0.3888888888888889,
+          "ValueTree": 0.25,
+          "ValueDList": 0.25
+        },
+        "baselines_overall": {
+          "ValueLogReg": 0.525,
+          "ValuekNN": 0.5875,
+          "ValueTree": 0.525,
+          "ValueDList": 0.525
+        }
+      }
+    }
+  },
+  {
+    "seed": 2,
+    "curves": {
+      "0.1": {
+        "overall": 0.5875,
+        "balanced": 0.25,
+        "known_acc": 0.7416666666666667,
+        "baselines": {
+          "ValueLogReg": 0.25,
+          "ValuekNN": 0.25,
+          "ValueTree": 0.390625,
+          "ValueDList": 0.25
+        },
+        "baselines_overall": {
+          "ValueLogReg": 0.5875,
+          "ValuekNN": 0.5875,
+          "ValueTree": 0.7,
+          "ValueDList": 0.5875
+        }
+      },
+      "0.25": {
+        "overall": 0.6125,
+        "balanced": 0.29446640316205536,
+        "known_acc": 0.75,
+        "baselines": {
+          "ValueLogReg": 0.25,
+          "ValuekNN": 0.2826086956521739,
+          "ValueTree": 0.25,
+          "ValueDList": 0.25
+        },
+        "baselines_overall": {
+          "ValueLogReg": 0.5875,
+          "ValuekNN": 0.60625,
+          "ValueTree": 0.5875,
+          "ValueDList": 0.5875
+        }
+      },
+      "0.5": {
+        "overall": 0.60625,
+        "balanced": 0.4769948122529644,
+        "known_acc": 0.775,
+        "baselines": {
+          "ValueLogReg": 0.25,
+          "ValuekNN": 0.39056324110671936,
+          "ValueTree": 0.25,
+          "ValueDList": 0.25
+        },
+        "baselines_overall": {
+          "ValueLogReg": 0.5875,
+          "ValuekNN": 0.66875,
+          "ValueTree": 0.5875,
+          "ValueDList": 0.5875
+        }
+      },
+      "1.0": {
+        "overall": 0.6875,
+        "balanced": 0.4723937747035573,
+        "known_acc": 0.8083333333333333,
+        "baselines": {
+          "ValueLogReg": 0.25,
+          "ValuekNN": 0.5390625,
+          "ValueTree": 0.25,
+          "ValueDList": 0.25
+        },
+        "baselines_overall": {
+          "ValueLogReg": 0.5875,
+          "ValuekNN": 0.6875,
+          "ValueTree": 0.5875,
+          "ValueDList": 0.5875
+        }
+      }
+    }
+  },
+  {
+    "seed": 3,
+    "curves": {
+      "0.1": {
+        "overall": 0.51875,
+        "balanced": 0.2767857142857143,
+        "known_acc": 0.75,
+        "baselines": {
+          "ValueLogReg": 0.25,
+          "ValuekNN": 0.41464285714285715,
+          "ValueTree": 0.45999999999999996,
+          "ValueDList": 0.25
+        },
+        "baselines_overall": {
+          "ValueLogReg": 0.5125,
+          "ValuekNN": 0.61875,
+          "ValueTree": 0.64375,
+          "ValueDList": 0.5125
+        }
+      },
+      "0.25": {
+        "overall": 0.58125,
+        "balanced": 0.3825,
+        "known_acc": 0.7833333333333333,
+        "baselines": {
+          "ValueLogReg": 0.25,
+          "ValuekNN": 0.2857142857142857,
+          "ValueTree": 0.25,
+          "ValueDList": 0.25
+        },
+        "baselines_overall": {
+          "ValueLogReg": 0.5125,
+          "ValuekNN": 0.5375,
+          "ValueTree": 0.5125,
+          "ValueDList": 0.5125
+        }
+      },
+      "0.5": {
+        "overall": 0.60625,
+        "balanced": 0.4025,
+        "known_acc": 0.7833333333333333,
+        "baselines": {
+          "ValueLogReg": 0.25,
+          "ValuekNN": 0.36464285714285716,
+          "ValueTree": 0.25,
+          "ValueDList": 0.25
+        },
+        "baselines_overall": {
+          "ValueLogReg": 0.5125,
+          "ValuekNN": 0.5875,
+          "ValueTree": 0.5125,
+          "ValueDList": 0.5125
+        }
+      },
+      "1.0": {
+        "overall": 0.60625,
+        "balanced": 0.4025,
+        "known_acc": 0.7833333333333333,
+        "baselines": {
+          "ValueLogReg": 0.25,
+          "ValuekNN": 0.5903571428571429,
+          "ValueTree": 0.25,
+          "ValueDList": 0.25
+        },
+        "baselines_overall": {
+          "ValueLogReg": 0.5125,
+          "ValuekNN": 0.73125,
+          "ValueTree": 0.5125,
+          "ValueDList": 0.5125
+        }
+      }
+    }
+  },
+  {
+    "seed": 4,
+    "curves": {
+      "0.1": {
+        "overall": 0.73125,
+        "balanced": 0.3132832080200501,
+        "known_acc": 0.8166666666666667,
+        "baselines": {
+          "ValueLogReg": 0.25,
+          "ValuekNN": 0.25,
+          "ValueTree": 0.25,
+          "ValueDList": 0.25
+        },
+        "baselines_overall": {
+          "ValueLogReg": 0.7,
+          "ValuekNN": 0.7,
+          "ValueTree": 0.7,
+          "ValueDList": 0.7
+        }
+      },
+      "0.25": {
+        "overall": 0.75625,
+        "balanced": 0.3276942355889724,
+        "known_acc": 0.8583333333333333,
+        "baselines": {
+          "ValueLogReg": 0.25,
+          "ValuekNN": 0.25,
+          "ValueTree": 0.25,
+          "ValueDList": 0.25
+        },
+        "baselines_overall": {
+          "ValueLogReg": 0.7,
+          "ValuekNN": 0.7,
+          "ValueTree": 0.7,
+          "ValueDList": 0.7
+        }
+      },
+      "0.5": {
+        "overall": 0.76875,
+        "balanced": 0.37899436090225563,
+        "known_acc": 0.8916666666666667,
+        "baselines": {
+          "ValueLogReg": 0.25,
+          "ValuekNN": 0.4151785714285714,
+          "ValueTree": 0.25,
+          "ValueDList": 0.25
+        },
+        "baselines_overall": {
+          "ValueLogReg": 0.7,
+          "ValuekNN": 0.75625,
+          "ValueTree": 0.7,
+          "ValueDList": 0.7
+        }
+      },
+      "1.0": {
+        "overall": 0.76875,
+        "balanced": 0.37899436090225563,
+        "known_acc": 0.8916666666666667,
+        "baselines": {
+          "ValueLogReg": 0.25,
+          "ValuekNN": 0.48214285714285715,
+          "ValueTree": 0.25,
+          "ValueDList": 0.25
+        },
+        "baselines_overall": {
+          "ValueLogReg": 0.7,
+          "ValuekNN": 0.78125,
+          "ValueTree": 0.7,
+          "ValueDList": 0.7
+        }
+      }
+    }
+  },
+  {
+    "seed": 5,
+    "curves": {
+      "0.1": {
+        "overall": 0.60625,
+        "balanced": 0.28,
+        "known_acc": 0.7666666666666667,
+        "baselines": {
+          "ValueLogReg": 0.25,
+          "ValuekNN": 0.32,
+          "ValueTree": 0.25,
+          "ValueDList": 0.25
+        },
+        "baselines_overall": {
+          "ValueLogReg": 0.5875,
+          "ValuekNN": 0.63125,
+          "ValueTree": 0.5875,
+          "ValueDList": 0.5875
+        }
+      },
+      "0.25": {
+        "overall": 0.64375,
+        "balanced": 0.3347058823529412,
+        "known_acc": 0.8,
+        "baselines": {
+          "ValueLogReg": 0.25,
+          "ValuekNN": 0.27,
+          "ValueTree": 0.25,
+          "ValueDList": 0.25
+        },
+        "baselines_overall": {
+          "ValueLogReg": 0.5875,
+          "ValuekNN": 0.6,
+          "ValueTree": 0.5875,
+          "ValueDList": 0.5875
+        }
+      },
+      "0.5": {
+        "overall": 0.64375,
+        "balanced": 0.3347058823529412,
+        "known_acc": 0.8,
+        "baselines": {
+          "ValueLogReg": 0.25,
+          "ValuekNN": 0.33999999999999997,
+          "ValueTree": 0.25,
+          "ValueDList": 0.25
+        },
+        "baselines_overall": {
+          "ValueLogReg": 0.5875,
+          "ValuekNN": 0.64375,
+          "ValueTree": 0.5875,
+          "ValueDList": 0.5875
+        }
+      },
+      "1.0": {
+        "overall": 0.64375,
+        "balanced": 0.3347058823529412,
+        "known_acc": 0.8,
+        "baselines": {
+          "ValueLogReg": 0.25,
+          "ValuekNN": 0.518235294117647,
+          "ValueTree": 0.25,
+          "ValueDList": 0.25
+        },
+        "baselines_overall": {
+          "ValueLogReg": 0.5875,
+          "ValuekNN": 0.7375,
+          "ValueTree": 0.5875,
+          "ValueDList": 0.5875
+        }
+      }
+    }
+  },
+  {
+    "seed": 6,
+    "curves": {
+      "0.1": {
+        "overall": 0.575,
+        "balanced": 0.30506993006993005,
+        "known_acc": 0.825,
+        "baselines": {
+          "ValueLogReg": 0.25,
+          "ValuekNN": 0.32407407407407407,
+          "ValueTree": 0.40384615384615385,
+          "ValueDList": 0.25
+        },
+        "baselines_overall": {
+          "ValueLogReg": 0.53125,
+          "ValuekNN": 0.58125,
+          "ValueTree": 0.63125,
+          "ValueDList": 0.53125
+        }
+      },
+      "0.25": {
+        "overall": 0.575,
+        "balanced": 0.30506993006993005,
+        "known_acc": 0.825,
+        "baselines": {
+          "ValueLogReg": 0.25,
+          "ValuekNN": 0.2777777777777778,
+          "ValueTree": 0.40384615384615385,
+          "ValueDList": 0.25
+        },
+        "baselines_overall": {
+          "ValueLogReg": 0.53125,
+          "ValuekNN": 0.55,
+          "ValueTree": 0.63125,
+          "ValueDList": 0.53125
+        }
+      },
+      "0.5": {
+        "overall": 0.675,
+        "balanced": 0.5111370111370112,
+        "known_acc": 0.825,
+        "baselines": {
+          "ValueLogReg": 0.25,
+          "ValuekNN": 0.48452473452473455,
+          "ValueTree": 0.25,
+          "ValueDList": 0.25
+        },
+        "baselines_overall": {
+          "ValueLogReg": 0.53125,
+          "ValuekNN": 0.68125,
+          "ValueTree": 0.53125,
+          "ValueDList": 0.53125
+        }
+      },
+      "1.0": {
+        "overall": 0.675,
+        "balanced": 0.5111370111370112,
+        "known_acc": 0.825,
+        "baselines": {
+          "ValueLogReg": 0.25,
+          "ValuekNN": 0.414983164983165,
+          "ValueTree": 0.25,
+          "ValueDList": 0.25
+        },
+        "baselines_overall": {
+          "ValueLogReg": 0.53125,
+          "ValuekNN": 0.63125,
+          "ValueTree": 0.53125,
+          "ValueDList": 0.53125
+        }
+      }
+    }
+  },
+  {
+    "seed": 7,
+    "curves": {
+      "0.1": {
+        "overall": 0.625,
+        "balanced": 0.25,
+        "known_acc": 0.7416666666666667,
+        "baselines": {
+          "ValueLogReg": 0.25,
+          "ValuekNN": 0.3625,
+          "ValueTree": 0.39,
+          "ValueDList": 0.25
+        },
+        "baselines_overall": {
+          "ValueLogReg": 0.625,
+          "ValuekNN": 0.68125,
+          "ValueTree": 0.7125,
+          "ValueDList": 0.625
+        }
+      },
+      "0.25": {
+        "overall": 0.6375,
+        "balanced": 0.25,
+        "known_acc": 0.7416666666666667,
+        "baselines": {
+          "ValueLogReg": 0.25,
+          "ValuekNN": 0.325,
+          "ValueTree": 0.39,
+          "ValueDList": 0.25
+        },
+        "baselines_overall": {
+          "ValueLogReg": 0.625,
+          "ValuekNN": 0.6625,
+          "ValueTree": 0.7125,
+          "ValueDList": 0.625
+        }
+      },
+      "0.5": {
+        "overall": 0.675,
+        "balanced": 0.4375,
+        "known_acc": 0.775,
+        "baselines": {
+          "ValueLogReg": 0.25,
+          "ValuekNN": 0.4125,
+          "ValueTree": 0.39,
+          "ValueDList": 0.25
+        },
+        "baselines_overall": {
+          "ValueLogReg": 0.625,
+          "ValuekNN": 0.70625,
+          "ValueTree": 0.7125,
+          "ValueDList": 0.625
+        }
+      },
+      "1.0": {
+        "overall": 0.7,
+        "balanced": 0.3958333333333333,
+        "known_acc": 0.8166666666666667,
+        "baselines": {
+          "ValueLogReg": 0.25,
+          "ValuekNN": 0.385,
+          "ValueTree": 0.39,
+          "ValueDList": 0.25
+        },
+        "baselines_overall": {
+          "ValueLogReg": 0.625,
+          "ValuekNN": 0.7,
+          "ValueTree": 0.7125,
+          "ValueDList": 0.625
+        }
+      }
+    }
+  },
+  {
+    "seed": 8,
+    "curves": {
+      "0.1": {
+        "overall": 0.6875,
+        "balanced": 0.3795093795093795,
+        "known_acc": 0.7583333333333333,
+        "baselines": {
+          "ValueLogReg": 0.25,
+          "ValuekNN": 0.25,
+          "ValueTree": 0.25,
+          "ValueDList": 0.25
+        },
+        "baselines_overall": {
+          "ValueLogReg": 0.5625,
+          "ValuekNN": 0.5625,
+          "ValueTree": 0.5625,
+          "ValueDList": 0.5625
+        }
+      },
+      "0.25": {
+        "overall": 0.71875,
+        "balanced": 0.42866161616161613,
+        "known_acc": 0.775,
+        "baselines": {
+          "ValueLogReg": 0.25,
+          "ValuekNN": 0.46969696969696967,
+          "ValueTree": 0.4017857142857143,
+          "ValueDList": 0.25
+        },
+        "baselines_overall": {
+          "ValueLogReg": 0.5625,
+          "ValuekNN": 0.69375,
+          "ValueTree": 0.66875,
+          "ValueDList": 0.5625
+        }
+      },
+      "0.5": {
+        "overall": 0.71875,
+        "balanced": 0.42866161616161613,
+        "known_acc": 0.775,
+        "baselines": {
+          "ValueLogReg": 0.25,
+          "ValuekNN": 0.49648268398268397,
+          "ValueTree": 0.25,
+          "ValueDList": 0.25
+        },
+        "baselines_overall": {
+          "ValueLogReg": 0.5625,
+          "ValuekNN": 0.7125,
+          "ValueTree": 0.5625,
+          "ValueDList": 0.5625
+        }
+      },
+      "1.0": {
+        "overall": 0.71875,
+        "balanced": 0.42866161616161613,
+        "known_acc": 0.775,
+        "baselines": {
+          "ValueLogReg": 0.25,
+          "ValuekNN": 0.38636363636363635,
+          "ValueTree": 0.25,
+          "ValueDList": 0.25
+        },
+        "baselines_overall": {
+          "ValueLogReg": 0.5625,
+          "ValuekNN": 0.675,
+          "ValueTree": 0.5625,
+          "ValueDList": 0.5625
+        }
+      }
+    }
+  }
+]
