@@ -74,8 +74,6 @@ class PredictionEngine:
             alternatives=alternatives.copy(),
         )
         
-        self.total_predictions += 1
-        
         return prediction
 
     def evaluate(
@@ -96,6 +94,7 @@ class PredictionEngine:
             surprise=surprise,
         )
         
+        self.total_predictions += 1
         if magnitude == 0.0:
             self.correct_predictions += 1
         

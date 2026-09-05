@@ -28,7 +28,9 @@ class MemoryConsolidation:
         self._consolidation_events: list[ConsolidationEvent] = []
 
     def should_consolidate(self) -> bool:
-        return self._step_count % self.consolidation_interval == 0
+        # Require at least one step and an interval boundary reached; a fresh
+        # object (0 steps) must not report consolidation.
+        return self._step_count > 0 and self._step_count % self.consolidation_interval == 0
 
     def consolidate(
         self,

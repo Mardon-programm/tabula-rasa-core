@@ -54,6 +54,8 @@ class WorldModel:
         
         # Uncertainty tracking
         self._uncertainty: dict[str, Uncertainty] = {}
+        # Error-driven epistemic inflation, per state (elevated by update_uncertainty).
+        self._uncertainty_error: dict[str, float] = {}
         
         # Observation statistics
         self._state_visits: dict[str, int] = {}
@@ -163,33 +165,59 @@ class WorldModel:
         return result
 
     def get_uncertainty(self, state: str) -> Uncertainty:
-        """Get uncertainty estimates for a state."""
-        if state not in self._uncertainty:
-            visits = self._state_visits.get(state, 0)
-            
-            epistemic = 1.0 / (1.0 + visits * 0.1)
-            aleatoric = 0.2 
-            model_uncertainty = 0.3 + 0.2 * epistemic
-            
-            self._uncertainty[state] = Uncertainty(
+        """Get uncertainty estimates for a state.
+
+        Epistemic (unknown) uncertainty is recomputed from accumulated visits
+        on every call: the more a state has been observed, the lower its
+        epistemic uncertainty. An error-driven inflation term (raised by
+        ``update_uncertainty``) is added on top so that mispredictions still
+        raise uncertainty despite accumulated visits.
+        """
+        visits = self._state_visits.get(state, 0)
+        error_term = self._uncertainty_error.get(state, 0.0)
+
+        base_epistemic = 1.0 / (1.0 + visits * 0.1)
+        epistemic = min(1.0, base_epistemic + error_term)
+        aleatoric = 0.2
+        model_uncertainty = min(1.0, 0.3 + 0.2 * epistemic)
+        prediction_uncertainty = epistemic + aleatoric
+        action_uncertainty = epistemic
+
+        unc = self._uncertainty.get(state)
+        if unc is None:
+            unc = Uncertainty(
                 epistemic=epistemic,
                 aleatoric=aleatoric,
                 model_uncertainty=model_uncertainty,
-                prediction_uncertainty=epistemic + aleatoric,
-                action_uncertainty=epistemic,
+                prediction_uncertainty=prediction_uncertainty,
+                action_uncertainty=action_uncertainty,
             )
-        
-        return self._uncertainty[state]
+            self._uncertainty[state] = unc
+        else:
+            unc.epistemic = epistemic
+            unc.aleatoric = aleatoric
+            unc.model_uncertainty = model_uncertainty
+            unc.prediction_uncertainty = prediction_uncertainty
+            unc.action_uncertainty = action_uncertainty
+
+        return Uncertainty(
+            epistemic=unc.epistemic,
+            aleatoric=unc.aleatoric,
+            model_uncertainty=unc.model_uncertainty,
+            prediction_uncertainty=unc.prediction_uncertainty,
+            action_uncertainty=unc.action_uncertainty,
+        )
 
     def update_uncertainty(
         self,
         state: str,
         prediction_error: float,
     ) -> None:
-        unc = self.get_uncertainty(state)
-        
-        unc.epistemic = min(1.0, unc.epistemic + 0.1 * prediction_error)
-        unc.model_uncertainty = min(1.0, unc.model_uncertainty + 0.05 * prediction_error)
+        # Raise the error-driven term; it is folded back in get_uncertainty.
+        self._uncertainty_error[state] = min(
+            1.0,
+            self._uncertainty_error.get(state, 0.0) + 0.05 * prediction_error,
+        )
 
     def get_statistics(self) -> dict[str, Any]:
         return {

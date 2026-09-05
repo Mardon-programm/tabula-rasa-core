@@ -1,0 +1,70 @@
+[
+  {
+    "condition": "friendliness = cold AND mood = upset",
+    "action": "do(ask)",
+    "provenance": [
+      "CREATE",
+      "SPECIALIZE"
+    ],
+    "id": "r39"
+  },
+  {
+    "condition": "friendliness = warm",
+    "action": "do(approach)",
+    "provenance": [
+      "CREATE",
+      "GENERALIZE"
+    ],
+    "id": "r23"
+  },
+  {
+    "condition": "role = child",
+    "action": "do(approach)",
+    "provenance": [
+      "CREATE",
+      "GENERALIZE"
+    ],
+    "id": "r22"
+  },
+  {
+    "condition": "role = child AND friendliness = cold AND status = insider AND mood = calm AND context = request",
+    "action": "do(approach)",
+    "provenance": [
+      "CREATE"
+    ],
+    "id": "r4"
+  },
+  {
+    "condition": "role = child AND friendliness = cold AND status = stranger AND mood = calm AND context = greeting",
+    "action": "do(approach)",
+    "provenance": [
+      "CREATE"
+    ],
+    "id": "r1"
+  },
+  {
+    "condition": "role = child AND friendliness = cold AND status = stranger AND mood = upset AND context = request",
+    "action": "do(approach)",
+    "provenance": [
+      "CREATE"
+    ],
+    "id": "r5"
+  },
+  {
+    "condition": "role = child AND friendliness = warm AND status = insider AND mood = upset AND context = greeting",
+    "action": "do(approach)",
+    "provenance": [
+      "CREATE"
+    ],
+    "id": "r2"
+  },
+  {
+    "condition": "status = stranger",
+    "action": "do(approach)",
+    "provenance": [
+      "CREATE",
+      "GENERALIZE"
+    ],
+    "id": "r46"
+  }
+]

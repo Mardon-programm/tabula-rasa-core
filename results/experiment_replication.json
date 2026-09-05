@@ -1,0 +1,2714 @@
+[
+  {
+    "seed": 1,
+    "results": {
+      "base": {
+        "config": "base",
+        "seed": 19001,
+        "transfer": {
+          "t1": 0.3333333333333333,
+          "t2": 0.31666666666666665,
+          "t3": 0.325
+        },
+        "overall": 0.325,
+        "known_acc": 1.0,
+        "complexity": 0.0,
+        "n_rules": 0,
+        "revisions": 0
+      },
+      "full": {
+        "config": "full",
+        "seed": 19001,
+        "transfer": {
+          "t1": 0.65,
+          "t2": 0.7166666666666667,
+          "t3": 0.4
+        },
+        "overall": 0.6125,
+        "known_acc": 0.8416666666666667,
+        "complexity": 241.0,
+        "n_rules": 53,
+        "revisions": 18
+      },
+      "ab_no_generalize": {
+        "config": "ab_no_generalize",
+        "seed": 19001,
+        "transfer": {
+          "t1": 0.26666666666666666,
+          "t2": 0.25,
+          "t3": 0.3
+        },
+        "overall": 0.26875,
+        "known_acc": 0.2916666666666667,
+        "complexity": 240.0,
+        "n_rules": 40,
+        "revisions": 0
+      },
+      "ab_no_specialize": {
+        "config": "ab_no_specialize",
+        "seed": 19001,
+        "transfer": {
+          "t1": 0.6833333333333333,
+          "t2": 0.8,
+          "t3": 0.4
+        },
+        "overall": 0.65625,
+        "known_acc": 0.8,
+        "complexity": 182.0,
+        "n_rules": 33,
+        "revisions": 1
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 19001,
+        "transfer": {
+          "t1": 0.65,
+          "t2": 0.7166666666666667,
+          "t3": 0.4
+        },
+        "overall": 0.6125,
+        "known_acc": 0.8416666666666667,
+        "complexity": 241.0,
+        "n_rules": 53,
+        "revisions": 18
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 19001,
+        "transfer": {
+          "t1": 0.26666666666666666,
+          "t2": 0.25,
+          "t3": 0.25
+        },
+        "overall": 0.25625,
+        "known_acc": 0.3,
+        "complexity": 1001.0,
+        "n_rules": 187,
+        "revisions": 77
+      },
+      "decision_list": {
+        "config": "decision_list",
+        "seed": 9001,
+        "transfer": {
+          "t1": 0.7833333333333333,
+          "t2": 0.7166666666666667,
+          "t3": 0.65
+        },
+        "overall": 0.725,
+        "known_acc": 0.9666666666666667,
+        "complexity": 0.0,
+        "n_rules": 0,
+        "revisions": 0
+      }
+    },
+    "chance": {
+      "t1": 0.3333333333333333,
+      "t2": 0.16666666666666666,
+      "t3": 0.25
+    },
+    "ceiling": {
+      "t1": 1.0,
+      "t2": 1.0,
+      "t3": 1.0
+    }
+  },
+  {
+    "seed": 2,
+    "results": {
+      "base": {
+        "config": "base",
+        "seed": 19002,
+        "transfer": {
+          "t1": 0.23333333333333334,
+          "t2": 0.18333333333333332,
+          "t3": 0.25
+        },
+        "overall": 0.21875,
+        "known_acc": 1.0,
+        "complexity": 0.0,
+        "n_rules": 0,
+        "revisions": 0
+      },
+      "full": {
+        "config": "full",
+        "seed": 19002,
+        "transfer": {
+          "t1": 0.5,
+          "t2": 0.8333333333333334,
+          "t3": 0.625
+        },
+        "overall": 0.65625,
+        "known_acc": 0.7833333333333333,
+        "complexity": 188.0,
+        "n_rules": 40,
+        "revisions": 10
+      },
+      "ab_no_generalize": {
+        "config": "ab_no_generalize",
+        "seed": 19002,
+        "transfer": {
+          "t1": 0.21666666666666667,
+          "t2": 0.2833333333333333,
+          "t3": 0.225
+        },
+        "overall": 0.24375,
+        "known_acc": 0.36666666666666664,
+        "complexity": 234.0,
+        "n_rules": 39,
+        "revisions": 0
+      },
+      "ab_no_specialize": {
+        "config": "ab_no_specialize",
+        "seed": 19002,
+        "transfer": {
+          "t1": 0.5,
+          "t2": 0.8333333333333334,
+          "t3": 0.625
+        },
+        "overall": 0.65625,
+        "known_acc": 0.7833333333333333,
+        "complexity": 188.0,
+        "n_rules": 40,
+        "revisions": 10
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 19002,
+        "transfer": {
+          "t1": 0.5,
+          "t2": 0.8333333333333334,
+          "t3": 0.625
+        },
+        "overall": 0.65625,
+        "known_acc": 0.7833333333333333,
+        "complexity": 188.0,
+        "n_rules": 40,
+        "revisions": 10
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 19002,
+        "transfer": {
+          "t1": 0.4,
+          "t2": 0.23333333333333334,
+          "t3": 0.3
+        },
+        "overall": 0.3125,
+        "known_acc": 0.4083333333333333,
+        "complexity": 861.0,
+        "n_rules": 162,
+        "revisions": 89
+      },
+      "decision_list": {
+        "config": "decision_list",
+        "seed": 9002,
+        "transfer": {
+          "t1": 0.8333333333333334,
+          "t2": 0.8166666666666667,
+          "t3": 0.775
+        },
+        "overall": 0.8125,
+        "known_acc": 0.975,
+        "complexity": 0.0,
+        "n_rules": 0,
+        "revisions": 0
+      }
+    },
+    "chance": {
+      "t1": 0.3,
+      "t2": 0.25,
+      "t3": 0.25
+    },
+    "ceiling": {
+      "t1": 1.0,
+      "t2": 1.0,
+      "t3": 1.0
+    }
+  },
+  {
+    "seed": 3,
+    "results": {
+      "base": {
+        "config": "base",
+        "seed": 19003,
+        "transfer": {
+          "t1": 0.21666666666666667,
+          "t2": 0.3,
+          "t3": 0.275
+        },
+        "overall": 0.2625,
+        "known_acc": 1.0,
+        "complexity": 0.0,
+        "n_rules": 0,
+        "revisions": 0
+      },
+      "full": {
+        "config": "full",
+        "seed": 19003,
+        "transfer": {
+          "t1": 0.48333333333333334,
+          "t2": 0.7,
+          "t3": 0.525
+        },
+        "overall": 0.575,
+        "known_acc": 0.7,
+        "complexity": 212.0,
+        "n_rules": 52,
+        "revisions": 23
+      },
+      "ab_no_generalize": {
+        "config": "ab_no_generalize",
+        "seed": 19003,
+        "transfer": {
+          "t1": 0.3333333333333333,
+          "t2": 0.2,
+          "t3": 0.225
+        },
+        "overall": 0.25625,
+        "known_acc": 0.4583333333333333,
+        "complexity": 234.0,
+        "n_rules": 39,
+        "revisions": 0
+      },
+      "ab_no_specialize": {
+        "config": "ab_no_specialize",
+        "seed": 19003,
+        "transfer": {
+          "t1": 0.5333333333333333,
+          "t2": 0.7,
+          "t3": 0.575
+        },
+        "overall": 0.60625,
+        "known_acc": 0.7166666666666667,
+        "complexity": 166.0,
+        "n_rules": 35,
+        "revisions": 7
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 19003,
+        "transfer": {
+          "t1": 0.48333333333333334,
+          "t2": 0.7,
+          "t3": 0.525
+        },
+        "overall": 0.575,
+        "known_acc": 0.7,
+        "complexity": 212.0,
+        "n_rules": 52,
+        "revisions": 23
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 19003,
+        "transfer": {
+          "t1": 0.21666666666666667,
+          "t2": 0.23333333333333334,
+          "t3": 0.4
+        },
+        "overall": 0.26875,
+        "known_acc": 0.3,
+        "complexity": 1033.0,
+        "n_rules": 205,
+        "revisions": 92
+      },
+      "decision_list": {
+        "config": "decision_list",
+        "seed": 9003,
+        "transfer": {
+          "t1": 0.7833333333333333,
+          "t2": 0.7,
+          "t3": 0.775
+        },
+        "overall": 0.75,
+        "known_acc": 0.9666666666666667,
+        "complexity": 0.0,
+        "n_rules": 0,
+        "revisions": 0
+      }
+    },
+    "chance": {
+      "t1": 0.25,
+      "t2": 0.2,
+      "t3": 0.225
+    },
+    "ceiling": {
+      "t1": 1.0,
+      "t2": 1.0,
+      "t3": 1.0
+    }
+  },
+  {
+    "seed": 4,
+    "results": {
+      "base": {
+        "config": "base",
+        "seed": 19004,
+        "transfer": {
+          "t1": 0.16666666666666666,
+          "t2": 0.2833333333333333,
+          "t3": 0.275
+        },
+        "overall": 0.2375,
+        "known_acc": 1.0,
+        "complexity": 0.0,
+        "n_rules": 0,
+        "revisions": 0
+      },
+      "full": {
+        "config": "full",
+        "seed": 19004,
+        "transfer": {
+          "t1": 0.5833333333333334,
+          "t2": 0.85,
+          "t3": 0.625
+        },
+        "overall": 0.69375,
+        "known_acc": 0.8,
+        "complexity": 180.0,
+        "n_rules": 35,
+        "revisions": 6
+      },
+      "ab_no_generalize": {
+        "config": "ab_no_generalize",
+        "seed": 19004,
+        "transfer": {
+          "t1": 0.2,
+          "t2": 0.18333333333333332,
+          "t3": 0.225
+        },
+        "overall": 0.2,
+        "known_acc": 0.31666666666666665,
+        "complexity": 234.0,
+        "n_rules": 39,
+        "revisions": 0
+      },
+      "ab_no_specialize": {
+        "config": "ab_no_specialize",
+        "seed": 19004,
+        "transfer": {
+          "t1": 0.5666666666666667,
+          "t2": 0.8,
+          "t3": 0.775
+        },
+        "overall": 0.70625,
+        "known_acc": 0.8416666666666667,
+        "complexity": 152.0,
+        "n_rules": 30,
+        "revisions": 3
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 19004,
+        "transfer": {
+          "t1": 0.5833333333333334,
+          "t2": 0.85,
+          "t3": 0.625
+        },
+        "overall": 0.69375,
+        "known_acc": 0.8,
+        "complexity": 180.0,
+        "n_rules": 35,
+        "revisions": 6
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 19004,
+        "transfer": {
+          "t1": 0.26666666666666666,
+          "t2": 0.0,
+          "t3": 0.175
+        },
+        "overall": 0.14375,
+        "known_acc": 0.38333333333333336,
+        "complexity": 981.0,
+        "n_rules": 203,
+        "revisions": 126
+      },
+      "decision_list": {
+        "config": "decision_list",
+        "seed": 9004,
+        "transfer": {
+          "t1": 0.8333333333333334,
+          "t2": 0.8,
+          "t3": 0.775
+        },
+        "overall": 0.80625,
+        "known_acc": 0.9833333333333333,
+        "complexity": 0.0,
+        "n_rules": 0,
+        "revisions": 0
+      }
+    },
+    "chance": {
+      "t1": 0.25,
+      "t2": 0.25,
+      "t3": 0.15
+    },
+    "ceiling": {
+      "t1": 1.0,
+      "t2": 1.0,
+      "t3": 1.0
+    }
+  },
+  {
+    "seed": 5,
+    "results": {
+      "base": {
+        "config": "base",
+        "seed": 19005,
+        "transfer": {
+          "t1": 0.2833333333333333,
+          "t2": 0.3333333333333333,
+          "t3": 0.25
+        },
+        "overall": 0.29375,
+        "known_acc": 1.0,
+        "complexity": 0.0,
+        "n_rules": 0,
+        "revisions": 0
+      },
+      "full": {
+        "config": "full",
+        "seed": 19005,
+        "transfer": {
+          "t1": 0.5666666666666667,
+          "t2": 0.7333333333333333,
+          "t3": 0.875
+        },
+        "overall": 0.70625,
+        "known_acc": 0.8833333333333333,
+        "complexity": 159.0,
+        "n_rules": 35,
+        "revisions": 9
+      },
+      "ab_no_generalize": {
+        "config": "ab_no_generalize",
+        "seed": 19005,
+        "transfer": {
+          "t1": 0.2833333333333333,
+          "t2": 0.2,
+          "t3": 0.175
+        },
+        "overall": 0.225,
+        "known_acc": 0.39166666666666666,
+        "complexity": 240.0,
+        "n_rules": 40,
+        "revisions": 0
+      },
+      "ab_no_specialize": {
+        "config": "ab_no_specialize",
+        "seed": 19005,
+        "transfer": {
+          "t1": 0.45,
+          "t2": 0.7333333333333333,
+          "t3": 0.575
+        },
+        "overall": 0.5875,
+        "known_acc": 0.7583333333333333,
+        "complexity": 176.0,
+        "n_rules": 44,
+        "revisions": 17
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 19005,
+        "transfer": {
+          "t1": 0.5666666666666667,
+          "t2": 0.7333333333333333,
+          "t3": 0.875
+        },
+        "overall": 0.70625,
+        "known_acc": 0.8833333333333333,
+        "complexity": 159.0,
+        "n_rules": 35,
+        "revisions": 9
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 19005,
+        "transfer": {
+          "t1": 0.38333333333333336,
+          "t2": 0.3333333333333333,
+          "t3": 0.2
+        },
+        "overall": 0.31875,
+        "known_acc": 0.525,
+        "complexity": 864.0,
+        "n_rules": 152,
+        "revisions": 37
+      },
+      "decision_list": {
+        "config": "decision_list",
+        "seed": 9005,
+        "transfer": {
+          "t1": 0.65,
+          "t2": 0.7333333333333333,
+          "t3": 0.825
+        },
+        "overall": 0.725,
+        "known_acc": 0.9833333333333333,
+        "complexity": 0.0,
+        "n_rules": 0,
+        "revisions": 0
+      }
+    },
+    "chance": {
+      "t1": 0.26666666666666666,
+      "t2": 0.21666666666666667,
+      "t3": 0.35
+    },
+    "ceiling": {
+      "t1": 1.0,
+      "t2": 1.0,
+      "t3": 1.0
+    }
+  },
+  {
+    "seed": 6,
+    "results": {
+      "base": {
+        "config": "base",
+        "seed": 19006,
+        "transfer": {
+          "t1": 0.25,
+          "t2": 0.13333333333333333,
+          "t3": 0.25
+        },
+        "overall": 0.20625,
+        "known_acc": 1.0,
+        "complexity": 0.0,
+        "n_rules": 0,
+        "revisions": 0
+      },
+      "full": {
+        "config": "full",
+        "seed": 19006,
+        "transfer": {
+          "t1": 0.6833333333333333,
+          "t2": 0.8666666666666667,
+          "t3": 0.55
+        },
+        "overall": 0.71875,
+        "known_acc": 0.7916666666666666,
+        "complexity": 140.0,
+        "n_rules": 26,
+        "revisions": 1
+      },
+      "ab_no_generalize": {
+        "config": "ab_no_generalize",
+        "seed": 19006,
+        "transfer": {
+          "t1": 0.21666666666666667,
+          "t2": 0.16666666666666666,
+          "t3": 0.4
+        },
+        "overall": 0.24375,
+        "known_acc": 0.375,
+        "complexity": 228.0,
+        "n_rules": 38,
+        "revisions": 0
+      },
+      "ab_no_specialize": {
+        "config": "ab_no_specialize",
+        "seed": 19006,
+        "transfer": {
+          "t1": 0.6833333333333333,
+          "t2": 0.8666666666666667,
+          "t3": 0.55
+        },
+        "overall": 0.71875,
+        "known_acc": 0.7916666666666666,
+        "complexity": 140.0,
+        "n_rules": 26,
+        "revisions": 1
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 19006,
+        "transfer": {
+          "t1": 0.6833333333333333,
+          "t2": 0.8666666666666667,
+          "t3": 0.55
+        },
+        "overall": 0.71875,
+        "known_acc": 0.7916666666666666,
+        "complexity": 140.0,
+        "n_rules": 26,
+        "revisions": 1
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 19006,
+        "transfer": {
+          "t1": 0.05,
+          "t2": 0.0,
+          "t3": 0.15
+        },
+        "overall": 0.05625,
+        "known_acc": 0.275,
+        "complexity": 904.0,
+        "n_rules": 167,
+        "revisions": 73
+      },
+      "decision_list": {
+        "config": "decision_list",
+        "seed": 9006,
+        "transfer": {
+          "t1": 0.8333333333333334,
+          "t2": 0.7833333333333333,
+          "t3": 1.0
+        },
+        "overall": 0.85625,
+        "known_acc": 1.0,
+        "complexity": 0.0,
+        "n_rules": 0,
+        "revisions": 0
+      }
+    },
+    "chance": {
+      "t1": 0.23333333333333334,
+      "t2": 0.26666666666666666,
+      "t3": 0.275
+    },
+    "ceiling": {
+      "t1": 1.0,
+      "t2": 1.0,
+      "t3": 1.0
+    }
+  },
+  {
+    "seed": 7,
+    "results": {
+      "base": {
+        "config": "base",
+        "seed": 19007,
+        "transfer": {
+          "t1": 0.2,
+          "t2": 0.35,
+          "t3": 0.325
+        },
+        "overall": 0.2875,
+        "known_acc": 1.0,
+        "complexity": 0.0,
+        "n_rules": 0,
+        "revisions": 0
+      },
+      "full": {
+        "config": "full",
+        "seed": 19007,
+        "transfer": {
+          "t1": 0.6666666666666666,
+          "t2": 0.8166666666666667,
+          "t3": 0.75
+        },
+        "overall": 0.74375,
+        "known_acc": 0.9,
+        "complexity": 157.0,
+        "n_rules": 32,
+        "revisions": 5
+      },
+      "ab_no_generalize": {
+        "config": "ab_no_generalize",
+        "seed": 19007,
+        "transfer": {
+          "t1": 0.26666666666666666,
+          "t2": 0.3,
+          "t3": 0.275
+        },
+        "overall": 0.28125,
+        "known_acc": 0.5166666666666667,
+        "complexity": 234.0,
+        "n_rules": 39,
+        "revisions": 0
+      },
+      "ab_no_specialize": {
+        "config": "ab_no_specialize",
+        "seed": 19007,
+        "transfer": {
+          "t1": 0.5833333333333334,
+          "t2": 0.8166666666666667,
+          "t3": 0.475
+        },
+        "overall": 0.64375,
+        "known_acc": 0.825,
+        "complexity": 154.0,
+        "n_rules": 31,
+        "revisions": 5
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 19007,
+        "transfer": {
+          "t1": 0.6666666666666666,
+          "t2": 0.8166666666666667,
+          "t3": 0.75
+        },
+        "overall": 0.74375,
+        "known_acc": 0.9,
+        "complexity": 157.0,
+        "n_rules": 32,
+        "revisions": 5
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 19007,
+        "transfer": {
+          "t1": 0.21666666666666667,
+          "t2": 0.26666666666666666,
+          "t3": 0.3
+        },
+        "overall": 0.25625,
+        "known_acc": 0.18333333333333332,
+        "complexity": 940.0,
+        "n_rules": 176,
+        "revisions": 82
+      },
+      "decision_list": {
+        "config": "decision_list",
+        "seed": 9007,
+        "transfer": {
+          "t1": 0.75,
+          "t2": 0.8166666666666667,
+          "t3": 0.7
+        },
+        "overall": 0.7625,
+        "known_acc": 0.9916666666666667,
+        "complexity": 0.0,
+        "n_rules": 0,
+        "revisions": 0
+      }
+    },
+    "chance": {
+      "t1": 0.3,
+      "t2": 0.2,
+      "t3": 0.275
+    },
+    "ceiling": {
+      "t1": 1.0,
+      "t2": 1.0,
+      "t3": 1.0
+    }
+  },
+  {
+    "seed": 8,
+    "results": {
+      "base": {
+        "config": "base",
+        "seed": 19008,
+        "transfer": {
+          "t1": 0.23333333333333334,
+          "t2": 0.3,
+          "t3": 0.275
+        },
+        "overall": 0.26875,
+        "known_acc": 1.0,
+        "complexity": 0.0,
+        "n_rules": 0,
+        "revisions": 0
+      },
+      "full": {
+        "config": "full",
+        "seed": 19008,
+        "transfer": {
+          "t1": 0.6833333333333333,
+          "t2": 0.7166666666666667,
+          "t3": 0.425
+        },
+        "overall": 0.63125,
+        "known_acc": 0.825,
+        "complexity": 300.0,
+        "n_rules": 63,
+        "revisions": 18
+      },
+      "ab_no_generalize": {
+        "config": "ab_no_generalize",
+        "seed": 19008,
+        "transfer": {
+          "t1": 0.21666666666666667,
+          "t2": 0.3,
+          "t3": 0.275
+        },
+        "overall": 0.2625,
+        "known_acc": 0.35,
+        "complexity": 234.0,
+        "n_rules": 39,
+        "revisions": 0
+      },
+      "ab_no_specialize": {
+        "config": "ab_no_specialize",
+        "seed": 19008,
+        "transfer": {
+          "t1": 0.6166666666666667,
+          "t2": 0.7166666666666667,
+          "t3": 0.475
+        },
+        "overall": 0.61875,
+        "known_acc": 0.7666666666666667,
+        "complexity": 216.0,
+        "n_rules": 42,
+        "revisions": 2
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 19008,
+        "transfer": {
+          "t1": 0.6833333333333333,
+          "t2": 0.7166666666666667,
+          "t3": 0.425
+        },
+        "overall": 0.63125,
+        "known_acc": 0.825,
+        "complexity": 300.0,
+        "n_rules": 63,
+        "revisions": 18
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 19008,
+        "transfer": {
+          "t1": 0.5,
+          "t2": 0.2833333333333333,
+          "t3": 0.325
+        },
+        "overall": 0.375,
+        "known_acc": 0.4083333333333333,
+        "complexity": 907.0,
+        "n_rules": 180,
+        "revisions": 97
+      },
+      "decision_list": {
+        "config": "decision_list",
+        "seed": 9008,
+        "transfer": {
+          "t1": 0.8333333333333334,
+          "t2": 0.7166666666666667,
+          "t3": 1.0
+        },
+        "overall": 0.83125,
+        "known_acc": 1.0,
+        "complexity": 0.0,
+        "n_rules": 0,
+        "revisions": 0
+      }
+    },
+    "chance": {
+      "t1": 0.36666666666666664,
+      "t2": 0.26666666666666666,
+      "t3": 0.2
+    },
+    "ceiling": {
+      "t1": 1.0,
+      "t2": 1.0,
+      "t3": 1.0
+    }
+  },
+  {
+    "seed": 9,
+    "results": {
+      "base": {
+        "config": "base",
+        "seed": 19009,
+        "transfer": {
+          "t1": 0.21666666666666667,
+          "t2": 0.2,
+          "t3": 0.275
+        },
+        "overall": 0.225,
+        "known_acc": 1.0,
+        "complexity": 0.0,
+        "n_rules": 0,
+        "revisions": 0
+      },
+      "full": {
+        "config": "full",
+        "seed": 19009,
+        "transfer": {
+          "t1": 0.6333333333333333,
+          "t2": 0.8166666666666667,
+          "t3": 0.625
+        },
+        "overall": 0.7,
+        "known_acc": 0.75,
+        "complexity": 195.0,
+        "n_rules": 42,
+        "revisions": 15
+      },
+      "ab_no_generalize": {
+        "config": "ab_no_generalize",
+        "seed": 19009,
+        "transfer": {
+          "t1": 0.2,
+          "t2": 0.2,
+          "t3": 0.15
+        },
+        "overall": 0.1875,
+        "known_acc": 0.5083333333333333,
+        "complexity": 234.0,
+        "n_rules": 39,
+        "revisions": 0
+      },
+      "ab_no_specialize": {
+        "config": "ab_no_specialize",
+        "seed": 19009,
+        "transfer": {
+          "t1": 0.55,
+          "t2": 0.7,
+          "t3": 0.575
+        },
+        "overall": 0.6125,
+        "known_acc": 0.75,
+        "complexity": 126.0,
+        "n_rules": 25,
+        "revisions": 0
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 19009,
+        "transfer": {
+          "t1": 0.6333333333333333,
+          "t2": 0.8166666666666667,
+          "t3": 0.625
+        },
+        "overall": 0.7,
+        "known_acc": 0.75,
+        "complexity": 195.0,
+        "n_rules": 42,
+        "revisions": 15
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 19009,
+        "transfer": {
+          "t1": 0.3333333333333333,
+          "t2": 0.6833333333333333,
+          "t3": 0.2
+        },
+        "overall": 0.43125,
+        "known_acc": 0.26666666666666666,
+        "complexity": 815.0,
+        "n_rules": 149,
+        "revisions": 58
+      },
+      "decision_list": {
+        "config": "decision_list",
+        "seed": 9009,
+        "transfer": {
+          "t1": 0.9,
+          "t2": 0.7,
+          "t3": 0.725
+        },
+        "overall": 0.78125,
+        "known_acc": 0.975,
+        "complexity": 0.0,
+        "n_rules": 0,
+        "revisions": 0
+      }
+    },
+    "chance": {
+      "t1": 0.21666666666666667,
+      "t2": 0.26666666666666666,
+      "t3": 0.25
+    },
+    "ceiling": {
+      "t1": 1.0,
+      "t2": 1.0,
+      "t3": 1.0
+    }
+  },
+  {
+    "seed": 10,
+    "results": {
+      "base": {
+        "config": "base",
+        "seed": 19010,
+        "transfer": {
+          "t1": 0.31666666666666665,
+          "t2": 0.18333333333333332,
+          "t3": 0.25
+        },
+        "overall": 0.25,
+        "known_acc": 1.0,
+        "complexity": 0.0,
+        "n_rules": 0,
+        "revisions": 0
+      },
+      "full": {
+        "config": "full",
+        "seed": 19010,
+        "transfer": {
+          "t1": 0.3333333333333333,
+          "t2": 0.7833333333333333,
+          "t3": 0.525
+        },
+        "overall": 0.55,
+        "known_acc": 0.775,
+        "complexity": 195.0,
+        "n_rules": 56,
+        "revisions": 25
+      },
+      "ab_no_generalize": {
+        "config": "ab_no_generalize",
+        "seed": 19010,
+        "transfer": {
+          "t1": 0.26666666666666666,
+          "t2": 0.18333333333333332,
+          "t3": 0.2
+        },
+        "overall": 0.21875,
+        "known_acc": 0.6,
+        "complexity": 240.0,
+        "n_rules": 40,
+        "revisions": 0
+      },
+      "ab_no_specialize": {
+        "config": "ab_no_specialize",
+        "seed": 19010,
+        "transfer": {
+          "t1": 0.3333333333333333,
+          "t2": 0.7833333333333333,
+          "t3": 0.525
+        },
+        "overall": 0.55,
+        "known_acc": 0.775,
+        "complexity": 186.0,
+        "n_rules": 53,
+        "revisions": 25
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 19010,
+        "transfer": {
+          "t1": 0.3333333333333333,
+          "t2": 0.7833333333333333,
+          "t3": 0.525
+        },
+        "overall": 0.55,
+        "known_acc": 0.775,
+        "complexity": 195.0,
+        "n_rules": 56,
+        "revisions": 25
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 19010,
+        "transfer": {
+          "t1": 0.26666666666666666,
+          "t2": 0.3,
+          "t3": 0.075
+        },
+        "overall": 0.23125,
+        "known_acc": 0.2833333333333333,
+        "complexity": 872.0,
+        "n_rules": 166,
+        "revisions": 76
+      },
+      "decision_list": {
+        "config": "decision_list",
+        "seed": 9010,
+        "transfer": {
+          "t1": 0.6833333333333333,
+          "t2": 0.7833333333333333,
+          "t3": 1.0
+        },
+        "overall": 0.8,
+        "known_acc": 1.0,
+        "complexity": 0.0,
+        "n_rules": 0,
+        "revisions": 0
+      }
+    },
+    "chance": {
+      "t1": 0.3333333333333333,
+      "t2": 0.3,
+      "t3": 0.3
+    },
+    "ceiling": {
+      "t1": 1.0,
+      "t2": 1.0,
+      "t3": 1.0
+    }
+  },
+  {
+    "seed": 11,
+    "results": {
+      "base": {
+        "config": "base",
+        "seed": 19011,
+        "transfer": {
+          "t1": 0.2833333333333333,
+          "t2": 0.2,
+          "t3": 0.35
+        },
+        "overall": 0.26875,
+        "known_acc": 1.0,
+        "complexity": 0.0,
+        "n_rules": 0,
+        "revisions": 0
+      },
+      "full": {
+        "config": "full",
+        "seed": 19011,
+        "transfer": {
+          "t1": 0.5833333333333334,
+          "t2": 0.7166666666666667,
+          "t3": 0.35
+        },
+        "overall": 0.575,
+        "known_acc": 0.725,
+        "complexity": 236.0,
+        "n_rules": 63,
+        "revisions": 36
+      },
+      "ab_no_generalize": {
+        "config": "ab_no_generalize",
+        "seed": 19011,
+        "transfer": {
+          "t1": 0.4,
+          "t2": 0.18333333333333332,
+          "t3": 0.275
+        },
+        "overall": 0.2875,
+        "known_acc": 0.38333333333333336,
+        "complexity": 234.0,
+        "n_rules": 39,
+        "revisions": 0
+      },
+      "ab_no_specialize": {
+        "config": "ab_no_specialize",
+        "seed": 19011,
+        "transfer": {
+          "t1": 0.5833333333333334,
+          "t2": 0.7166666666666667,
+          "t3": 0.35
+        },
+        "overall": 0.575,
+        "known_acc": 0.725,
+        "complexity": 128.0,
+        "n_rules": 32,
+        "revisions": 8
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 19011,
+        "transfer": {
+          "t1": 0.5833333333333334,
+          "t2": 0.7166666666666667,
+          "t3": 0.35
+        },
+        "overall": 0.575,
+        "known_acc": 0.725,
+        "complexity": 236.0,
+        "n_rules": 63,
+        "revisions": 36
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 19011,
+        "transfer": {
+          "t1": 0.16666666666666666,
+          "t2": 0.7333333333333333,
+          "t3": 0.425
+        },
+        "overall": 0.44375,
+        "known_acc": 0.2916666666666667,
+        "complexity": 1012.0,
+        "n_rules": 201,
+        "revisions": 99
+      },
+      "decision_list": {
+        "config": "decision_list",
+        "seed": 9011,
+        "transfer": {
+          "t1": 0.85,
+          "t2": 0.7166666666666667,
+          "t3": 1.0
+        },
+        "overall": 0.8375,
+        "known_acc": 1.0,
+        "complexity": 0.0,
+        "n_rules": 0,
+        "revisions": 0
+      }
+    },
+    "chance": {
+      "t1": 0.26666666666666666,
+      "t2": 0.3,
+      "t3": 0.075
+    },
+    "ceiling": {
+      "t1": 1.0,
+      "t2": 1.0,
+      "t3": 1.0
+    }
+  },
+  {
+    "seed": 12,
+    "results": {
+      "base": {
+        "config": "base",
+        "seed": 19012,
+        "transfer": {
+          "t1": 0.3,
+          "t2": 0.25,
+          "t3": 0.3
+        },
+        "overall": 0.28125,
+        "known_acc": 1.0,
+        "complexity": 0.0,
+        "n_rules": 0,
+        "revisions": 0
+      },
+      "full": {
+        "config": "full",
+        "seed": 19012,
+        "transfer": {
+          "t1": 0.55,
+          "t2": 0.75,
+          "t3": 0.375
+        },
+        "overall": 0.58125,
+        "known_acc": 0.7583333333333333,
+        "complexity": 154.0,
+        "n_rules": 36,
+        "revisions": 10
+      },
+      "ab_no_generalize": {
+        "config": "ab_no_generalize",
+        "seed": 19012,
+        "transfer": {
+          "t1": 0.18333333333333332,
+          "t2": 0.26666666666666666,
+          "t3": 0.25
+        },
+        "overall": 0.23125,
+        "known_acc": 0.375,
+        "complexity": 228.0,
+        "n_rules": 38,
+        "revisions": 0
+      },
+      "ab_no_specialize": {
+        "config": "ab_no_specialize",
+        "seed": 19012,
+        "transfer": {
+          "t1": 0.5666666666666667,
+          "t2": 0.75,
+          "t3": 0.375
+        },
+        "overall": 0.5875,
+        "known_acc": 0.725,
+        "complexity": 144.0,
+        "n_rules": 34,
+        "revisions": 11
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 19012,
+        "transfer": {
+          "t1": 0.55,
+          "t2": 0.75,
+          "t3": 0.375
+        },
+        "overall": 0.58125,
+        "known_acc": 0.7583333333333333,
+        "complexity": 154.0,
+        "n_rules": 36,
+        "revisions": 10
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 19012,
+        "transfer": {
+          "t1": 0.4166666666666667,
+          "t2": 0.31666666666666665,
+          "t3": 0.25
+        },
+        "overall": 0.3375,
+        "known_acc": 0.325,
+        "complexity": 828.0,
+        "n_rules": 148,
+        "revisions": 40
+      },
+      "decision_list": {
+        "config": "decision_list",
+        "seed": 9012,
+        "transfer": {
+          "t1": 0.85,
+          "t2": 0.75,
+          "t3": 0.575
+        },
+        "overall": 0.74375,
+        "known_acc": 0.975,
+        "complexity": 0.0,
+        "n_rules": 0,
+        "revisions": 0
+      }
+    },
+    "chance": {
+      "t1": 0.18333333333333332,
+      "t2": 0.3333333333333333,
+      "t3": 0.275
+    },
+    "ceiling": {
+      "t1": 1.0,
+      "t2": 1.0,
+      "t3": 1.0
+    }
+  },
+  {
+    "seed": 13,
+    "results": {
+      "base": {
+        "config": "base",
+        "seed": 19013,
+        "transfer": {
+          "t1": 0.25,
+          "t2": 0.21666666666666667,
+          "t3": 0.275
+        },
+        "overall": 0.24375,
+        "known_acc": 1.0,
+        "complexity": 0.0,
+        "n_rules": 0,
+        "revisions": 0
+      },
+      "full": {
+        "config": "full",
+        "seed": 19013,
+        "transfer": {
+          "t1": 0.7,
+          "t2": 0.8166666666666667,
+          "t3": 0.625
+        },
+        "overall": 0.725,
+        "known_acc": 0.8,
+        "complexity": 254.0,
+        "n_rules": 47,
+        "revisions": 11
+      },
+      "ab_no_generalize": {
+        "config": "ab_no_generalize",
+        "seed": 19013,
+        "transfer": {
+          "t1": 0.25,
+          "t2": 0.2,
+          "t3": 0.2
+        },
+        "overall": 0.21875,
+        "known_acc": 0.31666666666666665,
+        "complexity": 240.0,
+        "n_rules": 40,
+        "revisions": 0
+      },
+      "ab_no_specialize": {
+        "config": "ab_no_specialize",
+        "seed": 19013,
+        "transfer": {
+          "t1": 0.5833333333333334,
+          "t2": 0.7833333333333333,
+          "t3": 0.5
+        },
+        "overall": 0.6375,
+        "known_acc": 0.75,
+        "complexity": 204.0,
+        "n_rules": 38,
+        "revisions": 1
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 19013,
+        "transfer": {
+          "t1": 0.7,
+          "t2": 0.8166666666666667,
+          "t3": 0.625
+        },
+        "overall": 0.725,
+        "known_acc": 0.8,
+        "complexity": 254.0,
+        "n_rules": 47,
+        "revisions": 11
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 19013,
+        "transfer": {
+          "t1": 0.25,
+          "t2": 0.25,
+          "t3": 0.2
+        },
+        "overall": 0.2375,
+        "known_acc": 0.25833333333333336,
+        "complexity": 838.0,
+        "n_rules": 163,
+        "revisions": 61
+      },
+      "decision_list": {
+        "config": "decision_list",
+        "seed": 9013,
+        "transfer": {
+          "t1": 0.8166666666666667,
+          "t2": 0.75,
+          "t3": 0.725
+        },
+        "overall": 0.76875,
+        "known_acc": 0.9666666666666667,
+        "complexity": 0.0,
+        "n_rules": 0,
+        "revisions": 0
+      }
+    },
+    "chance": {
+      "t1": 0.23333333333333334,
+      "t2": 0.11666666666666667,
+      "t3": 0.25
+    },
+    "ceiling": {
+      "t1": 1.0,
+      "t2": 1.0,
+      "t3": 1.0
+    }
+  },
+  {
+    "seed": 14,
+    "results": {
+      "base": {
+        "config": "base",
+        "seed": 19014,
+        "transfer": {
+          "t1": 0.2,
+          "t2": 0.23333333333333334,
+          "t3": 0.2
+        },
+        "overall": 0.2125,
+        "known_acc": 1.0,
+        "complexity": 0.0,
+        "n_rules": 0,
+        "revisions": 0
+      },
+      "full": {
+        "config": "full",
+        "seed": 19014,
+        "transfer": {
+          "t1": 0.6333333333333333,
+          "t2": 0.7833333333333333,
+          "t3": 0.55
+        },
+        "overall": 0.66875,
+        "known_acc": 0.8083333333333333,
+        "complexity": 189.0,
+        "n_rules": 36,
+        "revisions": 8
+      },
+      "ab_no_generalize": {
+        "config": "ab_no_generalize",
+        "seed": 19014,
+        "transfer": {
+          "t1": 0.26666666666666666,
+          "t2": 0.36666666666666664,
+          "t3": 0.35
+        },
+        "overall": 0.325,
+        "known_acc": 0.5,
+        "complexity": 240.0,
+        "n_rules": 40,
+        "revisions": 0
+      },
+      "ab_no_specialize": {
+        "config": "ab_no_specialize",
+        "seed": 19014,
+        "transfer": {
+          "t1": 0.6333333333333333,
+          "t2": 0.8666666666666667,
+          "t3": 0.6
+        },
+        "overall": 0.7125,
+        "known_acc": 0.8416666666666667,
+        "complexity": 176.0,
+        "n_rules": 34,
+        "revisions": 5
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 19014,
+        "transfer": {
+          "t1": 0.6333333333333333,
+          "t2": 0.7833333333333333,
+          "t3": 0.55
+        },
+        "overall": 0.66875,
+        "known_acc": 0.8083333333333333,
+        "complexity": 189.0,
+        "n_rules": 36,
+        "revisions": 8
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 19014,
+        "transfer": {
+          "t1": 0.3333333333333333,
+          "t2": 0.7833333333333333,
+          "t3": 0.05
+        },
+        "overall": 0.43125,
+        "known_acc": 0.2916666666666667,
+        "complexity": 909.0,
+        "n_rules": 172,
+        "revisions": 60
+      },
+      "decision_list": {
+        "config": "decision_list",
+        "seed": 9014,
+        "transfer": {
+          "t1": 0.8666666666666667,
+          "t2": 0.7833333333333333,
+          "t3": 0.825
+        },
+        "overall": 0.825,
+        "known_acc": 1.0,
+        "complexity": 0.0,
+        "n_rules": 0,
+        "revisions": 0
+      }
+    },
+    "chance": {
+      "t1": 0.21666666666666667,
+      "t2": 0.35,
+      "t3": 0.375
+    },
+    "ceiling": {
+      "t1": 1.0,
+      "t2": 1.0,
+      "t3": 1.0
+    }
+  },
+  {
+    "seed": 15,
+    "results": {
+      "base": {
+        "config": "base",
+        "seed": 19015,
+        "transfer": {
+          "t1": 0.23333333333333334,
+          "t2": 0.3,
+          "t3": 0.2
+        },
+        "overall": 0.25,
+        "known_acc": 1.0,
+        "complexity": 0.0,
+        "n_rules": 0,
+        "revisions": 0
+      },
+      "full": {
+        "config": "full",
+        "seed": 19015,
+        "transfer": {
+          "t1": 0.6,
+          "t2": 0.75,
+          "t3": 0.425
+        },
+        "overall": 0.6125,
+        "known_acc": 0.8166666666666667,
+        "complexity": 222.0,
+        "n_rules": 42,
+        "revisions": 6
+      },
+      "ab_no_generalize": {
+        "config": "ab_no_generalize",
+        "seed": 19015,
+        "transfer": {
+          "t1": 0.2,
+          "t2": 0.26666666666666666,
+          "t3": 0.15
+        },
+        "overall": 0.2125,
+        "known_acc": 0.48333333333333334,
+        "complexity": 234.0,
+        "n_rules": 39,
+        "revisions": 0
+      },
+      "ab_no_specialize": {
+        "config": "ab_no_specialize",
+        "seed": 19015,
+        "transfer": {
+          "t1": 0.5333333333333333,
+          "t2": 0.75,
+          "t3": 0.425
+        },
+        "overall": 0.5875,
+        "known_acc": 0.8166666666666667,
+        "complexity": 188.0,
+        "n_rules": 34,
+        "revisions": 0
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 19015,
+        "transfer": {
+          "t1": 0.6,
+          "t2": 0.75,
+          "t3": 0.425
+        },
+        "overall": 0.6125,
+        "known_acc": 0.8166666666666667,
+        "complexity": 222.0,
+        "n_rules": 42,
+        "revisions": 6
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 19015,
+        "transfer": {
+          "t1": 0.35,
+          "t2": 0.5,
+          "t3": 0.2
+        },
+        "overall": 0.36875,
+        "known_acc": 0.4666666666666667,
+        "complexity": 1042.0,
+        "n_rules": 205,
+        "revisions": 105
+      },
+      "decision_list": {
+        "config": "decision_list",
+        "seed": 9015,
+        "transfer": {
+          "t1": 0.8,
+          "t2": 0.75,
+          "t3": 0.75
+        },
+        "overall": 0.76875,
+        "known_acc": 0.9666666666666667,
+        "complexity": 0.0,
+        "n_rules": 0,
+        "revisions": 0
+      }
+    },
+    "chance": {
+      "t1": 0.2833333333333333,
+      "t2": 0.21666666666666667,
+      "t3": 0.275
+    },
+    "ceiling": {
+      "t1": 1.0,
+      "t2": 1.0,
+      "t3": 1.0
+    }
+  },
+  {
+    "seed": 16,
+    "results": {
+      "base": {
+        "config": "base",
+        "seed": 19016,
+        "transfer": {
+          "t1": 0.2833333333333333,
+          "t2": 0.3,
+          "t3": 0.25
+        },
+        "overall": 0.28125,
+        "known_acc": 1.0,
+        "complexity": 0.0,
+        "n_rules": 0,
+        "revisions": 0
+      },
+      "full": {
+        "config": "full",
+        "seed": 19016,
+        "transfer": {
+          "t1": 0.7333333333333333,
+          "t2": 0.85,
+          "t3": 0.65
+        },
+        "overall": 0.75625,
+        "known_acc": 0.875,
+        "complexity": 206.0,
+        "n_rules": 46,
+        "revisions": 14
+      },
+      "ab_no_generalize": {
+        "config": "ab_no_generalize",
+        "seed": 19016,
+        "transfer": {
+          "t1": 0.23333333333333334,
+          "t2": 0.21666666666666667,
+          "t3": 0.325
+        },
+        "overall": 0.25,
+        "known_acc": 0.425,
+        "complexity": 240.0,
+        "n_rules": 40,
+        "revisions": 0
+      },
+      "ab_no_specialize": {
+        "config": "ab_no_specialize",
+        "seed": 19016,
+        "transfer": {
+          "t1": 0.5166666666666667,
+          "t2": 0.8,
+          "t3": 0.625
+        },
+        "overall": 0.65,
+        "known_acc": 0.7583333333333333,
+        "complexity": 196.0,
+        "n_rules": 40,
+        "revisions": 8
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 19016,
+        "transfer": {
+          "t1": 0.7333333333333333,
+          "t2": 0.85,
+          "t3": 0.65
+        },
+        "overall": 0.75625,
+        "known_acc": 0.875,
+        "complexity": 206.0,
+        "n_rules": 46,
+        "revisions": 14
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 19016,
+        "transfer": {
+          "t1": 0.3,
+          "t2": 0.11666666666666667,
+          "t3": 0.525
+        },
+        "overall": 0.2875,
+        "known_acc": 0.275,
+        "complexity": 831.0,
+        "n_rules": 156,
+        "revisions": 82
+      },
+      "decision_list": {
+        "config": "decision_list",
+        "seed": 9016,
+        "transfer": {
+          "t1": 0.8,
+          "t2": 0.8,
+          "t3": 1.0
+        },
+        "overall": 0.85,
+        "known_acc": 1.0,
+        "complexity": 0.0,
+        "n_rules": 0,
+        "revisions": 0
+      }
+    },
+    "chance": {
+      "t1": 0.23333333333333334,
+      "t2": 0.2,
+      "t3": 0.075
+    },
+    "ceiling": {
+      "t1": 1.0,
+      "t2": 1.0,
+      "t3": 1.0
+    }
+  },
+  {
+    "seed": 17,
+    "results": {
+      "base": {
+        "config": "base",
+        "seed": 19017,
+        "transfer": {
+          "t1": 0.21666666666666667,
+          "t2": 0.21666666666666667,
+          "t3": 0.2
+        },
+        "overall": 0.2125,
+        "known_acc": 1.0,
+        "complexity": 0.0,
+        "n_rules": 0,
+        "revisions": 0
+      },
+      "full": {
+        "config": "full",
+        "seed": 19017,
+        "transfer": {
+          "t1": 0.7,
+          "t2": 0.8,
+          "t3": 0.625
+        },
+        "overall": 0.71875,
+        "known_acc": 0.8916666666666667,
+        "complexity": 259.0,
+        "n_rules": 51,
+        "revisions": 27
+      },
+      "ab_no_generalize": {
+        "config": "ab_no_generalize",
+        "seed": 19017,
+        "transfer": {
+          "t1": 0.2,
+          "t2": 0.21666666666666667,
+          "t3": 0.275
+        },
+        "overall": 0.225,
+        "known_acc": 0.5833333333333334,
+        "complexity": 234.0,
+        "n_rules": 39,
+        "revisions": 0
+      },
+      "ab_no_specialize": {
+        "config": "ab_no_specialize",
+        "seed": 19017,
+        "transfer": {
+          "t1": 0.5166666666666667,
+          "t2": 0.8,
+          "t3": 0.6
+        },
+        "overall": 0.64375,
+        "known_acc": 0.775,
+        "complexity": 162.0,
+        "n_rules": 31,
+        "revisions": 2
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 19017,
+        "transfer": {
+          "t1": 0.7,
+          "t2": 0.8,
+          "t3": 0.625
+        },
+        "overall": 0.71875,
+        "known_acc": 0.8916666666666667,
+        "complexity": 259.0,
+        "n_rules": 51,
+        "revisions": 27
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 19017,
+        "transfer": {
+          "t1": 0.45,
+          "t2": 0.6,
+          "t3": 0.325
+        },
+        "overall": 0.475,
+        "known_acc": 0.525,
+        "complexity": 975.0,
+        "n_rules": 176,
+        "revisions": 64
+      },
+      "decision_list": {
+        "config": "decision_list",
+        "seed": 9017,
+        "transfer": {
+          "t1": 0.8666666666666667,
+          "t2": 0.8,
+          "t3": 0.9
+        },
+        "overall": 0.85,
+        "known_acc": 1.0,
+        "complexity": 0.0,
+        "n_rules": 0,
+        "revisions": 0
+      }
+    },
+    "chance": {
+      "t1": 0.2,
+      "t2": 0.26666666666666666,
+      "t3": 0.475
+    },
+    "ceiling": {
+      "t1": 1.0,
+      "t2": 1.0,
+      "t3": 1.0
+    }
+  },
+  {
+    "seed": 18,
+    "results": {
+      "base": {
+        "config": "base",
+        "seed": 19018,
+        "transfer": {
+          "t1": 0.23333333333333334,
+          "t2": 0.3333333333333333,
+          "t3": 0.375
+        },
+        "overall": 0.30625,
+        "known_acc": 1.0,
+        "complexity": 0.0,
+        "n_rules": 0,
+        "revisions": 0
+      },
+      "full": {
+        "config": "full",
+        "seed": 19018,
+        "transfer": {
+          "t1": 0.5833333333333334,
+          "t2": 0.7666666666666667,
+          "t3": 0.55
+        },
+        "overall": 0.64375,
+        "known_acc": 0.7833333333333333,
+        "complexity": 167.0,
+        "n_rules": 34,
+        "revisions": 10
+      },
+      "ab_no_generalize": {
+        "config": "ab_no_generalize",
+        "seed": 19018,
+        "transfer": {
+          "t1": 0.26666666666666666,
+          "t2": 0.3,
+          "t3": 0.175
+        },
+        "overall": 0.25625,
+        "known_acc": 0.575,
+        "complexity": 240.0,
+        "n_rules": 40,
+        "revisions": 0
+      },
+      "ab_no_specialize": {
+        "config": "ab_no_specialize",
+        "seed": 19018,
+        "transfer": {
+          "t1": 0.6,
+          "t2": 0.7666666666666667,
+          "t3": 0.625
+        },
+        "overall": 0.66875,
+        "known_acc": 0.825,
+        "complexity": 138.0,
+        "n_rules": 25,
+        "revisions": 0
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 19018,
+        "transfer": {
+          "t1": 0.5833333333333334,
+          "t2": 0.7666666666666667,
+          "t3": 0.55
+        },
+        "overall": 0.64375,
+        "known_acc": 0.7833333333333333,
+        "complexity": 167.0,
+        "n_rules": 34,
+        "revisions": 10
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 19018,
+        "transfer": {
+          "t1": 0.016666666666666666,
+          "t2": 0.0,
+          "t3": 0.225
+        },
+        "overall": 0.0625,
+        "known_acc": 0.16666666666666666,
+        "complexity": 909.0,
+        "n_rules": 163,
+        "revisions": 45
+      },
+      "decision_list": {
+        "config": "decision_list",
+        "seed": 9018,
+        "transfer": {
+          "t1": 0.7833333333333333,
+          "t2": 0.7,
+          "t3": 0.675
+        },
+        "overall": 0.725,
+        "known_acc": 0.975,
+        "complexity": 0.0,
+        "n_rules": 0,
+        "revisions": 0
+      }
+    },
+    "chance": {
+      "t1": 0.18333333333333332,
+      "t2": 0.23333333333333334,
+      "t3": 0.275
+    },
+    "ceiling": {
+      "t1": 1.0,
+      "t2": 1.0,
+      "t3": 1.0
+    }
+  },
+  {
+    "seed": 19,
+    "results": {
+      "base": {
+        "config": "base",
+        "seed": 19019,
+        "transfer": {
+          "t1": 0.18333333333333332,
+          "t2": 0.23333333333333334,
+          "t3": 0.225
+        },
+        "overall": 0.2125,
+        "known_acc": 1.0,
+        "complexity": 0.0,
+        "n_rules": 0,
+        "revisions": 0
+      },
+      "full": {
+        "config": "full",
+        "seed": 19019,
+        "transfer": {
+          "t1": 0.5833333333333334,
+          "t2": 0.75,
+          "t3": 0.6
+        },
+        "overall": 0.65,
+        "known_acc": 0.75,
+        "complexity": 199.0,
+        "n_rules": 47,
+        "revisions": 20
+      },
+      "ab_no_generalize": {
+        "config": "ab_no_generalize",
+        "seed": 19019,
+        "transfer": {
+          "t1": 0.23333333333333334,
+          "t2": 0.18333333333333332,
+          "t3": 0.2
+        },
+        "overall": 0.20625,
+        "known_acc": 0.3333333333333333,
+        "complexity": 234.0,
+        "n_rules": 39,
+        "revisions": 0
+      },
+      "ab_no_specialize": {
+        "config": "ab_no_specialize",
+        "seed": 19019,
+        "transfer": {
+          "t1": 0.6666666666666666,
+          "t2": 0.8,
+          "t3": 0.7
+        },
+        "overall": 0.725,
+        "known_acc": 0.8,
+        "complexity": 108.0,
+        "n_rules": 22,
+        "revisions": 1
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 19019,
+        "transfer": {
+          "t1": 0.5833333333333334,
+          "t2": 0.75,
+          "t3": 0.6
+        },
+        "overall": 0.65,
+        "known_acc": 0.75,
+        "complexity": 199.0,
+        "n_rules": 47,
+        "revisions": 20
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 19019,
+        "transfer": {
+          "t1": 0.06666666666666667,
+          "t2": 0.25,
+          "t3": 0.175
+        },
+        "overall": 0.1625,
+        "known_acc": 0.058333333333333334,
+        "complexity": 997.0,
+        "n_rules": 197,
+        "revisions": 111
+      },
+      "decision_list": {
+        "config": "decision_list",
+        "seed": 9019,
+        "transfer": {
+          "t1": 0.8333333333333334,
+          "t2": 0.75,
+          "t3": 0.85
+        },
+        "overall": 0.80625,
+        "known_acc": 0.975,
+        "complexity": 0.0,
+        "n_rules": 0,
+        "revisions": 0
+      }
+    },
+    "chance": {
+      "t1": 0.21666666666666667,
+      "t2": 0.25,
+      "t3": 0.2
+    },
+    "ceiling": {
+      "t1": 1.0,
+      "t2": 1.0,
+      "t3": 1.0
+    }
+  },
+  {
+    "seed": 20,
+    "results": {
+      "base": {
+        "config": "base",
+        "seed": 19020,
+        "transfer": {
+          "t1": 0.2833333333333333,
+          "t2": 0.3,
+          "t3": 0.325
+        },
+        "overall": 0.3,
+        "known_acc": 1.0,
+        "complexity": 0.0,
+        "n_rules": 0,
+        "revisions": 0
+      },
+      "full": {
+        "config": "full",
+        "seed": 19020,
+        "transfer": {
+          "t1": 0.5666666666666667,
+          "t2": 0.8666666666666667,
+          "t3": 0.6
+        },
+        "overall": 0.6875,
+        "known_acc": 0.8,
+        "complexity": 170.0,
+        "n_rules": 37,
+        "revisions": 10
+      },
+      "ab_no_generalize": {
+        "config": "ab_no_generalize",
+        "seed": 19020,
+        "transfer": {
+          "t1": 0.4166666666666667,
+          "t2": 0.16666666666666666,
+          "t3": 0.275
+        },
+        "overall": 0.2875,
+        "known_acc": 0.49166666666666664,
+        "complexity": 240.0,
+        "n_rules": 40,
+        "revisions": 0
+      },
+      "ab_no_specialize": {
+        "config": "ab_no_specialize",
+        "seed": 19020,
+        "transfer": {
+          "t1": 0.5666666666666667,
+          "t2": 0.8666666666666667,
+          "t3": 0.6
+        },
+        "overall": 0.6875,
+        "known_acc": 0.8,
+        "complexity": 170.0,
+        "n_rules": 37,
+        "revisions": 10
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 19020,
+        "transfer": {
+          "t1": 0.5666666666666667,
+          "t2": 0.8666666666666667,
+          "t3": 0.6
+        },
+        "overall": 0.6875,
+        "known_acc": 0.8,
+        "complexity": 170.0,
+        "n_rules": 37,
+        "revisions": 10
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 19020,
+        "transfer": {
+          "t1": 0.5,
+          "t2": 0.26666666666666666,
+          "t3": 0.15
+        },
+        "overall": 0.325,
+        "known_acc": 0.31666666666666665,
+        "complexity": 933.0,
+        "n_rules": 174,
+        "revisions": 73
+      },
+      "decision_list": {
+        "config": "decision_list",
+        "seed": 9020,
+        "transfer": {
+          "t1": 0.8833333333333333,
+          "t2": 0.7833333333333333,
+          "t3": 0.75
+        },
+        "overall": 0.8125,
+        "known_acc": 0.9833333333333333,
+        "complexity": 0.0,
+        "n_rules": 0,
+        "revisions": 0
+      }
+    },
+    "chance": {
+      "t1": 0.31666666666666665,
+      "t2": 0.3333333333333333,
+      "t3": 0.2
+    },
+    "ceiling": {
+      "t1": 1.0,
+      "t2": 1.0,
+      "t3": 1.0
+    }
+  },
+  {
+    "seed": 21,
+    "results": {
+      "base": {
+        "config": "base",
+        "seed": 19021,
+        "transfer": {
+          "t1": 0.38333333333333336,
+          "t2": 0.25,
+          "t3": 0.175
+        },
+        "overall": 0.28125,
+        "known_acc": 1.0,
+        "complexity": 0.0,
+        "n_rules": 0,
+        "revisions": 0
+      },
+      "full": {
+        "config": "full",
+        "seed": 19021,
+        "transfer": {
+          "t1": 0.6333333333333333,
+          "t2": 0.8333333333333334,
+          "t3": 0.7
+        },
+        "overall": 0.725,
+        "known_acc": 0.8083333333333333,
+        "complexity": 168.0,
+        "n_rules": 34,
+        "revisions": 6
+      },
+      "ab_no_generalize": {
+        "config": "ab_no_generalize",
+        "seed": 19021,
+        "transfer": {
+          "t1": 0.31666666666666665,
+          "t2": 0.2833333333333333,
+          "t3": 0.425
+        },
+        "overall": 0.33125,
+        "known_acc": 0.575,
+        "complexity": 222.0,
+        "n_rules": 37,
+        "revisions": 0
+      },
+      "ab_no_specialize": {
+        "config": "ab_no_specialize",
+        "seed": 19021,
+        "transfer": {
+          "t1": 0.6333333333333333,
+          "t2": 0.8333333333333334,
+          "t3": 0.7
+        },
+        "overall": 0.725,
+        "known_acc": 0.8083333333333333,
+        "complexity": 168.0,
+        "n_rules": 34,
+        "revisions": 6
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 19021,
+        "transfer": {
+          "t1": 0.6333333333333333,
+          "t2": 0.8333333333333334,
+          "t3": 0.7
+        },
+        "overall": 0.725,
+        "known_acc": 0.8083333333333333,
+        "complexity": 168.0,
+        "n_rules": 34,
+        "revisions": 6
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 19021,
+        "transfer": {
+          "t1": 0.05,
+          "t2": 0.06666666666666667,
+          "t3": 0.225
+        },
+        "overall": 0.1,
+        "known_acc": 0.225,
+        "complexity": 1031.0,
+        "n_rules": 194,
+        "revisions": 58
+      },
+      "decision_list": {
+        "config": "decision_list",
+        "seed": 9021,
+        "transfer": {
+          "t1": 0.75,
+          "t2": 0.8333333333333334,
+          "t3": 0.85
+        },
+        "overall": 0.80625,
+        "known_acc": 0.975,
+        "complexity": 0.0,
+        "n_rules": 0,
+        "revisions": 0
+      }
+    },
+    "chance": {
+      "t1": 0.2833333333333333,
+      "t2": 0.2,
+      "t3": 0.15
+    },
+    "ceiling": {
+      "t1": 1.0,
+      "t2": 1.0,
+      "t3": 1.0
+    }
+  },
+  {
+    "seed": 22,
+    "results": {
+      "base": {
+        "config": "base",
+        "seed": 19022,
+        "transfer": {
+          "t1": 0.26666666666666666,
+          "t2": 0.3,
+          "t3": 0.2
+        },
+        "overall": 0.2625,
+        "known_acc": 1.0,
+        "complexity": 0.0,
+        "n_rules": 0,
+        "revisions": 0
+      },
+      "full": {
+        "config": "full",
+        "seed": 19022,
+        "transfer": {
+          "t1": 0.6333333333333333,
+          "t2": 0.8333333333333334,
+          "t3": 0.625
+        },
+        "overall": 0.70625,
+        "known_acc": 0.7666666666666667,
+        "complexity": 182.0,
+        "n_rules": 37,
+        "revisions": 8
+      },
+      "ab_no_generalize": {
+        "config": "ab_no_generalize",
+        "seed": 19022,
+        "transfer": {
+          "t1": 0.21666666666666667,
+          "t2": 0.26666666666666666,
+          "t3": 0.25
+        },
+        "overall": 0.24375,
+        "known_acc": 0.525,
+        "complexity": 240.0,
+        "n_rules": 40,
+        "revisions": 0
+      },
+      "ab_no_specialize": {
+        "config": "ab_no_specialize",
+        "seed": 19022,
+        "transfer": {
+          "t1": 0.6333333333333333,
+          "t2": 0.8333333333333334,
+          "t3": 0.625
+        },
+        "overall": 0.70625,
+        "known_acc": 0.7666666666666667,
+        "complexity": 182.0,
+        "n_rules": 37,
+        "revisions": 8
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 19022,
+        "transfer": {
+          "t1": 0.6333333333333333,
+          "t2": 0.8333333333333334,
+          "t3": 0.625
+        },
+        "overall": 0.70625,
+        "known_acc": 0.7666666666666667,
+        "complexity": 182.0,
+        "n_rules": 37,
+        "revisions": 8
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 19022,
+        "transfer": {
+          "t1": 0.21666666666666667,
+          "t2": 0.2833333333333333,
+          "t3": 0.0
+        },
+        "overall": 0.1875,
+        "known_acc": 0.125,
+        "complexity": 1035.0,
+        "n_rules": 199,
+        "revisions": 98
+      },
+      "decision_list": {
+        "config": "decision_list",
+        "seed": 9022,
+        "transfer": {
+          "t1": 0.8666666666666667,
+          "t2": 0.7666666666666667,
+          "t3": 1.0
+        },
+        "overall": 0.8625,
+        "known_acc": 1.0,
+        "complexity": 0.0,
+        "n_rules": 0,
+        "revisions": 0
+      }
+    },
+    "chance": {
+      "t1": 0.23333333333333334,
+      "t2": 0.4,
+      "t3": 0.25
+    },
+    "ceiling": {
+      "t1": 1.0,
+      "t2": 1.0,
+      "t3": 1.0
+    }
+  },
+  {
+    "seed": 23,
+    "results": {
+      "base": {
+        "config": "base",
+        "seed": 19023,
+        "transfer": {
+          "t1": 0.25,
+          "t2": 0.25,
+          "t3": 0.325
+        },
+        "overall": 0.26875,
+        "known_acc": 1.0,
+        "complexity": 0.0,
+        "n_rules": 0,
+        "revisions": 0
+      },
+      "full": {
+        "config": "full",
+        "seed": 19023,
+        "transfer": {
+          "t1": 0.65,
+          "t2": 0.7833333333333333,
+          "t3": 0.675
+        },
+        "overall": 0.70625,
+        "known_acc": 0.7916666666666666,
+        "complexity": 238.0,
+        "n_rules": 46,
+        "revisions": 11
+      },
+      "ab_no_generalize": {
+        "config": "ab_no_generalize",
+        "seed": 19023,
+        "transfer": {
+          "t1": 0.25,
+          "t2": 0.26666666666666666,
+          "t3": 0.2
+        },
+        "overall": 0.24375,
+        "known_acc": 0.5166666666666667,
+        "complexity": 240.0,
+        "n_rules": 40,
+        "revisions": 0
+      },
+      "ab_no_specialize": {
+        "config": "ab_no_specialize",
+        "seed": 19023,
+        "transfer": {
+          "t1": 0.5666666666666667,
+          "t2": 0.85,
+          "t3": 0.55
+        },
+        "overall": 0.66875,
+        "known_acc": 0.7333333333333333,
+        "complexity": 216.0,
+        "n_rules": 44,
+        "revisions": 7
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 19023,
+        "transfer": {
+          "t1": 0.65,
+          "t2": 0.7833333333333333,
+          "t3": 0.675
+        },
+        "overall": 0.70625,
+        "known_acc": 0.7916666666666666,
+        "complexity": 238.0,
+        "n_rules": 46,
+        "revisions": 11
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 19023,
+        "transfer": {
+          "t1": 0.3333333333333333,
+          "t2": 0.7666666666666667,
+          "t3": 0.525
+        },
+        "overall": 0.54375,
+        "known_acc": 0.5416666666666666,
+        "complexity": 896.0,
+        "n_rules": 168,
+        "revisions": 67
+      },
+      "decision_list": {
+        "config": "decision_list",
+        "seed": 9023,
+        "transfer": {
+          "t1": 0.7833333333333333,
+          "t2": 0.7666666666666667,
+          "t3": 1.0
+        },
+        "overall": 0.83125,
+        "known_acc": 1.0,
+        "complexity": 0.0,
+        "n_rules": 0,
+        "revisions": 0
+      }
+    },
+    "chance": {
+      "t1": 0.26666666666666666,
+      "t2": 0.26666666666666666,
+      "t3": 0.275
+    },
+    "ceiling": {
+      "t1": 1.0,
+      "t2": 1.0,
+      "t3": 1.0
+    }
+  },
+  {
+    "seed": 24,
+    "results": {
+      "base": {
+        "config": "base",
+        "seed": 19024,
+        "transfer": {
+          "t1": 0.31666666666666665,
+          "t2": 0.23333333333333334,
+          "t3": 0.325
+        },
+        "overall": 0.2875,
+        "known_acc": 1.0,
+        "complexity": 0.0,
+        "n_rules": 0,
+        "revisions": 0
+      },
+      "full": {
+        "config": "full",
+        "seed": 19024,
+        "transfer": {
+          "t1": 0.55,
+          "t2": 0.6833333333333333,
+          "t3": 0.675
+        },
+        "overall": 0.63125,
+        "known_acc": 0.825,
+        "complexity": 256.0,
+        "n_rules": 49,
+        "revisions": 10
+      },
+      "ab_no_generalize": {
+        "config": "ab_no_generalize",
+        "seed": 19024,
+        "transfer": {
+          "t1": 0.3,
+          "t2": 0.25,
+          "t3": 0.225
+        },
+        "overall": 0.2625,
+        "known_acc": 0.35833333333333334,
+        "complexity": 234.0,
+        "n_rules": 39,
+        "revisions": 0
+      },
+      "ab_no_specialize": {
+        "config": "ab_no_specialize",
+        "seed": 19024,
+        "transfer": {
+          "t1": 0.5,
+          "t2": 0.6833333333333333,
+          "t3": 0.55
+        },
+        "overall": 0.58125,
+        "known_acc": 0.7833333333333333,
+        "complexity": 198.0,
+        "n_rules": 43,
+        "revisions": 9
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 19024,
+        "transfer": {
+          "t1": 0.55,
+          "t2": 0.6833333333333333,
+          "t3": 0.675
+        },
+        "overall": 0.63125,
+        "known_acc": 0.825,
+        "complexity": 256.0,
+        "n_rules": 49,
+        "revisions": 10
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 19024,
+        "transfer": {
+          "t1": 0.26666666666666666,
+          "t2": 0.16666666666666666,
+          "t3": 0.125
+        },
+        "overall": 0.19375,
+        "known_acc": 0.38333333333333336,
+        "complexity": 966.0,
+        "n_rules": 175,
+        "revisions": 54
+      },
+      "decision_list": {
+        "config": "decision_list",
+        "seed": 9024,
+        "transfer": {
+          "t1": 0.7666666666666667,
+          "t2": 0.6833333333333333,
+          "t3": 0.775
+        },
+        "overall": 0.7375,
+        "known_acc": 0.9666666666666667,
+        "complexity": 0.0,
+        "n_rules": 0,
+        "revisions": 0
+      }
+    },
+    "chance": {
+      "t1": 0.25,
+      "t2": 0.26666666666666666,
+      "t3": 0.125
+    },
+    "ceiling": {
+      "t1": 1.0,
+      "t2": 1.0,
+      "t3": 1.0
+    }
+  }
+]
