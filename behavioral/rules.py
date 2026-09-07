@@ -42,6 +42,20 @@ class Action:
     name: str
     program_id: str | None = None
 
+    def __eq__(self, other: object) -> bool:
+        if isinstance(other, Action):
+            return (
+                self.kind == other.kind
+                and self.name == other.name
+                and self.program_id == other.program_id
+            )
+        if isinstance(other, str):
+            return self.name == other
+        return NotImplemented
+
+    def __hash__(self) -> int:
+        return hash((self.kind, self.name, self.program_id))
+
     def __str__(self) -> str:
         if self.kind == "primitive":
             return f"do({self.name})"

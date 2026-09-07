@@ -1,0 +1,1874 @@
+[
+  {
+    "seed": 1,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 1,
+        "heldout_acc": 1.0,
+        "row_overall": 0.92,
+        "row_balanced": 0.6428571428571428,
+        "known_acc": 0.905,
+        "n_active": 7
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 1,
+        "heldout_acc": 0.0,
+        "row_overall": 0.725,
+        "row_balanced": 0.25,
+        "known_acc": 0.725,
+        "n_active": 0
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 1,
+        "heldout_acc": 0.0,
+        "row_overall": 0.725,
+        "row_balanced": 0.25,
+        "known_acc": 0.725,
+        "n_active": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 1,
+        "heldout_acc": 0.2777777777777778,
+        "row_overall": 0.835,
+        "row_balanced": 0.4470046082949309,
+        "known_acc": 0.82,
+        "n_active": 0
+      },
+      "ValueDListML": {
+        "config": "ValueDListML",
+        "seed": 1,
+        "heldout_acc": 0.8888888888888888,
+        "row_overall": 0.85,
+        "row_balanced": 0.5447163515016685,
+        "known_acc": 0.835,
+        "n_active": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 1,
+        "heldout_acc": 1.0,
+        "row_overall": 0.905,
+        "row_balanced": 0.6681034482758621,
+        "known_acc": 0.89,
+        "n_active": 0
+      },
+      "ValueForest": {
+        "config": "ValueForest",
+        "seed": 1,
+        "heldout_acc": 0.9722222222222222,
+        "row_overall": 0.915,
+        "row_balanced": 0.625,
+        "known_acc": 0.865,
+        "n_active": 0
+      },
+      "chance": {
+        "heldout_acc": 0.25
+      },
+      "ceiling": {
+        "heldout_acc": 1.0
+      }
+    },
+    "audit": {
+      "found": "approach[['emotion = calm', 'task = guard']]",
+      "heldout_region_correct_full": 1.0
+    }
+  },
+  {
+    "seed": 2,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 2,
+        "heldout_acc": 1.0,
+        "row_overall": 0.915,
+        "row_balanced": 0.7222222222222222,
+        "known_acc": 0.93,
+        "n_active": 6
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 2,
+        "heldout_acc": 0.0,
+        "row_overall": 0.72,
+        "row_balanced": 0.25,
+        "known_acc": 0.765,
+        "n_active": 0
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 2,
+        "heldout_acc": 0.0,
+        "row_overall": 0.72,
+        "row_balanced": 0.25,
+        "known_acc": 0.765,
+        "n_active": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 2,
+        "heldout_acc": 0.3333333333333333,
+        "row_overall": 0.815,
+        "row_balanced": 0.47145229468599037,
+        "known_acc": 0.845,
+        "n_active": 0
+      },
+      "ValueDListML": {
+        "config": "ValueDListML",
+        "seed": 2,
+        "heldout_acc": 1.0,
+        "row_overall": 0.84,
+        "row_balanced": 0.5381944444444444,
+        "known_acc": 0.905,
+        "n_active": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 2,
+        "heldout_acc": 1.0,
+        "row_overall": 0.935,
+        "row_balanced": 0.8690972222222222,
+        "known_acc": 0.94,
+        "n_active": 0
+      },
+      "ValueForest": {
+        "config": "ValueForest",
+        "seed": 2,
+        "heldout_acc": 0.9722222222222222,
+        "row_overall": 0.92,
+        "row_balanced": 0.7472222222222222,
+        "known_acc": 0.935,
+        "n_active": 0
+      },
+      "chance": {
+        "heldout_acc": 0.2222222222222222
+      },
+      "ceiling": {
+        "heldout_acc": 1.0
+      }
+    },
+    "audit": {
+      "found": "approach[['emotion = calm', 'task = guard']]",
+      "heldout_region_correct_full": 1.0
+    }
+  },
+  {
+    "seed": 3,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 3,
+        "heldout_acc": 1.0,
+        "row_overall": 0.96,
+        "row_balanced": 0.8502747252747253,
+        "known_acc": 0.95,
+        "n_active": 9
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 3,
+        "heldout_acc": 0.0,
+        "row_overall": 0.725,
+        "row_balanced": 0.25,
+        "known_acc": 0.745,
+        "n_active": 0
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 3,
+        "heldout_acc": 0.0,
+        "row_overall": 0.725,
+        "row_balanced": 0.25,
+        "known_acc": 0.745,
+        "n_active": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 3,
+        "heldout_acc": 0.6944444444444444,
+        "row_overall": 0.855,
+        "row_balanced": 0.5099516862447897,
+        "known_acc": 0.865,
+        "n_active": 0
+      },
+      "ValueDListML": {
+        "config": "ValueDListML",
+        "seed": 3,
+        "heldout_acc": 1.0,
+        "row_overall": 0.82,
+        "row_balanced": 0.5490147783251231,
+        "known_acc": 0.815,
+        "n_active": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 3,
+        "heldout_acc": 1.0,
+        "row_overall": 0.94,
+        "row_balanced": 0.926790450928382,
+        "known_acc": 0.93,
+        "n_active": 0
+      },
+      "ValueForest": {
+        "config": "ValueForest",
+        "seed": 3,
+        "heldout_acc": 1.0,
+        "row_overall": 0.925,
+        "row_balanced": 0.7266483516483516,
+        "known_acc": 0.895,
+        "n_active": 0
+      },
+      "chance": {
+        "heldout_acc": 0.1388888888888889
+      },
+      "ceiling": {
+        "heldout_acc": 1.0
+      }
+    },
+    "audit": {
+      "found": "approach[['emotion = calm', 'task = guard']]",
+      "heldout_region_correct_full": 1.0
+    }
+  },
+  {
+    "seed": 4,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 4,
+        "heldout_acc": 1.0,
+        "row_overall": 0.905,
+        "row_balanced": 0.7124060150375939,
+        "known_acc": 0.92,
+        "n_active": 5
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 4,
+        "heldout_acc": 0.0,
+        "row_overall": 0.695,
+        "row_balanced": 0.25,
+        "known_acc": 0.78,
+        "n_active": 0
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 4,
+        "heldout_acc": 0.0,
+        "row_overall": 0.695,
+        "row_balanced": 0.25,
+        "known_acc": 0.78,
+        "n_active": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 4,
+        "heldout_acc": 0.3888888888888889,
+        "row_overall": 0.8,
+        "row_balanced": 0.4417293233082707,
+        "known_acc": 0.87,
+        "n_active": 0
+      },
+      "ValueDListML": {
+        "config": "ValueDListML",
+        "seed": 4,
+        "heldout_acc": 1.0,
+        "row_overall": 0.855,
+        "row_balanced": 0.7245767295937686,
+        "known_acc": 0.845,
+        "n_active": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 4,
+        "heldout_acc": 1.0,
+        "row_overall": 0.945,
+        "row_balanced": 0.8619232433601991,
+        "known_acc": 0.95,
+        "n_active": 0
+      },
+      "ValueForest": {
+        "config": "ValueForest",
+        "seed": 4,
+        "heldout_acc": 0.8611111111111112,
+        "row_overall": 0.905,
+        "row_balanced": 0.7302631578947368,
+        "known_acc": 0.91,
+        "n_active": 0
+      },
+      "chance": {
+        "heldout_acc": 0.3333333333333333
+      },
+      "ceiling": {
+        "heldout_acc": 1.0
+      }
+    },
+    "audit": {
+      "found": "approach[['emotion = calm', 'task = guard']]",
+      "heldout_region_correct_full": 1.0
+    }
+  },
+  {
+    "seed": 5,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 5,
+        "heldout_acc": 1.0,
+        "row_overall": 0.83,
+        "row_balanced": 0.5,
+        "known_acc": 0.875,
+        "n_active": 3
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 5,
+        "heldout_acc": 0.0,
+        "row_overall": 0.665,
+        "row_balanced": 0.25,
+        "known_acc": 0.765,
+        "n_active": 0
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 5,
+        "heldout_acc": 0.0,
+        "row_overall": 0.665,
+        "row_balanced": 0.25,
+        "known_acc": 0.765,
+        "n_active": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 5,
+        "heldout_acc": 0.3055555555555556,
+        "row_overall": 0.815,
+        "row_balanced": 0.480566534914361,
+        "known_acc": 0.865,
+        "n_active": 0
+      },
+      "ValueDListML": {
+        "config": "ValueDListML",
+        "seed": 5,
+        "heldout_acc": 1.0,
+        "row_overall": 0.755,
+        "row_balanced": 0.47180451127819545,
+        "known_acc": 0.82,
+        "n_active": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 5,
+        "heldout_acc": 1.0,
+        "row_overall": 0.93,
+        "row_balanced": 0.83635472079408,
+        "known_acc": 0.915,
+        "n_active": 0
+      },
+      "ValueForest": {
+        "config": "ValueForest",
+        "seed": 5,
+        "heldout_acc": 1.0,
+        "row_overall": 0.94,
+        "row_balanced": 0.7391304347826086,
+        "known_acc": 0.945,
+        "n_active": 0
+      },
+      "chance": {
+        "heldout_acc": 0.2777777777777778
+      },
+      "ceiling": {
+        "heldout_acc": 1.0
+      }
+    },
+    "audit": {
+      "found": "approach[['emotion = calm', 'task = guard']]",
+      "heldout_region_correct_full": 1.0
+    }
+  },
+  {
+    "seed": 6,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 6,
+        "heldout_acc": 1.0,
+        "row_overall": 0.96,
+        "row_balanced": 0.865625,
+        "known_acc": 0.9,
+        "n_active": 4
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 6,
+        "heldout_acc": 0.0,
+        "row_overall": 0.725,
+        "row_balanced": 0.25,
+        "known_acc": 0.715,
+        "n_active": 0
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 6,
+        "heldout_acc": 0.0,
+        "row_overall": 0.725,
+        "row_balanced": 0.25,
+        "known_acc": 0.715,
+        "n_active": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 6,
+        "heldout_acc": 0.08333333333333333,
+        "row_overall": 0.79,
+        "row_balanced": 0.3620689655172414,
+        "known_acc": 0.78,
+        "n_active": 0
+      },
+      "ValueDListML": {
+        "config": "ValueDListML",
+        "seed": 6,
+        "heldout_acc": 1.0,
+        "row_overall": 0.86,
+        "row_balanced": 0.496551724137931,
+        "known_acc": 0.79,
+        "n_active": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 6,
+        "heldout_acc": 1.0,
+        "row_overall": 0.91,
+        "row_balanced": 0.8438577586206897,
+        "known_acc": 0.89,
+        "n_active": 0
+      },
+      "ValueForest": {
+        "config": "ValueForest",
+        "seed": 6,
+        "heldout_acc": 1.0,
+        "row_overall": 0.87,
+        "row_balanced": 0.5,
+        "known_acc": 0.83,
+        "n_active": 0
+      },
+      "chance": {
+        "heldout_acc": 0.3611111111111111
+      },
+      "ceiling": {
+        "heldout_acc": 1.0
+      }
+    },
+    "audit": {
+      "found": "approach[['emotion = calm', 'task = guard']]",
+      "heldout_region_correct_full": 1.0
+    }
+  },
+  {
+    "seed": 7,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 7,
+        "heldout_acc": 1.0,
+        "row_overall": 0.93,
+        "row_balanced": 0.7062937062937062,
+        "known_acc": 0.925,
+        "n_active": 6
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 7,
+        "heldout_acc": 0.0,
+        "row_overall": 0.75,
+        "row_balanced": 0.25,
+        "known_acc": 0.735,
+        "n_active": 0
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 7,
+        "heldout_acc": 0.0,
+        "row_overall": 0.75,
+        "row_balanced": 0.25,
+        "known_acc": 0.735,
+        "n_active": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 7,
+        "heldout_acc": 0.2222222222222222,
+        "row_overall": 0.82,
+        "row_balanced": 0.3977272727272727,
+        "known_acc": 0.815,
+        "n_active": 0
+      },
+      "ValueDListML": {
+        "config": "ValueDListML",
+        "seed": 7,
+        "heldout_acc": 1.0,
+        "row_overall": 0.885,
+        "row_balanced": 0.5192307692307693,
+        "known_acc": 0.855,
+        "n_active": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 7,
+        "heldout_acc": 1.0,
+        "row_overall": 0.91,
+        "row_balanced": 0.6469347319347319,
+        "known_acc": 0.915,
+        "n_active": 0
+      },
+      "ValueForest": {
+        "config": "ValueForest",
+        "seed": 7,
+        "heldout_acc": 1.0,
+        "row_overall": 0.885,
+        "row_balanced": 0.5227272727272727,
+        "known_acc": 0.86,
+        "n_active": 0
+      },
+      "chance": {
+        "heldout_acc": 0.19444444444444445
+      },
+      "ceiling": {
+        "heldout_acc": 1.0
+      }
+    },
+    "audit": {
+      "found": "approach[['emotion = calm', 'task = guard']]",
+      "heldout_region_correct_full": 1.0
+    }
+  },
+  {
+    "seed": 8,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 8,
+        "heldout_acc": 1.0,
+        "row_overall": 0.88,
+        "row_balanced": 0.5995165189363416,
+        "known_acc": 0.89,
+        "n_active": 5
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 8,
+        "heldout_acc": 0.0,
+        "row_overall": 0.73,
+        "row_balanced": 0.25,
+        "known_acc": 0.77,
+        "n_active": 0
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 8,
+        "heldout_acc": 0.0,
+        "row_overall": 0.73,
+        "row_balanced": 0.25,
+        "known_acc": 0.77,
+        "n_active": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 8,
+        "heldout_acc": 0.4166666666666667,
+        "row_overall": 0.82,
+        "row_balanced": 0.44083333333333335,
+        "known_acc": 0.84,
+        "n_active": 0
+      },
+      "ValueDListML": {
+        "config": "ValueDListML",
+        "seed": 8,
+        "heldout_acc": 1.0,
+        "row_overall": 0.895,
+        "row_balanced": 0.6566277195809831,
+        "known_acc": 0.9,
+        "n_active": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 8,
+        "heldout_acc": 1.0,
+        "row_overall": 0.935,
+        "row_balanced": 0.8103008326618318,
+        "known_acc": 0.92,
+        "n_active": 0
+      },
+      "ValueForest": {
+        "config": "ValueForest",
+        "seed": 8,
+        "heldout_acc": 1.0,
+        "row_overall": 0.87,
+        "row_balanced": 0.5502450980392157,
+        "known_acc": 0.865,
+        "n_active": 0
+      },
+      "chance": {
+        "heldout_acc": 0.16666666666666666
+      },
+      "ceiling": {
+        "heldout_acc": 1.0
+      }
+    },
+    "audit": {
+      "found": "approach[['emotion = calm', 'task = guard']]",
+      "heldout_region_correct_full": 1.0
+    }
+  },
+  {
+    "seed": 9,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 9,
+        "heldout_acc": 1.0,
+        "row_overall": 0.945,
+        "row_balanced": 0.8108221476510067,
+        "known_acc": 0.955,
+        "n_active": 8
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 9,
+        "heldout_acc": 0.0,
+        "row_overall": 0.745,
+        "row_balanced": 0.25,
+        "known_acc": 0.765,
+        "n_active": 0
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 9,
+        "heldout_acc": 0.0,
+        "row_overall": 0.745,
+        "row_balanced": 0.25,
+        "known_acc": 0.765,
+        "n_active": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 9,
+        "heldout_acc": 0.5833333333333334,
+        "row_overall": 0.87,
+        "row_balanced": 0.5157142857142857,
+        "known_acc": 0.875,
+        "n_active": 0
+      },
+      "ValueDListML": {
+        "config": "ValueDListML",
+        "seed": 9,
+        "heldout_acc": 1.0,
+        "row_overall": 0.885,
+        "row_balanced": 0.6668264621284755,
+        "known_acc": 0.855,
+        "n_active": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 9,
+        "heldout_acc": 1.0,
+        "row_overall": 0.925,
+        "row_balanced": 0.7449664429530202,
+        "known_acc": 0.935,
+        "n_active": 0
+      },
+      "ValueForest": {
+        "config": "ValueForest",
+        "seed": 9,
+        "heldout_acc": 1.0,
+        "row_overall": 0.915,
+        "row_balanced": 0.6666666666666666,
+        "known_acc": 0.915,
+        "n_active": 0
+      },
+      "chance": {
+        "heldout_acc": 0.16666666666666666
+      },
+      "ceiling": {
+        "heldout_acc": 1.0
+      }
+    },
+    "audit": {
+      "found": "approach[['emotion = calm', 'task = guard']]",
+      "heldout_region_correct_full": 1.0
+    }
+  },
+  {
+    "seed": 10,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 10,
+        "heldout_acc": 1.0,
+        "row_overall": 0.915,
+        "row_balanced": 0.7083333333333334,
+        "known_acc": 0.93,
+        "n_active": 3
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 10,
+        "heldout_acc": 0.0,
+        "row_overall": 0.695,
+        "row_balanced": 0.25,
+        "known_acc": 0.755,
+        "n_active": 0
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 10,
+        "heldout_acc": 0.0,
+        "row_overall": 0.68,
+        "row_balanced": 0.2446043165467626,
+        "known_acc": 0.745,
+        "n_active": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 10,
+        "heldout_acc": 0.2222222222222222,
+        "row_overall": 0.805,
+        "row_balanced": 0.4117647058823529,
+        "known_acc": 0.835,
+        "n_active": 0
+      },
+      "ValueDListML": {
+        "config": "ValueDListML",
+        "seed": 10,
+        "heldout_acc": 1.0,
+        "row_overall": 0.865,
+        "row_balanced": 0.5380695443645084,
+        "known_acc": 0.885,
+        "n_active": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 10,
+        "heldout_acc": 1.0,
+        "row_overall": 0.915,
+        "row_balanced": 0.8147781774580336,
+        "known_acc": 0.92,
+        "n_active": 0
+      },
+      "ValueForest": {
+        "config": "ValueForest",
+        "seed": 10,
+        "heldout_acc": 0.8611111111111112,
+        "row_overall": 0.855,
+        "row_balanced": 0.4852941176470588,
+        "known_acc": 0.865,
+        "n_active": 0
+      },
+      "chance": {
+        "heldout_acc": 0.19444444444444445
+      },
+      "ceiling": {
+        "heldout_acc": 1.0
+      }
+    },
+    "audit": {
+      "found": "approach[['emotion = calm', 'task = guard']]",
+      "heldout_region_correct_full": 1.0
+    }
+  },
+  {
+    "seed": 11,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 11,
+        "heldout_acc": 1.0,
+        "row_overall": 0.9,
+        "row_balanced": 0.6696047008547008,
+        "known_acc": 0.92,
+        "n_active": 7
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 11,
+        "heldout_acc": 0.0,
+        "row_overall": 0.72,
+        "row_balanced": 0.25,
+        "known_acc": 0.765,
+        "n_active": 0
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 11,
+        "heldout_acc": 0.0,
+        "row_overall": 0.72,
+        "row_balanced": 0.25,
+        "known_acc": 0.765,
+        "n_active": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 11,
+        "heldout_acc": 0.3888888888888889,
+        "row_overall": 0.855,
+        "row_balanced": 0.48275862068965514,
+        "known_acc": 0.86,
+        "n_active": 0
+      },
+      "ValueDListML": {
+        "config": "ValueDListML",
+        "seed": 11,
+        "heldout_acc": 1.0,
+        "row_overall": 0.85,
+        "row_balanced": 0.49479166666666663,
+        "known_acc": 0.855,
+        "n_active": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 11,
+        "heldout_acc": 1.0,
+        "row_overall": 0.92,
+        "row_balanced": 0.7880227411477412,
+        "known_acc": 0.92,
+        "n_active": 0
+      },
+      "ValueForest": {
+        "config": "ValueForest",
+        "seed": 11,
+        "heldout_acc": 1.0,
+        "row_overall": 0.875,
+        "row_balanced": 0.5384615384615384,
+        "known_acc": 0.895,
+        "n_active": 0
+      },
+      "chance": {
+        "heldout_acc": 0.2777777777777778
+      },
+      "ceiling": {
+        "heldout_acc": 1.0
+      }
+    },
+    "audit": {
+      "found": "approach[['emotion = calm', 'task = guard']]",
+      "heldout_region_correct_full": 1.0
+    }
+  },
+  {
+    "seed": 12,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 12,
+        "heldout_acc": 1.0,
+        "row_overall": 0.94,
+        "row_balanced": 0.78125,
+        "known_acc": 0.93,
+        "n_active": 4
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 12,
+        "heldout_acc": 0.0,
+        "row_overall": 0.71,
+        "row_balanced": 0.25,
+        "known_acc": 0.725,
+        "n_active": 0
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 12,
+        "heldout_acc": 0.0,
+        "row_overall": 0.71,
+        "row_balanced": 0.25,
+        "known_acc": 0.725,
+        "n_active": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 12,
+        "heldout_acc": 0.16666666666666666,
+        "row_overall": 0.805,
+        "row_balanced": 0.415625,
+        "known_acc": 0.82,
+        "n_active": 0
+      },
+      "ValueDListML": {
+        "config": "ValueDListML",
+        "seed": 12,
+        "heldout_acc": 1.0,
+        "row_overall": 0.855,
+        "row_balanced": 0.5536971830985915,
+        "known_acc": 0.865,
+        "n_active": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 12,
+        "heldout_acc": 1.0,
+        "row_overall": 0.935,
+        "row_balanced": 0.8609888497652582,
+        "known_acc": 0.945,
+        "n_active": 0
+      },
+      "ValueForest": {
+        "config": "ValueForest",
+        "seed": 12,
+        "heldout_acc": 1.0,
+        "row_overall": 0.895,
+        "row_balanced": 0.6354166666666666,
+        "known_acc": 0.89,
+        "n_active": 0
+      },
+      "chance": {
+        "heldout_acc": 0.25
+      },
+      "ceiling": {
+        "heldout_acc": 1.0
+      }
+    },
+    "audit": {
+      "found": "approach[['emotion = calm', 'task = guard']]",
+      "heldout_region_correct_full": 1.0
+    }
+  },
+  {
+    "seed": 13,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 13,
+        "heldout_acc": 1.0,
+        "row_overall": 0.95,
+        "row_balanced": 0.8412698412698413,
+        "known_acc": 0.97,
+        "n_active": 9
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 13,
+        "heldout_acc": 0.0,
+        "row_overall": 0.71,
+        "row_balanced": 0.25,
+        "known_acc": 0.745,
+        "n_active": 0
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 13,
+        "heldout_acc": 0.0,
+        "row_overall": 0.665,
+        "row_balanced": 0.23415492957746478,
+        "known_acc": 0.695,
+        "n_active": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 13,
+        "heldout_acc": 0.4166666666666667,
+        "row_overall": 0.825,
+        "row_balanced": 0.507925759686323,
+        "known_acc": 0.86,
+        "n_active": 0
+      },
+      "ValueDListML": {
+        "config": "ValueDListML",
+        "seed": 13,
+        "heldout_acc": 1.0,
+        "row_overall": 0.92,
+        "row_balanced": 0.8589313659736195,
+        "known_acc": 0.935,
+        "n_active": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 13,
+        "heldout_acc": 0.9166666666666666,
+        "row_overall": 0.86,
+        "row_balanced": 0.6168893704104972,
+        "known_acc": 0.92,
+        "n_active": 0
+      },
+      "ValueForest": {
+        "config": "ValueForest",
+        "seed": 13,
+        "heldout_acc": 1.0,
+        "row_overall": 0.88,
+        "row_balanced": 0.626984126984127,
+        "known_acc": 0.915,
+        "n_active": 0
+      },
+      "chance": {
+        "heldout_acc": 0.2222222222222222
+      },
+      "ceiling": {
+        "heldout_acc": 1.0
+      }
+    },
+    "audit": {
+      "found": "approach[['emotion = calm', 'task = guard']]",
+      "heldout_region_correct_full": 1.0
+    }
+  },
+  {
+    "seed": 14,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 14,
+        "heldout_acc": 1.0,
+        "row_overall": 0.965,
+        "row_balanced": 0.8833333333333333,
+        "known_acc": 0.965,
+        "n_active": 11
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 14,
+        "heldout_acc": 0.0,
+        "row_overall": 0.71,
+        "row_balanced": 0.25,
+        "known_acc": 0.745,
+        "n_active": 0
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 14,
+        "heldout_acc": 0.0,
+        "row_overall": 0.71,
+        "row_balanced": 0.25,
+        "known_acc": 0.745,
+        "n_active": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 14,
+        "heldout_acc": 0.3611111111111111,
+        "row_overall": 0.815,
+        "row_balanced": 0.46071428571428574,
+        "known_acc": 0.87,
+        "n_active": 0
+      },
+      "ValueDListML": {
+        "config": "ValueDListML",
+        "seed": 14,
+        "heldout_acc": 1.0,
+        "row_overall": 0.895,
+        "row_balanced": 0.65,
+        "known_acc": 0.92,
+        "n_active": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 14,
+        "heldout_acc": 1.0,
+        "row_overall": 0.91,
+        "row_balanced": 0.7894366197183098,
+        "known_acc": 0.925,
+        "n_active": 0
+      },
+      "ValueForest": {
+        "config": "ValueForest",
+        "seed": 14,
+        "heldout_acc": 1.0,
+        "row_overall": 0.915,
+        "row_balanced": 0.7464788732394366,
+        "known_acc": 0.95,
+        "n_active": 0
+      },
+      "chance": {
+        "heldout_acc": 0.1388888888888889
+      },
+      "ceiling": {
+        "heldout_acc": 1.0
+      }
+    },
+    "audit": {
+      "found": "approach[['emotion = calm', 'task = guard']]",
+      "heldout_region_correct_full": 1.0
+    }
+  },
+  {
+    "seed": 15,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 15,
+        "heldout_acc": 1.0,
+        "row_overall": 0.92,
+        "row_balanced": 0.6357142857142857,
+        "known_acc": 0.885,
+        "n_active": 4
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 15,
+        "heldout_acc": 0.0,
+        "row_overall": 0.7,
+        "row_balanced": 0.25,
+        "known_acc": 0.705,
+        "n_active": 0
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 15,
+        "heldout_acc": 0.0,
+        "row_overall": 0.7,
+        "row_balanced": 0.25,
+        "known_acc": 0.705,
+        "n_active": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 15,
+        "heldout_acc": 0.3055555555555556,
+        "row_overall": 0.825,
+        "row_balanced": 0.4681372549019608,
+        "known_acc": 0.79,
+        "n_active": 0
+      },
+      "ValueDListML": {
+        "config": "ValueDListML",
+        "seed": 15,
+        "heldout_acc": 1.0,
+        "row_overall": 0.845,
+        "row_balanced": 0.4910714285714286,
+        "known_acc": 0.84,
+        "n_active": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 15,
+        "heldout_acc": 1.0,
+        "row_overall": 0.885,
+        "row_balanced": 0.6922619047619047,
+        "known_acc": 0.89,
+        "n_active": 0
+      },
+      "ValueForest": {
+        "config": "ValueForest",
+        "seed": 15,
+        "heldout_acc": 0.6666666666666666,
+        "row_overall": 0.875,
+        "row_balanced": 0.5125,
+        "known_acc": 0.875,
+        "n_active": 0
+      },
+      "chance": {
+        "heldout_acc": 0.25
+      },
+      "ceiling": {
+        "heldout_acc": 1.0
+      }
+    },
+    "audit": {
+      "found": "approach[['emotion = calm', 'task = guard']]",
+      "heldout_region_correct_full": 1.0
+    }
+  },
+  {
+    "seed": 16,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 16,
+        "heldout_acc": 1.0,
+        "row_overall": 0.95,
+        "row_balanced": 0.8076923076923077,
+        "known_acc": 0.93,
+        "n_active": 8
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 16,
+        "heldout_acc": 0.0,
+        "row_overall": 0.735,
+        "row_balanced": 0.25,
+        "known_acc": 0.725,
+        "n_active": 0
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 16,
+        "heldout_acc": 0.0,
+        "row_overall": 0.735,
+        "row_balanced": 0.25,
+        "known_acc": 0.725,
+        "n_active": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 16,
+        "heldout_acc": 0.4166666666666667,
+        "row_overall": 0.86,
+        "row_balanced": 0.4814814814814815,
+        "known_acc": 0.84,
+        "n_active": 0
+      },
+      "ValueDListML": {
+        "config": "ValueDListML",
+        "seed": 16,
+        "heldout_acc": 1.0,
+        "row_overall": 0.895,
+        "row_balanced": 0.6662742019884877,
+        "known_acc": 0.87,
+        "n_active": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 16,
+        "heldout_acc": 1.0,
+        "row_overall": 0.895,
+        "row_balanced": 0.6487441130298273,
+        "known_acc": 0.895,
+        "n_active": 0
+      },
+      "ValueForest": {
+        "config": "ValueForest",
+        "seed": 16,
+        "heldout_acc": 1.0,
+        "row_overall": 0.925,
+        "row_balanced": 0.7115384615384616,
+        "known_acc": 0.88,
+        "n_active": 0
+      },
+      "chance": {
+        "heldout_acc": 0.19444444444444445
+      },
+      "ceiling": {
+        "heldout_acc": 1.0
+      }
+    },
+    "audit": {
+      "found": "approach[['emotion = calm', 'task = guard']]",
+      "heldout_region_correct_full": 1.0
+    }
+  },
+  {
+    "seed": 17,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 17,
+        "heldout_acc": 1.0,
+        "row_overall": 0.905,
+        "row_balanced": 0.6875,
+        "known_acc": 0.91,
+        "n_active": 6
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 17,
+        "heldout_acc": 0.0,
+        "row_overall": 0.71,
+        "row_balanced": 0.25,
+        "known_acc": 0.72,
+        "n_active": 0
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 17,
+        "heldout_acc": 0.0,
+        "row_overall": 0.71,
+        "row_balanced": 0.25,
+        "known_acc": 0.72,
+        "n_active": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 17,
+        "heldout_acc": 0.16666666666666666,
+        "row_overall": 0.805,
+        "row_balanced": 0.43333333333333335,
+        "known_acc": 0.79,
+        "n_active": 0
+      },
+      "ValueDListML": {
+        "config": "ValueDListML",
+        "seed": 17,
+        "heldout_acc": 1.0,
+        "row_overall": 0.86,
+        "row_balanced": 0.6144366197183099,
+        "known_acc": 0.855,
+        "n_active": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 17,
+        "heldout_acc": 0.9166666666666666,
+        "row_overall": 0.945,
+        "row_balanced": 0.9227699530516432,
+        "known_acc": 0.955,
+        "n_active": 0
+      },
+      "ValueForest": {
+        "config": "ValueForest",
+        "seed": 17,
+        "heldout_acc": 0.9166666666666666,
+        "row_overall": 0.915,
+        "row_balanced": 0.703125,
+        "known_acc": 0.895,
+        "n_active": 0
+      },
+      "chance": {
+        "heldout_acc": 0.2777777777777778
+      },
+      "ceiling": {
+        "heldout_acc": 1.0
+      }
+    },
+    "audit": {
+      "found": "approach[['emotion = calm', 'task = guard']]",
+      "heldout_region_correct_full": 1.0
+    }
+  },
+  {
+    "seed": 18,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 18,
+        "heldout_acc": 1.0,
+        "row_overall": 0.885,
+        "row_balanced": 0.575,
+        "known_acc": 0.885,
+        "n_active": 4
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 18,
+        "heldout_acc": 0.0,
+        "row_overall": 0.715,
+        "row_balanced": 0.25,
+        "known_acc": 0.725,
+        "n_active": 0
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 18,
+        "heldout_acc": 0.0,
+        "row_overall": 0.715,
+        "row_balanced": 0.25,
+        "known_acc": 0.725,
+        "n_active": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 18,
+        "heldout_acc": 0.2222222222222222,
+        "row_overall": 0.78,
+        "row_balanced": 0.3548387096774194,
+        "known_acc": 0.8,
+        "n_active": 0
+      },
+      "ValueDListML": {
+        "config": "ValueDListML",
+        "seed": 18,
+        "heldout_acc": 1.0,
+        "row_overall": 0.895,
+        "row_balanced": 0.625,
+        "known_acc": 0.895,
+        "n_active": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 18,
+        "heldout_acc": 1.0,
+        "row_overall": 0.885,
+        "row_balanced": 0.6533872377622377,
+        "known_acc": 0.905,
+        "n_active": 0
+      },
+      "ValueForest": {
+        "config": "ValueForest",
+        "seed": 18,
+        "heldout_acc": 0.7222222222222222,
+        "row_overall": 0.92,
+        "row_balanced": 0.684375,
+        "known_acc": 0.905,
+        "n_active": 0
+      },
+      "chance": {
+        "heldout_acc": 0.16666666666666666
+      },
+      "ceiling": {
+        "heldout_acc": 1.0
+      }
+    },
+    "audit": {
+      "found": "approach[['emotion = calm', 'task = guard']]",
+      "heldout_region_correct_full": 1.0
+    }
+  },
+  {
+    "seed": 19,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 19,
+        "heldout_acc": 1.0,
+        "row_overall": 0.935,
+        "row_balanced": 0.7348484848484849,
+        "known_acc": 0.92,
+        "n_active": 8
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 19,
+        "heldout_acc": 0.0,
+        "row_overall": 0.765,
+        "row_balanced": 0.25,
+        "known_acc": 0.77,
+        "n_active": 0
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 19,
+        "heldout_acc": 0.0,
+        "row_overall": 0.765,
+        "row_balanced": 0.25,
+        "known_acc": 0.77,
+        "n_active": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 19,
+        "heldout_acc": 0.25,
+        "row_overall": 0.85,
+        "row_balanced": 0.45714285714285713,
+        "known_acc": 0.87,
+        "n_active": 0
+      },
+      "ValueDListML": {
+        "config": "ValueDListML",
+        "seed": 19,
+        "heldout_acc": 1.0,
+        "row_overall": 0.86,
+        "row_balanced": 0.6443850267379679,
+        "known_acc": 0.88,
+        "n_active": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 19,
+        "heldout_acc": 1.0,
+        "row_overall": 0.89,
+        "row_balanced": 0.7262032085561497,
+        "known_acc": 0.905,
+        "n_active": 0
+      },
+      "ValueForest": {
+        "config": "ValueForest",
+        "seed": 19,
+        "heldout_acc": 1.0,
+        "row_overall": 0.89,
+        "row_balanced": 0.5909090909090909,
+        "known_acc": 0.92,
+        "n_active": 0
+      },
+      "chance": {
+        "heldout_acc": 0.3055555555555556
+      },
+      "ceiling": {
+        "heldout_acc": 1.0
+      }
+    },
+    "audit": {
+      "found": "approach[['emotion = calm', 'task = guard']]",
+      "heldout_region_correct_full": 1.0
+    }
+  },
+  {
+    "seed": 20,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 20,
+        "heldout_acc": 1.0,
+        "row_overall": 0.95,
+        "row_balanced": 0.7857142857142857,
+        "known_acc": 0.955,
+        "n_active": 10
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 20,
+        "heldout_acc": 0.0,
+        "row_overall": 0.76,
+        "row_balanced": 0.25,
+        "known_acc": 0.775,
+        "n_active": 0
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 20,
+        "heldout_acc": 0.0,
+        "row_overall": 0.76,
+        "row_balanced": 0.25,
+        "known_acc": 0.775,
+        "n_active": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 20,
+        "heldout_acc": 0.3611111111111111,
+        "row_overall": 0.85,
+        "row_balanced": 0.45208333333333334,
+        "known_acc": 0.84,
+        "n_active": 0
+      },
+      "ValueDListML": {
+        "config": "ValueDListML",
+        "seed": 20,
+        "heldout_acc": 1.0,
+        "row_overall": 0.925,
+        "row_balanced": 0.6607142857142857,
+        "known_acc": 0.92,
+        "n_active": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 20,
+        "heldout_acc": 0.8055555555555556,
+        "row_overall": 0.925,
+        "row_balanced": 0.7838972431077694,
+        "known_acc": 0.91,
+        "n_active": 0
+      },
+      "ValueForest": {
+        "config": "ValueForest",
+        "seed": 20,
+        "heldout_acc": 0.9166666666666666,
+        "row_overall": 0.905,
+        "row_balanced": 0.6035714285714285,
+        "known_acc": 0.915,
+        "n_active": 0
+      },
+      "chance": {
+        "heldout_acc": 0.2222222222222222
+      },
+      "ceiling": {
+        "heldout_acc": 1.0
+      }
+    },
+    "audit": {
+      "found": "approach[['emotion = calm', 'task = guard']]",
+      "heldout_region_correct_full": 1.0
+    }
+  },
+  {
+    "seed": 21,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 21,
+        "heldout_acc": 1.0,
+        "row_overall": 0.915,
+        "row_balanced": 0.5588235294117647,
+        "known_acc": 0.895,
+        "n_active": 4
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 21,
+        "heldout_acc": 0.0,
+        "row_overall": 0.79,
+        "row_balanced": 0.25,
+        "known_acc": 0.78,
+        "n_active": 0
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 21,
+        "heldout_acc": 0.0,
+        "row_overall": 0.79,
+        "row_balanced": 0.25,
+        "known_acc": 0.78,
+        "n_active": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 21,
+        "heldout_acc": 0.5833333333333334,
+        "row_overall": 0.88,
+        "row_balanced": 0.4642857142857143,
+        "known_acc": 0.87,
+        "n_active": 0
+      },
+      "ValueDListML": {
+        "config": "ValueDListML",
+        "seed": 21,
+        "heldout_acc": 1.0,
+        "row_overall": 0.85,
+        "row_balanced": 0.5251303052866716,
+        "known_acc": 0.855,
+        "n_active": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 21,
+        "heldout_acc": 1.0,
+        "row_overall": 0.9,
+        "row_balanced": 0.6843354430379747,
+        "known_acc": 0.855,
+        "n_active": 0
+      },
+      "ValueForest": {
+        "config": "ValueForest",
+        "seed": 21,
+        "heldout_acc": 0.9722222222222222,
+        "row_overall": 0.915,
+        "row_balanced": 0.5588235294117647,
+        "known_acc": 0.885,
+        "n_active": 0
+      },
+      "chance": {
+        "heldout_acc": 0.3333333333333333
+      },
+      "ceiling": {
+        "heldout_acc": 1.0
+      }
+    },
+    "audit": {
+      "found": "approach[['emotion = calm', 'task = guard']]",
+      "heldout_region_correct_full": 1.0
+    }
+  },
+  {
+    "seed": 22,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 22,
+        "heldout_acc": 1.0,
+        "row_overall": 0.885,
+        "row_balanced": 0.6294312510755464,
+        "known_acc": 0.88,
+        "n_active": 6
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 22,
+        "heldout_acc": 0.0,
+        "row_overall": 0.745,
+        "row_balanced": 0.25,
+        "known_acc": 0.75,
+        "n_active": 0
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 22,
+        "heldout_acc": 0.0,
+        "row_overall": 0.745,
+        "row_balanced": 0.25,
+        "known_acc": 0.75,
+        "n_active": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 22,
+        "heldout_acc": 0.1111111111111111,
+        "row_overall": 0.825,
+        "row_balanced": 0.40384615384615385,
+        "known_acc": 0.82,
+        "n_active": 0
+      },
+      "ValueDListML": {
+        "config": "ValueDListML",
+        "seed": 22,
+        "heldout_acc": 1.0,
+        "row_overall": 0.9,
+        "row_balanced": 0.5961538461538461,
+        "known_acc": 0.885,
+        "n_active": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 22,
+        "heldout_acc": 1.0,
+        "row_overall": 0.925,
+        "row_balanced": 0.8647070211667527,
+        "known_acc": 0.91,
+        "n_active": 0
+      },
+      "ValueForest": {
+        "config": "ValueForest",
+        "seed": 22,
+        "heldout_acc": 0.9166666666666666,
+        "row_overall": 0.905,
+        "row_balanced": 0.6824664429530202,
+        "known_acc": 0.905,
+        "n_active": 0
+      },
+      "chance": {
+        "heldout_acc": 0.3333333333333333
+      },
+      "ceiling": {
+        "heldout_acc": 1.0
+      }
+    },
+    "audit": {
+      "found": "approach[['emotion = calm', 'task = guard']]",
+      "heldout_region_correct_full": 1.0
+    }
+  },
+  {
+    "seed": 23,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 23,
+        "heldout_acc": 1.0,
+        "row_overall": 0.935,
+        "row_balanced": 0.7680288461538461,
+        "known_acc": 0.935,
+        "n_active": 6
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 23,
+        "heldout_acc": 0.0,
+        "row_overall": 0.73,
+        "row_balanced": 0.25,
+        "known_acc": 0.73,
+        "n_active": 0
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 23,
+        "heldout_acc": 0.0,
+        "row_overall": 0.73,
+        "row_balanced": 0.25,
+        "known_acc": 0.73,
+        "n_active": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 23,
+        "heldout_acc": 0.05555555555555555,
+        "row_overall": 0.81,
+        "row_balanced": 0.415625,
+        "known_acc": 0.805,
+        "n_active": 0
+      },
+      "ValueDListML": {
+        "config": "ValueDListML",
+        "seed": 23,
+        "heldout_acc": 1.0,
+        "row_overall": 0.86,
+        "row_balanced": 0.5192307692307693,
+        "known_acc": 0.865,
+        "n_active": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 23,
+        "heldout_acc": 1.0,
+        "row_overall": 0.91,
+        "row_balanced": 0.7769856427818757,
+        "known_acc": 0.89,
+        "n_active": 0
+      },
+      "ValueForest": {
+        "config": "ValueForest",
+        "seed": 23,
+        "heldout_acc": 0.9722222222222222,
+        "row_overall": 0.86,
+        "row_balanced": 0.515625,
+        "known_acc": 0.865,
+        "n_active": 0
+      },
+      "chance": {
+        "heldout_acc": 0.2222222222222222
+      },
+      "ceiling": {
+        "heldout_acc": 1.0
+      }
+    },
+    "audit": {
+      "found": "approach[['emotion = calm', 'task = guard']]",
+      "heldout_region_correct_full": 1.0
+    }
+  },
+  {
+    "seed": 24,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 24,
+        "heldout_acc": 1.0,
+        "row_overall": 0.955,
+        "row_balanced": 0.75,
+        "known_acc": 0.95,
+        "n_active": 4
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 24,
+        "heldout_acc": 0.0,
+        "row_overall": 0.77,
+        "row_balanced": 0.25,
+        "known_acc": 0.71,
+        "n_active": 0
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 24,
+        "heldout_acc": 0.0,
+        "row_overall": 0.77,
+        "row_balanced": 0.25,
+        "known_acc": 0.71,
+        "n_active": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 24,
+        "heldout_acc": 0.1388888888888889,
+        "row_overall": 0.85,
+        "row_balanced": 0.40384615384615385,
+        "known_acc": 0.825,
+        "n_active": 0
+      },
+      "ValueDListML": {
+        "config": "ValueDListML",
+        "seed": 24,
+        "heldout_acc": 1.0,
+        "row_overall": 0.915,
+        "row_balanced": 0.6525974025974026,
+        "known_acc": 0.89,
+        "n_active": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 24,
+        "heldout_acc": 1.0,
+        "row_overall": 0.95,
+        "row_balanced": 0.9053030303030303,
+        "known_acc": 0.93,
+        "n_active": 0
+      },
+      "ValueForest": {
+        "config": "ValueForest",
+        "seed": 24,
+        "heldout_acc": 0.6944444444444444,
+        "row_overall": 0.91,
+        "row_balanced": 0.6241258741258742,
+        "known_acc": 0.885,
+        "n_active": 0
+      },
+      "chance": {
+        "heldout_acc": 0.16666666666666666
+      },
+      "ceiling": {
+        "heldout_acc": 1.0
+      }
+    },
+    "audit": {
+      "found": "approach[['emotion = calm', 'task = guard']]",
+      "heldout_region_correct_full": 1.0
+    }
+  }
+]

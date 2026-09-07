@@ -1,19 +1,13 @@
-# Byte-compiled / optimized / DLL files
 __pycache__/
-*.py[cod]
-*$py.class
-
-# Checkpoints / states
-checkpoints/*.pkl
-
-# Environment
+*.pyc
+*.pyo
+*.egg-info/
 .venv/
 venv/
 env/
-
-# Streamlit
-.streamlit/
-
-# OS
+*.log
 .DS_Store
-Thumbs.db
+.idea/
+.vscode/
+*.json~
+*.bak
