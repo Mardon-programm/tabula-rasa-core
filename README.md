@@ -519,4 +519,4 @@ Key papers informing this architecture:
 **Status**: Experimental research architecture (v1.0)
 **Scope**: Controlled experiments on non-pretrained world-model learning and adaptation
 **Last Updated**: 2026
-**Maintained by**: [Your Team]
+**Maintained by**: Mardon
