@@ -1,0 +1,554 @@
+[
+  {
+    "config_name": "phase4",
+    "seed": 1,
+    "metrics": {
+      "heldout_accuracy": 1.0,
+      "row_balanced_accuracy": 0.5666666666666667,
+      "row_overall_accuracy": 0.9,
+      "known_accuracy": 0.865
+    },
+    "artifacts": {
+      "full_results": {
+        "seed": 1,
+        "results": {
+          "full_bp": {
+            "config": "full_bp",
+            "seed": 1,
+            "heldout_acc": 1.0,
+            "row_overall": 0.9,
+            "row_balanced": 0.5666666666666667,
+            "known_acc": 0.865,
+            "n_active": 4
+          },
+          "ab_no_compose": {
+            "config": "ab_no_compose",
+            "seed": 1,
+            "heldout_acc": 0.0,
+            "row_overall": 0.74,
+            "row_balanced": 0.25,
+            "known_acc": 0.72,
+            "n_active": 0
+          },
+          "null_bp": {
+            "config": "null_bp",
+            "seed": 1,
+            "heldout_acc": 0.0,
+            "row_overall": 0.74,
+            "row_balanced": 0.25,
+            "known_acc": 0.72,
+            "n_active": 0
+          },
+          "ValuekNN": {
+            "config": "ValuekNN",
+            "seed": 1,
+            "heldout_acc": 0.4444444444444444,
+            "row_overall": 0.82,
+            "row_balanced": 0.40009652509652505,
+            "known_acc": 0.805,
+            "n_active": 0
+          },
+          "ValueDListML": {
+            "config": "ValueDListML",
+            "seed": 1,
+            "heldout_acc": 1.0,
+            "row_overall": 0.82,
+            "row_balanced": 0.4797297297297297,
+            "known_acc": 0.81,
+            "n_active": 0
+          },
+          "ValueTree": {
+            "config": "ValueTree",
+            "seed": 1,
+            "heldout_acc": 1.0,
+            "row_overall": 0.915,
+            "row_balanced": 0.7843093093093093,
+            "known_acc": 0.91,
+            "n_active": 0
+          },
+          "ValueForest": {
+            "config": "ValueForest",
+            "seed": 1,
+            "heldout_acc": 0.75,
+            "row_overall": 0.895,
+            "row_balanced": 0.5833333333333334,
+            "known_acc": 0.86,
+            "n_active": 0
+          },
+          "chance": {
+            "heldout_acc": 0.2222222222222222
+          },
+          "ceiling": {
+            "heldout_acc": 1.0
+          }
+        },
+        "audit": {
+          "found": "approach[['emotion = calm', 'task = guard']]",
+          "heldout_region_correct_full": 1.0
+        }
+      }
+    },
+    "runtime_seconds": 0.9909408092498779,
+    "git_commit": null
+  },
+  {
+    "config_name": "phase4",
+    "seed": 2,
+    "metrics": {
+      "heldout_accuracy": 1.0,
+      "row_balanced_accuracy": 0.6806972789115646,
+      "row_overall_accuracy": 0.91,
+      "known_accuracy": 0.885
+    },
+    "artifacts": {
+      "full_results": {
+        "seed": 2,
+        "results": {
+          "full_bp": {
+            "config": "full_bp",
+            "seed": 2,
+            "heldout_acc": 1.0,
+            "row_overall": 0.91,
+            "row_balanced": 0.6806972789115646,
+            "known_acc": 0.885,
+            "n_active": 5
+          },
+          "ab_no_compose": {
+            "config": "ab_no_compose",
+            "seed": 2,
+            "heldout_acc": 0.0,
+            "row_overall": 0.735,
+            "row_balanced": 0.25,
+            "known_acc": 0.715,
+            "n_active": 0
+          },
+          "null_bp": {
+            "config": "null_bp",
+            "seed": 2,
+            "heldout_acc": 0.0,
+            "row_overall": 0.735,
+            "row_balanced": 0.25,
+            "known_acc": 0.715,
+            "n_active": 0
+          },
+          "ValuekNN": {
+            "config": "ValuekNN",
+            "seed": 2,
+            "heldout_acc": 0.4444444444444444,
+            "row_overall": 0.845,
+            "row_balanced": 0.4583333333333333,
+            "known_acc": 0.815,
+            "n_active": 0
+          },
+          "ValueDListML": {
+            "config": "ValueDListML",
+            "seed": 2,
+            "heldout_acc": 1.0,
+            "row_overall": 0.865,
+            "row_balanced": 0.4931972789115646,
+            "known_acc": 0.835,
+            "n_active": 0
+          },
+          "ValueTree": {
+            "config": "ValueTree",
+            "seed": 2,
+            "heldout_acc": 1.0,
+            "row_overall": 0.94,
+            "row_balanced": 0.8017161410018553,
+            "known_acc": 0.88,
+            "n_active": 0
+          },
+          "ValueForest": {
+            "config": "ValueForest",
+            "seed": 2,
+            "heldout_acc": 0.8888888888888888,
+            "row_overall": 0.89,
+            "row_balanced": 0.5333333333333333,
+            "known_acc": 0.87,
+            "n_active": 0
+          },
+          "chance": {
+            "heldout_acc": 0.19444444444444445
+          },
+          "ceiling": {
+            "heldout_acc": 1.0
+          }
+        },
+        "audit": {
+          "found": "approach[['emotion = calm', 'task = guard']]",
+          "heldout_region_correct_full": 1.0
+        }
+      }
+    },
+    "runtime_seconds": 0.8811814785003662,
+    "git_commit": null
+  },
+  {
+    "config_name": "phase4",
+    "seed": 1,
+    "metrics": {
+      "heldout_accuracy": 1.0,
+      "row_balanced_accuracy": 0.5666666666666667,
+      "row_overall_accuracy": 0.9,
+      "known_accuracy": 0.865
+    },
+    "artifacts": {
+      "full_results": {
+        "seed": 1,
+        "results": {
+          "full_bp": {
+            "config": "full_bp",
+            "seed": 1,
+            "heldout_acc": 1.0,
+            "row_overall": 0.9,
+            "row_balanced": 0.5666666666666667,
+            "known_acc": 0.865,
+            "n_active": 4
+          },
+          "ab_no_compose": {
+            "config": "ab_no_compose",
+            "seed": 1,
+            "heldout_acc": 0.0,
+            "row_overall": 0.74,
+            "row_balanced": 0.25,
+            "known_acc": 0.72,
+            "n_active": 0
+          },
+          "null_bp": {
+            "config": "null_bp",
+            "seed": 1,
+            "heldout_acc": 0.0,
+            "row_overall": 0.74,
+            "row_balanced": 0.25,
+            "known_acc": 0.72,
+            "n_active": 0
+          },
+          "ValuekNN": {
+            "config": "ValuekNN",
+            "seed": 1,
+            "heldout_acc": 0.4444444444444444,
+            "row_overall": 0.82,
+            "row_balanced": 0.40009652509652505,
+            "known_acc": 0.805,
+            "n_active": 0
+          },
+          "ValueDListML": {
+            "config": "ValueDListML",
+            "seed": 1,
+            "heldout_acc": 1.0,
+            "row_overall": 0.82,
+            "row_balanced": 0.4797297297297297,
+            "known_acc": 0.81,
+            "n_active": 0
+          },
+          "ValueTree": {
+            "config": "ValueTree",
+            "seed": 1,
+            "heldout_acc": 1.0,
+            "row_overall": 0.915,
+            "row_balanced": 0.7843093093093093,
+            "known_acc": 0.91,
+            "n_active": 0
+          },
+          "ValueForest": {
+            "config": "ValueForest",
+            "seed": 1,
+            "heldout_acc": 0.75,
+            "row_overall": 0.895,
+            "row_balanced": 0.5833333333333334,
+            "known_acc": 0.86,
+            "n_active": 0
+          },
+          "chance": {
+            "heldout_acc": 0.2222222222222222
+          },
+          "ceiling": {
+            "heldout_acc": 1.0
+          }
+        },
+        "audit": {
+          "found": "approach[['emotion = calm', 'task = guard']]",
+          "heldout_region_correct_full": 1.0
+        }
+      }
+    },
+    "runtime_seconds": 0.8459949493408203,
+    "git_commit": null
+  },
+  {
+    "config_name": "phase4",
+    "seed": 2,
+    "metrics": {
+      "heldout_accuracy": 1.0,
+      "row_balanced_accuracy": 0.6806972789115646,
+      "row_overall_accuracy": 0.91,
+      "known_accuracy": 0.885
+    },
+    "artifacts": {
+      "full_results": {
+        "seed": 2,
+        "results": {
+          "full_bp": {
+            "config": "full_bp",
+            "seed": 2,
+            "heldout_acc": 1.0,
+            "row_overall": 0.91,
+            "row_balanced": 0.6806972789115646,
+            "known_acc": 0.885,
+            "n_active": 5
+          },
+          "ab_no_compose": {
+            "config": "ab_no_compose",
+            "seed": 2,
+            "heldout_acc": 0.0,
+            "row_overall": 0.735,
+            "row_balanced": 0.25,
+            "known_acc": 0.715,
+            "n_active": 0
+          },
+          "null_bp": {
+            "config": "null_bp",
+            "seed": 2,
+            "heldout_acc": 0.0,
+            "row_overall": 0.735,
+            "row_balanced": 0.25,
+            "known_acc": 0.715,
+            "n_active": 0
+          },
+          "ValuekNN": {
+            "config": "ValuekNN",
+            "seed": 2,
+            "heldout_acc": 0.4444444444444444,
+            "row_overall": 0.845,
+            "row_balanced": 0.4583333333333333,
+            "known_acc": 0.815,
+            "n_active": 0
+          },
+          "ValueDListML": {
+            "config": "ValueDListML",
+            "seed": 2,
+            "heldout_acc": 1.0,
+            "row_overall": 0.865,
+            "row_balanced": 0.4931972789115646,
+            "known_acc": 0.835,
+            "n_active": 0
+          },
+          "ValueTree": {
+            "config": "ValueTree",
+            "seed": 2,
+            "heldout_acc": 1.0,
+            "row_overall": 0.94,
+            "row_balanced": 0.8017161410018553,
+            "known_acc": 0.88,
+            "n_active": 0
+          },
+          "ValueForest": {
+            "config": "ValueForest",
+            "seed": 2,
+            "heldout_acc": 0.8888888888888888,
+            "row_overall": 0.89,
+            "row_balanced": 0.5333333333333333,
+            "known_acc": 0.87,
+            "n_active": 0
+          },
+          "chance": {
+            "heldout_acc": 0.19444444444444445
+          },
+          "ceiling": {
+            "heldout_acc": 1.0
+          }
+        },
+        "audit": {
+          "found": "approach[['emotion = calm', 'task = guard']]",
+          "heldout_region_correct_full": 1.0
+        }
+      }
+    },
+    "runtime_seconds": 0.8900926113128662,
+    "git_commit": null
+  },
+  {
+    "config_name": "phase4",
+    "seed": 1,
+    "metrics": {
+      "heldout_accuracy": 1.0,
+      "row_balanced_accuracy": 0.5666666666666667,
+      "row_overall_accuracy": 0.9,
+      "known_accuracy": 0.865
+    },
+    "artifacts": {
+      "full_results": {
+        "seed": 1,
+        "results": {
+          "full_bp": {
+            "config": "full_bp",
+            "seed": 1,
+            "heldout_acc": 1.0,
+            "row_overall": 0.9,
+            "row_balanced": 0.5666666666666667,
+            "known_acc": 0.865,
+            "n_active": 4
+          },
+          "ab_no_compose": {
+            "config": "ab_no_compose",
+            "seed": 1,
+            "heldout_acc": 0.0,
+            "row_overall": 0.74,
+            "row_balanced": 0.25,
+            "known_acc": 0.72,
+            "n_active": 0
+          },
+          "null_bp": {
+            "config": "null_bp",
+            "seed": 1,
+            "heldout_acc": 0.0,
+            "row_overall": 0.74,
+            "row_balanced": 0.25,
+            "known_acc": 0.72,
+            "n_active": 0
+          },
+          "ValuekNN": {
+            "config": "ValuekNN",
+            "seed": 1,
+            "heldout_acc": 0.4444444444444444,
+            "row_overall": 0.82,
+            "row_balanced": 0.40009652509652505,
+            "known_acc": 0.805,
+            "n_active": 0
+          },
+          "ValueDListML": {
+            "config": "ValueDListML",
+            "seed": 1,
+            "heldout_acc": 1.0,
+            "row_overall": 0.82,
+            "row_balanced": 0.4797297297297297,
+            "known_acc": 0.81,
+            "n_active": 0
+          },
+          "ValueTree": {
+            "config": "ValueTree",
+            "seed": 1,
+            "heldout_acc": 1.0,
+            "row_overall": 0.915,
+            "row_balanced": 0.7843093093093093,
+            "known_acc": 0.91,
+            "n_active": 0
+          },
+          "ValueForest": {
+            "config": "ValueForest",
+            "seed": 1,
+            "heldout_acc": 0.75,
+            "row_overall": 0.895,
+            "row_balanced": 0.5833333333333334,
+            "known_acc": 0.86,
+            "n_active": 0
+          },
+          "chance": {
+            "heldout_acc": 0.2222222222222222
+          },
+          "ceiling": {
+            "heldout_acc": 1.0
+          }
+        },
+        "audit": {
+          "found": "approach[['emotion = calm', 'task = guard']]",
+          "heldout_region_correct_full": 1.0
+        }
+      }
+    },
+    "runtime_seconds": 0.8479771614074707,
+    "git_commit": null
+  },
+  {
+    "config_name": "phase4",
+    "seed": 2,
+    "metrics": {
+      "heldout_accuracy": 1.0,
+      "row_balanced_accuracy": 0.6806972789115646,
+      "row_overall_accuracy": 0.91,
+      "known_accuracy": 0.885
+    },
+    "artifacts": {
+      "full_results": {
+        "seed": 2,
+        "results": {
+          "full_bp": {
+            "config": "full_bp",
+            "seed": 2,
+            "heldout_acc": 1.0,
+            "row_overall": 0.91,
+            "row_balanced": 0.6806972789115646,
+            "known_acc": 0.885,
+            "n_active": 5
+          },
+          "ab_no_compose": {
+            "config": "ab_no_compose",
+            "seed": 2,
+            "heldout_acc": 0.0,
+            "row_overall": 0.735,
+            "row_balanced": 0.25,
+            "known_acc": 0.715,
+            "n_active": 0
+          },
+          "null_bp": {
+            "config": "null_bp",
+            "seed": 2,
+            "heldout_acc": 0.0,
+            "row_overall": 0.735,
+            "row_balanced": 0.25,
+            "known_acc": 0.715,
+            "n_active": 0
+          },
+          "ValuekNN": {
+            "config": "ValuekNN",
+            "seed": 2,
+            "heldout_acc": 0.4444444444444444,
+            "row_overall": 0.845,
+            "row_balanced": 0.4583333333333333,
+            "known_acc": 0.815,
+            "n_active": 0
+          },
+          "ValueDListML": {
+            "config": "ValueDListML",
+            "seed": 2,
+            "heldout_acc": 1.0,
+            "row_overall": 0.865,
+            "row_balanced": 0.4931972789115646,
+            "known_acc": 0.835,
+            "n_active": 0
+          },
+          "ValueTree": {
+            "config": "ValueTree",
+            "seed": 2,
+            "heldout_acc": 1.0,
+            "row_overall": 0.94,
+            "row_balanced": 0.8017161410018553,
+            "known_acc": 0.88,
+            "n_active": 0
+          },
+          "ValueForest": {
+            "config": "ValueForest",
+            "seed": 2,
+            "heldout_acc": 0.8888888888888888,
+            "row_overall": 0.89,
+            "row_balanced": 0.5333333333333333,
+            "known_acc": 0.87,
+            "n_active": 0
+          },
+          "chance": {
+            "heldout_acc": 0.19444444444444445
+          },
+          "ceiling": {
+            "heldout_acc": 1.0
+          }
+        },
+        "audit": {
+          "found": "approach[['emotion = calm', 'task = guard']]",
+          "heldout_region_correct_full": 1.0
+        }
+      }
+    },
+    "runtime_seconds": 0.863344669342041,
+    "git_commit": null
+  }
+]

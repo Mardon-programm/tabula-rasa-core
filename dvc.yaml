@@ -1,0 +1,206 @@
+# DVC Pipeline for TR-Core Experiments
+# Run with: dvc repro
+
+stages:
+  # Data generation stage
+  generate_data_v3:
+    cmd: python -m experiments.generate_data --config conf/experiment/phase3.yaml --output data/phase3
+    deps:
+      - experiments/generate_data.py
+      - conf/experiment/phase3.yaml
+      - environment/attribute_tasks_v3.py
+    outs:
+      - data/phase3/train.json
+      - data/phase3/known.json
+      - data/phase3/test_T1.json
+      - data/phase3/test_T2.json
+      - data/phase3/test_T3.json
+
+  generate_data_v4:
+    cmd: python -m experiments.generate_data --config conf/experiment/phase4.yaml --output data/phase4
+    deps:
+      - experiments/generate_data.py
+      - conf/experiment/phase4.yaml
+      - environment/attribute_tasks_v4.py
+    outs:
+      - data/phase4/train.json
+      - data/phase4/known.json
+      - data/phase4/heldout_test.json
+      - data/phase4/row_test.json
+
+  # Phase 3 experiment
+  run_phase3:
+    cmd: python -m experiments.run_hydra experiment=phase3 seed=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24 --multirun
+    deps:
+      - experiments/run_hydra.py
+      - experiments/experiment_phase3.py
+      - experiments/compositional_baselines.py
+      - behavioral/program_v3.py
+      - behavioral/program.py
+      - behavioral/rules.py
+      - conf/experiment/phase3.yaml
+      - conf/agent/behavioral_program_v3.yaml
+      - conf/env/attribute_tasks_v3.yaml
+      - data/phase3
+    outs:
+      - results/phase3_main.json:
+          cache: true
+      - results/phase3_replication.json:
+          cache: true
+      - results/phase3_summary.json:
+          cache: true
+
+  # Phase 4 experiment
+  run_phase4:
+    cmd: python -m experiments.run_hydra experiment=phase4 seed=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24 --multirun
+    deps:
+      - experiments/run_hydra.py
+      - experiments/experiment_phase4.py
+      - experiments/compositional_baselines.py
+      - behavioral/program_v3.py
+      - behavioral/program.py
+      - behavioral/rules.py
+      - conf/experiment/phase4.yaml
+      - conf/agent/behavioral_program_v3.yaml
+      - conf/env/attribute_tasks_v4.yaml
+      - data/phase4
+    outs:
+      - results/phase4_main.json:
+          cache: true
+      - results/phase4_replication.json:
+          cache: true
+      - results/phase4_summary.json:
+          cache: true
+
+  # Ablation studies
+  run_ablations_phase3:
+    cmd: python -m experiments.run_hydra experiment=phase3 seed=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24 agent.allowed_operations="['CREATE', 'MODIFY', 'GENERALIZE', 'SPECIALIZE', 'SPLIT', 'DELETE']" --multirun
+    deps:
+      - experiments/run_hydra.py
+      - experiments/experiment_phase3.py
+      - behavioral/program_v3.py
+      - conf/experiment/phase3.yaml
+      - conf/agent/behavioral_program_v3.yaml
+    outs:
+      - results/phase3_ab_no_compose.json:
+          cache: true
+
+  run_ablations_phase4:
+    cmd: python -m experiments.run_hydra experiment=phase4 seed=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24 agent.allowed_operations="['CREATE', 'MODIFY', 'GENERALIZE', 'SPECIALIZE', 'SPLIT', 'DELETE']" --multirun
+    deps:
+      - experiments/run_hydra.py
+      - experiments/experiment_phase4.py
+      - behavioral/program_v3.py
+      - conf/experiment/phase4.yaml
+      - conf/agent/behavioral_program_v3.yaml
+    outs:
+      - results/phase4_ab_no_compose.json:
+          cache: true
+
+  # Null control (randomized outcomes)
+  run_null_phase3:
+    cmd: python -m experiments.run_hydra experiment=phase3 seed=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24 agent.randomize_outcomes=true --multirun
+    deps:
+      - experiments/run_hydra.py
+      - experiments/experiment_phase3.py
+      - behavioral/program_v3.py
+      - conf/experiment/phase3.yaml
+      - conf/agent/behavioral_program_v3.yaml
+    outs:
+      - results/phase3_null_bp.json:
+          cache: true
+
+  run_null_phase4:
+    cmd: python -m experiments.run_hydra experiment=phase4 seed=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24 agent.randomize_outcomes=true --multirun
+    deps:
+      - experiments/run_hydra.py
+      - experiments/experiment_phase4.py
+      - behavioral/program_v3.py
+      - conf/experiment/phase4.yaml
+      - conf/agent/behavioral_program_v3.yaml
+    outs:
+      - results/phase4_null_bp.json:
+          cache: true
+
+  # Parameter sweep: max_arity
+  sweep_max_arity_phase3:
+    cmd: python -m experiments.run_hydra experiment=phase3 seed=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24 agent.max_arity=2,3,4,5 --multirun
+    deps:
+      - experiments/run_hydra.py
+      - experiments/experiment_phase3.py
+      - behavioral/program_v3.py
+      - conf/experiment/phase3.yaml
+      - conf/agent/behavioral_program_v3.yaml
+    outs:
+      - results/phase3_sweep_max_arity.json:
+          cache: true
+
+  sweep_max_arity_phase4:
+    cmd: python -m experiments.run_hydra experiment=phase4 seed=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24 agent.max_arity=2,3,4,5 --multirun
+    deps:
+      - experiments/run_hydra.py
+      - experiments/experiment_phase4.py
+      - behavioral/program_v3.py
+      - conf/experiment/phase4.yaml
+      - conf/agent/behavioral_program_v3.yaml
+    outs:
+      - results/phase4_sweep_max_arity.json:
+          cache: true
+
+  # Parameter sweep: min_coverage
+  sweep_min_coverage_phase3:
+    cmd: python -m experiments.run_hydra experiment=phase3 seed=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24 agent.min_coverage=2,3,4,5,6,8 --multirun
+    deps:
+      - experiments/run_hydra.py
+      - experiments/experiment_phase3.py
+      - behavioral/program_v3.py
+      - conf/experiment/phase3.yaml
+      - conf/agent/behavioral_program_v3.yaml
+    outs:
+      - results/phase3_sweep_min_coverage.json:
+          cache: true
+
+  # Parameter sweep: binomial filter alpha
+  sweep_alpha_phase3:
+    cmd: python -m experiments.run_hydra experiment=phase3 seed=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24 agent.alpha=0.001,0.01,0.05,0.1 --multirun
+    deps:
+      - experiments/run_hydra.py
+      - experiments/experiment_phase3.py
+      - behavioral/program_v3.py
+      - conf/experiment/phase3.yaml
+      - conf/agent/behavioral_program_v3.yaml
+    outs:
+      - results/phase3_sweep_alpha.json:
+          cache: true
+
+  # Statistical analysis
+  analyze_phase3:
+    cmd: python -m experiments.analyze_results --input results/phase3_main.json --output results/phase3_analysis.json
+    deps:
+      - experiments/analyze_results.py
+      - results/phase3_main.json
+      - results/phase3_replication.json
+    outs:
+      - results/phase3_analysis.json:
+          cache: true
+
+  analyze_phase4:
+    cmd: python -m experiments.analyze_results --input results/phase4_main.json --output results/phase4_analysis.json
+    deps:
+      - experiments/analyze_results.py
+      - results/phase4_main.json
+      - results/phase4_replication.json
+    outs:
+      - results/phase4_analysis.json:
+          cache: true
+
+  # Paper figures generation
+  generate_figures:
+    cmd: python -m experiments.generate_figures --phase3 results/phase3_analysis.json --phase4 results/phase4_analysis.json --output figures/
+    deps:
+      - experiments/generate_figures.py
+      - results/phase3_analysis.json
+      - results/phase4_analysis.json
+    outs:
+      - figures/:
+          cache: true

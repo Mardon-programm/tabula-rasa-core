@@ -1,0 +1,48 @@
+# BehavioralProgramV3 Agent Configuration
+_target_: behavioral.program_v3.BehavioralProgramV3
+
+# Attribute schema (can be overridden by env)
+attributes: ["role", "friendliness", "status", "mood", "context", "season", "location", "time"]
+domains:
+  role: ["adult", "child", "elder"]
+  friendliness: ["warm", "cold"]
+  status: ["insider", "stranger"]
+  mood: ["calm", "upset"]
+  context: ["greeting", "request", "conflict"]
+  season: ["spring", "summer", "autumn", "winter"]
+  location: ["home", "school", "work", "public"]
+  time: ["dawn", "day", "dusk", "night"]
+
+actions: ["approach", "avoid", "ask", "obey", "offer"]
+
+# Induction parameters (from spec v0.2 §8)
+params:
+  n_min: 3
+  p_min: 0.7
+  explore_rate: 0.2
+  f_min: 3
+  d_min: 0.3
+  sep_min: 0.2
+  validate_accuracy: 0.85
+  validate_margin: 0.05
+  develop_interval: 250
+  max_condition_literals: 4
+  min_coverage: 4
+  base: 1.0
+  w_lit: 1.0
+  w_var: 2.0
+  w_prog: 3.0
+  w_depth: 2.0
+
+# Development operations allowed
+allowed_operations: ["CREATE", "MODIFY", "GENERALIZE", "SPECIALIZE", "COMPOSE", "SPLIT", "DELETE"]
+
+# Apriori-specific
+max_arity: 4
+max_rules_per_action: 40
+min_hits: 5
+theta: 0.95
+alpha: 1e-3
+
+# Random seed
+seed: 0

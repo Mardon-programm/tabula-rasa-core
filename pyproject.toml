@@ -1,0 +1,101 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tr-core"
+version = "0.3.0"
+description = "Tabula Rasa Core: Behavioral Program Induction for Compositional Generalization"
+readme = "README.md"
+authors = [{name = "TR-Core Research Group"}]
+license = {text = "MIT"}
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24",
+    "gymnasium>=1.0",
+    "hydra-core>=1.3",
+    "omegaconf>=2.3",
+    "scikit-learn>=1.3",
+    "scipy>=1.10",
+    "matplotlib>=3.7",
+    "seaborn>=0.12",
+    "pandas>=2.0",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4",
+    "pytest-cov>=4.1",
+    "ruff>=0.1",
+    "mypy>=1.5",
+    "pre-commit>=3.5",
+]
+docs = [
+    "sphinx>=7.1",
+    "sphinx-rtd-theme>=1.3",
+]
+
+[project.urls]
+Homepage = "https://github.com/tabula-rasa/tr-core"
+Repository = "https://github.com/tabula-rasa/tr-core"
+Documentation = "https://tr-core.readthedocs.io"
+
+[project.scripts]
+tr-core-phase3 = "experiments.run_hydra:main"
+tr-core-phase4 = "experiments.run_hydra:main"
+tr-core-analyze = "experiments.analyze_results:main"
+tr-core-figures = "experiments.generate_figures:main"
+tr-core-harness = "experiments.harness:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["behavioral", "core", "environment", "experiments", "memory", "models", "persistence", "planner", "web"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+select = ["E", "F", "I", "UP", "B", "C4", "ANN", "T20"]
+ignore = ["ANN101", "ANN102", "T201", "T203"]
+per-file-ignores = { "experiments/*.py" = ["T201", "T203"] }
+
+[tool.ruff.format]
+quote-style = "single"
+indent-style = "space"
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short"
+
+[tool.coverage.run]
+source = ["behavioral", "core", "environment", "experiments", "memory", "models", "persistence", "planner"]
+omit = ["tests/*", "*/__pycache__/*"]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+]

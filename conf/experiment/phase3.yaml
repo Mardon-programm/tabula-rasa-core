@@ -1,0 +1,78 @@
+# Phase 3 Experiment Configuration
+name: phase3
+description: "Rare compositional rules discovery (Apriori induction)"
+
+# Experiment parameters
+n_seeds: 24
+seed_base: 7000
+replication_base: 17000
+
+# Data splits
+train_size: 2500
+known_size: 200
+test_sizes:
+  T1: 200
+  T2: 200
+  T3: 200
+
+# Agent configuration (merged with agent config)
+agent:
+  develop_interval: 250
+  min_coverage: 4
+  validate_accuracy: 0.85
+  validate_margin: 0.05
+  explore_rate: 0.2
+  max_arity: 4
+  max_rules_per_action: 40
+  min_hits: 5
+  theta: 0.95
+  alpha: 1e-3
+
+# Baseline configurations
+baselines:
+  - name: ValueKNN
+    k: 15
+  - name: ValueDecisionTree
+    max_depth: 10
+    min_samples_leaf: 8
+  - name: ValueRandomForest
+    n_estimators: 25
+    max_depth: 10
+    min_samples_leaf: 8
+    max_features: 6
+  - name: ValueLogisticRegression
+    C: 1.0
+    max_iter: 1000
+  - name: ValueDecisionList
+    max_arity: 1
+  - name: ValueMultiDecisionList
+    max_arity: 4
+    min_coverage: 8
+    ratio: 0.85
+
+# Ablation configurations
+ablations:
+  - name: null_bp
+    randomize_outcomes: true
+  - name: ab_no_compose
+    allowed_operations: ["CREATE", "MODIFY", "GENERALIZE", "SPECIALIZE", "SPLIT", "DELETE"]
+
+# Metrics to compute
+metrics:
+  - balanced_accuracy
+  - overall_accuracy
+  - rule_recovery_exact
+  - rule_recovery_subset
+  - policy_fdr
+  - pair_rule_recovery
+
+# Statistical testing
+statistics:
+  permutation_tests: 20000
+  bootstrap_ci: 2000
+  alpha: 0.05
+
+# Output
+save_predictions: true
+save_rules: true
+save_audit: true

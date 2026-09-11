@@ -234,3 +234,22 @@ class AttributeTaskGeneratorV3:
         t3 = sample_from(pool_test, self.t3_size)
 
         return GeneratedSetsV3(train=train, known=known, t1=t1, t2=t2, t3=t3)
+
+
+# ---------------------------------------------------------------------------
+# Oracle rules in structured format (for Gymnasium wrapper)
+# ---------------------------------------------------------------------------
+
+ORACLE_RULES_V3: list[dict] = [
+    # Rare compositional rules (priority order)
+    {"action": "offer", "condition": {"season": "winter", "location": "public", "time": "night"}},
+    {"action": "ask", "condition": {"location": "school", "role": "child", "mood": "upset"}},
+    {"action": "approach", "condition": {"friendliness": "warm", "status": "stranger", "season": "spring", "time": "dawn"}},
+    {"action": "offer", "condition": {"role": "adult", "context": "greeting", "season": "autumn"}},
+    # Common simple rules
+    {"action": "approach", "condition": {"status": "insider", "mood": "calm"}},
+    {"action": "avoid", "condition": {"context": "conflict"}},
+    {"action": "obey", "condition": {"friendliness": "cold", "role": "elder"}},
+    # Fallback
+    {"action": "ask", "condition": {}},
+]

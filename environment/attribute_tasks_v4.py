@@ -186,3 +186,20 @@ class AttributeTaskGeneratorV4:
             test_heldout=test_heldout,
             test_row=test_row,
         )
+
+
+# ---------------------------------------------------------------------------
+# Oracle rules in structured format (for Gymnasium wrapper)
+# ---------------------------------------------------------------------------
+
+ORACLE_RULES_V4: list[dict] = [
+    # Held-out rule (priority)
+    {"action": "approach", "condition": {"emotion": "calm", "task": "guard", "hour": "night"}},
+    # Train pair rules
+    {"action": "approach", "condition": {"emotion": "calm", "task": "guard"}},
+    {"action": "ask", "condition": {"emotion": "excited", "task": "fetch"}},
+    {"action": "obey", "condition": {"agent": "dog", "terrain": "forest"}},
+    {"action": "avoid", "condition": {"agent": "fox", "weather": "storm"}},
+    # Fallback
+    {"action": "ask", "condition": {}},
+]

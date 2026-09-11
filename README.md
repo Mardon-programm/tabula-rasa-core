@@ -1,522 +1,189 @@
-# TR-Core: Tabula Rasa Developmental Cognitive Agent
+# TR-Core: Tabula Rasa Behavioral Program Induction
 
-TR-Core is an **experimental developmental cognitive architecture** investigating how non-pretrained systems can build and adapt internal world models from experience — without pretrained neural weights, pre-trained embeddings, or LLMs.
+TR-Core is a **formal experimentation framework** for studying autonomous symbolic induction of compositional rules from experience. It implements a developmental cognitive architecture where a behavioral program (layer of changeable rules over fixed substrate) learns via seven operations: CREATE, MODIFY, GENERALIZE, SPECIALIZE, COMPOSE, SPLIT, DELETE.
 
-It is a *research instrument*, not a claim about AGI: the goal is to run controlled experiments on whether a persistent agent can perceive, predict, adapt, remember, and model its own limits, and to characterize *which mechanisms actually matter*.
-
-> See [`PROJECT_OVERVIEW.md`](PROJECT_OVERVIEW.md) for a short pitch / project-home summary.
-
-## Research Question
-
-> Can a non-pretrained cognitive architecture detect changes in environmental dynamics and adapt its internal transition model using prediction error and experience-driven learning — and which of its mechanisms (memory, curiosity, self-model, adaptation) contribute to that?
-
-The null hypothesis is explicitly on the table: on a sufficiently simple environment, a plain adaptive transition learner may match the full architecture. This is treated as a valid (and informative) result, not a failure.
-
-## Overview
-
-TR-Core is designed to investigate whether a persistent agent can autonomously:
-
-- **Perceive** complex environments through sensory substrates
-- **Learn** state transitions and build an internal world model
-- **Predict** future states with calibrated confidence
-- **Detect** concept drift and adapt beliefs without catastrophic forgetting
-- **Explore** strategically using curiosity-driven reinforcement learning
-- **Remember** through episodic→semantic consolidation
-- **Plan** multi-step action sequences via tree search
-- **Understand** its own capabilities and limitations (metacognition)
-- **Develop** new capabilities through interaction
+**Key contribution**: An Apriori-style induction engine with binomial statistical filtering that discovers rare compositional rules (conjunctions of 3–4 literals) and generalizes to structurally held-out contexts — outperforming kNN, decision trees, random forests, and logistic regression on balanced accuracy.
 
 ## Architecture
 
 ```
-                  ENVIRONMENT
-                      │
-                      ▼
-                  SUBSTRATE (perception)
-                      │
-        ┌─────────────┴─────────────┐
-        ▼                           ▼
-   WORLD MODEL                   MEMORY
-   (what exists)            (what happened)
-        │                           │
-        └──────────┬────────────────┘
-                   ▼
-            PREDICTION ENGINE
-            (what happens next)
-                   │
-         ┌─────────┴──────────┐
-         ▼                    ▼
-    ERROR SIGNAL         CURIOSITY
-         │                    │
-         └──────┬─────────────┘
-                ▼
-            ADAPTATION
-         (update beliefs)
-                │
-         ┌──────┴──────────┐
-         ▼                 ▼
-    SELF-MODEL      CONSOLIDATION
-    (metacognition)   (episodic→semantic)
-         │                 │
-         └──────┬──────────┘
-                ▼
-            PLANNER
-         (tree search)
-                │
-                ▼
-             ACTION
-                │
-                └──────────→ ENVIRONMENT
+┌─────────────────────────────────────────────────────────────┐
+│                    ATTRIBUTE TASK ENVIRONMENT               │
+│  (Gymnasium interface: V3 rare compositional, V4 Structural-OOD) │
+└─────────────────────────┬───────────────────────────────────┘
+                          │ observe(context, action, success)
+                          ▼
+┌─────────────────────────────────────────────────────────────┐
+│                    BEHAVIORAL PROGRAM (V3)                  │
+│  ┌─────────────────┐  ┌─────────────────────────────────┐  │
+│  │   RULE BASE     │  │     INDUCTION ENGINE (Apriori)  │  │
+│  │  • LATENT       │  │  • Coverage-based pruning       │  │
+│  │  • ACTIVE       │  │  • Binomial filter (α=1e-3)     │  │
+│  │  • RETIRED      │  │  • Precision ≥ 0.95             │  │
+│  │  • DELETED      │  │  • Max arity K=4                │  │
+│  └────────┬────────┘  └──────────────┬──────────────────┘  │
+│           │                          │                      │
+│           └──────────┬───────────────┘                      │
+│                      ▼                                     │
+│              SUBPROGRAMS (COMPOSE)                          │
+└─────────────────────────────────────────────────────────────┘
+```
+
+## Research Results (Phase 3 & 4)
+
+| Experiment | Task | Key Finding |
+|------------|------|-------------|
+| **Phase 3** | Rare compositional rules (8 attrs, 4608 contexts) | BP balanced acc **0.78–0.80** vs kNN 0.70, RF 0.66, LogReg 0.20. COMPOSE necessary (ablation: 0.20). |
+| **Phase 4** | Structural-OOD (held-out triple `calm∧guard∧night→approach`) | BP heldout acc **0.96** vs DListML 0.91, Tree 0.98, kNN 0.25. Pair rule `calm∧guard→approach` recovered **24/24** seeds. |
+
+Mechanistic controls isolate COMPOSE as the causal mechanism:
+- `null_bp` (randomized outcomes): collapses to chance (0.20)
+- `ab_no_compose` (COMPOSE disabled): collapses to chance (0.20)
+
+## Professional Lab Infrastructure
+
+| Component | Status | Location |
+|-----------|--------|----------|
+| Formal complexity analysis (LaTeX) | ✅ | `docs/apriori_formal_analysis.tex` |
+| Hydra configuration management | ✅ | `conf/` |
+| DVC pipeline (data→exp→analysis→figures) | ✅ | `dvc.yaml` |
+| Benchmark harness (sweeps, multi-seed) | ✅ | `experiments/harness.py` |
+| Gymnasium environment interface | ✅ | `environment/gymnasium_env.py` |
+| Publication-ready figure generation | ✅ | `experiments/generate_figures.py` |
+| Statistical analysis (permutation tests, Cohen's dz) | ✅ | `experiments/analyze_results.py` |
+
+## Installation
+
+```bash
+# Using uv (recommended)
+uv venv .venv --python 3.11
+source .venv/bin/activate
+uv pip install -e .[dev]
+
+# Or with pip
+pip install -e .[dev]
+```
+
+## Quick Start
+
+### Run Phase 4 experiment (2 seeds for testing)
+```bash
+python -m experiments.run_hydra experiment=phase4 seed=1,2 --multirun
+```
+
+### Run with benchmark harness
+```python
+from experiments.harness import BenchmarkHarness
+
+harness = BenchmarkHarness(config_path="conf", output_dir="results")
+
+# Single run
+result = harness.run_single("phase4", seed=1)
+print(result.metrics)
+
+# Parameter sweep
+results = harness.run_sweep(
+    "phase4",
+    param_grid={"agent.max_arity": [2, 3, 4], "agent.min_coverage": [2, 4, 6]},
+    seeds=[1, 2, 3, 4, 5],
+)
+summary = harness.summarize(results)
+```
+
+### Gymnasium interface (for RL baselines)
+```python
+import gymnasium as gym
+from environment.gymnasium_env import register_envs
+
+register_envs()
+env = gym.make("TRCore-AttributeTaskV4-v0", seed=42)
+
+obs, info = env.reset()
+action = env.action_space.sample()
+obs, reward, terminated, truncated, info = env.step(action)
+print(f"Success: {info['success']}, Oracle action: {info['oracle_action']}")
+```
+
+### DVC pipeline (full reproducible run)
+```bash
+dvc repro  # Runs data generation → experiments → analysis → figures
+```
+
+### Generate paper figures
+```bash
+python -m experiments.generate_figures \
+    --phase3 results/phase3_analysis.json \
+    --phase4 results/phase4_analysis.json \
+    --output figures/
 ```
 
 ## Project Structure
 
 ```
-tabula_rasa_core/
-│
-├── core/                      # Core cognitive systems
-│   ├── substrate.py          # Sensory processing
-│   ├── graph_brain.py        # Neural-like graph
-│   ├── world_model.py        # Environment model
-│   ├── prediction.py         # Predictive engine
-│   ├── adaptation.py         # Belief updating
-│   ├── curiosity_rl.py       # Exploration drive
-│   ├── developmental_stage.py # Development tracking
-│   ├── axiom_matrix.py       # Constraints
-│   └── __init__.py
-│
-├── memory/                    # Memory systems
-│   ├── episodic.py           # Recent experiences
-│   ├── semantic.py           # Extracted knowledge
-│   ├── consolidation.py      # Episodic→semantic
-│   └── __init__.py
-│
-├── models/                    # Agent models
-│   ├── state.py              # State management
-│   ├── self_model.py         # Metacognition
-│   └── __init__.py
-│
-├── planner/                   # Planning & search
-│   ├── tree_search.py        # Tree search planner
-│   └── __init__.py
-│
-├── environment/              # Test environments
-│   ├── sandbox_sim.py        # Simple simulation
-│   ├── world_model.json      # Learned model
-│   └── __init__.py
-│
-├── experiments/              # Benchmarking framework
-│   ├── metrics.py            # Metric collection
-│   ├── experiments.py        # Benchmark definitions
-│   ├── runner.py             # Experiment runner
-│   ├── baselines.py          # Random/Static/Adaptive baselines
-│   ├── benchmark.py          # Multi-seed concept-drift benchmark + ablation
-│   └── __init__.py
-│
-├── persistence/              # State persistence
-│   ├── storage.py            # Checkpointing
-│   └── __init__.py
-│
-├── web/                      # Interactive Streamlit dashboard
-│   ├── app.py                # Research + Demo modes
-│   ├── state.py              # CognitiveStateTracker (live state extraction)
-│   ├── viz.py                # Plotly/NetworkX visualizations
-│   └── __init__.py
-│
-├── results/                  # Exported metrics & benchmark reports
-│   └── benchmark_report.json
-│
-├── tests/                    # Test suite
-│   ├── test_substrate.py
-│   ├── test_graph.py
-│   ├── test_prediction.py
-│   ├── test_adaptation.py
-│   ├── test_memory.py
-│   └── ...
-│
-├── main.py                   # Main entry point
-├── requirements.txt          # Dependencies
-└── README.md                # This file
+tr-core/
+├── behavioral/              # Behavioral Program (core induction)
+│   ├── program.py          # Base BehavioralProgram (v0.2)
+│   ├── program_v3.py       # Apriori induction (Phase 3/4)
+│   └── rules.py            # Rule, Condition, Literal, Evidence
+├── environment/             # Attribute task environments
+│   ├── attribute_tasks_v3.py   # Phase 3: rare compositional
+│   ├── attribute_tasks_v4.py   # Phase 4: Structural-OOD
+│   └── gymnasium_env.py        # Gymnasium wrapper
+├── experiments/             # Experimentation framework
+│   ├── experiment_phase3.py    # Phase 3 runner
+│   ├── experiment_phase4.py    # Phase 4 runner
+│   ├── compositional_baselines.py  # kNN, Tree, Forest, DList, etc.
+│   ├── harness.py              # BenchmarkHarness (sweeps, multi-seed)
+│   ├── run_hydra.py            # Hydra entry point
+│   ├── analyze_results.py      # Paired permutation tests
+│   └── generate_figures.py     # Publication figures
+├── conf/                      # Hydra configs
+│   ├── config.yaml
+│   ├── experiment/phase3.yaml, phase4.yaml
+│   ├── agent/behavioral_program_v3.yaml
+│   └── env/attribute_tasks_v3.yaml, v4.yaml
+├── docs/
+│   └── apriori_formal_analysis.tex  # Complexity proofs, guarantees
+├── dvc.yaml                   # DVC pipeline
+├── pyproject.toml             # Package config
+└── tests/                     # Unit tests
 ```
 
-## Core Systems
+## Configuration (Hydra)
 
-### 1. **Substrate** (`core/substrate.py`)
-Sensory processing layer that quantizes raw observations into discrete states.
-- Entropy-based segmentation
-- Windowed observation buffering
-- Modality tracking
-
-### 2. **Graph Brain** (`core/graph_brain.py`)
-Neural-like directed graph representing learned associations.
-- Weighted synapses with learning rate
-- Activation counting and age tracking
-- Decay and pruning for stability
-
-### 3. **World Model** (`core/world_model.py`)
-Comprehensive representation of environment structure.
-- Entity tracking with properties
-- Relation modeling
-- State transition statistics
-- **Recency-weighted transition probabilities** (forgives superseded rules after drift)
-- Causal link discovery
-- Uncertainty quantification (epistemic, aleatoric, model)
-
-### 4. **Prediction Engine** (`core/prediction.py`)
-Generates predictions with calibrated confidence.
-- Multi-state prediction with alternatives
-- Prediction error evaluation
-- Calibration tracking
-- Concept drift signal detection
-
-### 5. **Adaptation Engine** (`core/adaptation.py`)
-Updates beliefs based on prediction errors.
-- Plasticity vs. stability balance
-- Concept drift handling
-- Confidence adjustment
-- Recovery after drift measurement
-
-### 6. **Memory Systems**
-Hierarchical memory organization:
-
-- **Episodic** (`memory/episodic.py`): Recent experiences (FIFO buffer)
-- **Semantic** (`memory/semantic.py`): Extracted facts with confidence
-- **Consolidation** (`memory/consolidation.py`): Transfer + forgetting
-
-### 7. **Self-Model** (`models/self_model.py`)
-Metacognitive representation of agent capabilities.
-- Prediction accuracy tracking
-- Capability confidence estimation
-- Knowledge vs. unknown estimation
-- Exploration/exploitation decision
-
-### 8. **Planner** (`planner/tree_search.py`)
-Multi-step action planning via tree search.
-- Depth-limited search
-- Uncertainty-aware evaluation
-- Goal-directed planning
-
-### 9. **Curiosity Engine** (`core/curiosity_rl.py`)
-Exploration drive combining novelty, uncertainty, and prediction error.
-- State visit tracking
-- Novelty decay
-- Intrinsic reward calculation
-
-## Running Experiments
-
-### Basic Usage
-
-```python
-from main import TabulaRasaCore
-from environment.sandbox_sim import SandboxEnvironment
-
-# Create agent
-agent = TabulaRasaCore(seed=42, enable_metrics=True)
-env = SandboxEnvironment(seed=42)
-
-# Run episode
-stats = agent.run_episode(env, max_steps=100)
-agent.print_status()
+```yaml
+# conf/experiment/phase4.yaml
+experiment:
+  name: phase4
+  n_seeds: 24
+  seed_base: 7000
+  train_size: 600
+  heldout_test_size: 60
+  
+agent:
+  max_arity: 4
+  min_coverage: 4
+  validate_accuracy: 0.85
+  theta: 0.95
+  alpha: 1e-3
 ```
 
-### Running Benchmarks
-
-```python
-from experiments.runner import ExperimentRunner
-
-runner = ExperimentRunner(agent, output_dir="results")
-results = runner.run_all_standard_experiments()
-runner.print_summary()
-runner.save_report()
-```
-
-## Interactive Web Dashboard
-
-A Streamlit dashboard that runs `TabulaRasaCore` live and streams its **actual internal
-state** to the UI. Nothing is scripted or mocked — every chart, gauge, and graph edge is
-read directly from the running core after each step.
-
+Override via CLI:
 ```bash
-streamlit run web/app.py
-```
-
-Two modes:
-
-- **Research Mode** — step-by-step control (`Run` / `Pause` / `Step` / `Reset` /
-  `Inject Drift` / `Export JSON`) with live Prediction Error, Cognitive Graph,
-  Accuracy, Memory, Uncertainty, Environment, Semantic Memory, Self-Model, and a
-  streaming Event Log.
-- **Demo Mode** — one-click `START EXPERIMENT`: watch the agent learn an environment
-  from scratch, hit concept drift, adapt, and discover new stable patterns.
-
-## Concept-Drift Benchmark (`experiments/benchmark.py`)
-
-A rigorous, reproducible comparison of TR-Core against baselines under concept drift:
-
-```
-20 seeds × (Random, Static, Adaptive, TR-Core + 4 ablations) × 120 steps, drift at step 60
-```
-
-```bash
-python experiments/benchmark.py            # defaults: 20 seeds, 120 steps, drift @ 60
-python experiments/benchmark.py --seeds 10 --steps 200 --drift 80
-```
-
-**Baselines** (`experiments/baselines.py`):
-- `Random` — no prediction, no learning (floor).
-- `Static` — learns a fixed model, cannot adapt after drift.
-- `Adaptive` — recency-weighted transition learner (strong, honest baseline).
-
-**Ablation flags** on `TabulaRasaCore`: `enable_memory`, `enable_curiosity`,
-`enable_self_model`, `enable_adaptation` — disable components one at a time.
-
-**Metrics**: mean error (overall / pre-drift / post-drift), cumulative error, accuracy,
-and recovery steps (first sustained correct streak after drift).
-
-### Key result (20 seeds, drift @ 60)
-
-| Model | MeanErr | PostDrift | Accuracy | Recovery |
-|-------|---------|-----------|----------|----------|
-| Random | 0.677 | 0.682 | 0.323 | 24 |
-| Static | 0.525 | 1.000 | 0.475 | never |
-| Adaptive | 0.175 | 0.300 | 0.825 | 18 |
-| **TR-Core (Full)** | **0.175** | **0.300** | **0.825** | **18** |
-| TR-Core − Memory | 0.175 | 0.300 | 0.825 | 18 |
-| TR-Core − Curiosity | 0.175 | 0.300 | 0.825 | 18 |
-| TR-Core − Self-model | 0.175 | 0.300 | 0.825 | 18 |
-| TR-Core − Adaptation | 1.000 | 1.000 | 0.000 | never |
-
-**Interpretation (honest):**
-- TR-Core detects and recovers from drift (PostDrift 0.30 vs Static 1.00, Random 0.68),
-  and `enable_adaptation` is essential (without it, accuracy collapses to 0).
-- **Finding (v1, 3-state environment):** a simple recency-adaptive learner matches full
-  TR-Core (0.175 / 0.300 / 0.825 / 18), and the ablation shows no additional value from
-  memory, curiosity, or self-model on this task.
-- This is a valid scientific result, not a failure: it establishes that **on a trivial
-  discrete environment, plain transition learning is sufficient**. It also motivates the
-  next experiment — a continuous / partially-observable / noisy environment (v2) whose
-  `state(t+1) = F(state(t), action, hidden_context)` design requires history and context,
-  where memory and the other mechanisms may matter.
-
-**World-model fix enabling recovery:** `WorldModel` now uses recency-weighted transition
-probabilities (`recency=0.9` default). Competing transitions decay with each observation
-so the model forgets superseded rules after drift instead of keeping them at equal weight.
-
-### Available Experiments
-
-1. **Learning Curve** - How fast does agent learn?
-2. **Prediction Accuracy** - How accurate are predictions?
-3. **Adaptation** - How fast after environment change?
-4. **Memory Retention** - What's retained after other learning?
-5. **Planning** - Can it plan multi-step sequences?
-6. **Concept Drift** - Can it detect and adapt to rule changes?
-
-## Metrics & Evaluation
-
-The system tracks comprehensive metrics:
-
-```
-Learning:
-  - Prediction accuracy
-  - Calibration error
-  - Learning curve
-
-Adaptation:
-  - Adaptation time
-  - Plasticity vs. stability
-  - Recovery after drift
-  - Drift detection rate
-
-Memory:
-  - Episodic buffer utilization
-  - Semantic fact count
-  - Retention rate
-  - Consolidation efficiency
-
-Planning:
-  - Planning success rate
-  - Plan depth
-
-Exploration:
-  - Curiosity score
-  - Exploration rate
-  - Novelty
-
-Self-Model:
-  - Estimated knowledge
-  - Uncertainty level
-  - Capability confidence
-```
-
-## Key Features
-
-### ✅ Continual Learning
-Agent learns sequentially without catastrophic forgetting through:
-- Memory consolidation (episodic → semantic)
-- Stability-plasticity balance in adaptation
-- Context-dependent belief marking
-
-### ✅ World Model Formation
-Builds internal representation through autonomous interaction:
-- Entity and relation discovery
-- Causal link extraction
-- Uncertainty estimation
-- Incremental refinement
-
-### ✅ Prediction with Error
-Error-driven learning cycle:
-- Generate prediction with confidence
-- Compare to actual outcome
-- Calculate prediction error
-- Update uncertainty and beliefs
-
-### ✅ Concept Drift Detection
-Autonomously detects when environment rules change:
-- Tracks prediction error trends
-- Signals drift magnitude
-- Triggers adaptive learning
-- Retains old knowledge
-
-### ✅ Metacognition
-Agent understands its own limits:
-- Tracks capability confidence by task
-- Estimates knowledge coverage
-- Adjusts exploration vs. exploitation
-- Recommends learning rates
-
-### ✅ Curiosity-Driven Exploration
-Exploration balances multiple drives:
-- Novelty (unexplored states)
-- Uncertainty (low confidence)
-- Information gain (informative experiences)
-
-### ✅ Developmental Stages
-Agent progresses through learning stages:
-- BLANK → SENSORY → ASSOCIATIVE → PREDICTIVE
-- EXPLORATORY → MEMORIAL → ADAPTIVE → PLANNING
-
-### ✅ Reproducibility
-Complete experiment tracking:
-- Seeded randomness
-- Checkpoint saving/loading
-- Detailed metrics export
-- JSON snapshot serialization
-
-## Performance Targets
-
-For a fully developed system, we target:
-
-| Metric | Target | Interpretation |
-|--------|--------|-----------------|
-| Prediction Accuracy | >85% | Can reliably predict transitions |
-| Calibration Error | <0.1 | Confidence matches reality |
-| Adaptation Time | <50 steps | Quick recovery from drift |
-| Memory Retention | >70% | Doesn't forget old knowledge |
-| Planning Success | >80% | Effective multi-step planning |
-| Concept Drift Detection | <20 steps | Fast drift identification |
-| Knowledge Coverage | >80% | Explores most of environment |
-
-## Sub-Questions
-
-Under the primary research question above, TR-Core explores the following sub-questions:
-
-1. **Can agents autonomously build world models through interaction?**
-2. **How can systems balance learning new knowledge with retaining old?**
-3. **Can agents detect and adapt to environmental shifts?**
-4. **How does curiosity drive efficient exploration?**
-5. **Can agents model their own capabilities?**
-6. **Is error-driven learning sufficient for development?**
-
-## Development Roadmap
-
-### Phase 1 (Complete)
-- Core perception and learning loops
-- Graph brain and world model
-- Prediction engine
-- Basic curiosity
-
-### Phase 2 (In Progress)
-- Memory consolidation
-- Concept drift detection
-- Adaptation mechanisms
-- Benchmark suite
-
-### Phase 3 (Planned)
-- Advanced planning (MCTS)
-- Transfer learning
-- Skill discovery
-- Hierarchical learning
-
-### Phase 4 (Future)
-- Multi-agent scenarios
-- Hierarchical world models
-- Option learning
-- Genuine developmental emergence
-
-## Installation
-
-```bash
-# Clone repository
-git clone https://github.com/user/tabula_rasa_core.git
-cd tabula_rasa_core
-
-# Core runtime uses Python stdlib only.
-# Web dashboard requires a few extras (see requirements.txt):
-pip install streamlit plotly networkx
-
-# Dev / test tools:
-pip install pytest pytest-cov black flake8 mypy
-```
-
-## Testing
-
-```bash
-# Run all tests
-pytest tests/
-
-# Run with coverage
-pytest --cov=core --cov=memory --cov=models tests/
-
-# Run specific test
-pytest tests/test_prediction.py::test_prediction_accuracy
+python -m experiments.run_hydra experiment=phase4 agent.max_arity=3 agent.min_coverage=6
 ```
 
 ## Citation
 
-If you use TR-Core in research, please cite:
-
 ```bibtex
-@misc{tabularasacore2024,
-  title={TR-Core: Tabula Rasa Developmental Cognitive Architecture},
-  author={[Your Name]},
-  year={2024},
-  url={https://github.com/user/tabula_rasa_core}
+@article{trcore2026,
+  title={TR-Core: Autonomous Symbolic Induction of Compositional Rules via Apriori Search with Binomial Filtering},
+  author={TR-Core Research Group},
+  year={2026},
+  note={arXiv preprint}
 }
 ```
 
 ## License
 
-MIT License - See LICENSE file
-
-## References
-
-Key papers informing this architecture:
-
-1. **Continual Learning**: [Continual Lifelong Learning with Dynamic Synaptic Plasticity](https://arxiv.org/abs/2105.10919)
-2. **World Models**: [World Models (Ha & Schmidhuber)](https://world-models.io/)
-3. **Curious RL**: [Curiosity-Driven Exploration by Self-Supervised Prediction](https://arxiv.org/abs/1705.05363)
-4. **Developmental Robotics**: [Developmental Robotics Overview](https://doi.org/10.1080/01691864.2023.2225232)
-5. **Meta-Learning**: [Meta-Learning: A Survey](https://arxiv.org/abs/1810.03548)
-
-## Contact & Contributions
-
-- Questions? Open an issue
-- Want to contribute? See CONTRIBUTING.md
-- Have ideas? Start a discussion
-
----
-
-**Status**: Experimental research architecture (v1.0)
-**Scope**: Controlled experiments on non-pretrained world-model learning and adaptation
-**Last Updated**: 2026
-**Maintained by**: Mardon
+MIT License

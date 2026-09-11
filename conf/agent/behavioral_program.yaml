@@ -1,0 +1,23 @@
+# Base BehavioralProgram Configuration (v0.2)
+_target_: behavioral.program.BehavioralProgram
+
+params:
+  n_min: 3
+  p_min: 0.7
+  explore_rate: 0.2
+  f_min: 3
+  d_min: 0.3
+  sep_min: 0.2
+  validate_accuracy: 0.8
+  validate_margin: 0.05
+  develop_interval: 50
+  max_condition_literals: 2
+  min_coverage: 3
+  base: 1.0
+  w_lit: 1.0
+  w_var: 2.0
+  w_prog: 3.0
+  w_depth: 2.0
+
+allowed_operations: ["CREATE", "MODIFY", "GENERALIZE", "SPECIALIZE", "COMPOSE", "SPLIT", "DELETE"]
+seed: 0
