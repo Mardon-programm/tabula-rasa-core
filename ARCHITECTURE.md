@@ -1,17 +1,14 @@
-# TR-Core Architecture Overview
+# TR-Core Architecture: Behavioral Program with Apriori Induction
+
+**Version:** v0.3 (Phase 3/4) — *Behavioral Program over Fixed Substrate*
+
+---
 
 ## System Philosophy
 
-TR-Core is designed as a **reproducible research platform** for investigating:
+TR-Core is a **formal experimentation framework** for studying autonomous symbolic induction of compositional rules from experience. It implements a developmental cognitive architecture where a **behavioral program** (layer of changeable rules over a fixed substrate) learns via seven development operations.
 
-- **How** agents autonomously build world models through interaction
-- **How** systems maintain learning (plasticity) while preserving knowledge (stability)  
-- **How** agents detect and adapt to environmental changes (concept drift)
-- **How** curiosity drives efficient exploration
-- **How** memory consolidation enables generalization
-- **How** agents can model their own capabilities (metacognition)
-
-NOT meant to be AGI, but rather a scientific instrument for these questions.
+**Key contribution:** An Apriori-style induction engine with binomial statistical filtering that discovers rare compositional rules (conjunctions of 3–4 literals) and generalizes to structurally held-out contexts.
 
 ---
 
@@ -19,506 +16,325 @@ NOT meant to be AGI, but rather a scientific instrument for these questions.
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                    MAIN CONTROL LOOP                        │
-│                     (main.py)                               │
-└──────────────────┬──────────────────────────────────────────┘
-                   │
-        ┌──────────┴──────────┐
-        │                     │
-        ▼                     ▼
-    PERCEPTION           EXPERIENCE
- (Substrate)           (Environment)
-    │                     │
-    │  ┌─────────────────┘
-    │  │
-    ▼  ▼
-┌─────────────────────────────────────┐
-│     COGNITIVE PROCESSING LOOP        │
-│  (runs every step)                   │
-└─────────────────────────────────────┘
-    │
-    ├─→ WORLD MODEL
-    │   ├─ Entity tracking
-    │   ├─ Relation discovery
-    │   ├─ Transition statistics
-    │   └─ Uncertainty maps
-    │
-    ├─→ PREDICTION
-    │   ├─ Forecast next state
-    │   ├─ Generate alternatives
-    │   └─ Compute confidence
-    │
-    ├─→ ADAPTATION
-    │   ├─ Compare prediction to outcome
-    │   ├─ Update edge weights
-    │   ├─ Detect concept drift
-    │   └─ Adjust learning rate
-    │
-    ├─→ MEMORY
-    │   ├─ Store episodic event
-    │   ├─ Extract semantic patterns
-    │   ├─ Consolidate knowledge
-    │   └─ Selective forgetting
-    │
-    ├─→ SELF-MODEL
-    │   ├─ Track capability confidence
-    │   ├─ Estimate knowledge coverage
-    │   └─ Assess uncertainty
-    │
-    ├─→ CURIOSITY
-    │   ├─ Compute novelty
-    │   ├─ Integrate uncertainty
-    │   ├─ Calculate information gain
-    │   └─ Generate intrinsic reward
-    │
-    ├─→ PLANNER
-    │   ├─ Tree search simulation
-    │   ├─ Evaluate trajectories
-    │   └─ Select best action
-    │
-    └─→ ACTION
-        │
-        └─ Execute → ENVIRONMENT
+│                    ATTRIBUTE TASK ENVIRONMENT               │
+│  (Gymnasium interface: V3 rare compositional, V4 Structural-OOD) │
+└─────────────────────────┬───────────────────────────────────┘
+                          │ observe(context, action, success)
+                          ▼
+┌─────────────────────────────────────────────────────────────┐
+│                    BEHAVIORAL PROGRAM (V3)                  │
+│  ┌─────────────────┐  ┌─────────────────────────────────┐  │
+│  │   RULE BASE     │  │     INDUCTION ENGINE (Apriori)  │  │
+│  │  • LATENT       │  │  • Coverage-based pruning       │  │
+│  │  • ACTIVE       │  │  • Binomial filter (α=1e-3)     │  │
+│  │  • RETIRED      │  │  • Precision ≥ 0.95             │  │
+│  │  • DELETED      │  │  • Max arity K=4                │  │
+│  └────────┬────────┘  └──────────────┬──────────────────┘  │
+│           │                          │                      │
+│           └──────────┬───────────────┘                      │
+│                      ▼                                     │
+│              SUBPROGRAMS (COMPOSE)                          │
+└─────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## Data Flow (Single Step)
+## Behavioral Program (v0.2 Spec)
 
-```
-STEP N
-├─ INPUT: env_observation, actual_next_state, reward
-│
-├─ PERCEIVE
-│  └─ Substrate.add_observation()
-│     └─ substrate.buffer += observation
-│
-├─ PREDICT  
-│  └─ PredictionEngine.predict(current_state)
-│     ├─ Get world_model transitions
-│     ├─ Compute probabilities
-│     └─ Return (expected_state, confidence, alternatives)
-│
-├─ EVALUATE
-│  └─ PredictionEngine.evaluate(prediction, actual_state)
-│     ├─ Compute magnitude = (expected != actual ? 1.0 : 0.0)
-│     ├─ Compute surprise = 1 - P(actual)
-│     └─ Return PredictionError
-│
-├─ WORLD MODEL UPDATE
-│  └─ WorldModel.observe_transition(state, action, next_state)
-│     ├─ Add/update edge weight
-│     └─ Increment visit count
-│
-├─ ADAPT
-│  └─ ModelAdapter.adapt_to_prediction_error(error, ...)
-│     ├─ Adjust edge weights
-│     ├─ Detect drift if error high
-│     └─ Update uncertainty
-│
-├─ MEMORY
-│  └─ Memory.store(state, action, next_state, reward, error)
-│     ├─ EpisodicMemory.append()
-│     └─ Check if should_consolidate()
-│
-├─ CONSOLIDATE (periodically)
-│  └─ MemoryConsolidation.consolidate()
-│     ├─ Extract patterns from episodic
-│     ├─ Add to semantic memory
-│     ├─ Forget low-confidence facts
-│     └─ Update retention metrics
-│
-├─ SELF-MODEL
-│  └─ SelfModel.update_metrics(...)
-│     ├─ Track prediction_accuracy
-│     ├─ Estimate knowledge
-│     └─ Update exploration_rate
-│
-├─ DEVELOPMENT
-│  └─ DevelopmentalController.record_stage_transition()
-│     ├─ Update metrics
-│     └─ Check advancement requirements
-│
-├─ ACTION SELECTION
-│  └─ if self_model.should_explore()
-│     ├─ action = CuriosityEngine.select_exploration_action()
-│     └─ curiosity_reward = calculate_reward()
-│
-│  else
-│     ├─ plan = Planner.plan(current_state, world_model)
-│     └─ action = plan[0]
-│
-├─ METRICS (if enabled)
-│  └─ MetricsCollector.record(...)
-│     ├─ Store all performance indicators
-│     └─ Compute trends
-│
-└─ OUTPUT: {step, state, action, reward, accuracy, drift_signal, ...}
-```
+### Rule Structure
 
----
-
-## Memory Hierarchy
-
-```
-SENSORY INPUT
-    ↓
-WORKING MEMORY (current observation)
-    ↓
-EPISODIC MEMORY (recent experiences)
-    ├─ Timestamped events
-    ├─ Full state + action + outcome
-    ├─ Limited capacity (FIFO)
-    └─ Recent focus
-    │
-    ├─ CONSOLIDATION CYCLE (every N steps)
-    │  └─ Pattern extraction
-    │     ├─ Frequency analysis
-    │     ├─ Transition probability
-    │     └─ Causal relationships
-    │
-    ▼
-SEMANTIC MEMORY (extracted knowledge)
-    ├─ Abstracted facts
-    ├─ Confidence scores
-    ├─ Generalized patterns
-    └─ Long-term retention
-    │
-    ├─ FORGETTING (decay low-confidence facts)
-    │  └─ Confidence < threshold → remove
-    │
-    ▼
-WORLD MODEL (integrated representation)
-    ├─ Entity properties
-    ├─ Relations
-    ├─ Transition rules
-    └─ Used for planning & prediction
-
-PROCEDURAL MEMORY
-    ├─ Action sequences (plans)
-    ├─ Success statistics
-    └─ Transfer learning
-```
-
----
-
-## Uncertainty Quantification
-
-```
-PREDICTION ENGINE
-    ├─ Epistemic (what we don't know)
-    │  └─ Reducible through more experience
-    │
-    ├─ Aleatoric (inherent randomness)
-    │  └─ Cannot be reduced
-    │
-    ├─ Model Uncertainty
-    │  └─ How good is our model?
-    │
-    └─ Prediction Uncertainty
-       └─ Confidence in this specific forecast
-
-USED FOR:
-    ├─ Curiosity (explore high-uncertainty)
-    ├─ Adaptation (high uncertainty → learn more)
-    ├─ Planning (account for uncertainty in futures)
-    └─ Self-Model (calibration assessment)
-```
-
----
-
-## Concept Drift Detection
-
-```
-STEADY STATE
-├─ Predictions mostly correct
-├─ Error distribution stable
-└─ Learning rate normal
-
-    ↓ ENVIRONMENT CHANGES
-
-DRIFT DETECTION TRIGGERED
-├─ Error spike detected
-├─ Magnitude > threshold
-├─ Surprise increases
-├─ Multiple incorrect predictions
-
-    ↓
-
-ADAPTIVE RESPONSE
-├─ Learning rate increases (higher plasticity)
-├─ Confidence in old beliefs decreases
-├─ Uncertainty increases (more exploration)
-├─ Context-dependent marking of old knowledge
-
-    ↓
-
-RECOVERY
-├─ New patterns learned
-├─ Error decreases
-├─ Confidence stabilizes
-├─ Learning rate normalizes
-```
-
----
-
-## Developmental Stages
-
-```
-STAGE 0: BLANK
-├─ No knowledge
-├─ Random behavior
-└─ Requirement: 100+ observations
-
-    ↓
-
-STAGE 1: PERCEPTION
-├─ Sensory integration
-├─ State recognition
-└─ Requirement: ???
-
-    ↓
-
-STAGE 2: ASSOCIATION
-├─ A predicts B
-├─ Simple transitions
-└─ Requirement: 500+ associations
-
-    ↓
-
-STAGE 3: PREDICTION
-├─ Forecast consequences
-├─ Multi-step reasoning
-└─ Requirement: >70% accuracy
-
-    ↓
-
-STAGE 4: EXPLORATION  
-├─ Curiosity-driven
-├─ Strategic sampling
-└─ Requirement: novelty > threshold
-
-    ↓
-
-STAGE 5: MEMORY
-├─ Consolidation working
-├─ Facts retained
-└─ Requirement: retention > 70%
-
-    ↓
-
-STAGE 6: SELF-MODEL
-├─ Metacognition active
-├─ Knows capabilities
-└─ Requirement: calibration > 70%
-
-    ↓
-
-STAGE 7: PLANNING
-├─ Multi-step planning
-├─ Tree search effective
-└─ Requirement: planning_success > 80%
-
-    ↓
-
-STAGE 8: EMBODIMENT
-├─ Full autonomy
-├─ All systems integrated
-└─ Final stage
-```
-
----
-
-## Key Parameters
-
-### Learning
-- `learning_rate` (0.001-1.0): How fast to update beliefs
-- `stability_factor` (0-1): Weight on stability vs. plasticity
-- `drift_threshold` (0-1): When to trigger adaptation
-
-### Exploration
-- `novelty_weight` (0-1): How much to value unexplored
-- `uncertainty_weight` (0-1): How much to value uncertain
-- `info_gain_weight` (0-1): How much to value informative
-
-### Memory
-- `episodic_limit` (buffer size)
-- `consolidation_interval` (steps between consolidations)
-- `forgetting_threshold` (minimum confidence to retain)
-
-### Prediction
-- `confidence_buckets` (calibration bins)
-- `concept_drift_signal_threshold` (when to trigger drift response)
-
----
-
-## Metrics Dashboard
-
-### Real-time
-- Current prediction accuracy
-- Drift signal strength
-- Episodic buffer utilization
-- Semantic fact count
-
-### Aggregated
-- Learning curve (accuracy over time)
-- Calibration error trend
-- Concept drift detections
-- Memory retention rate
-- Recovery time after drift
-
-### Diagnostic
-- Plasticity vs. stability balance
-- Novelty coverage
-- Adaptation event rate
-- Stage progression
-
----
-
-## Integration Points
-
-### Environment Interface
 ```python
-class Environment:
-    def observe() -> Observation
-    def step(action) -> (state, reward, done)
+Rule:
+  condition: Condition      # Conjunction of Literals (AND)
+  action: Action            # Primitive or Subprogram
+  status: LATENT | ACTIVE | RETIRED | DELETED
+  evidence: Evidence        # (n_success, n_failure)
+  provenance: list[str]     # Operations that created/modified
 ```
 
-### Custom Predictor
+### Literal Types
+
+| Operator | Meaning | Example |
+|----------|---------|---------|
+| `=` | Equality | `role = adult` |
+| `≠` | Inequality | `status ≠ stranger` |
+| `∈` | Set membership | `season ∈ {spring, autumn}` |
+
+### Seven Development Operations
+
+| Operation | Description | Precondition |
+|-----------|-------------|--------------|
+| **CREATE** | New LATENT rule from successful interaction | No covering rule exists |
+| **GENERALIZE** | Replace constants with variable (`∈` set) | Multiple rules share action, validated on train |
+| **SPECIALIZE** | Add discriminant literal, split parent | Discriminating feature found (separation score) |
+| **SPLIT** | Partition rule along attribute values | Multiple discriminant values |
+| **COMPOSE** | Conjoin two rules into subprogram | Both rules active, compatible |
+| **MODIFY** | Change condition or action | Direct edit |
+| **DELETE** | Retire rule as last resort | No other option |
+
+### Revision Policy (Spec v0.2 §4)
+
+1. **One failure ≠ wrong rule** — evidence accumulated first
+2. **Failure threshold exceeded** → context analysis finds discriminating feature → SPECIALIZE or SPLIT
+3. **Otherwise** → GENERALIZE on train-validated hypothesis
+4. **DELETE** only as last resort
+
+---
+
+## Apriori Induction Engine (Phase 3/4)
+
+### Algorithm
+
 ```python
-class CustomPredictor:
-    def predict(state, world_model) -> Prediction
-    def evaluate(prediction, actual) -> Error
+def develop(self) -> int:
+    explore = [t for t in self.trials if t[3]]  # uniform-random trials only
+    for action in actions:
+        # Level k = 1: all single literals
+        # Level k > 1: extend supported (k-1)-conjunctions (Apriori join)
+        for k in 1..K:
+            for candidate in candidates_k:
+                cov = coverage(candidate, explore, action)
+                if cov < min_coverage: continue  # Apriori pruning
+                hits = success_count(candidate, explore, action)
+                prec = hits / cov
+                if hits >= min_hits and prec >= theta:
+                    pval = binom_sf(hits-1, cov, base_rate)
+                    if pval <= alpha:
+                        materialize(candidate, action, op=COMPOSE if k>=2 else GENERALIZE)
 ```
 
-### Custom Adapter
-```python
-class CustomAdapter:
-    def adapt(error, world_model) -> AdaptationEvent
-    def handle_drift(old_state, new_state, world_model) -> None
+### Anti-Monotonicity Pruning
+
+**Theorem:** If `cov(C) < min_coverage`, then for all `C' ⊃ C`, `cov(C') < min_coverage`.
+
+This induces a **phase transition**: with `min_coverage=4`, effective branching factor `b_eff(k) < 1` for `k ≥ 3`, making search tractable (`O((1+βL)^K)` expected vs `O(L^K)` worst-case).
+
+### Binomial Statistical Filter
+
+For candidate `C` with `cov=n`, `hits=h`, base rate `p_a`:
+
+```
+p-value = P(X ≥ h) where X ~ Binomial(n, p_a)
+Accept iff: p-value ≤ α (1e-3) AND precision ≥ θ (0.95) AND hits ≥ h_min (5)
 ```
 
-### Custom Planner
-```python
-class CustomPlanner:
-    def plan(state, world_model, goal) -> [actions]
+**Guarantees:** Exact per-candidate Type I error ≤ α. Controls false discovery from sparse conjunctions.
+
+---
+
+## Environments
+
+### Phase 3: Rare Compositional Rules (V3)
+
+| Property | Value |
+|----------|-------|
+| Attributes | 8 (role, friendliness, status, mood, context, season, location, time) |
+| Contexts | 4608 |
+| Actions | 5 (approach, avoid, ask, obey, offer) |
+| Oracle | Priority list: 4 rare rules (arity 3–4) + 3 simple + fallback |
+| Key property | Single literals ambiguous (precision 0.16–0.68); only conjunctions disambiguate |
+
+### Phase 4: Structural-OOD Generalization (V4)
+
+| Property | Value |
+|----------|-------|
+| Attributes | 6 (agent, emotion, task, terrain, weather, hour) |
+| Contexts | 864 |
+| Actions | 4 (approach, avoid, ask, obey) |
+| Held-out | `calm ∧ guard ∧ night → approach` (zero train support) |
+| Train rule | `calm ∧ guard → approach` (pair covers held-out triple) |
+| Test | Generalization from pair to never-observed triple |
+
+---
+
+## Data Flow (Single Interaction)
+
 ```
+STEP
+├─ INPUT: context (dict), chosen_action, success (bool), explored (bool)
+│
+├─ OBSERVE
+│  └─ trials.append((context, action, success, explored))
+│
+├─ MATCH
+│  └─ active_rules = [r for r in rules if r.condition.matches(context)]
+│
+├─ ACT
+│  └─ If no active rule: explore with probability explore_rate
+│
+├─ UPDATE EVIDENCE
+│  └─ fired_rule.evidence.record(success)
+│
+├─ REVISE (if failure)
+│  ├─ If failure threshold exceeded:
+│  │  ├─ Find discriminating feature (separation score)
+│  │  └─ SPECIALIZE or SPLIT
+│  └─ Else: GENERALIZE or DELETE
+│
+└─ DEVELOP (periodically, every develop_interval steps)
+   └─ Apriori induction on explore trials → materialize new rules
+```
+
+---
+
+## Experimental Infrastructure
+
+### Hydra Configuration
+
+```
+conf/
+├── config.yaml                    # Main (defaults, output dirs)
+├── experiment/phase3.yaml         # Phase 3 params
+├── experiment/phase4.yaml         # Phase 4 params
+├── agent/behavioral_program_v3.yaml  # Induction params
+├── env/attribute_tasks_v3.yaml    # V3 schema
+└── env/attribute_tasks_v4.yaml    # V4 schema
+```
+
+### DVC Pipeline (14 stages)
+
+```
+generate_data_v3 → run_phase3 → run_ablations_phase3 → run_null_phase3 → sweep_* → analyze_phase3 → generate_figures
+generate_data_v4 → run_phase4 → run_ablations_phase4 → run_null_phase4 → sweep_* → analyze_phase4 → generate_figures
+```
+
+### Statistical Analysis
+
+- **Paired permutation tests** (20k permutations)
+- **Cohen's dz** effect sizes
+- **Bootstrap 95% CI** (2000 resamples)
+- **Mechanistic controls:** `null_bp` (random outcomes), `ab_no_compose` (COMPOSE disabled)
+
+### Gymnasium Interface
+
+```python
+import gymnasium as gym
+from environment.gymnasium_env import register_envs
+
+register_envs()
+env = gym.make("TRCore-AttributeTaskV4-v0", seed=42)
+# Dict(Discrete) observation, Discrete action space
+```
+
+---
+
+## Key Results Summary
+
+### Phase 3 (Rare Compositional, 24 seeds × 2 replications)
+
+| Model | Main Balanced Acc | Replication Balanced Acc |
+|-------|-------------------|--------------------------|
+| **full_bp** | **0.784** | **0.803** |
+| ValueDListML | 0.813 | 0.766 |
+| ValueTree | 0.752 | 0.763 |
+| ValuekNN | 0.702 | 0.710 |
+| ValueRF | 0.659 | 0.671 |
+| **ab_no_compose / null_bp** | **0.200** | **0.200** |
+
+- COMPOSE necessary (ablations → chance)
+- Rule recovery: 68% exact/subset, behavioral FDR = 0.36
+
+### Phase 4 (Structural-OOD, 24 seeds × 2 replications)
+
+| Model | Main Heldout | Replication Heldout |
+|-------|--------------|---------------------|
+| **full_bp** | **0.958** | **1.000** |
+| ValueTree | 0.977 | 0.985 |
+| ValueDListML | 0.910 | 0.995 |
+| ValuekNN | 0.253 | 0.311 |
+| **ab_no_compose / null_bp** | **0.000** | **0.000** |
+
+- Pair rule `calm∧guard→approach` recovered 24/24 seeds
+- COMPOSE = causal mechanism for OOD generalization
+
+---
+
+## Formal Guarantees (Appendix)
+
+| Property | Bound |
+|----------|-------|
+| Worst-case time | `O(N·L + L^K)` |
+| Expected time (pruning) | `O((1+βL)^K)` |
+| Space | `O(N + L + R·K)` |
+| Per-candidate Type I error | `≤ α = 1e-3` |
+| Ground-truth recovery | If coverage ≥ c_min, precision ≥ θ+δ, p-value ≤ α/2 |
+
+Full proofs: `docs/apriori_formal_analysis.tex`
 
 ---
 
 ## Reproducibility
 
-All components seeded:
-```python
-import random
-random.seed(42)
+```bash
+# Full pipeline
+dvc repro
 
-agent = TabulaRasaCore(seed=42)
-env = SandboxEnvironment(seed=42)
+# Single experiment
+python -m experiments.run --experiment phase4 --seeds 1-24 --summarize --paired-stats
 
-# Multiple runs with same seed produce identical results
+# Parameter sweep
+python -c "
+from experiments.harness import BenchmarkHarness
+h = BenchmarkHarness()
+r = h.run_sweep('phase4', {'agent.max_arity': [2,3,4]}, seeds=range(1,6))
+print(h.summarize(r))
+"
 ```
 
-Checkpointing enables resume:
-```python
-agent.save_checkpoint("midway")
-# later...
-agent.load_checkpoint("midway")
-agent.run_episode(env, max_steps=100)
+All components seeded. Checkpointing via `persistence/`.
+
+---
+
+## Limitations & Future Work
+
+| Limitation | Status |
+|------------|--------|
+| Binomial filter weak for low-sample rules | Known (warm/stranger/spring/dawn: 13/24 seeds) |
+| Arity ≥ 5 and `≠` literals not supported | Planned |
+| Neural-symbolic baselines (GNN, NTP) not included | Can be added to `compositional_baselines.py` |
+| Only attribute-task environments | Transfer to POMDP/continuous next |
+
+---
+
+## Project Structure (Current v0.3)
+
+```
+tr-core/
+├── behavioral/              # Behavioral Program (core)
+│   ├── program.py          # Base (v0.2 spec)
+│   ├── program_v3.py       # Apriori induction (Phase 3/4)
+│   └── rules.py            # Rule, Condition, Literal, Evidence
+├── environment/             # Task environments
+│   ├── attribute_tasks_v3.py
+│   ├── attribute_tasks_v4.py
+│   └── gymnasium_env.py    # Gymnasium wrapper
+├── experiments/             # Experimentation framework
+│   ├── experiment_phase3.py
+│   ├── experiment_phase4.py
+│   ├── compositional_baselines.py
+│   ├── harness.py          # BenchmarkHarness
+│   ├── run.py              # CLI runner
+│   ├── analyze_results.py  # Stats
+│   └── generate_figures.py
+├── conf/                    # Hydra configs
+├── docs/
+│   ├── apriori_formal_analysis.tex
+│   ├── tr_core_paper.tex
+│   └── references.bib
+├── dvc.yaml                 # Pipeline
+├── pyproject.toml           # Package
+└── tests/
 ```
 
 ---
 
-## Assumptions & Limitations
+## Citation
 
-### Assumptions
-- Environment is Markovian (current state sufficient for prediction)
-- Discrete state space (can be extended to continuous)
-- Deterministic transitions (can handle stochastic with probability)
-- Single agent (multi-agent future)
-
-### Limitations
-- No pretrained representations (learns from scratch)
-- Limited to simple environments initially
-- Memory is local (no distributed learning)
-- Single-threaded execution
-- No uncertainty quantification framework external to module
-
-### Future Extensions
-- Hierarchical world models
-- Compositional representations
-- Transfer learning between domains
-- Multi-agent coordination
-- Continuous state/action spaces
-
----
-
-## Research Value
-
-This architecture enables:
-
-1. **Controlled Experiments**
-   - Isolate individual components
-   - Measure their contribution
-   - Ablation studies
-
-2. **Benchmarking**
-   - Compare different learning algorithms
-   - Measure against baselines
-   - Track progress over time
-
-3. **Reproducibility**
-   - Full source code
-   - Seeded randomness
-   - Detailed logging
-
-4. **Extensibility**
-   - Modular design
-   - Clear interfaces
-   - Easy to add new components
-
-5. **Understanding**
-   - Trace decisions
-   - Inspect internal states
-   - Analyze learned models
-
----
-
-## Implementation Quality
-
-- ✅ Type hints throughout (Python 3.10+)
-- ✅ Comprehensive docstrings
-- ✅ Error handling
-- ✅ Logging/debugging support
-- ✅ Test coverage
-- ✅ No external dependencies (stdlib only)
-- ✅ Performance-conscious (caching, pruning)
-- ✅ Memory-efficient (bounded buffers)
-
----
-
-## Use Cases
-
-### Academic
-- Study continual learning in controlled settings
-- Benchmark adaptation mechanisms
-- Investigate world model formation
-
-### Prototyping
-- Test cognitive architecture ideas
-- Validate algorithms before scaling
-- Compare approaches quickly
-
-### Education
-- Teach cognitive science concepts
-- Demonstrate autonomous learning
-- Hands-on AI experiments
-
-### Industry
-- Baseline for autonomous systems
-- Continual learning infrastructure
-- Adaptation mechanism testing
-
----
-
-**TR-Core: Research-grade implementation of autonomous developmental cognition**
+```bibtex
+@article{trcore2026,
+  title={TR-Core: Autonomous Symbolic Induction of Compositional Rules via Apriori Search with Binomial Filtering},
+  author={TR-Core Research Group},
+  year={2026},
+  note={arXiv preprint}
+}
+```

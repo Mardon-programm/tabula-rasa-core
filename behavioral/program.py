@@ -490,12 +490,12 @@ class BehavioralProgram:
     # Learning from a train sample.
     # ------------------------------------------------------------------
 
-    def learn(self, context: dict, action: Action, success: bool) -> None:
+    def learn(self, context: dict, action: Action, success: bool, explored: bool = False) -> None:
         """Feed one episode: match rule, update evidence, possibly revise."""
 
         if success:
             self._ensure_rule_for(context, action)
-        self.observe_outcome(context, action, success)
+        self.observe_outcome(context, action, success, explored=explored)
 
     def _ensure_rule_for(self, context: dict, action: Action) -> Rule:
         """CREATE a rule when a successful interaction has no covering rule."""

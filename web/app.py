@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import sys
 import os
+import random
 from typing import Any, Optional
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
@@ -18,6 +19,24 @@ st.set_page_config(
 
 from web.state import CognitiveStateTracker
 from web import viz as V
+
+# Behavioral Program V3 imports
+try:
+    from behavioral.program_v3 import BehavioralProgramV3
+    from behavioral.program import Params
+    from behavioral.rules import Action, Literal, Condition
+    from environment.attribute_tasks_v4 import (
+        AttributeTaskGeneratorV4,
+        ATTRIBUTE_DOMAINS_V4,
+        V4_ATTRIBUTES,
+        ACTIONS_V4,
+        oracle_action_v4,
+        is_success_v4,
+        ContextV4,
+    )
+    BP_V3_AVAILABLE = True
+except ImportError:
+    BP_V3_AVAILABLE = False
 
 
 st.markdown(
@@ -93,9 +112,12 @@ if "running" not in st.session_state:
 
 with st.sidebar:
     st.subheader("Mode")
+    mode_options = ["Research Mode", "Demo Mode"]
+    if BP_V3_AVAILABLE:
+        mode_options.insert(1, "Phase 4 Demo")
     mode = st.radio(
         "Select interface",
-        ["Research Mode", "Demo Mode"],
+        mode_options,
         index=0,
         key="mode",
     )
@@ -107,12 +129,12 @@ with st.sidebar:
     st.markdown("**Drift**")
     drift_at = st.slider("Inject drift at step", 10, 200, 28, step=1)
 
-    if st.button("↻ Reset", use_container_width=True):
+    if st.button("↻ Reset", width='stretch'):
         tracker.reset()
         st.session_state.running = False
         st.rerun()
 
-    if st.button("⚡ Inject Concept Drift", use_container_width=True):
+    if st.button("⚡ Inject Concept Drift", width='stretch'):
         tracker.inject_drift()
         st.rerun()
 
@@ -153,7 +175,7 @@ if mode == "Demo Mode":
             unsafe_allow_html=True,
         )
 
-    if st.button("▶ START EXPERIMENT", use_container_width=True, type="primary"):
+    if st.button("▶ START EXPERIMENT", width='stretch', type="primary"):
         st.session_state.running = True
 
     if st.session_state.running and done < total_target:
@@ -202,22 +224,222 @@ if mode == "Demo Mode":
 
     st.stop()
 
+# ---------- PHASE 4 DEMO (BehavioralProgramV3) ----------
+if mode == "Phase 4 Demo":
+    if not BP_V3_AVAILABLE:
+        st.error("BehavioralProgramV3 not available. Check imports.")
+        st.stop()
+
+    st.markdown("### Phase 4: Structural-OOD Compositional Generalization")
+    st.caption("Agent learns `calm ∧ guard → approach` (pair), generalizes to never-seen `calm ∧ guard ∧ night → approach` (triple)")
+
+    # Session state for BP demo
+    if "bp_demo" not in st.session_state:
+        st.session_state.bp_demo = {
+            "bp": None,
+            "gen": None,
+            "sets": None,
+            "experience": [],
+            "step_count": 0,
+            "phase": "init",  # init, train, develop, test
+            "heldout_results": None,
+        }
+
+    bp_demo = st.session_state.bp_demo
+
+    # Sidebar controls for Phase 4
+    with st.sidebar:
+        st.divider()
+        st.markdown("**Phase 4 Controls**")
+        
+        if bp_demo["phase"] == "init":
+            if st.button("🔧 Initialize Environment", width='stretch'):
+                bp_demo["gen"] = AttributeTaskGeneratorV4(seed=42)
+                bp_demo["sets"] = bp_demo["gen"].generate()
+                
+                bp_demo["bp"] = BehavioralProgramV3(
+                    attributes=list(V4_ATTRIBUTES),
+                    domains=ATTRIBUTE_DOMAINS_V4,
+                    actions=ACTIONS_V4,
+                    params=Params(
+                        develop_interval=50,
+                        min_coverage=2,
+                        validate_accuracy=0.4,
+                        validate_margin=0.05,
+                        explore_rate=0.5,
+                    ),
+                    seed=42,
+                    max_arity=4,
+                )
+                bp_demo["phase"] = "train"
+                st.rerun()
+
+        elif bp_demo["phase"] == "train":
+            st.markdown("**Training Steps**")
+            train_steps = st.slider("Experience steps", 10, 500, 100, step=10)
+            if st.button("▶ Collect Experience", width='stretch'):
+                rng = random.Random(42 + bp_demo["step_count"])
+                for _ in range(train_steps):
+                    ctx = rng.choice(bp_demo["sets"].train)
+                    action_name = rng.choice(ACTIONS_V4)
+                    action = Action("primitive", action_name)
+                    success = is_success_v4(ctx, action_name)
+                    bp_demo["experience"].append((ctx, action, success, True))
+                    bp_demo["bp"].learn(ctx, action, success, True)
+                    bp_demo["step_count"] += 1
+                bp_demo["phase"] = "develop"
+                st.rerun()
+
+        elif bp_demo["phase"] == "develop":
+            st.markdown("**Induction**")
+            if st.button("🧠 Run Apriori Induction (develop)", width='stretch', type="primary"):
+                n_new = bp_demo["bp"].develop()
+                st.success(f"Materialized {n_new} new rules")
+                bp_demo["phase"] = "test"
+                st.rerun()
+
+        elif bp_demo["phase"] == "test":
+            st.markdown("**Evaluation**")
+            if st.button("🧪 Test Held-Out Triple", width='stretch', type="primary"):
+                # Test the held-out triple: calm ∧ guard ∧ night → approach
+                heldout_ctx: ContextV4 = {
+                    "emotion": "calm",
+                    "task": "guard",
+                    "hour": "night",
+                    "agent": "dog",
+                    "terrain": "forest",
+                    "weather": "sunny",
+                }
+                pred = bp_demo["bp"].choose_action(heldout_ctx)
+                oracle = oracle_action_v4(heldout_ctx)
+                success = pred == oracle if pred else False
+                
+                bp_demo["heldout_results"] = {
+                    "context": heldout_ctx,
+                    "predicted": pred.name if pred else "None",
+                    "oracle": oracle,
+                    "success": success,
+                }
+                st.rerun()
+
+    # Main display
+    if bp_demo["phase"] == "init":
+        st.info("Click **Initialize Environment** in sidebar to start.")
+        
+    elif bp_demo["phase"] == "train":
+        st.markdown(f"**Experience collected:** {len(bp_demo['experience'])} steps")
+        st.markdown(f"**Rules in program:** {len(bp_demo['bp'].rules)}")
+        
+        # Show experience summary
+        if bp_demo["experience"]:
+            actions = [str(e[1]) for e in bp_demo["experience"]]
+            from collections import Counter
+            action_counts = Counter(actions)
+            st.bar_chart(action_counts)
+            
+    elif bp_demo["phase"] == "develop":
+        st.markdown(f"**Total rules:** {len(bp_demo['bp'].rules)}")
+        
+        # Rule visualization
+        st.markdown("### Rule Base")
+        rule_data = []
+        for r in bp_demo["bp"].rules:
+            status_color = {
+                "LATENT": "#ffa500",
+                "ACTIVE": "#00ff00",
+                "RETIRED": "#ff0000",
+                "DELETED": "#888888",
+            }.get(r.status, "#ffffff")
+            
+            prov = ", ".join(r.provenance) if r.provenance else "—"
+            cond_str = " ∧ ".join([f"{l.attribute}={l.value}" for l in r.condition.literals]) if r.condition.literals else "TRUE"
+            
+            rule_data.append({
+                "ID": r.id,
+                "Status": r.status,
+                "Condition": cond_str,
+                "Action": r.action.name,
+                "Provenance": prov,
+                "Evidence": f"{r.evidence.n_success}/{r.evidence.n_failure}",
+            })
+        
+        if rule_data:
+            import pandas as pd
+            df = pd.DataFrame(rule_data)
+            st.dataframe(df, width='stretch', hide_index=True)
+            
+    elif bp_demo["phase"] == "test":
+        st.markdown(f"**Total rules:** {len(bp_demo['bp'].rules)}")
+        
+        # Show all rules
+        st.markdown("### Final Rule Base")
+        rule_data = []
+        for r in bp_demo["bp"].rules:
+            if r.status in ("ACTIVE", "LATENT"):
+                prov = ", ".join(r.provenance) if r.provenance else "—"
+                cond_str = " ∧ ".join([f"{l.attribute}={l.value}" for l in r.condition.literals]) if r.condition.literals else "TRUE"
+                rule_data.append({
+                    "ID": r.id,
+                    "Status": r.status,
+                    "Condition": cond_str,
+                    "Action": r.action.name,
+                    "Provenance": prov,
+                    "Evidence": f"{r.evidence.n_success}/{r.evidence.n_failure}",
+                })
+        
+        if rule_data:
+            import pandas as pd
+            df = pd.DataFrame(rule_data)
+            st.dataframe(df, width='stretch', hide_index=True)
+        
+        # Held-out test result
+        if bp_demo["heldout_results"]:
+            hr = bp_demo["heldout_results"]
+            st.markdown("---")
+            st.markdown("### 🧪 Held-Out Triple Test")
+            
+            col1, col2, col3 = st.columns(3)
+            col1.metric("Context", "calm ∧ guard ∧ night")
+            col2.metric("Predicted", hr["predicted"])
+            col3.metric("Oracle", hr["oracle"])
+            
+            if hr["success"]:
+                st.success("✅ **SUCCESS**: Agent correctly generalized from pair to triple!")
+            else:
+                st.error(f"❌ **FAILED**: Predicted {hr['predicted']}, oracle was {hr['oracle']}")
+            
+            # Test pair rule recovery
+            pair_found = False
+            for r in bp_demo["bp"].active_rules:
+                if r.action.name == "approach":
+                    lits = {f"{l.attribute}={l.value}" for l in r.condition.literals}
+                    if "emotion=calm" in lits and "task=guard" in lits and len(lits) == 2:
+                        pair_found = True
+                        break
+            
+            if pair_found:
+                st.success("✅ **Pair Rule Recovered**: `calm ∧ guard → approach` found as ACTIVE rule")
+            else:
+                st.warning("⚠️ Pair rule not found in ACTIVE rules")
+
+    st.stop()
+
 # ---------- RESEARCH MODE ----------
 st.markdown("### Control Console")
 
 controls = {"run": False, "pause": False, "step": False, "reset": False, "drift": False}
 c1, c2, c3, c4, c5, c6 = st.columns(6)
-if c1.button("▶ RUN", use_container_width=True):
+if c1.button("▶ RUN", width='stretch'):
     controls["run"] = True
-if c2.button("⏸ PAUSE", use_container_width=True):
+if c2.button("⏸ PAUSE", width='stretch'):
     controls["pause"] = True
-if c3.button("⏭ STEP", use_container_width=True):
+if c3.button("⏭ STEP", width='stretch'):
     controls["step"] = True
-if c4.button("↻ RESET", use_container_width=True):
+if c4.button("↻ RESET", width='stretch'):
     controls["reset"] = True
-if c5.button("⚡ DRIFT", use_container_width=True):
+if c5.button("⚡ DRIFT", width='stretch'):
     controls["drift"] = True
-if c6.button("⬇ Export JSON", use_container_width=True):
+if c6.button("⬇ Export JSON", width='stretch'):
     controls["export"] = True
 
 if controls["reset"]:

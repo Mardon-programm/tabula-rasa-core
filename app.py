@@ -402,17 +402,17 @@ def render_research_mode() -> None:
         labels = list(range(1, len(st.session_state.error_timeseries) + 1))
         st.subheader("Prediction Error & Concept Drift")
         fig = build_prediction_error_figure(labels)
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width='stretch')
 
         st.subheader("Cognitive Knowledge & Uncertainty")
-        st.plotly_chart(build_knowledge_figure(labels), use_container_width=True)
+        st.plotly_chart(build_knowledge_figure(labels), width='stretch')
 
         st.subheader("Prediction Accuracy")
-        st.plotly_chart(build_accuracy_figure(labels), use_container_width=True)
+        st.plotly_chart(build_accuracy_figure(labels), width='stretch')
 
     with right:
         st.subheader("Cognitive Graph")
-        st.plotly_chart(build_cognitive_graph_figure(agent), use_container_width=True)
+        st.plotly_chart(build_cognitive_graph_figure(agent), width='stretch')
 
         st.subheader("Memory")
         mem = status["memory"]
@@ -527,13 +527,13 @@ def render_demo_mode() -> None:
         drift_idx = 30
         labels = list(range(1, len(st.session_state.error_timeseries) + 1))
         st.subheader("What the agent experienced")
-        st.plotly_chart(build_prediction_error_figure(labels), use_container_width=True)
+        st.plotly_chart(build_prediction_error_figure(labels), width='stretch')
 
         col_graph, col_mem = st.columns(2)
         with col_graph:
             st.subheader("What the agent now believes")
             st.plotly_chart(build_cognitive_graph_figure(st.session_state.agent),
-                            use_container_width=True)
+                            width='stretch')
         with col_mem:
             st.subheader("What it has learned")
             st.metric("Episodic Events", mem["episodic"])
