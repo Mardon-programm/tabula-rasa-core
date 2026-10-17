@@ -1,0 +1,18 @@
+# Code Owners
+
+# Core
+/behavioral/ @Mardon-programm
+/environment/ @Mardon-programm
+/experiments/ @Mardon-programm
+
+# Web
+/web/ @Mardon-programm
+
+# Configs
+/conf/ @Mardon-programm
+/dvc.yaml @Mardon-programm
+/pyproject.toml @Mardon-programm
+
+# Docs
+/docs/ @Mardon-programm
+README.md @Mardon-programm

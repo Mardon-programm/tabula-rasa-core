@@ -1,0 +1,43 @@
+name: Feature Request
+description: Suggest a new feature or improvement
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: "Thanks for suggesting a feature! Please describe what you'd like to see added."
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: "One-line summary of the feature"
+      placeholder: "Add support for continuous attributes in the induction engine"
+    validations:
+      required: true
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivation
+      description: "Why is this needed? What problem does it solve?"
+    validations:
+      required: true
+  - type: textarea
+    id: design
+    attributes:
+      label: Proposed Design
+      description: "How should this work? Any API changes, new files, etc."
+    validations:
+      required: false
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component
+      options:
+        - behavioral (induction engine)
+        - environment (attribute tasks)
+        - perception (encoder, interface)
+        - memory (episodic, semantic, procedural)
+        - planning (HTN, MPC)
+        - motor (RL, MPC, sim2real)
+        - meta (curiosity, self-model, safety)
+        - infrastructure (DVC, Hydra, CI)

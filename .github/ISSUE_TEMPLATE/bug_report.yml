@@ -1,0 +1,60 @@
+name: Bug Report
+description: Report a bug in TR-Core
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: "Thanks for reporting a bug! Please fill out the details below."
+  - type: input
+    id: version
+    attributes:
+      label: TR-Core Version
+      description: "Which version/commit are you using?"
+      placeholder: "e.g., main branch, commit abc123"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: "Clear and concise description of the bug"
+      placeholder: "When I run X, Y happens instead of Z..."
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to Reproduce
+      description: "Minimal steps to reproduce the issue"
+      placeholder: |
+        1. Run `python -m experiments.run --experiment phase4 --seeds 1-3`
+        2. Observe error...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: "What should happen instead?"
+    validations:
+      required: true
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component
+      options:
+        - behavioral (induction engine)
+        - environment (attribute tasks)
+        - experiments (runner, analysis)
+        - web (streamlit demo)
+        - alan (next phase)
+        - infrastructure (DVC, Hydra, configs)
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs/Stack Trace
+      description: "Paste any relevant logs or stack traces"
+      render: shell

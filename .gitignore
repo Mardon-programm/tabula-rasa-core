@@ -1,13 +1,53 @@
+# Python
 __pycache__/
-*.pyc
-*.pyo
-*.egg-info/
-.venv/
+*.py[cod]
+*$py.class
+*.so
+.Python
 venv/
+.env
+.venv/
 env/
-*.log
-.DS_Store
+
+# IDE
 .idea/
 .vscode/
-*.json~
-*.bak
+*.swp
+*.swo
+
+# Data/Outputs
+*.log
+checkpoints/
+results/
+data/
+*.pt
+*.pth
+*.onnx
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Build
+dist/
+build/
+*.egg-info/
+
+# Local development
+.venv/
+*.egg
+
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Documentation build
+docs/_build/
+
+# Model weights
+*.bin
+*.safetensors
