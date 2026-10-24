@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Status](https://img.shields.io/badge/Status-Active-brightgreen.svg)]()
 [![Paper](https://img.shields.io/badge/arXiv-2026.XXXXX-orange.svg)]()
-[![DOI](https://img.shields.io/badge/DOI-10.XXXX/XXXXX-blue.svg)]()
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23619568.svg)](https://doi.org/10.5281/zenodo.23619568)
 
 > **TR-Core** is a symbolic cognitive architecture that autonomously discovers compositional rules from raw interaction without pretrained weights, embeddings, or LLMs. It achieves structural out-of-distribution generalization through an Apriori-style induction engine with exact binomial statistical filtering.
 
