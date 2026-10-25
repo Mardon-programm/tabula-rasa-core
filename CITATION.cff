@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this software in your research, please cite it as below."
+authors:
+  - family-names: "Iiminazhi uulu"
+    given-names: "Mardonbek"
+title: "TR-Core: Autonomous Symbolic Induction for Structural-OOD Generalization"
+version: 1.0.0
+doi: 10.5281/zenodo.23619568
+date-released: 2026-10-24
+url: "https://github.com/Mardon-programm/tabula-rasa-core"
