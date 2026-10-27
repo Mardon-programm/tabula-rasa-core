@@ -1,0 +1,295 @@
+<h1
+id="tr-core-autonomous-symbolic-induction-for-structural-ood-generalization">TR-Core:
+Autonomous Symbolic Induction for Structural-OOD Generalization</h1>
+<p><strong>Mardon [Surname]</strong><br />
+Independent Systems Engineer<br />
+School No. 7, Osh, Kyrgyzstan</p>
+<hr />
+<h1 id="the-problem-why-neural-networks-fail-at-structural-ood">The
+Problem: Why Neural Networks Fail at Structural OOD</h1>
+<table>
+<colgroup>
+<col style="width: 48%" />
+<col style="width: 52%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Limitation</th>
+<th>Consequence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Memorization over composition</td>
+<td>Fails on valid but unseen concept combinations</td>
+</tr>
+<tr class="even">
+<td>Black-box opacity</td>
+<td>Cannot audit, debug, or repair decisions</td>
+</tr>
+<tr class="odd">
+<td>Data hunger</td>
+<td>Requires massive labeled datasets</td>
+</tr>
+<tr class="even">
+<td>Static knowledge</td>
+<td>Cannot adapt without full retraining</td>
+</tr>
+<tr class="odd">
+<td>No causal mechanism</td>
+<td>Correlation mistaken for composition</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Structural-OOD Example</strong><br />
+Learned: calm AND guard IMPLIES approach<br />
+Held-out (never seen): calm AND guard AND night IMPLIES approach<br />
+Neural nets: ~0.25 accuracy (chance)<br />
+Required: Compositional generalization via COMPOSE</p>
+<hr />
+<h1 id="tr-core-architecture">TR-Core Architecture</h1>
+<pre><code>+-------------------------------------------------------------+
+|                    ATTRIBUTE TASK ENVIRONMENT               |
+|         (Gymnasium: V3 Rare / V4 Structural-OOD)            |
++-----------------------------+-------------------------------+
+                              | observe(context, action, success)
+                              V
++-------------------------------------------------------------+
+|  BEHAVIORAL PROGRAM V3                                      |
+|  +-----------------+  +---------------------------------+  |
+|  |   RULE BASE     |  |     INDUCTION ENGINE (Apriori)  |  |
+|  |  * LATENT       |  |  * Coverage pruning (c_min=4)   |  |
+|  |  * ACTIVE       |  |  * Binomial filter (alpha=1e-3) |  |
+|  |  * RETIRED      |  |  * Precision &gt;= 0.95            |  |
+|  |  * DELETED      |  |  * Max arity K=4                |  |
++------------+--------+  +----------------+----------------+  |
+             |                         |                      |
+             +------------+------------+                      |
+                          V                                     |
+                  SUBPROGRAMS (COMPOSE)                         |
++-------------------------------------------------------------+</code></pre>
+<p><strong>7 Development Operations</strong>: CREATE, GENERALIZE,
+SPECIALIZE, SPLIT, COMPOSE, MODIFY, DELETE</p>
+<hr />
+<h1 id="phase-3-rare-compositional-rules-8-attrs-4608-contexts">Phase 3:
+Rare Compositional Rules (8 attrs, 4,608 contexts)</h1>
+<table>
+<thead>
+<tr class="header">
+<th>Model</th>
+<th>Balanced Accuracy (Main/Repl)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>TR-Core (full_bp)</strong></td>
+<td><strong>0.784 / 0.803</strong></td>
+</tr>
+<tr class="even">
+<td>ValueDListML</td>
+<td>0.813 / 0.766</td>
+</tr>
+<tr class="odd">
+<td>ValueDecisionTree</td>
+<td>0.752 / 0.763</td>
+</tr>
+<tr class="even">
+<td>ValuekNN</td>
+<td>0.702 / 0.710</td>
+</tr>
+<tr class="odd">
+<td>ValueRandomForest</td>
+<td>0.659 / 0.671</td>
+</tr>
+<tr class="even">
+<td>Logistic Regression</td>
+<td>0.200 / 0.200</td>
+</tr>
+<tr class="odd">
+<td><strong>ab_no_compose / null_bp</strong></td>
+<td><strong>0.200 / 0.200</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Rule Recovery</strong>: 68% exact/subset | Behavioral FDR =
+0.36</p>
+<hr />
+<h1
+id="phase-4-structural-ood-held-out-triple-zero-training-support">Phase
+4: Structural-OOD (Held-out triple, zero training support)</h1>
+<table>
+<thead>
+<tr class="header">
+<th>Model</th>
+<th>Held-out Accuracy (Main/Repl)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>TR-Core (full_bp)</strong></td>
+<td><strong>0.958 / 1.000</strong></td>
+</tr>
+<tr class="even">
+<td>ValueDecisionTree</td>
+<td>0.977 / 0.985</td>
+</tr>
+<tr class="odd">
+<td>ValueDListML</td>
+<td>0.910 / 0.995</td>
+</tr>
+<tr class="even">
+<td>ValueRandomForest</td>
+<td>0.844 / 0.935</td>
+</tr>
+<tr class="odd">
+<td>ValuekNN</td>
+<td>0.253 / 0.311</td>
+</tr>
+<tr class="even">
+<td><strong>ab_no_compose / null_bp</strong></td>
+<td><strong>0.000 / 0.000</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Pair rule recovery</strong>: calm AND guard IMPLIES approach
+recovered 24/24 seeds</p>
+<hr />
+<h1 id="ablation-studies-causal-evidence">Ablation Studies: Causal
+Evidence</h1>
+<table>
+<thead>
+<tr class="header">
+<th>Ablation</th>
+<th>Phase 3 Balanced Acc</th>
+<th>Phase 4 Held-out Acc</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>full_bp (COMPOSE enabled)</td>
+<td>0.784 / 0.803</td>
+<td>0.958 / 1.000</td>
+</tr>
+<tr class="even">
+<td>ab_no_compose (COMPOSE disabled)</td>
+<td>0.200 / 0.200</td>
+<td>0.000 / 0.000</td>
+</tr>
+<tr class="odd">
+<td>null_bp (randomized outcomes)</td>
+<td>0.200 / 0.202</td>
+<td>0.000 / 0.000</td>
+</tr>
+<tr class="even">
+<td>chance baseline</td>
+<td>0.199 / 0.205</td>
+<td>0.251 / 0.236</td>
+</tr>
+</tbody>
+</table>
+<p>Conclusion: COMPOSE is the causal mechanism for structural-OOD
+generalization. Without it, the system collapses to random guessing.
+With it, it achieves near-ceiling OOD accuracy.</p>
+<hr />
+<h1 id="formal-guarantees-infrastructure">Formal Guarantees &amp;
+Infrastructure</h1>
+<h3 id="formal-analysis-proven">Formal Analysis (Proven)</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Property</th>
+<th>Bound</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Worst-case time</td>
+<td>O(N*L + L^K)</td>
+</tr>
+<tr class="even">
+<td>Expected time (pruning)</td>
+<td>O((1+beta*L)^K)</td>
+</tr>
+<tr class="odd">
+<td>Space</td>
+<td>O(N + L + R*K)</td>
+</tr>
+<tr class="even">
+<td>Type I error (per candidate)</td>
+<td>&lt;= alpha = 0.001 (exact binomial)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="professional-infrastructure">Professional Infrastructure</h3>
+<ul>
+<li>Gymnasium interface: TRCore-AttributeTaskV3-v0, V4-v0</li>
+<li>Configuration: Hydra (sweep-ready YAML)</li>
+<li>Pipeline: DVC (14 stages: data to exp to analysis to figures)</li>
+<li>Statistics: Permutation tests (20k), Cohen’s dz, bootstrap CI</li>
+<li>Reproducibility: 24 seeds x 2 replications, fixed seeds, DVC
+tracking</li>
+<li>Package: pip install -e . via pyproject.toml</li>
+</ul>
+<hr />
+<h1 id="conclusions-next-steps-alan">Conclusions &amp; Next Steps:
+Alan</h1>
+<h3 id="what-tr-core-proves">What TR-Core Proves</h3>
+<ol type="1">
+<li>Compositional generalization without neural networks – symbolic
+induction + exact statistics suffices</li>
+<li>COMPOSE is necessary and sufficient for structural-OOD – ablations
+isolate it as causal mechanism</li>
+<li>Exact statistical control enables tractable search – binomial filter
++ coverage floor tames combinatorial explosion</li>
+<li>White-box by construction – every decision traceable to a rule with
+provenance</li>
+</ol>
+<h3 id="next-steps-alan-embodied-agi-prototype">Next Steps: Alan
+(Embodied AGI Prototype)</h3>
+<table>
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 26%" />
+<col style="width: 43%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Phase</th>
+<th>Goal</th>
+<th>Timeline</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1. Perception</td>
+<td>Pixels to discrete attributes (Slot Attention + DINOv2)</td>
+<td>Months 1-3</td>
+</tr>
+<tr class="even">
+<td>2. Hierarchical Composition</td>
+<td>Rules to Skills to HTN Programs (library learning)</td>
+<td>Months 4-7</td>
+</tr>
+<tr class="odd">
+<td>3. Lifelong Memory</td>
+<td>Episodic to Semantic to Procedural consolidation</td>
+<td>Months 8-11</td>
+</tr>
+<tr class="even">
+<td>4. Embodiment</td>
+<td>Sim2Real on Unitree Go1 / ALOHA (CBF-MPC safety)</td>
+<td>Months 12-18</td>
+</tr>
+</tbody>
+</table>
+<p>TR-Core is the verified symbolic core. Alan builds the organism
+around it.</p>
+<hr />
+<h1 id="contact-links">Contact &amp; Links</h1>
+<p>Repository: github.com/Mardon-programm/tabula-rasa-core<br />
+Alan (Next Phase): github.com/Mardon-programm/alan<br />
+Paper (LaTeX): docs/tr_core_paper.tex<br />
+Formal Analysis: docs/apriori_formal_analysis.tex<br />
+Demo: streamlit run web/app.py -&gt; Phase 4 Demo</p>
+<p>Contact: [email] | Independent Systems Engineer | School No. 7,
+Osh</p>

@@ -1,0 +1,84 @@
+\begin{thebibliography}{10}
+
+\bibitem{baldassarre2014intrinsically}
+Gianluca Baldassarre and Marco Mirolli.
+\newblock Intrinsically motivated cumulative learning: A review of the
+  im-clever project.
+\newblock {\em Frontiers in Neurorobotics}, 8:1--12, 2014.
+
+\bibitem{battaglia2018relational}
+Peter~W Battaglia, Jessica~B Hamrick, Victor Bapst, Alvaro Sanchez-Gonzalez,
+  Vinicius Zambaldi, Mateusz Malinowski, Andrea Tacchetti, David Raposo, Adam
+  Santoro, Ryan Faulkner, et~al.
+\newblock Relational inductive biases, deep learning, and graph networks.
+\newblock {\em arXiv preprint arXiv:1806.01261}, 2018.
+
+\bibitem{goertzel2014opencog}
+Ben Goertzel, Ruiting Lian, Itamar Arel, Hugo de~Garis, and Shuo Chen.
+\newblock Opencog: A software framework for integrative artificial general
+  intelligence.
+\newblock {\em Artificial General Intelligence}, pages 183--192, 2014.
+
+\bibitem{behavioral_program_spec_v02}
+TR-Core~Research Group.
+\newblock Behavioral program specification v0.2.
+\newblock 2026.
+\newblock Internal specification document.
+
+\bibitem{kim2020cogs}
+Najoung Kim and Tal Linzen.
+\newblock Cogs: A compositional generalization challenge based on semantic
+  parsing.
+\newblock {\em Proceedings of EMNLP}, 2020.
+
+\bibitem{laird2019soar}
+John~E Laird.
+\newblock The soar cognitive architecture.
+\newblock {\em MIT Press}, 2019.
+
+\bibitem{lake2018generalization}
+Brenden~M Lake and Marco Baroni.
+\newblock Generalization without systematicity: On the compositional skills of
+  sequence-to-sequence recurrent networks.
+\newblock {\em International Conference on Machine Learning}, pages 2873--2882,
+  2018.
+
+\bibitem{langley2009cognitive}
+Pat Langley, John~E Laird, and Seth Rogers.
+\newblock Cognitive architectures and general intelligent systems.
+\newblock {\em AI Magazine}, 30(4):13--13, 2009.
+
+\bibitem{manhaeve2018deepproblog}
+Robin Manhaeve, Sebastijan Dumancic, Angelika Kimmig, Thomas Demeester, and Luc
+  De~Raedt.
+\newblock Deepproblog: Neural probabilistic logic programming.
+\newblock {\em Advances in Neural Information Processing Systems}, 31, 2018.
+
+\bibitem{muggleton1995inverse}
+Stephen Muggleton.
+\newblock Inverse entailment and progol.
+\newblock {\em New Generation Computing}, 13:245--286, 1995.
+
+\bibitem{quinlan1990foil}
+J~Ross Quinlan.
+\newblock Learning logical definitions from relations.
+\newblock {\em Machine Learning}, 5:239--266, 1990.
+
+\bibitem{rocktaschel2017end}
+Tim Rockt{\"a}schel and Sebastian Riedel.
+\newblock End-to-end differentiable proving.
+\newblock {\em Advances in Neural Information Processing Systems}, 30, 2017.
+
+\bibitem{ruis2020benchmark}
+Laura Ruis, Jacob Andreas, Marco Baroni, Diane Bouchacourt, and Brenden~M Lake.
+\newblock A benchmark for systematic generalization in grounded language
+  understanding.
+\newblock {\em Proceedings of EMNLP}, 2020.
+
+\bibitem{verschure2016distributed}
+Paul~FM Verschure and Paul Althaus.
+\newblock Distributed adaptive control: A theory of the mind-brain-body
+  connection.
+\newblock {\em Neural Networks}, 75:1--14, 2016.
+
+\end{thebibliography}

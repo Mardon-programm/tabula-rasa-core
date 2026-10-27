@@ -1,0 +1,293 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{algorithm, algorithmic}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\title{Formal Analysis of the Apriori Induction Engine in TR-Core}
+\author{TR-Core Research Group}
+\date{\today}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Binom}{\mathrm{Binom}}
+\newcommand{\argmin}{\mathrm{argmin}}
+\newcommand{\argmax}{\mathrm{argmax}}
+\newcommand{\poly}{\mathrm{poly}}
+\newcommand{\Oh}{\mathcal{O}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Th}{\Theta}
+\newcommand{\calA}{\mathcal{A}}
+\newcommand{\calC}{\mathcal{C}}
+\newcommand{\calD}{\mathcal{D}}
+\newcommand{\calL}{\mathcal{L}}
+\newcommand{\calR}{\mathcal{R}}
+\newcommand{\calS}{\mathcal{S}}
+\newcommand{\calX}{\mathcal{X}}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem{proposition}{Proposition}
+\newtheorem{definition}{Definition}
+\newtheorem{remark}{Remark}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We present a formal complexity analysis of the Apriori-style induction engine implemented in \texttt{BehavioralProgramV3} (TR-Core Phase 3). The engine discovers compositional rules as conjunctions of literals over a finite attribute domain, using coverage-based pruning and a binomial statistical filter. We derive worst-case and expected-case bounds for time and space complexity, prove correctness of the anti-monotonicity pruning, and characterize the statistical guarantees of the binomial filter.
+\end{abstract}
+
+\section{Problem Setup and Notation}
+
+\subsection{Attribute Domain}
+Let $\calA = \{A_1, \dots, A_m\}$ be a set of $m$ categorical attributes. Each attribute $A_i$ has a finite domain $\mathrm{dom}(A_i)$ of size $d_i = |\mathrm{dom}(A_i)|$. A \emph{literal} is a pair $(A_i, v)$ with $v \in \mathrm{dom}(A_i)$, denoted $A_i = v$. The set of all possible literals is
+\[
+\calL = \bigcup_{i=1}^m \{A_i\} \times \mathrm{dom}(A_i), \qquad |\calL| = \sum_{i=1}^m d_i =: L.
+\]
+In TR-Core v3/v4: $m=5$ or $8$, $d_i \in \{2,3,4\}$, so $L \in [15, 25]$.
+
+\subsection{Conjunctions and Arity}
+A \emph{conjunction} (candidate condition) of arity $k$ is a set $C \subseteq \calL$ with $|C| = k$ and at most one literal per attribute. The set of all valid conjunctions of arity $\leq K$ is
+\[
+\calC_{\leq K} = \bigcup_{k=1}^K \{ C \subseteq \calL : |C|=k,\; \forall A_i, |C \cap (\{A_i\}\times\mathrm{dom}(A_i))| \leq 1 \}.
+\]
+Total candidates:
+\[
+|\calC_{\leq K}| = \sum_{k=1}^K \sum_{1 \leq i_1 < \dots < i_k \leq m} \prod_{j=1}^k d_{i_j}.
+\]
+For uniform domains $d_i = d$, this is $\sum_{k=1}^K \binom{m}{k} d^k \leq (1+d)^m - 1$.
+
+\subsection{Data and Coverage}
+The agent collects \emph{explore trials} $\calD = \{(x^{(t)}, a^{(t)}, y^{(t)})\}_{t=1}^N$ where $x^{(t)} \in \calX = \prod_i \mathrm{dom}(A_i)$ is a context, $a^{(t)} \in \calY$ is an action chosen uniformly at random (exploration), and $y^{(t)} \in \{0,1\}$ is success. For a fixed action $a$, define the filtered dataset
+\[
+\calD_a = \{(x, y) \in \calD : a^{(t)} = a\}, \qquad N_a = |\calD_a|.
+\]
+For a conjunction $C$, its \emph{coverage} and \emph{hits} on $\calD_a$ are
+\[
+\mathrm{cov}_a(C) = |\{(x,y) \in \calD_a : x \models C\}|, \qquad
+\mathrm{hits}_a(C) = |\{(x,y) \in \calD_a : x \models C \land y=1\}|.
+\]
+Precision is $\mathrm{prec}_a(C) = \mathrm{hits}_a(C) / \mathrm{cov}_a(C)$ (undefined if $\mathrm{cov}_a(C)=0$).
+
+\subsection{Induction Criteria}
+A candidate $C$ for action $a$ is \emph{materialized} as a rule iff:
+\begin{enumerate}
+    \item $\mathrm{cov}_a(C) \geq c_{\min}$ (coverage floor)
+    \item $\mathrm{hits}_a(C) \geq h_{\min}$ (minimum successes)
+    \item $\mathrm{prec}_a(C) \geq \theta$ (precision threshold)
+    \item $p\text{-value} = \Prob_{\Binom(N_a, p_a)}(\mathrm{hits} \geq \mathrm{hits}_a(C)) \leq \alpha$ (binomial filter)
+\end{enumerate}
+where $p_a = \mathrm{hits}_a(\emptyset) / N_a$ is the base success rate for action $a$. Default parameters: $c_{\min}=4$, $h_{\min}=5$, $\theta=0.95$, $\alpha=10^{-3}$, $K=4$.
+
+\section{Algorithm: Apriori Induction with Binomial Filter}
+
+\begin{algorithm}
+\caption{Apriori Induction for One Action}
+\begin{algorithmic}
+\REQUIRE $\calD_a$, $L$ literals, $K$, thresholds $(c_{\min}, h_{\min}, \theta, \alpha)$
+\STATE $S_1 \gets \{\{l\} : l \in \calL\}$ \COMMENT{All 1-literal candidates}
+\FOR{$k = 1$ to $K$}
+    \STATE $S_k^{\text{supported}} \gets \emptyset$
+    \FOR{$C \in S_k$}
+        \STATE Compute $\mathrm{cov}_a(C), \mathrm{hits}_a(C)$ via bitmask intersection
+        \IF{$\mathrm{cov}_a(C) \geq c_{\min}$}
+            \STATE $S_k^{\text{supported}} \gets S_k^{\text{supported}} \cup \{C\}$
+            \IF{$\mathrm{hits}_a(C) \geq h_{\min} \land \mathrm{prec}_a(C) \geq \theta \land p\text{-value}(C) \leq \alpha$}
+                \STATE Materialize rule $C \to a$
+            \ENDIF
+        \ENDIF
+    \ENDFOR
+    \IF{$S_k^{\text{supported}} = \emptyset$} \BREAK \ENDIF
+    \STATE $S_{k+1} \gets \mathrm{GenCandidates}(S_k^{\text{supported}})$ \COMMENT{Apriori join+prune}
+\ENDFOR
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{Candidate Generation (Apriori Join)}
+$\mathrm{GenCandidates}(S)$ produces all $(k+1)$-literal sets whose every $k$-subset is in $S$:
+\[
+\mathrm{GenCandidates}(S) = \{ C \cup \{l\} : C \in S,\; l \in \calL \setminus C,\; \forall C' \subset C \cup \{l\}, |C'|=k \implies C' \in S \}.
+\]
+In the implementation (line 154-169 of \texttt{program\_v3.py}), this is done by extending each supported $C$ with literals not in $C$, then sorting for determinism.
+
+\section{Complexity Analysis}
+
+\subsection{Worst-Case Time Complexity}
+
+\begin{theorem}[Worst-Case Candidate Enumeration]
+The worst-case number of candidates evaluated across all arities $1 \dots K$ is
+\[
+T_{\text{cand}} = \sum_{k=1}^K \binom{L}{k} = \Oh(L^K).
+\]
+\end{theorem}
+\begin{proof}
+Without pruning, every subset of $\calL$ of size $\leq K$ is a candidate. The sum of binomial coefficients is bounded by $(eL/K)^K$ for $K \ll L$, i.e., $\Oh(L^K)$.
+\end{proof}
+
+\begin{theorem}[Worst-Case Coverage Computation]
+For a single candidate $C$, computing $\mathrm{cov}_a(C)$ and $\mathrm{hits}_a(C)$ over $N_a$ trials takes $\Oh(N_a)$ time naively, or $\Oh(1)$ with precomputed bitmasks (as implemented). With bitmasks:
+\[
+T_{\text{eval}} = \Oh(N_a \cdot L) \text{ preprocessing} + \Oh(T_{\text{cand}}) \text{ evaluation}.
+\]
+\end{theorem}
+\begin{proof}
+Preprocessing: tokenize each trial into a bitmask of length $L$ ($\Oh(N_a L)$). Evaluation: bitwise AND and popcount are $\Oh(1)$ on 32/64-bit words (here $L \leq 32$ fits in \texttt{uint32}).
+\end{proof}
+
+\begin{corollary}[Overall Worst-Case Time]
+\[
+T_{\text{worst}} = \Oh(N_a L + L^K).
+\]
+For TR-Core: $N_a \sim 2500$, $L \sim 20$, $K=4$ $\implies$ $L^K = 160,\!000$ candidates, feasible.
+\end{corollary}
+
+\subsection{Expected Complexity Under Anti-Monotonicity}
+
+\begin{definition}[Anti-Monotonicity of Coverage]
+Coverage is anti-monotone: if $C \subseteq C'$ then $\mathrm{cov}_a(C') \leq \mathrm{cov}_a(C)$.
+\end{definition}
+
+\begin{lemma}[Apriori Pruning Correctness]
+If $\mathrm{cov}_a(C) < c_{\min}$, then for all $C' \supset C$, $\mathrm{cov}_a(C') < c_{\min}$.
+\end{lemma}
+\begin{proof}
+Direct from anti-monotonicity: $C \subseteq C' \implies \mathrm{cov}_a(C') \leq \mathrm{cov}_a(C) < c_{\min}$.
+\end{proof}
+
+\begin{theorem}[Expected Candidates Under Pruning]
+Let $p_k = \Prob(\mathrm{cov}_a(C) \geq c_{\min})$ for a random $k$-literal conjunction. Assume $p_k$ decays exponentially: $p_k \leq \beta^k$ for some $\beta < 1$. Then expected candidates:
+\[
+\E[T_{\text{cand}}] = \sum_{k=1}^K \binom{L}{k} p_{k-1} \leq \sum_{k=1}^K \binom{L}{k} \beta^{k-1} = \Oh((1+\beta L)^K).
+\]
+\end{theorem}
+\begin{proof}
+A $k$-candidate is generated only if its $(k-1)$-subsets are supported. By union bound, probability a random $k$-candidate is generated $\leq \beta^{k-1}$. Sum over all $\binom{L}{k}$ candidates.
+\end{proof}
+
+\begin{remark}
+In practice, $c_{\min}=4$ and sparse data ($N_a \sim 600$) make $p_k$ drop sharply. Phase 3 logs show $\sim 100$ rules materialized per seed from $\sim 10^5$ initial candidates, implying effective branching factor $\ll L$.
+\end{remark}
+
+\subsection{Space Complexity}
+
+\begin{theorem}[Space Complexity]
+\[
+S = \Oh(N_a + L + R \cdot K)
+\]
+where $R$ is the number of materialized rules. Bitmasks: $\Oh(N_a)$; literal index: $\Oh(L)$; rules: $\Oh(R K)$.
+\end{theorem}
+In TR-Core: $R \sim 100$, $K=4$, $N_a \sim 2500$ $\implies$ negligible memory.
+
+\section{Statistical Guarantees of the Binomial Filter}
+
+\subsection{Filter Definition}
+For candidate $C$ with $\mathrm{cov}_a(C) = n$, $\mathrm{hits}_a(C) = h$, the filter computes
+\[
+p\text{-value}(C) = \sum_{j=h}^n \binom{n}{j} p_a^j (1-p_a)^{n-j} = \Prob_{X \sim \Binom(n, p_a)}(X \geq h).
+\]
+Accept if $p\text{-value} \leq \alpha$.
+
+\subsection{Type I Error (False Positive)}
+
+\begin{theorem}[Per-Candidate Type I Error]
+Under the null hypothesis that $C$ has true precision $p_a$, the probability of materializing $C$ is $\leq \alpha$.
+\end{theorem}
+\begin{proof}
+Direct from definition of $p$-value. The test is exact (binomial, not asymptotic).
+\end{proof}
+
+\begin{theorem}[Family-Wise Error Rate (FWER)]
+Let $M$ be the total number of candidates tested. Under global null (all candidates have precision $p_a$),
+\[
+\Prob(\text{any false positive}) \leq M \alpha \quad \text{(Bonferroni)}.
+\]
+With $\alpha=10^{-3}$, $M \sim 10^5$, Bonferroni gives FWER $\leq 0.1$. The actual FWER is lower due to dependence among candidates.
+\end{theorem}
+
+\subsection{Type II Error (False Negative / Power)}
+
+\begin{theorem}[Detection Power]
+For a candidate with true precision $p > p_a$, coverage $n$, the power is
+\[
+\beta(n, p) = \Prob_{\Binom(n, p)}(X \geq h_{\text{crit}})
+\]
+where $h_{\text{crit}} = \min\{h : \Prob_{\Binom(n, p_a)}(X \geq h) \leq \alpha\}$.
+\end{theorem}
+
+\begin{corollary}[Minimum Detectable Effect]
+For $n = c_{\min} = 4$, $p_a \approx 0.2$, $\alpha=10^{-3}$: $h_{\text{crit}} = 4$ (need perfect precision). For $n=10$, $h_{\text{crit}} = 7$ (70\%). The filter requires \emph{high precision on sufficient coverage} — this is by design to avoid overfitting sparse conjunctions.
+\end{corollary}
+
+\section{Rule Recovery Guarantees}
+
+\subsection{Setting}
+Let the true oracle contain a set of ground-truth compositional rules $\calR^* = \{C_j^* \to a_j\}$ with arity $k_j \leq K$. Assume:
+\begin{enumerate}
+    \item (Coverage) $\forall j,\; \mathrm{cov}_{a_j}(C_j^*) \geq c_{\min}$ in the explore data.
+    \item (Precision) $\forall j,\; \mathrm{prec}_{a_j}(C_j^*) \geq \theta + \delta$ for some $\delta > 0$.
+    \item (Separation) $\forall j,\; p\text{-value}(C_j^*) \leq \alpha/2$ with high probability.
+\end{enumerate}
+
+\begin{theorem}[Recovery of Ground-Truth Rules]
+Under the above assumptions, with probability $\geq 1 - \eta$ (over data sampling), every $C_j^* \in \calR^*$ is materialized as an ACTIVE rule.
+\end{theorem}
+\begin{proof}
+By Assumption 1, $C_j^*$ passes coverage pruning at all levels $\leq k_j$. By Assumption 2 and 3, it passes the binomial filter. The algorithm evaluates all candidates up to arity $K$, so $C_j^*$ is considered and materialized.
+\end{proof}
+
+\begin{remark}
+Phase 3 results: 4/6 oracle rules recovered in 100\% of seeds (exact match); 2/6 recovered in 50-83\%. The missed rules (`cold∧elder→obey`, `warm∧stranger∧spring∧dawn→approach`) violate Assumption 1 or 2 due to priority overlap with other rules.
+\end{remark}
+
+\section{Phase Transition in Rule Recovery}
+
+Define the \emph{effective branching factor} $b_{\text{eff}}(k) = |S_k^{\text{supported}}| / |S_{k-1}^{\text{supported}}|$.
+
+\begin{proposition}[Phase Transition]
+If $b_{\text{eff}}(k) > 1$ for all $k \leq K$, the candidate set grows exponentially and induction is intractable. If $b_{\text{eff}}(k) < 1$ for some $k$, the search terminates early. The transition occurs at the critical coverage threshold $c_{\min}^*$ where $\E[b_{\text{eff}}(k)] = 1$.
+\end{proposition}
+
+In TR-Core, $c_{\min}=4$ places the system in the subcritical regime ($b_{\text{eff}} < 1$ for $k \geq 3$), enabling tractable discovery of arity-4 rules.
+
+\section{Comparison to Alternative Inducers}
+
+\begin{table}[htbp]
+\centering
+\caption{Complexity comparison of induction methods}
+\begin{tabular}{lccc}
+\toprule
+Method & Time & Space & Statistical Guarantee \\
+\midrule
+Apriori (this work) & $\Oh(NL + L^K)$ & $\Oh(N + L)$ & Exact binomial test \\
+Decision Tree (CART) & $\Oh(N L \log N)$ & $\Oh(N)$ & Heuristic (impurity) \\
+Decision List (greedy) & $\Oh(N L^K)$ & $\Oh(N)$ & Heuristic (lift/accuracy) \\
+k-NN & $\Oh(N L)$ (query) & $\Oh(N L)$ & None (non-parametric) \\
+Random Forest & $\Oh(T N L \log N)$ & $\Oh(T N)$ & Asymptotic consistency \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Conclusion}
+
+The Apriori induction engine in TR-Core has:
+\begin{itemize}
+    \item \textbf{Worst-case time} $\Oh(L^K)$ — exponential in max arity, but $K=4$, $L \leq 25$ makes it tractable.
+    \item \textbf{Expected time} $\Oh((1+\beta L)^K)$ — sub-exponential due to anti-monotonicity pruning with $c_{\min}=4$.
+    \item \textbf{Space} $\Oh(N + L)$ — linear in data, independent of candidate space.
+    \item \textbf{Statistical guarantee} — exact binomial test controls per-candidate Type I error at $\alpha=10^{-3}$; high precision threshold $\theta=0.95$ ensures rules are behaviorally meaningful.
+    \item \textbf{Recovery guarantee} — ground-truth compositional rules are recovered if they have sufficient coverage and precision in explore data.
+\end{itemize}
+
+The combinatorial explosion is tamed by the coverage floor $c_{\min}$, which induces a phase transition to a subcritical branching process. This is the key theoretical insight: \emph{the induction engine is tractable precisely because the environment is sparse and the coverage threshold is set above the noise floor}.
+
+\end{document}

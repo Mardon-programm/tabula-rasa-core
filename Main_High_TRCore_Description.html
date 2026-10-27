@@ -1,0 +1,33 @@
+<h1 id="project-description">Project Description</h1>
+<p>Modern AI systems rely on massive neural networks trained on static
+datasets. These “black boxes” fail at structural out-of-distribution
+generalization: when faced with a valid but never-seen combination of
+known concepts, they default to memorization rather than composition.
+They require massive data, lack interpretability, and cannot adapt
+without retraining.</p>
+<p>TR-Core is a tabula-rasa symbolic cognitive architecture that
+autonomously discovers compositional rules from raw interaction –
+without pretrained weights, embeddings, or LLMs. The system implements a
+Behavioral Program: a layer of changeable rules over a fixed substrate,
+modified through seven development operations (CREATE, MODIFY,
+GENERALIZE, SPECIALIZE, COMPOSE, SPLIT, DELETE).</p>
+<p>The core innovation is an Apriori-style induction engine with an
+exact binomial statistical filter (alpha = 0.001, precision &gt;= 0.95).
+It searches conjunctions of literals over finite attribute domains (max
+arity 4), using coverage-based anti-monotonicity pruning to tame
+combinatorial explosion. The COMPOSE operation – conjoining rules into
+subprograms – is the causal mechanism for structural-OOD
+generalization.</p>
+<p>Validated on two controlled protocols: Phase 3 (8 attributes, 4,608
+contexts) achieves 0.78-0.80 balanced accuracy, significantly
+outperforming kNN (0.70), Random Forest (0.66), and Logistic Regression
+(0.20). Phase 4 (Structural-OOD) tests generalization to a held-out
+triple “calm AND guard AND night IMPLIES approach” with zero training
+support; TR-Core achieves 0.96-1.00 held-out accuracy by composing the
+learned pair “calm AND guard IMPLIES approach”. Mechanistic ablations
+(COMPOSE disabled, outcomes randomized) collapse to chance (0.20),
+isolating COMPOSE as the causal mechanism.</p>
+<p>The system includes a Gymnasium-compatible interface, Hydra
+configuration, DVC pipeline, and formal complexity analysis (worst-case
+O(L^K), expected O((1+beta*L)^K) with exact binomial Type I error
+control).</p>

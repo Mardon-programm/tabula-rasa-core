@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99e (TeX Live 2026/Arch Linux)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: tr_core_paper.aux
+The style file: plain.bst
+Database file #1: references.bib
+Warning--empty journal in behavioral_program_spec_v02
+You've used 14 entries,
+            2118 wiz_defined-function locations,
+            574 strings with 6311 characters,
+and the built_in function-call counts, 4623 in all, are:
+= -- 456
+> -- 253
+< -- 2
++ -- 102
+- -- 86
+* -- 310
+:= -- 811
+add.period$ -- 43
+call.type$ -- 14
+change.case$ -- 84
+chr.to.int$ -- 0
+cite$ -- 15
+duplicate$ -- 167
+empty$ -- 310
+format.name$ -- 86
+if$ -- 931
+int.to.chr$ -- 0
+int.to.str$ -- 14
+missing$ -- 14
+newline$ -- 74
+num.names$ -- 28
+pop$ -- 71
+preamble$ -- 1
+purify$ -- 70
+quote$ -- 0
+skip$ -- 132
+stack$ -- 0
+substring$ -- 245
+swap$ -- 33
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 56
+warning$ -- 1
+while$ -- 44
+width$ -- 16
+write$ -- 152
+(There was 1 warning)

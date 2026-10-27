@@ -1,6 +1,6 @@
 \documentclass[11pt]{article}
 \usepackage{amsmath, amssymb, amsthm}
-\usepackage{algorithm, algorithmic}
+
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{hyperref}
@@ -31,6 +31,7 @@
 \newcommand{\calR}{\mathcal{R}}
 \newcommand{\calS}{\mathcal{S}}
 \newcommand{\calX}{\mathcal{X}}
+\newcommand{\calY}{\mathcal{Y}}
 
 \newtheorem{theorem}{Theorem}
 \newtheorem{lemma}{Lemma}
@@ -91,27 +92,27 @@ where $p_a = \mathrm{hits}_a(\emptyset) / N_a$ is the base success rate for acti
 
 \section{Algorithm: Apriori Induction with Binomial Filter}
 
-\begin{algorithm}
-\caption{Apriori Induction for One Action}
-\begin{algorithmic}
-\REQUIRE $\calD_a$, $L$ literals, $K$, thresholds $(c_{\min}, h_{\min}, \theta, \alpha)$
-\STATE $S_1 \gets \{\{l\} : l \in \calL\}$ \COMMENT{All 1-literal candidates}
-\FOR{$k = 1$ to $K$}
-    \STATE $S_k^{\text{supported}} \gets \emptyset$
-    \FOR{$C \in S_k$}
-        \STATE Compute $\mathrm{cov}_a(C), \mathrm{hits}_a(C)$ via bitmask intersection
-        \IF{$\mathrm{cov}_a(C) \geq c_{\min}$}
-            \STATE $S_k^{\text{supported}} \gets S_k^{\text{supported}} \cup \{C\}$
-            \IF{$\mathrm{hits}_a(C) \geq h_{\min} \land \mathrm{prec}_a(C) \geq \theta \land p\text{-value}(C) \leq \alpha$}
-                \STATE Materialize rule $C \to a$
-            \ENDIF
-        \ENDIF
-    \ENDFOR
-    \IF{$S_k^{\text{supported}} = \emptyset$} \BREAK \ENDIF
-    \STATE $S_{k+1} \gets \mathrm{GenCandidates}(S_k^{\text{supported}})$ \COMMENT{Apriori join+prune}
-\ENDFOR
-\end{algorithmic}
-\end{algorithm}
+\begin{quote}
+\textbf{Algorithm 1: Apriori Induction for One Action}
+
+\textbf{Input:} $\calD_a$, $L$ literals, $K$, thresholds $(c_{\min}, h_{\min}, \theta, \alpha)$
+$S_1 \gets \{\{l\} : l \in \calL\}$ 
+\textbf{for} $k = 1$ to $K$
+    $S_k^{\text{supported}} \gets \emptyset$
+    \textbf{for} $C \in S_k$
+        Compute $\mathrm{cov}_a(C), \mathrm{hits}_a(C)$ via bitmask intersection
+        \textbf{if} $\mathrm{cov}_a(C) \geq c_{\min}$
+            $S_k^{\text{supported}} \gets S_k^{\text{supported}} \cup \{C\}$
+            \textbf{if} $\mathrm{hits}_a(C) \geq h_{\min} \land \mathrm{prec}_a(C) \geq \theta \land p\text{-value}(C) \leq \alpha$
+                Materialize rule $C \to a$
+            \textbf{end if}
+        \textbf{end if}
+    \textbf{end for}
+    \textbf{if} $S_k^{\text{supported}} = \emptyset$ \textbf{break} \textbf{end if}
+    $S_{k+1} \gets \mathrm{GenCandidates}(S_k^{\text{supported}})$ 
+\textbf{end for}
+
+\end{quote}
 
 \subsection{Candidate Generation (Apriori Join)}
 $\mathrm{GenCandidates}(S)$ produces all $(k+1)$-literal sets whose every $k$-subset is in $S$:
@@ -246,7 +247,7 @@ By Assumption 1, $C_j^*$ passes coverage pruning at all levels $\leq k_j$. By As
 \end{proof}
 
 \begin{remark}
-Phase 3 results: 4/6 oracle rules recovered in 100\% of seeds (exact match); 2/6 recovered in 50-83\%. The missed rules (`cold∧elder→obey`, `warm∧stranger∧spring∧dawn→approach`) violate Assumption 1 or 2 due to priority overlap with other rules.
+Phase 3 results: 4/6 oracle rules recovered in 100\% of seeds (exact match); 2/6 recovered in 50-83\%. The missed rules (\texttt{$cold\land elder\to obey$}, \texttt{$warm\land stranger\land spring\land dawn\to approach$}) violate Assumption 1 or 2 due to priority overlap with other rules.
 \end{remark}
 
 \section{Phase Transition in Rule Recovery}
