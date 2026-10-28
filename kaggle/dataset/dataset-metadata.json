@@ -1,0 +1,18 @@
+{
+  "title": "TR-Core: Autonomous Symbolic Induction of Compositional Rules",
+  "id": "mardonprogramm/tr-core-compositional-generalization",
+  "licenses": [
+    {
+      "name": "CC-BY-4.0"
+    }
+  ],
+  "description": "Experimental data from TR-Core (Tabula Rasa Core) — a formal experimentation framework for studying autonomous symbolic induction of compositional rules from experience.\n\nIncludes:\n- Phase 3 results: 24 seeds × 2 replications, rare compositional rules (8 attributes, 4608 contexts)\n- Phase 4 results: 24 seeds × 2 replications, Structural-OOD generalization (held-out triple)\n- Analysis: paired permutation tests, Cohen's dz, bootstrap 95% CI\n- Publication-ready figures (PDF + PNG)\n\nKey finding: COMPOSE operation is necessary and sufficient for structural-OOD generalization (0.96–1.00 held-out accuracy vs chance for ablations).\n\nPaper: https://osf.io/ruvjg\nCode: https://github.com/Mardon-programm/tabula-rasa-core\nZenodo DOI: 10.5281/zenodo.23619568",
+  "keywords": [
+    "cognitive-architecture",
+    "neuro-symbolic",
+    "apriori",
+    "compositional-generalization",
+    "symbolic-induction",
+    "tabula-rasa"
+  ]
+}

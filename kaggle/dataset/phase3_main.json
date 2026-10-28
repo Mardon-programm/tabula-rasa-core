@@ -1,0 +1,5850 @@
+[
+  {
+    "seed": 1,
+    "train_size": 2500,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 1,
+        "transfer": {
+          "t1": 0.855,
+          "t2": 0.9,
+          "t3": 0.88
+        },
+        "overall": 0.8783333333333333,
+        "balanced": 0.8507431150402089,
+        "rare_balanced": 0.8457142857142858,
+        "nonrare_balanced": 0.86227580709446,
+        "rare_accuracy": 0.8387096774193549,
+        "known_acc": 0.915,
+        "n_active": 99
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 1,
+        "transfer": {
+          "t1": 0.13,
+          "t2": 0.095,
+          "t3": 0.08
+        },
+        "overall": 0.10166666666666667,
+        "balanced": 0.18769230769230769,
+        "rare_balanced": 0.0,
+        "nonrare_balanced": 0.23461538461538461,
+        "rare_accuracy": 0.0,
+        "known_acc": 0.09,
+        "n_active": 2
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 1,
+        "transfer": {
+          "t1": 0.145,
+          "t2": 0.1,
+          "t3": 0.08
+        },
+        "overall": 0.10833333333333334,
+        "balanced": 0.2,
+        "rare_balanced": 0.0,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.0,
+        "known_acc": 0.095,
+        "n_active": 0
+      },
+      "ValueLogReg": {
+        "config": "ValueLogReg",
+        "seed": 1,
+        "transfer": {
+          "t1": 0.355,
+          "t2": 0.305,
+          "t3": 0.43
+        },
+        "overall": 0.36333333333333334,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.4032258064516129,
+        "known_acc": 0.37,
+        "n_active": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 1,
+        "transfer": {
+          "t1": 0.89,
+          "t2": 0.855,
+          "t3": 0.89
+        },
+        "overall": 0.8783333333333333,
+        "balanced": 0.7176920259692331,
+        "rare_balanced": 0.2777777777777778,
+        "nonrare_balanced": 0.9042870665603826,
+        "rare_accuracy": 0.3387096774193548,
+        "known_acc": 0.945,
+        "n_active": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 1,
+        "transfer": {
+          "t1": 0.92,
+          "t2": 0.88,
+          "t3": 0.89
+        },
+        "overall": 0.8966666666666666,
+        "balanced": 0.7341291165023517,
+        "rare_balanced": 0.21333333333333335,
+        "nonrare_balanced": 0.9384615384615385,
+        "rare_accuracy": 0.25806451612903225,
+        "known_acc": 0.91,
+        "n_active": 0
+      },
+      "ValueDList": {
+        "config": "ValueDList",
+        "seed": 1,
+        "transfer": {
+          "t1": 0.145,
+          "t2": 0.1,
+          "t3": 0.08
+        },
+        "overall": 0.10833333333333334,
+        "balanced": 0.2,
+        "rare_balanced": 0.0,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.0,
+        "known_acc": 0.095,
+        "n_active": 0
+      },
+      "ValueCompoLift": {
+        "config": "ValueCompoLift",
+        "seed": 1,
+        "transfer": {
+          "t1": 0.655,
+          "t2": 0.625,
+          "t3": 0.615
+        },
+        "overall": 0.6316666666666667,
+        "balanced": 0.6644133046539243,
+        "rare_balanced": 0.3244444444444445,
+        "nonrare_balanced": 0.7055224109871131,
+        "rare_accuracy": 0.43548387096774194,
+        "known_acc": 0.625,
+        "n_active": 0
+      },
+      "ValueDListML": {
+        "config": "ValueDListML",
+        "seed": 1,
+        "transfer": {
+          "t1": 0.955,
+          "t2": 0.955,
+          "t3": 0.925
+        },
+        "overall": 0.945,
+        "balanced": 0.91643373802853,
+        "rare_balanced": 0.5777777777777778,
+        "nonrare_balanced": 0.971154468911917,
+        "rare_accuracy": 0.7580645161290323,
+        "known_acc": 0.94,
+        "n_active": 0
+      },
+      "ValueForest": {
+        "config": "ValueForest",
+        "seed": 1,
+        "transfer": {
+          "t1": 0.935,
+          "t2": 0.88,
+          "t3": 0.895
+        },
+        "overall": 0.9033333333333333,
+        "balanced": 0.746436808810044,
+        "rare_balanced": 0.21333333333333335,
+        "nonrare_balanced": 0.9538461538461538,
+        "rare_accuracy": 0.25806451612903225,
+        "known_acc": 0.945,
+        "n_active": 0
+      },
+      "chance": {
+        "overall": 0.14884930914459013,
+        "balanced": 0.14884930914459013
+      },
+      "ceiling": {
+        "overall": 1.0,
+        "balanced": 1.0
+      }
+    },
+    "audit": {
+      "n_active": 99,
+      "n_total": 99,
+      "arity_histogram": {
+        "2": 1,
+        "4": 74,
+        "3": 24
+      },
+      "mean_arity": 3.7373737373737375,
+      "rare_discovered": {
+        "offer(('season', 'winter'), ('location', 'public'), ('time', 'night'))": true,
+        "ask(('location', 'school'), ('role', 'child'), ('mood', 'upset'))": true,
+        "approach(('friendliness', 'warm'), ('status', 'stranger'), ('season', 'spring'), ('time', 'dawn'))": true,
+        "offer(('role', 'adult'), ('context', 'greeting'), ('season', 'autumn'))": true
+      },
+      "simple_discovered": {
+        "approach(('status', 'insider'), ('mood', 'calm'))": true,
+        "avoid(('context', 'conflict'),)": false,
+        "obey(('friendliness', 'cold'), ('role', 'elder'))": false
+      },
+      "rule_recovery": {
+        "n_targets": 6,
+        "n_compositional_active": 99,
+        "n_active": 99,
+        "n_atomic": 0,
+        "n_consistent": 67,
+        "n_inconsistent": 32,
+        "precision": 0.6767676767676767,
+        "fdr": 0.32323232323232326,
+        "winner_accuracy": 0.9288380774615026,
+        "n_fire_contexts": 4286,
+        "mean_active_arity": 3.7373737373737375,
+        "exact_recovered": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          false
+        ],
+        "subset_recovered": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          false
+        ],
+        "n_exact_recovered": 5,
+        "n_subset_recovered": 5,
+        "exact_rate": 0.8333333333333334,
+        "subset_rate": 0.8333333333333334,
+        "targets": [
+          "offer[3]",
+          "ask[3]",
+          "approach[4]",
+          "offer[3]",
+          "approach[2]",
+          "obey[2]"
+        ],
+        "targets_exact": [
+          "offer_('season=winter', 'location=public', 'time=night')",
+          "ask_('location=school', 'role=child', 'mood=upset')",
+          "approach_('friendliness=warm', 'status=stranger', 'season=spring', 'time=dawn')",
+          "offer_('role=adult', 'context=greeting', 'season=autumn')",
+          "approach_('status=insider', 'mood=calm')",
+          "obey_('friendliness=cold', 'role=elder')"
+        ]
+      }
+    }
+  },
+  {
+    "seed": 2,
+    "train_size": 2500,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 2,
+        "transfer": {
+          "t1": 0.885,
+          "t2": 0.88,
+          "t3": 0.88
+        },
+        "overall": 0.8816666666666667,
+        "balanced": 0.8234423910583091,
+        "rare_balanced": 0.45108225108225103,
+        "nonrare_balanced": 0.9006701631701632,
+        "rare_accuracy": 0.5161290322580645,
+        "known_acc": 0.935,
+        "n_active": 96
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 2,
+        "transfer": {
+          "t1": 0.265,
+          "t2": 0.2,
+          "t3": 0.265
+        },
+        "overall": 0.24333333333333335,
+        "balanced": 0.196684639448292,
+        "rare_balanced": 0.30303030303030304,
+        "nonrare_balanced": 0.24692409040235128,
+        "rare_accuracy": 0.16129032258064516,
+        "known_acc": 0.27,
+        "n_active": 3
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 2,
+        "transfer": {
+          "t1": 0.255,
+          "t2": 0.225,
+          "t3": 0.265
+        },
+        "overall": 0.24833333333333332,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.1774193548387097,
+        "known_acc": 0.275,
+        "n_active": 0
+      },
+      "ValueLogReg": {
+        "config": "ValueLogReg",
+        "seed": 2,
+        "transfer": {
+          "t1": 0.395,
+          "t2": 0.435,
+          "t3": 0.375
+        },
+        "overall": 0.40166666666666667,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.3387096774193548,
+        "known_acc": 0.325,
+        "n_active": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 2,
+        "transfer": {
+          "t1": 0.905,
+          "t2": 0.915,
+          "t3": 0.915
+        },
+        "overall": 0.9116666666666666,
+        "balanced": 0.7751696232446214,
+        "rare_balanced": 0.4115440115440115,
+        "nonrare_balanced": 0.9370417510334254,
+        "rare_accuracy": 0.4032258064516129,
+        "known_acc": 0.895,
+        "n_active": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 2,
+        "transfer": {
+          "t1": 0.91,
+          "t2": 0.91,
+          "t3": 0.91
+        },
+        "overall": 0.91,
+        "balanced": 0.7723968921440307,
+        "rare_balanced": 0.19047619047619047,
+        "nonrare_balanced": 0.9927536231884058,
+        "rare_accuracy": 0.1935483870967742,
+        "known_acc": 0.96,
+        "n_active": 0
+      },
+      "ValueDList": {
+        "config": "ValueDList",
+        "seed": 2,
+        "transfer": {
+          "t1": 0.255,
+          "t2": 0.225,
+          "t3": 0.265
+        },
+        "overall": 0.24833333333333332,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.1774193548387097,
+        "known_acc": 0.275,
+        "n_active": 0
+      },
+      "ValueCompoLift": {
+        "config": "ValueCompoLift",
+        "seed": 2,
+        "transfer": {
+          "t1": 0.635,
+          "t2": 0.625,
+          "t3": 0.615
+        },
+        "overall": 0.625,
+        "balanced": 0.6968239793633653,
+        "rare_balanced": 0.40014430014430014,
+        "nonrare_balanced": 0.7260561747842044,
+        "rare_accuracy": 0.4838709677419355,
+        "known_acc": 0.64,
+        "n_active": 0
+      },
+      "ValueDListML": {
+        "config": "ValueDListML",
+        "seed": 2,
+        "transfer": {
+          "t1": 0.935,
+          "t2": 0.87,
+          "t3": 0.895
+        },
+        "overall": 0.9,
+        "balanced": 0.8242289006078087,
+        "rare_balanced": 0.48427128427128424,
+        "nonrare_balanced": 0.9006670634330209,
+        "rare_accuracy": 0.5645161290322581,
+        "known_acc": 0.92,
+        "n_active": 0
+      },
+      "ValueForest": {
+        "config": "ValueForest",
+        "seed": 2,
+        "transfer": {
+          "t1": 0.85,
+          "t2": 0.86,
+          "t3": 0.87
+        },
+        "overall": 0.86,
+        "balanced": 0.6034070453018349,
+        "rare_balanced": 0.19047619047619047,
+        "nonrare_balanced": 0.782051282051282,
+        "rare_accuracy": 0.1935483870967742,
+        "known_acc": 0.9,
+        "n_active": 0
+      },
+      "chance": {
+        "overall": 0.17784452263911274,
+        "balanced": 0.17784452263911274
+      },
+      "ceiling": {
+        "overall": 1.0,
+        "balanced": 1.0
+      }
+    },
+    "audit": {
+      "n_active": 96,
+      "n_total": 96,
+      "arity_histogram": {
+        "2": 1,
+        "4": 65,
+        "3": 30
+      },
+      "mean_arity": 3.6666666666666665,
+      "rare_discovered": {
+        "offer(('season', 'winter'), ('location', 'public'), ('time', 'night'))": false,
+        "ask(('location', 'school'), ('role', 'child'), ('mood', 'upset'))": true,
+        "approach(('friendliness', 'warm'), ('status', 'stranger'), ('season', 'spring'), ('time', 'dawn'))": false,
+        "offer(('role', 'adult'), ('context', 'greeting'), ('season', 'autumn'))": true
+      },
+      "simple_discovered": {
+        "approach(('status', 'insider'), ('mood', 'calm'))": true,
+        "avoid(('context', 'conflict'),)": false,
+        "obey(('friendliness', 'cold'), ('role', 'elder'))": false
+      },
+      "rule_recovery": {
+        "n_targets": 6,
+        "n_compositional_active": 96,
+        "n_active": 96,
+        "n_atomic": 0,
+        "n_consistent": 54,
+        "n_inconsistent": 42,
+        "precision": 0.5625,
+        "fdr": 0.4375,
+        "winner_accuracy": 0.924119241192412,
+        "n_fire_contexts": 4428,
+        "mean_active_arity": 3.6666666666666665,
+        "exact_recovered": [
+          false,
+          true,
+          false,
+          true,
+          true,
+          false
+        ],
+        "subset_recovered": [
+          false,
+          true,
+          false,
+          true,
+          true,
+          false
+        ],
+        "n_exact_recovered": 3,
+        "n_subset_recovered": 3,
+        "exact_rate": 0.5,
+        "subset_rate": 0.5,
+        "targets": [
+          "offer[3]",
+          "ask[3]",
+          "approach[4]",
+          "offer[3]",
+          "approach[2]",
+          "obey[2]"
+        ],
+        "targets_exact": [
+          "offer_('season=winter', 'location=public', 'time=night')",
+          "ask_('location=school', 'role=child', 'mood=upset')",
+          "approach_('friendliness=warm', 'status=stranger', 'season=spring', 'time=dawn')",
+          "offer_('role=adult', 'context=greeting', 'season=autumn')",
+          "approach_('status=insider', 'mood=calm')",
+          "obey_('friendliness=cold', 'role=elder')"
+        ]
+      }
+    }
+  },
+  {
+    "seed": 3,
+    "train_size": 2500,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 3,
+        "transfer": {
+          "t1": 0.925,
+          "t2": 0.88,
+          "t3": 0.88
+        },
+        "overall": 0.895,
+        "balanced": 0.7604170581149751,
+        "rare_balanced": 0.45821256038647346,
+        "nonrare_balanced": 0.86487392825421,
+        "rare_accuracy": 0.4897959183673469,
+        "known_acc": 0.875,
+        "n_active": 105
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 3,
+        "transfer": {
+          "t1": 0.215,
+          "t2": 0.29,
+          "t3": 0.25
+        },
+        "overall": 0.25166666666666665,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.12244897959183673,
+        "known_acc": 0.305,
+        "n_active": 0
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 3,
+        "transfer": {
+          "t1": 0.215,
+          "t2": 0.29,
+          "t3": 0.25
+        },
+        "overall": 0.25166666666666665,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.12244897959183673,
+        "known_acc": 0.305,
+        "n_active": 0
+      },
+      "ValueLogReg": {
+        "config": "ValueLogReg",
+        "seed": 3,
+        "transfer": {
+          "t1": 0.43,
+          "t2": 0.39,
+          "t3": 0.39
+        },
+        "overall": 0.4033333333333333,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.40816326530612246,
+        "known_acc": 0.35,
+        "n_active": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 3,
+        "transfer": {
+          "t1": 0.92,
+          "t2": 0.9,
+          "t3": 0.885
+        },
+        "overall": 0.9016666666666666,
+        "balanced": 0.6986913095126336,
+        "rare_balanced": 0.2789855072463768,
+        "nonrare_balanced": 0.8663763569300238,
+        "rare_accuracy": 0.3469387755102041,
+        "known_acc": 0.855,
+        "n_active": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 3,
+        "transfer": {
+          "t1": 0.96,
+          "t2": 0.93,
+          "t3": 0.92
+        },
+        "overall": 0.9366666666666666,
+        "balanced": 0.7846149636035247,
+        "rare_balanced": 0.18333333333333335,
+        "nonrare_balanced": 1.0,
+        "rare_accuracy": 0.22448979591836735,
+        "known_acc": 0.935,
+        "n_active": 0
+      },
+      "ValueDList": {
+        "config": "ValueDList",
+        "seed": 3,
+        "transfer": {
+          "t1": 0.215,
+          "t2": 0.29,
+          "t3": 0.25
+        },
+        "overall": 0.25166666666666665,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.12244897959183673,
+        "known_acc": 0.305,
+        "n_active": 0
+      },
+      "ValueCompoLift": {
+        "config": "ValueCompoLift",
+        "seed": 3,
+        "transfer": {
+          "t1": 0.755,
+          "t2": 0.73,
+          "t3": 0.64
+        },
+        "overall": 0.7083333333333334,
+        "balanced": 0.736100016680887,
+        "rare_balanced": 0.314975845410628,
+        "nonrare_balanced": 0.8124815685039094,
+        "rare_accuracy": 0.3673469387755102,
+        "known_acc": 0.695,
+        "n_active": 0
+      },
+      "ValueDListML": {
+        "config": "ValueDListML",
+        "seed": 3,
+        "transfer": {
+          "t1": 0.965,
+          "t2": 0.93,
+          "t3": 0.925
+        },
+        "overall": 0.94,
+        "balanced": 0.8570838649261809,
+        "rare_balanced": 0.5217391304347826,
+        "nonrare_balanced": 0.9388674388674388,
+        "rare_accuracy": 0.673469387755102,
+        "known_acc": 0.89,
+        "n_active": 0
+      },
+      "ValueForest": {
+        "config": "ValueForest",
+        "seed": 3,
+        "transfer": {
+          "t1": 0.91,
+          "t2": 0.87,
+          "t3": 0.885
+        },
+        "overall": 0.8883333333333333,
+        "balanced": 0.6425842670273736,
+        "rare_balanced": 0.19999999999999998,
+        "nonrare_balanced": 0.8214285714285714,
+        "rare_accuracy": 0.24489795918367346,
+        "known_acc": 0.86,
+        "n_active": 0
+      },
+      "chance": {
+        "overall": 0.2084376384323332,
+        "balanced": 0.2084376384323332
+      },
+      "ceiling": {
+        "overall": 1.0,
+        "balanced": 1.0
+      }
+    },
+    "audit": {
+      "n_active": 105,
+      "n_total": 105,
+      "arity_histogram": {
+        "2": 1,
+        "4": 70,
+        "3": 34
+      },
+      "mean_arity": 3.657142857142857,
+      "rare_discovered": {
+        "offer(('season', 'winter'), ('location', 'public'), ('time', 'night'))": true,
+        "ask(('location', 'school'), ('role', 'child'), ('mood', 'upset'))": true,
+        "approach(('friendliness', 'warm'), ('status', 'stranger'), ('season', 'spring'), ('time', 'dawn'))": true,
+        "offer(('role', 'adult'), ('context', 'greeting'), ('season', 'autumn'))": true
+      },
+      "simple_discovered": {
+        "approach(('status', 'insider'), ('mood', 'calm'))": true,
+        "avoid(('context', 'conflict'),)": false,
+        "obey(('friendliness', 'cold'), ('role', 'elder'))": false
+      },
+      "rule_recovery": {
+        "n_targets": 6,
+        "n_compositional_active": 105,
+        "n_active": 105,
+        "n_atomic": 0,
+        "n_consistent": 65,
+        "n_inconsistent": 40,
+        "precision": 0.6190476190476191,
+        "fdr": 0.38095238095238093,
+        "winner_accuracy": 0.9036544850498339,
+        "n_fire_contexts": 4515,
+        "mean_active_arity": 3.657142857142857,
+        "exact_recovered": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          false
+        ],
+        "subset_recovered": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          false
+        ],
+        "n_exact_recovered": 5,
+        "n_subset_recovered": 5,
+        "exact_rate": 0.8333333333333334,
+        "subset_rate": 0.8333333333333334,
+        "targets": [
+          "offer[3]",
+          "ask[3]",
+          "approach[4]",
+          "offer[3]",
+          "approach[2]",
+          "obey[2]"
+        ],
+        "targets_exact": [
+          "offer_('season=winter', 'location=public', 'time=night')",
+          "ask_('location=school', 'role=child', 'mood=upset')",
+          "approach_('friendliness=warm', 'status=stranger', 'season=spring', 'time=dawn')",
+          "offer_('role=adult', 'context=greeting', 'season=autumn')",
+          "approach_('status=insider', 'mood=calm')",
+          "obey_('friendliness=cold', 'role=elder')"
+        ]
+      }
+    }
+  },
+  {
+    "seed": 4,
+    "train_size": 2500,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 4,
+        "transfer": {
+          "t1": 0.865,
+          "t2": 0.8,
+          "t3": 0.825
+        },
+        "overall": 0.83,
+        "balanced": 0.6838497010236141,
+        "rare_balanced": 0.5098765432098765,
+        "nonrare_balanced": 0.7713325391422736,
+        "rare_accuracy": 0.515625,
+        "known_acc": 0.83,
+        "n_active": 97
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 4,
+        "transfer": {
+          "t1": 0.225,
+          "t2": 0.2,
+          "t3": 0.235
+        },
+        "overall": 0.22,
+        "balanced": 0.21096153846153848,
+        "rare_balanced": 0.0,
+        "nonrare_balanced": 0.2637019230769231,
+        "rare_accuracy": 0.0,
+        "known_acc": 0.22,
+        "n_active": 2
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 4,
+        "transfer": {
+          "t1": 0.22,
+          "t2": 0.2,
+          "t3": 0.23
+        },
+        "overall": 0.21666666666666667,
+        "balanced": 0.2,
+        "rare_balanced": 0.0,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.0,
+        "known_acc": 0.23,
+        "n_active": 0
+      },
+      "ValueLogReg": {
+        "config": "ValueLogReg",
+        "seed": 4,
+        "transfer": {
+          "t1": 0.365,
+          "t2": 0.47,
+          "t3": 0.43
+        },
+        "overall": 0.4216666666666667,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.421875,
+        "known_acc": 0.405,
+        "n_active": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 4,
+        "transfer": {
+          "t1": 0.89,
+          "t2": 0.86,
+          "t3": 0.905
+        },
+        "overall": 0.885,
+        "balanced": 0.7120656227830141,
+        "rare_balanced": 0.46691358024691354,
+        "nonrare_balanced": 0.8661171148173361,
+        "rare_accuracy": 0.46875,
+        "known_acc": 0.9,
+        "n_active": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 4,
+        "transfer": {
+          "t1": 0.88,
+          "t2": 0.875,
+          "t3": 0.88
+        },
+        "overall": 0.8783333333333333,
+        "balanced": 0.667094861660079,
+        "rare_balanced": 0.20987654320987656,
+        "nonrare_balanced": 0.8645833333333334,
+        "rare_accuracy": 0.265625,
+        "known_acc": 0.885,
+        "n_active": 0
+      },
+      "ValueDList": {
+        "config": "ValueDList",
+        "seed": 4,
+        "transfer": {
+          "t1": 0.22,
+          "t2": 0.2,
+          "t3": 0.23
+        },
+        "overall": 0.21666666666666667,
+        "balanced": 0.2,
+        "rare_balanced": 0.0,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.0,
+        "known_acc": 0.23,
+        "n_active": 0
+      },
+      "ValueCompoLift": {
+        "config": "ValueCompoLift",
+        "seed": 4,
+        "transfer": {
+          "t1": 0.575,
+          "t2": 0.525,
+          "t3": 0.575
+        },
+        "overall": 0.5583333333333333,
+        "balanced": 0.6456678659504747,
+        "rare_balanced": 0.3317283950617284,
+        "nonrare_balanced": 0.683030225674031,
+        "rare_accuracy": 0.34375,
+        "known_acc": 0.58,
+        "n_active": 0
+      },
+      "ValueDListML": {
+        "config": "ValueDListML",
+        "seed": 4,
+        "transfer": {
+          "t1": 0.93,
+          "t2": 0.88,
+          "t3": 0.885
+        },
+        "overall": 0.8983333333333333,
+        "balanced": 0.7712534036012297,
+        "rare_balanced": 0.5644444444444444,
+        "nonrare_balanced": 0.885395716009654,
+        "rare_accuracy": 0.625,
+        "known_acc": 0.885,
+        "n_active": 0
+      },
+      "ValueForest": {
+        "config": "ValueForest",
+        "seed": 4,
+        "transfer": {
+          "t1": 0.905,
+          "t2": 0.915,
+          "t3": 0.915
+        },
+        "overall": 0.9116666666666666,
+        "balanced": 0.7476504172156346,
+        "rare_balanced": 0.23765432098765435,
+        "nonrare_balanced": 0.9635416666666666,
+        "rare_accuracy": 0.28125,
+        "known_acc": 0.935,
+        "n_active": 0
+      },
+      "chance": {
+        "overall": 0.2043938042633695,
+        "balanced": 0.2043938042633695
+      },
+      "ceiling": {
+        "overall": 1.0,
+        "balanced": 1.0
+      }
+    },
+    "audit": {
+      "n_active": 97,
+      "n_total": 97,
+      "arity_histogram": {
+        "2": 1,
+        "4": 73,
+        "3": 23
+      },
+      "mean_arity": 3.7422680412371134,
+      "rare_discovered": {
+        "offer(('season', 'winter'), ('location', 'public'), ('time', 'night'))": true,
+        "ask(('location', 'school'), ('role', 'child'), ('mood', 'upset'))": true,
+        "approach(('friendliness', 'warm'), ('status', 'stranger'), ('season', 'spring'), ('time', 'dawn'))": true,
+        "offer(('role', 'adult'), ('context', 'greeting'), ('season', 'autumn'))": true
+      },
+      "simple_discovered": {
+        "approach(('status', 'insider'), ('mood', 'calm'))": true,
+        "avoid(('context', 'conflict'),)": false,
+        "obey(('friendliness', 'cold'), ('role', 'elder'))": false
+      },
+      "rule_recovery": {
+        "n_targets": 6,
+        "n_compositional_active": 97,
+        "n_active": 97,
+        "n_atomic": 0,
+        "n_consistent": 62,
+        "n_inconsistent": 35,
+        "precision": 0.6391752577319587,
+        "fdr": 0.36082474226804123,
+        "winner_accuracy": 0.89247556262787,
+        "n_fire_contexts": 4399,
+        "mean_active_arity": 3.7422680412371134,
+        "exact_recovered": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          false
+        ],
+        "subset_recovered": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          false
+        ],
+        "n_exact_recovered": 5,
+        "n_subset_recovered": 5,
+        "exact_rate": 0.8333333333333334,
+        "subset_rate": 0.8333333333333334,
+        "targets": [
+          "offer[3]",
+          "ask[3]",
+          "approach[4]",
+          "offer[3]",
+          "approach[2]",
+          "obey[2]"
+        ],
+        "targets_exact": [
+          "offer_('season=winter', 'location=public', 'time=night')",
+          "ask_('location=school', 'role=child', 'mood=upset')",
+          "approach_('friendliness=warm', 'status=stranger', 'season=spring', 'time=dawn')",
+          "offer_('role=adult', 'context=greeting', 'season=autumn')",
+          "approach_('status=insider', 'mood=calm')",
+          "obey_('friendliness=cold', 'role=elder')"
+        ]
+      }
+    }
+  },
+  {
+    "seed": 5,
+    "train_size": 2500,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 5,
+        "transfer": {
+          "t1": 0.87,
+          "t2": 0.82,
+          "t3": 0.855
+        },
+        "overall": 0.8483333333333334,
+        "balanced": 0.6823452479236152,
+        "rare_balanced": 0.7151067323481116,
+        "nonrare_balanced": 0.7575736655313839,
+        "rare_accuracy": 0.7142857142857143,
+        "known_acc": 0.855,
+        "n_active": 109
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 5,
+        "transfer": {
+          "t1": 0.23,
+          "t2": 0.225,
+          "t3": 0.225
+        },
+        "overall": 0.22666666666666666,
+        "balanced": 0.19154929577464788,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.23897058823529413,
+        "rare_accuracy": 0.10714285714285714,
+        "known_acc": 0.235,
+        "n_active": 2
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 5,
+        "transfer": {
+          "t1": 0.24,
+          "t2": 0.235,
+          "t3": 0.235
+        },
+        "overall": 0.23666666666666666,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.10714285714285714,
+        "known_acc": 0.235,
+        "n_active": 0
+      },
+      "ValueLogReg": {
+        "config": "ValueLogReg",
+        "seed": 5,
+        "transfer": {
+          "t1": 0.455,
+          "t2": 0.37,
+          "t3": 0.41
+        },
+        "overall": 0.4116666666666667,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.5178571428571429,
+        "known_acc": 0.35,
+        "n_active": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 5,
+        "transfer": {
+          "t1": 0.925,
+          "t2": 0.86,
+          "t3": 0.93
+        },
+        "overall": 0.905,
+        "balanced": 0.7044898446596968,
+        "rare_balanced": 0.2988505747126437,
+        "nonrare_balanced": 0.8941344514394387,
+        "rare_accuracy": 0.4642857142857143,
+        "known_acc": 0.875,
+        "n_active": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 5,
+        "transfer": {
+          "t1": 0.945,
+          "t2": 0.855,
+          "t3": 0.925
+        },
+        "overall": 0.9083333333333333,
+        "balanced": 0.7081484860580487,
+        "rare_balanced": 0.2413793103448276,
+        "nonrare_balanced": 0.9038461538461539,
+        "rare_accuracy": 0.375,
+        "known_acc": 0.88,
+        "n_active": 0
+      },
+      "ValueDList": {
+        "config": "ValueDList",
+        "seed": 5,
+        "transfer": {
+          "t1": 0.24,
+          "t2": 0.235,
+          "t3": 0.235
+        },
+        "overall": 0.23666666666666666,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.10714285714285714,
+        "known_acc": 0.235,
+        "n_active": 0
+      },
+      "ValueCompoLift": {
+        "config": "ValueCompoLift",
+        "seed": 5,
+        "transfer": {
+          "t1": 0.665,
+          "t2": 0.675,
+          "t3": 0.63
+        },
+        "overall": 0.6566666666666666,
+        "balanced": 0.6700976852135521,
+        "rare_balanced": 0.3338806787082649,
+        "nonrare_balanced": 0.7482502424583715,
+        "rare_accuracy": 0.4642857142857143,
+        "known_acc": 0.71,
+        "n_active": 0
+      },
+      "ValueDListML": {
+        "config": "ValueDListML",
+        "seed": 5,
+        "transfer": {
+          "t1": 0.93,
+          "t2": 0.875,
+          "t3": 0.95
+        },
+        "overall": 0.9183333333333333,
+        "balanced": 0.7585533443576439,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.9564661256175018,
+        "rare_accuracy": 0.5178571428571429,
+        "known_acc": 0.875,
+        "n_active": 0
+      },
+      "ValueForest": {
+        "config": "ValueForest",
+        "seed": 5,
+        "transfer": {
+          "t1": 0.91,
+          "t2": 0.825,
+          "t3": 0.89
+        },
+        "overall": 0.875,
+        "balanced": 0.6281889718880083,
+        "rare_balanced": 0.2528735632183908,
+        "nonrare_balanced": 0.8028846153846154,
+        "rare_accuracy": 0.39285714285714285,
+        "known_acc": 0.835,
+        "n_active": 0
+      },
+      "chance": {
+        "overall": 0.20802152585760408,
+        "balanced": 0.20802152585760408
+      },
+      "ceiling": {
+        "overall": 1.0,
+        "balanced": 1.0
+      }
+    },
+    "audit": {
+      "n_active": 109,
+      "n_total": 109,
+      "arity_histogram": {
+        "3": 41,
+        "4": 68
+      },
+      "mean_arity": 3.623853211009174,
+      "rare_discovered": {
+        "offer(('season', 'winter'), ('location', 'public'), ('time', 'night'))": true,
+        "ask(('location', 'school'), ('role', 'child'), ('mood', 'upset'))": true,
+        "approach(('friendliness', 'warm'), ('status', 'stranger'), ('season', 'spring'), ('time', 'dawn'))": false,
+        "offer(('role', 'adult'), ('context', 'greeting'), ('season', 'autumn'))": true
+      },
+      "simple_discovered": {
+        "approach(('status', 'insider'), ('mood', 'calm'))": false,
+        "avoid(('context', 'conflict'),)": false,
+        "obey(('friendliness', 'cold'), ('role', 'elder'))": false
+      },
+      "rule_recovery": {
+        "n_targets": 6,
+        "n_compositional_active": 109,
+        "n_active": 109,
+        "n_atomic": 0,
+        "n_consistent": 59,
+        "n_inconsistent": 50,
+        "precision": 0.5412844036697247,
+        "fdr": 0.45871559633027525,
+        "winner_accuracy": 0.9059532082464674,
+        "n_fire_contexts": 4317,
+        "mean_active_arity": 3.623853211009174,
+        "exact_recovered": [
+          true,
+          true,
+          false,
+          true,
+          false,
+          false
+        ],
+        "subset_recovered": [
+          true,
+          true,
+          false,
+          true,
+          false,
+          false
+        ],
+        "n_exact_recovered": 3,
+        "n_subset_recovered": 3,
+        "exact_rate": 0.5,
+        "subset_rate": 0.5,
+        "targets": [
+          "offer[3]",
+          "ask[3]",
+          "approach[4]",
+          "offer[3]",
+          "approach[2]",
+          "obey[2]"
+        ],
+        "targets_exact": [
+          "offer_('season=winter', 'location=public', 'time=night')",
+          "ask_('location=school', 'role=child', 'mood=upset')",
+          "approach_('friendliness=warm', 'status=stranger', 'season=spring', 'time=dawn')",
+          "offer_('role=adult', 'context=greeting', 'season=autumn')",
+          "approach_('status=insider', 'mood=calm')",
+          "obey_('friendliness=cold', 'role=elder')"
+        ]
+      }
+    }
+  },
+  {
+    "seed": 6,
+    "train_size": 2500,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 6,
+        "transfer": {
+          "t1": 0.94,
+          "t2": 0.93,
+          "t3": 0.925
+        },
+        "overall": 0.9316666666666666,
+        "balanced": 0.8328124976455552,
+        "rare_balanced": 0.6424731182795699,
+        "nonrare_balanced": 0.8827952636612411,
+        "rare_accuracy": 0.6885245901639344,
+        "known_acc": 0.96,
+        "n_active": 104
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 6,
+        "transfer": {
+          "t1": 0.345,
+          "t2": 0.375,
+          "t3": 0.38
+        },
+        "overall": 0.36666666666666664,
+        "balanced": 0.1887955182072829,
+        "rare_balanced": 0.1388888888888889,
+        "nonrare_balanced": 0.25011125945705387,
+        "rare_accuracy": 0.16393442622950818,
+        "known_acc": 0.395,
+        "n_active": 3
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 6,
+        "transfer": {
+          "t1": 0.36,
+          "t2": 0.425,
+          "t3": 0.405
+        },
+        "overall": 0.39666666666666667,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.39344262295081966,
+        "known_acc": 0.425,
+        "n_active": 0
+      },
+      "ValueLogReg": {
+        "config": "ValueLogReg",
+        "seed": 6,
+        "transfer": {
+          "t1": 0.36,
+          "t2": 0.425,
+          "t3": 0.405
+        },
+        "overall": 0.39666666666666667,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.39344262295081966,
+        "known_acc": 0.425,
+        "n_active": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 6,
+        "transfer": {
+          "t1": 0.9,
+          "t2": 0.91,
+          "t3": 0.865
+        },
+        "overall": 0.8916666666666667,
+        "balanced": 0.7127261221875457,
+        "rare_balanced": 0.42428315412186385,
+        "nonrare_balanced": 0.8841440470222408,
+        "rare_accuracy": 0.4098360655737705,
+        "known_acc": 0.905,
+        "n_active": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 6,
+        "transfer": {
+          "t1": 0.935,
+          "t2": 0.94,
+          "t3": 0.905
+        },
+        "overall": 0.9266666666666666,
+        "balanced": 0.7860095389507153,
+        "rare_balanced": 0.23611111111111113,
+        "nonrare_balanced": 1.0,
+        "rare_accuracy": 0.2786885245901639,
+        "known_acc": 0.935,
+        "n_active": 0
+      },
+      "ValueDList": {
+        "config": "ValueDList",
+        "seed": 6,
+        "transfer": {
+          "t1": 0.36,
+          "t2": 0.425,
+          "t3": 0.405
+        },
+        "overall": 0.39666666666666667,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.39344262295081966,
+        "known_acc": 0.425,
+        "n_active": 0
+      },
+      "ValueCompoLift": {
+        "config": "ValueCompoLift",
+        "seed": 6,
+        "transfer": {
+          "t1": 0.635,
+          "t2": 0.635,
+          "t3": 0.6
+        },
+        "overall": 0.6233333333333333,
+        "balanced": 0.6550067644338708,
+        "rare_balanced": 0.41890681003584224,
+        "nonrare_balanced": 0.6871911024708601,
+        "rare_accuracy": 0.5081967213114754,
+        "known_acc": 0.61,
+        "n_active": 0
+      },
+      "ValueDListML": {
+        "config": "ValueDListML",
+        "seed": 6,
+        "transfer": {
+          "t1": 0.92,
+          "t2": 0.96,
+          "t3": 0.91
+        },
+        "overall": 0.93,
+        "balanced": 0.8169400992324809,
+        "rare_balanced": 0.6702508960573477,
+        "nonrare_balanced": 0.8584342937054954,
+        "rare_accuracy": 0.7704918032786885,
+        "known_acc": 0.955,
+        "n_active": 0
+      },
+      "ValueForest": {
+        "config": "ValueForest",
+        "seed": 6,
+        "transfer": {
+          "t1": 0.865,
+          "t2": 0.885,
+          "t3": 0.83
+        },
+        "overall": 0.86,
+        "balanced": 0.595533348474525,
+        "rare_balanced": 0.23611111111111113,
+        "nonrare_balanced": 0.7619047619047619,
+        "rare_accuracy": 0.2786885245901639,
+        "known_acc": 0.885,
+        "n_active": 0
+      },
+      "chance": {
+        "overall": 0.1766540855523051,
+        "balanced": 0.1766540855523051
+      },
+      "ceiling": {
+        "overall": 1.0,
+        "balanced": 1.0
+      }
+    },
+    "audit": {
+      "n_active": 104,
+      "n_total": 104,
+      "arity_histogram": {
+        "2": 1,
+        "4": 75,
+        "3": 28
+      },
+      "mean_arity": 3.7115384615384617,
+      "rare_discovered": {
+        "offer(('season', 'winter'), ('location', 'public'), ('time', 'night'))": true,
+        "ask(('location', 'school'), ('role', 'child'), ('mood', 'upset'))": true,
+        "approach(('friendliness', 'warm'), ('status', 'stranger'), ('season', 'spring'), ('time', 'dawn'))": true,
+        "offer(('role', 'adult'), ('context', 'greeting'), ('season', 'autumn'))": true
+      },
+      "simple_discovered": {
+        "approach(('status', 'insider'), ('mood', 'calm'))": true,
+        "avoid(('context', 'conflict'),)": false,
+        "obey(('friendliness', 'cold'), ('role', 'elder'))": false
+      },
+      "rule_recovery": {
+        "n_targets": 6,
+        "n_compositional_active": 104,
+        "n_active": 104,
+        "n_atomic": 0,
+        "n_consistent": 70,
+        "n_inconsistent": 34,
+        "precision": 0.6730769230769231,
+        "fdr": 0.3269230769230769,
+        "winner_accuracy": 0.9263276836158192,
+        "n_fire_contexts": 4425,
+        "mean_active_arity": 3.7115384615384617,
+        "exact_recovered": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          false
+        ],
+        "subset_recovered": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          false
+        ],
+        "n_exact_recovered": 5,
+        "n_subset_recovered": 5,
+        "exact_rate": 0.8333333333333334,
+        "subset_rate": 0.8333333333333334,
+        "targets": [
+          "offer[3]",
+          "ask[3]",
+          "approach[4]",
+          "offer[3]",
+          "approach[2]",
+          "obey[2]"
+        ],
+        "targets_exact": [
+          "offer_('season=winter', 'location=public', 'time=night')",
+          "ask_('location=school', 'role=child', 'mood=upset')",
+          "approach_('friendliness=warm', 'status=stranger', 'season=spring', 'time=dawn')",
+          "offer_('role=adult', 'context=greeting', 'season=autumn')",
+          "approach_('status=insider', 'mood=calm')",
+          "obey_('friendliness=cold', 'role=elder')"
+        ]
+      }
+    }
+  },
+  {
+    "seed": 7,
+    "train_size": 2500,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 7,
+        "transfer": {
+          "t1": 0.89,
+          "t2": 0.925,
+          "t3": 0.88
+        },
+        "overall": 0.8983333333333333,
+        "balanced": 0.7292761421845088,
+        "rare_balanced": 0.34271284271284275,
+        "nonrare_balanced": 0.8987577639751553,
+        "rare_accuracy": 0.35185185185185186,
+        "known_acc": 0.91,
+        "n_active": 85
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 7,
+        "transfer": {
+          "t1": 0.08,
+          "t2": 0.095,
+          "t3": 0.05
+        },
+        "overall": 0.075,
+        "balanced": 0.20413793103448277,
+        "rare_balanced": 0.0,
+        "nonrare_balanced": 0.25517241379310346,
+        "rare_accuracy": 0.0,
+        "known_acc": 0.12,
+        "n_active": 4
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 7,
+        "transfer": {
+          "t1": 0.075,
+          "t2": 0.09,
+          "t3": 0.045
+        },
+        "overall": 0.07,
+        "balanced": 0.2,
+        "rare_balanced": 0.0,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.0,
+        "known_acc": 0.115,
+        "n_active": 0
+      },
+      "ValueLogReg": {
+        "config": "ValueLogReg",
+        "seed": 7,
+        "transfer": {
+          "t1": 0.405,
+          "t2": 0.41,
+          "t3": 0.44
+        },
+        "overall": 0.41833333333333333,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.3888888888888889,
+        "known_acc": 0.305,
+        "n_active": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 7,
+        "transfer": {
+          "t1": 0.885,
+          "t2": 0.895,
+          "t3": 0.895
+        },
+        "overall": 0.8916666666666667,
+        "balanced": 0.6873036589275083,
+        "rare_balanced": 0.30014430014430016,
+        "nonrare_balanced": 0.8804547477092018,
+        "rare_accuracy": 0.3333333333333333,
+        "known_acc": 0.87,
+        "n_active": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 7,
+        "transfer": {
+          "t1": 0.925,
+          "t2": 0.95,
+          "t3": 0.92
+        },
+        "overall": 0.9316666666666666,
+        "balanced": 0.7779112122936824,
+        "rare_balanced": 0.20634920634920637,
+        "nonrare_balanced": 1.0,
+        "rare_accuracy": 0.24074074074074073,
+        "known_acc": 0.94,
+        "n_active": 0
+      },
+      "ValueDList": {
+        "config": "ValueDList",
+        "seed": 7,
+        "transfer": {
+          "t1": 0.075,
+          "t2": 0.09,
+          "t3": 0.045
+        },
+        "overall": 0.07,
+        "balanced": 0.2,
+        "rare_balanced": 0.0,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.0,
+        "known_acc": 0.115,
+        "n_active": 0
+      },
+      "ValueCompoLift": {
+        "config": "ValueCompoLift",
+        "seed": 7,
+        "transfer": {
+          "t1": 0.71,
+          "t2": 0.675,
+          "t3": 0.665
+        },
+        "overall": 0.6833333333333333,
+        "balanced": 0.6660395111597199,
+        "rare_balanced": 0.28138528138528135,
+        "nonrare_balanced": 0.7816218551853641,
+        "rare_accuracy": 0.3333333333333333,
+        "known_acc": 0.665,
+        "n_active": 0
+      },
+      "ValueDListML": {
+        "config": "ValueDListML",
+        "seed": 7,
+        "transfer": {
+          "t1": 0.905,
+          "t2": 0.9,
+          "t3": 0.87
+        },
+        "overall": 0.8916666666666667,
+        "balanced": 0.7265565414116039,
+        "rare_balanced": 0.29797979797979796,
+        "nonrare_balanced": 0.8772649389590919,
+        "rare_accuracy": 0.35185185185185186,
+        "known_acc": 0.915,
+        "n_active": 0
+      },
+      "ValueForest": {
+        "config": "ValueForest",
+        "seed": 7,
+        "transfer": {
+          "t1": 0.855,
+          "t2": 0.875,
+          "t3": 0.875
+        },
+        "overall": 0.8683333333333333,
+        "balanced": 0.5969588313413015,
+        "rare_balanced": 0.20634920634920637,
+        "nonrare_balanced": 0.7738095238095238,
+        "rare_accuracy": 0.24074074074074073,
+        "known_acc": 0.825,
+        "n_active": 0
+      },
+      "chance": {
+        "overall": 0.16554405753608942,
+        "balanced": 0.16554405753608942
+      },
+      "ceiling": {
+        "overall": 1.0,
+        "balanced": 1.0
+      }
+    },
+    "audit": {
+      "n_active": 85,
+      "n_total": 85,
+      "arity_histogram": {
+        "2": 3,
+        "4": 63,
+        "3": 19
+      },
+      "mean_arity": 3.7058823529411766,
+      "rare_discovered": {
+        "offer(('season', 'winter'), ('location', 'public'), ('time', 'night'))": false,
+        "ask(('location', 'school'), ('role', 'child'), ('mood', 'upset'))": true,
+        "approach(('friendliness', 'warm'), ('status', 'stranger'), ('season', 'spring'), ('time', 'dawn'))": false,
+        "offer(('role', 'adult'), ('context', 'greeting'), ('season', 'autumn'))": true
+      },
+      "simple_discovered": {
+        "approach(('status', 'insider'), ('mood', 'calm'))": true,
+        "avoid(('context', 'conflict'),)": false,
+        "obey(('friendliness', 'cold'), ('role', 'elder'))": false
+      },
+      "rule_recovery": {
+        "n_targets": 6,
+        "n_compositional_active": 85,
+        "n_active": 85,
+        "n_atomic": 0,
+        "n_consistent": 55,
+        "n_inconsistent": 30,
+        "precision": 0.6470588235294117,
+        "fdr": 0.35294117647058826,
+        "winner_accuracy": 0.9037952338923213,
+        "n_fire_contexts": 4532,
+        "mean_active_arity": 3.7058823529411766,
+        "exact_recovered": [
+          false,
+          true,
+          false,
+          true,
+          true,
+          false
+        ],
+        "subset_recovered": [
+          false,
+          true,
+          false,
+          true,
+          true,
+          false
+        ],
+        "n_exact_recovered": 3,
+        "n_subset_recovered": 3,
+        "exact_rate": 0.5,
+        "subset_rate": 0.5,
+        "targets": [
+          "offer[3]",
+          "ask[3]",
+          "approach[4]",
+          "offer[3]",
+          "approach[2]",
+          "obey[2]"
+        ],
+        "targets_exact": [
+          "offer_('season=winter', 'location=public', 'time=night')",
+          "ask_('location=school', 'role=child', 'mood=upset')",
+          "approach_('friendliness=warm', 'status=stranger', 'season=spring', 'time=dawn')",
+          "offer_('role=adult', 'context=greeting', 'season=autumn')",
+          "approach_('status=insider', 'mood=calm')",
+          "obey_('friendliness=cold', 'role=elder')"
+        ]
+      }
+    }
+  },
+  {
+    "seed": 8,
+    "train_size": 2500,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 8,
+        "transfer": {
+          "t1": 0.875,
+          "t2": 0.815,
+          "t3": 0.865
+        },
+        "overall": 0.8516666666666667,
+        "balanced": 0.7715258608986832,
+        "rare_balanced": 0.5205187766163376,
+        "nonrare_balanced": 0.8272108843537415,
+        "rare_accuracy": 0.6176470588235294,
+        "known_acc": 0.885,
+        "n_active": 98
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 8,
+        "transfer": {
+          "t1": 0.27,
+          "t2": 0.175,
+          "t3": 0.255
+        },
+        "overall": 0.23333333333333334,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.08823529411764706,
+        "known_acc": 0.23,
+        "n_active": 3
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 8,
+        "transfer": {
+          "t1": 0.27,
+          "t2": 0.175,
+          "t3": 0.255
+        },
+        "overall": 0.23333333333333334,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.08823529411764706,
+        "known_acc": 0.23,
+        "n_active": 0
+      },
+      "ValueLogReg": {
+        "config": "ValueLogReg",
+        "seed": 8,
+        "transfer": {
+          "t1": 0.365,
+          "t2": 0.435,
+          "t3": 0.355
+        },
+        "overall": 0.385,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.3088235294117647,
+        "known_acc": 0.405,
+        "n_active": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 8,
+        "transfer": {
+          "t1": 0.865,
+          "t2": 0.855,
+          "t3": 0.81
+        },
+        "overall": 0.8433333333333334,
+        "balanced": 0.6725482841926829,
+        "rare_balanced": 0.2698412698412698,
+        "nonrare_balanced": 0.8547828870622661,
+        "rare_accuracy": 0.25,
+        "known_acc": 0.93,
+        "n_active": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 8,
+        "transfer": {
+          "t1": 0.935,
+          "t2": 0.91,
+          "t3": 0.9
+        },
+        "overall": 0.915,
+        "balanced": 0.787965367965368,
+        "rare_balanced": 0.2698412698412698,
+        "nonrare_balanced": 1.0,
+        "rare_accuracy": 0.25,
+        "known_acc": 0.945,
+        "n_active": 0
+      },
+      "ValueDList": {
+        "config": "ValueDList",
+        "seed": 8,
+        "transfer": {
+          "t1": 0.27,
+          "t2": 0.175,
+          "t3": 0.255
+        },
+        "overall": 0.23333333333333334,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.08823529411764706,
+        "known_acc": 0.23,
+        "n_active": 0
+      },
+      "ValueCompoLift": {
+        "config": "ValueCompoLift",
+        "seed": 8,
+        "transfer": {
+          "t1": 0.62,
+          "t2": 0.57,
+          "t3": 0.645
+        },
+        "overall": 0.6116666666666667,
+        "balanced": 0.6670860710409002,
+        "rare_balanced": 0.505420054200542,
+        "nonrare_balanced": 0.6655528699185032,
+        "rare_accuracy": 0.6323529411764706,
+        "known_acc": 0.61,
+        "n_active": 0
+      },
+      "ValueDListML": {
+        "config": "ValueDListML",
+        "seed": 8,
+        "transfer": {
+          "t1": 0.95,
+          "t2": 0.875,
+          "t3": 0.925
+        },
+        "overall": 0.9166666666666666,
+        "balanced": 0.8504107958485919,
+        "rare_balanced": 0.5925280681378242,
+        "nonrare_balanced": 0.9070914696813978,
+        "rare_accuracy": 0.7058823529411765,
+        "known_acc": 0.95,
+        "n_active": 0
+      },
+      "ValueForest": {
+        "config": "ValueForest",
+        "seed": 8,
+        "transfer": {
+          "t1": 0.9,
+          "t2": 0.86,
+          "t3": 0.86
+        },
+        "overall": 0.8733333333333333,
+        "balanced": 0.6859245516388374,
+        "rare_balanced": 0.2698412698412698,
+        "nonrare_balanced": 0.8724489795918368,
+        "rare_accuracy": 0.25,
+        "known_acc": 0.92,
+        "n_active": 0
+      },
+      "chance": {
+        "overall": 0.20544775239132645,
+        "balanced": 0.20544775239132645
+      },
+      "ceiling": {
+        "overall": 1.0,
+        "balanced": 1.0
+      }
+    },
+    "audit": {
+      "n_active": 98,
+      "n_total": 98,
+      "arity_histogram": {
+        "2": 1,
+        "4": 61,
+        "3": 36
+      },
+      "mean_arity": 3.6122448979591835,
+      "rare_discovered": {
+        "offer(('season', 'winter'), ('location', 'public'), ('time', 'night'))": false,
+        "ask(('location', 'school'), ('role', 'child'), ('mood', 'upset'))": true,
+        "approach(('friendliness', 'warm'), ('status', 'stranger'), ('season', 'spring'), ('time', 'dawn'))": false,
+        "offer(('role', 'adult'), ('context', 'greeting'), ('season', 'autumn'))": true
+      },
+      "simple_discovered": {
+        "approach(('status', 'insider'), ('mood', 'calm'))": true,
+        "avoid(('context', 'conflict'),)": false,
+        "obey(('friendliness', 'cold'), ('role', 'elder'))": false
+      },
+      "rule_recovery": {
+        "n_targets": 6,
+        "n_compositional_active": 98,
+        "n_active": 98,
+        "n_atomic": 0,
+        "n_consistent": 54,
+        "n_inconsistent": 44,
+        "precision": 0.5510204081632653,
+        "fdr": 0.4489795918367347,
+        "winner_accuracy": 0.9001334519572953,
+        "n_fire_contexts": 4496,
+        "mean_active_arity": 3.6122448979591835,
+        "exact_recovered": [
+          false,
+          true,
+          false,
+          true,
+          true,
+          false
+        ],
+        "subset_recovered": [
+          false,
+          true,
+          false,
+          true,
+          true,
+          false
+        ],
+        "n_exact_recovered": 3,
+        "n_subset_recovered": 3,
+        "exact_rate": 0.5,
+        "subset_rate": 0.5,
+        "targets": [
+          "offer[3]",
+          "ask[3]",
+          "approach[4]",
+          "offer[3]",
+          "approach[2]",
+          "obey[2]"
+        ],
+        "targets_exact": [
+          "offer_('season=winter', 'location=public', 'time=night')",
+          "ask_('location=school', 'role=child', 'mood=upset')",
+          "approach_('friendliness=warm', 'status=stranger', 'season=spring', 'time=dawn')",
+          "offer_('role=adult', 'context=greeting', 'season=autumn')",
+          "approach_('status=insider', 'mood=calm')",
+          "obey_('friendliness=cold', 'role=elder')"
+        ]
+      }
+    }
+  },
+  {
+    "seed": 9,
+    "train_size": 2500,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 9,
+        "transfer": {
+          "t1": 0.9,
+          "t2": 0.9,
+          "t3": 0.925
+        },
+        "overall": 0.9083333333333333,
+        "balanced": 0.8595062015761646,
+        "rare_balanced": 0.6649122807017543,
+        "nonrare_balanced": 0.933921568627451,
+        "rare_accuracy": 0.6862745098039216,
+        "known_acc": 0.92,
+        "n_active": 92
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 9,
+        "transfer": {
+          "t1": 0.1,
+          "t2": 0.1,
+          "t3": 0.13
+        },
+        "overall": 0.11,
+        "balanced": 0.21878779097846035,
+        "rare_balanced": 0.0,
+        "nonrare_balanced": 0.27395142267433287,
+        "rare_accuracy": 0.0,
+        "known_acc": 0.08,
+        "n_active": 5
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 9,
+        "transfer": {
+          "t1": 0.08,
+          "t2": 0.07,
+          "t3": 0.105
+        },
+        "overall": 0.085,
+        "balanced": 0.2,
+        "rare_balanced": 0.0,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.0,
+        "known_acc": 0.055,
+        "n_active": 0
+      },
+      "ValueLogReg": {
+        "config": "ValueLogReg",
+        "seed": 9,
+        "transfer": {
+          "t1": 0.405,
+          "t2": 0.42,
+          "t3": 0.395
+        },
+        "overall": 0.4066666666666667,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.37254901960784315,
+        "known_acc": 0.375,
+        "n_active": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 9,
+        "transfer": {
+          "t1": 0.89,
+          "t2": 0.915,
+          "t3": 0.88
+        },
+        "overall": 0.895,
+        "balanced": 0.704017509773836,
+        "rare_balanced": 0.5704678362573099,
+        "nonrare_balanced": 0.8502222467934542,
+        "rare_accuracy": 0.5490196078431373,
+        "known_acc": 0.88,
+        "n_active": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 9,
+        "transfer": {
+          "t1": 0.93,
+          "t2": 0.965,
+          "t3": 0.935
+        },
+        "overall": 0.9433333333333334,
+        "balanced": 0.7818089315997738,
+        "rare_balanced": 0.2982456140350877,
+        "nonrare_balanced": 1.0,
+        "rare_accuracy": 0.3333333333333333,
+        "known_acc": 0.915,
+        "n_active": 0
+      },
+      "ValueDList": {
+        "config": "ValueDList",
+        "seed": 9,
+        "transfer": {
+          "t1": 0.08,
+          "t2": 0.07,
+          "t3": 0.105
+        },
+        "overall": 0.085,
+        "balanced": 0.2,
+        "rare_balanced": 0.0,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.0,
+        "known_acc": 0.055,
+        "n_active": 0
+      },
+      "ValueCompoLift": {
+        "config": "ValueCompoLift",
+        "seed": 9,
+        "transfer": {
+          "t1": 0.67,
+          "t2": 0.66,
+          "t3": 0.71
+        },
+        "overall": 0.68,
+        "balanced": 0.7265944614137345,
+        "rare_balanced": 0.6605263157894736,
+        "nonrare_balanced": 0.7556431519976412,
+        "rare_accuracy": 0.6470588235294118,
+        "known_acc": 0.68,
+        "n_active": 0
+      },
+      "ValueDListML": {
+        "config": "ValueDListML",
+        "seed": 9,
+        "transfer": {
+          "t1": 0.905,
+          "t2": 0.875,
+          "t3": 0.945
+        },
+        "overall": 0.9083333333333333,
+        "balanced": 0.8645892296997939,
+        "rare_balanced": 0.5815789473684211,
+        "nonrare_balanced": 0.9448264042459089,
+        "rare_accuracy": 0.6274509803921569,
+        "known_acc": 0.91,
+        "n_active": 0
+      },
+      "ValueForest": {
+        "config": "ValueForest",
+        "seed": 9,
+        "transfer": {
+          "t1": 0.88,
+          "t2": 0.9,
+          "t3": 0.85
+        },
+        "overall": 0.8766666666666667,
+        "balanced": 0.6249461865017347,
+        "rare_balanced": 0.2982456140350877,
+        "nonrare_balanced": 0.803921568627451,
+        "rare_accuracy": 0.3333333333333333,
+        "known_acc": 0.89,
+        "n_active": 0
+      },
+      "chance": {
+        "overall": 0.18062022095440777,
+        "balanced": 0.18062022095440777
+      },
+      "ceiling": {
+        "overall": 1.0,
+        "balanced": 1.0
+      }
+    },
+    "audit": {
+      "n_active": 92,
+      "n_total": 92,
+      "arity_histogram": {
+        "2": 1,
+        "4": 65,
+        "3": 26
+      },
+      "mean_arity": 3.6956521739130435,
+      "rare_discovered": {
+        "offer(('season', 'winter'), ('location', 'public'), ('time', 'night'))": true,
+        "ask(('location', 'school'), ('role', 'child'), ('mood', 'upset'))": true,
+        "approach(('friendliness', 'warm'), ('status', 'stranger'), ('season', 'spring'), ('time', 'dawn'))": false,
+        "offer(('role', 'adult'), ('context', 'greeting'), ('season', 'autumn'))": true
+      },
+      "simple_discovered": {
+        "approach(('status', 'insider'), ('mood', 'calm'))": true,
+        "avoid(('context', 'conflict'),)": false,
+        "obey(('friendliness', 'cold'), ('role', 'elder'))": false
+      },
+      "rule_recovery": {
+        "n_targets": 6,
+        "n_compositional_active": 92,
+        "n_active": 92,
+        "n_atomic": 0,
+        "n_consistent": 66,
+        "n_inconsistent": 26,
+        "precision": 0.7173913043478262,
+        "fdr": 0.2826086956521739,
+        "winner_accuracy": 0.9422464756707595,
+        "n_fire_contexts": 4398,
+        "mean_active_arity": 3.6956521739130435,
+        "exact_recovered": [
+          true,
+          true,
+          false,
+          true,
+          true,
+          false
+        ],
+        "subset_recovered": [
+          true,
+          true,
+          false,
+          true,
+          true,
+          false
+        ],
+        "n_exact_recovered": 4,
+        "n_subset_recovered": 4,
+        "exact_rate": 0.6666666666666666,
+        "subset_rate": 0.6666666666666666,
+        "targets": [
+          "offer[3]",
+          "ask[3]",
+          "approach[4]",
+          "offer[3]",
+          "approach[2]",
+          "obey[2]"
+        ],
+        "targets_exact": [
+          "offer_('season=winter', 'location=public', 'time=night')",
+          "ask_('location=school', 'role=child', 'mood=upset')",
+          "approach_('friendliness=warm', 'status=stranger', 'season=spring', 'time=dawn')",
+          "offer_('role=adult', 'context=greeting', 'season=autumn')",
+          "approach_('status=insider', 'mood=calm')",
+          "obey_('friendliness=cold', 'role=elder')"
+        ]
+      }
+    }
+  },
+  {
+    "seed": 10,
+    "train_size": 2500,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 10,
+        "transfer": {
+          "t1": 0.87,
+          "t2": 0.92,
+          "t3": 0.885
+        },
+        "overall": 0.8916666666666667,
+        "balanced": 0.8229149633328132,
+        "rare_balanced": 0.5576454197143852,
+        "nonrare_balanced": 0.8970495495495496,
+        "rare_accuracy": 0.6615384615384615,
+        "known_acc": 0.91,
+        "n_active": 94
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 10,
+        "transfer": {
+          "t1": 0.085,
+          "t2": 0.07,
+          "t3": 0.075
+        },
+        "overall": 0.07666666666666666,
+        "balanced": 0.23002298850574712,
+        "rare_balanced": 0.034482758620689655,
+        "nonrare_balanced": 0.26166666666666666,
+        "rare_accuracy": 0.046153846153846156,
+        "known_acc": 0.08,
+        "n_active": 4
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 10,
+        "transfer": {
+          "t1": 0.06,
+          "t2": 0.06,
+          "t3": 0.06
+        },
+        "overall": 0.06,
+        "balanced": 0.2,
+        "rare_balanced": 0.0,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.0,
+        "known_acc": 0.06,
+        "n_active": 0
+      },
+      "ValueLogReg": {
+        "config": "ValueLogReg",
+        "seed": 10,
+        "transfer": {
+          "t1": 0.39,
+          "t2": 0.445,
+          "t3": 0.44
+        },
+        "overall": 0.425,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.5076923076923077,
+        "known_acc": 0.365,
+        "n_active": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 10,
+        "transfer": {
+          "t1": 0.87,
+          "t2": 0.9,
+          "t3": 0.88
+        },
+        "overall": 0.8833333333333333,
+        "balanced": 0.6837506284565108,
+        "rare_balanced": 0.2626262626262626,
+        "nonrare_balanced": 0.8665915915915916,
+        "rare_accuracy": 0.4,
+        "known_acc": 0.9,
+        "n_active": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 10,
+        "transfer": {
+          "t1": 0.91,
+          "t2": 0.93,
+          "t3": 0.88
+        },
+        "overall": 0.9066666666666666,
+        "balanced": 0.714534942182001,
+        "rare_balanced": 0.2222222222222222,
+        "nonrare_balanced": 0.9097222222222222,
+        "rare_accuracy": 0.3384615384615385,
+        "known_acc": 0.885,
+        "n_active": 0
+      },
+      "ValueDList": {
+        "config": "ValueDList",
+        "seed": 10,
+        "transfer": {
+          "t1": 0.06,
+          "t2": 0.06,
+          "t3": 0.06
+        },
+        "overall": 0.06,
+        "balanced": 0.2,
+        "rare_balanced": 0.0,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.0,
+        "known_acc": 0.06,
+        "n_active": 0
+      },
+      "ValueCompoLift": {
+        "config": "ValueCompoLift",
+        "seed": 10,
+        "transfer": {
+          "t1": 0.645,
+          "t2": 0.62,
+          "t3": 0.575
+        },
+        "overall": 0.6133333333333333,
+        "balanced": 0.6729820911565334,
+        "rare_balanced": 0.3427377220480669,
+        "nonrare_balanced": 0.7207408195597171,
+        "rare_accuracy": 0.49230769230769234,
+        "known_acc": 0.64,
+        "n_active": 0
+      },
+      "ValueDListML": {
+        "config": "ValueDListML",
+        "seed": 10,
+        "transfer": {
+          "t1": 0.92,
+          "t2": 0.89,
+          "t3": 0.88
+        },
+        "overall": 0.8966666666666666,
+        "balanced": 0.8254705362251,
+        "rare_balanced": 0.47126436781609193,
+        "nonrare_balanced": 0.9294142370717173,
+        "rare_accuracy": 0.6923076923076923,
+        "known_acc": 0.905,
+        "n_active": 0
+      },
+      "ValueForest": {
+        "config": "ValueForest",
+        "seed": 10,
+        "transfer": {
+          "t1": 0.93,
+          "t2": 0.93,
+          "t3": 0.89
+        },
+        "overall": 0.9166666666666666,
+        "balanced": 0.7240120663650076,
+        "rare_balanced": 0.27272727272727276,
+        "nonrare_balanced": 0.9166666666666666,
+        "rare_accuracy": 0.4153846153846154,
+        "known_acc": 0.89,
+        "n_active": 0
+      },
+      "chance": {
+        "overall": 0.166342123056119,
+        "balanced": 0.166342123056119
+      },
+      "ceiling": {
+        "overall": 1.0,
+        "balanced": 1.0
+      }
+    },
+    "audit": {
+      "n_active": 94,
+      "n_total": 94,
+      "arity_histogram": {
+        "2": 1,
+        "4": 71,
+        "3": 22
+      },
+      "mean_arity": 3.74468085106383,
+      "rare_discovered": {
+        "offer(('season', 'winter'), ('location', 'public'), ('time', 'night'))": true,
+        "ask(('location', 'school'), ('role', 'child'), ('mood', 'upset'))": true,
+        "approach(('friendliness', 'warm'), ('status', 'stranger'), ('season', 'spring'), ('time', 'dawn'))": true,
+        "offer(('role', 'adult'), ('context', 'greeting'), ('season', 'autumn'))": true
+      },
+      "simple_discovered": {
+        "approach(('status', 'insider'), ('mood', 'calm'))": true,
+        "avoid(('context', 'conflict'),)": false,
+        "obey(('friendliness', 'cold'), ('role', 'elder'))": false
+      },
+      "rule_recovery": {
+        "n_targets": 6,
+        "n_compositional_active": 94,
+        "n_active": 94,
+        "n_atomic": 0,
+        "n_consistent": 63,
+        "n_inconsistent": 31,
+        "precision": 0.6702127659574468,
+        "fdr": 0.32978723404255317,
+        "winner_accuracy": 0.9200571020699501,
+        "n_fire_contexts": 4203,
+        "mean_active_arity": 3.74468085106383,
+        "exact_recovered": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          false
+        ],
+        "subset_recovered": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          false
+        ],
+        "n_exact_recovered": 5,
+        "n_subset_recovered": 5,
+        "exact_rate": 0.8333333333333334,
+        "subset_rate": 0.8333333333333334,
+        "targets": [
+          "offer[3]",
+          "ask[3]",
+          "approach[4]",
+          "offer[3]",
+          "approach[2]",
+          "obey[2]"
+        ],
+        "targets_exact": [
+          "offer_('season=winter', 'location=public', 'time=night')",
+          "ask_('location=school', 'role=child', 'mood=upset')",
+          "approach_('friendliness=warm', 'status=stranger', 'season=spring', 'time=dawn')",
+          "offer_('role=adult', 'context=greeting', 'season=autumn')",
+          "approach_('status=insider', 'mood=calm')",
+          "obey_('friendliness=cold', 'role=elder')"
+        ]
+      }
+    }
+  },
+  {
+    "seed": 11,
+    "train_size": 2500,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 11,
+        "transfer": {
+          "t1": 0.885,
+          "t2": 0.865,
+          "t3": 0.91
+        },
+        "overall": 0.8866666666666667,
+        "balanced": 0.8332619076474475,
+        "rare_balanced": 0.6344760312151617,
+        "nonrare_balanced": 0.8934617763483423,
+        "rare_accuracy": 0.7017543859649122,
+        "known_acc": 0.88,
+        "n_active": 99
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 11,
+        "transfer": {
+          "t1": 0.035,
+          "t2": 0.075,
+          "t3": 0.03
+        },
+        "overall": 0.04666666666666667,
+        "balanced": 0.20239520958083834,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.0031446540880503146,
+        "rare_accuracy": 0.45614035087719296,
+        "known_acc": 0.04,
+        "n_active": 4
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 11,
+        "transfer": {
+          "t1": 0.03,
+          "t2": 0.07,
+          "t3": 0.03
+        },
+        "overall": 0.043333333333333335,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.0,
+        "rare_accuracy": 0.45614035087719296,
+        "known_acc": 0.03,
+        "n_active": 0
+      },
+      "ValueLogReg": {
+        "config": "ValueLogReg",
+        "seed": 11,
+        "transfer": {
+          "t1": 0.36,
+          "t2": 0.385,
+          "t3": 0.37
+        },
+        "overall": 0.37166666666666665,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.40350877192982454,
+        "known_acc": 0.41,
+        "n_active": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 11,
+        "transfer": {
+          "t1": 0.885,
+          "t2": 0.87,
+          "t3": 0.905
+        },
+        "overall": 0.8866666666666667,
+        "balanced": 0.7095994084627265,
+        "rare_balanced": 0.3571627647714604,
+        "nonrare_balanced": 0.8810733485509072,
+        "rare_accuracy": 0.40350877192982454,
+        "known_acc": 0.905,
+        "n_active": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 11,
+        "transfer": {
+          "t1": 0.905,
+          "t2": 0.87,
+          "t3": 0.89
+        },
+        "overall": 0.8883333333333333,
+        "balanced": 0.7524019226121748,
+        "rare_balanced": 0.2608695652173913,
+        "nonrare_balanced": 0.9559748427672956,
+        "rare_accuracy": 0.3157894736842105,
+        "known_acc": 0.905,
+        "n_active": 0
+      },
+      "ValueDList": {
+        "config": "ValueDList",
+        "seed": 11,
+        "transfer": {
+          "t1": 0.03,
+          "t2": 0.07,
+          "t3": 0.03
+        },
+        "overall": 0.043333333333333335,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.0,
+        "rare_accuracy": 0.45614035087719296,
+        "known_acc": 0.03,
+        "n_active": 0
+      },
+      "ValueCompoLift": {
+        "config": "ValueCompoLift",
+        "seed": 11,
+        "transfer": {
+          "t1": 0.58,
+          "t2": 0.6,
+          "t3": 0.56
+        },
+        "overall": 0.58,
+        "balanced": 0.6232836829771574,
+        "rare_balanced": 0.4453734671125975,
+        "nonrare_balanced": 0.6684224876221062,
+        "rare_accuracy": 0.5614035087719298,
+        "known_acc": 0.65,
+        "n_active": 0
+      },
+      "ValueDListML": {
+        "config": "ValueDListML",
+        "seed": 11,
+        "transfer": {
+          "t1": 0.92,
+          "t2": 0.885,
+          "t3": 0.92
+        },
+        "overall": 0.9083333333333333,
+        "balanced": 0.8317009438514734,
+        "rare_balanced": 0.44871794871794873,
+        "nonrare_balanced": 0.9614539007092199,
+        "rare_accuracy": 0.5614035087719298,
+        "known_acc": 0.935,
+        "n_active": 0
+      },
+      "ValueForest": {
+        "config": "ValueForest",
+        "seed": 11,
+        "transfer": {
+          "t1": 0.94,
+          "t2": 0.895,
+          "t3": 0.92
+        },
+        "overall": 0.9183333333333333,
+        "balanced": 0.7394232288369345,
+        "rare_balanced": 0.2608695652173913,
+        "nonrare_balanced": 0.9418604651162791,
+        "rare_accuracy": 0.3157894736842105,
+        "known_acc": 0.93,
+        "n_active": 0
+      },
+      "chance": {
+        "overall": 0.22297437980495,
+        "balanced": 0.22297437980495
+      },
+      "ceiling": {
+        "overall": 1.0,
+        "balanced": 1.0
+      }
+    },
+    "audit": {
+      "n_active": 99,
+      "n_total": 99,
+      "arity_histogram": {
+        "2": 1,
+        "4": 75,
+        "3": 23
+      },
+      "mean_arity": 3.7474747474747474,
+      "rare_discovered": {
+        "offer(('season', 'winter'), ('location', 'public'), ('time', 'night'))": true,
+        "ask(('location', 'school'), ('role', 'child'), ('mood', 'upset'))": true,
+        "approach(('friendliness', 'warm'), ('status', 'stranger'), ('season', 'spring'), ('time', 'dawn'))": true,
+        "offer(('role', 'adult'), ('context', 'greeting'), ('season', 'autumn'))": true
+      },
+      "simple_discovered": {
+        "approach(('status', 'insider'), ('mood', 'calm'))": true,
+        "avoid(('context', 'conflict'),)": false,
+        "obey(('friendliness', 'cold'), ('role', 'elder'))": false
+      },
+      "rule_recovery": {
+        "n_targets": 6,
+        "n_compositional_active": 99,
+        "n_active": 99,
+        "n_atomic": 0,
+        "n_consistent": 78,
+        "n_inconsistent": 21,
+        "precision": 0.7878787878787878,
+        "fdr": 0.21212121212121213,
+        "winner_accuracy": 0.9357985480943739,
+        "n_fire_contexts": 4408,
+        "mean_active_arity": 3.7474747474747474,
+        "exact_recovered": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          false
+        ],
+        "subset_recovered": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          false
+        ],
+        "n_exact_recovered": 5,
+        "n_subset_recovered": 5,
+        "exact_rate": 0.8333333333333334,
+        "subset_rate": 0.8333333333333334,
+        "targets": [
+          "offer[3]",
+          "ask[3]",
+          "approach[4]",
+          "offer[3]",
+          "approach[2]",
+          "obey[2]"
+        ],
+        "targets_exact": [
+          "offer_('season=winter', 'location=public', 'time=night')",
+          "ask_('location=school', 'role=child', 'mood=upset')",
+          "approach_('friendliness=warm', 'status=stranger', 'season=spring', 'time=dawn')",
+          "offer_('role=adult', 'context=greeting', 'season=autumn')",
+          "approach_('status=insider', 'mood=calm')",
+          "obey_('friendliness=cold', 'role=elder')"
+        ]
+      }
+    }
+  },
+  {
+    "seed": 12,
+    "train_size": 2500,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 12,
+        "transfer": {
+          "t1": 0.875,
+          "t2": 0.91,
+          "t3": 0.91
+        },
+        "overall": 0.8983333333333333,
+        "balanced": 0.7789939777033508,
+        "rare_balanced": 0.6494252873563219,
+        "nonrare_balanced": 0.8753501400560224,
+        "rare_accuracy": 0.5,
+        "known_acc": 0.86,
+        "n_active": 103
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 12,
+        "transfer": {
+          "t1": 0.345,
+          "t2": 0.345,
+          "t3": 0.325
+        },
+        "overall": 0.3383333333333333,
+        "balanced": 0.1894556025369979,
+        "rare_balanced": 0.3076923076923077,
+        "nonrare_balanced": 0.23713949291983974,
+        "rare_accuracy": 0.41379310344827586,
+        "known_acc": 0.45,
+        "n_active": 3
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 12,
+        "transfer": {
+          "t1": 0.37,
+          "t2": 0.365,
+          "t3": 0.34
+        },
+        "overall": 0.35833333333333334,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.4482758620689655,
+        "known_acc": 0.465,
+        "n_active": 0
+      },
+      "ValueLogReg": {
+        "config": "ValueLogReg",
+        "seed": 12,
+        "transfer": {
+          "t1": 0.37,
+          "t2": 0.365,
+          "t3": 0.34
+        },
+        "overall": 0.35833333333333334,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.4482758620689655,
+        "known_acc": 0.465,
+        "n_active": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 12,
+        "transfer": {
+          "t1": 0.895,
+          "t2": 0.885,
+          "t3": 0.905
+        },
+        "overall": 0.895,
+        "balanced": 0.7113963244406898,
+        "rare_balanced": 0.4417919245505453,
+        "nonrare_balanced": 0.8763460814416429,
+        "rare_accuracy": 0.46551724137931033,
+        "known_acc": 0.9,
+        "n_active": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 12,
+        "transfer": {
+          "t1": 0.905,
+          "t2": 0.93,
+          "t3": 0.94
+        },
+        "overall": 0.925,
+        "balanced": 0.7844978858350952,
+        "rare_balanced": 0.16666666666666666,
+        "nonrare_balanced": 1.0,
+        "rare_accuracy": 0.22413793103448276,
+        "known_acc": 0.93,
+        "n_active": 0
+      },
+      "ValueDList": {
+        "config": "ValueDList",
+        "seed": 12,
+        "transfer": {
+          "t1": 0.37,
+          "t2": 0.365,
+          "t3": 0.34
+        },
+        "overall": 0.35833333333333334,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.4482758620689655,
+        "known_acc": 0.465,
+        "n_active": 0
+      },
+      "ValueCompoLift": {
+        "config": "ValueCompoLift",
+        "seed": 12,
+        "transfer": {
+          "t1": 0.63,
+          "t2": 0.585,
+          "t3": 0.575
+        },
+        "overall": 0.5966666666666667,
+        "balanced": 0.6182852357243838,
+        "rare_balanced": 0.27630415561450045,
+        "nonrare_balanced": 0.6594479063600467,
+        "rare_accuracy": 0.39655172413793105,
+        "known_acc": 0.56,
+        "n_active": 0
+      },
+      "ValueDListML": {
+        "config": "ValueDListML",
+        "seed": 12,
+        "transfer": {
+          "t1": 0.865,
+          "t2": 0.915,
+          "t3": 0.885
+        },
+        "overall": 0.8883333333333333,
+        "balanced": 0.7105195535238226,
+        "rare_balanced": 0.4213085764809903,
+        "nonrare_balanced": 0.8010715914272686,
+        "rare_accuracy": 0.5862068965517241,
+        "known_acc": 0.88,
+        "n_active": 0
+      },
+      "ValueForest": {
+        "config": "ValueForest",
+        "seed": 12,
+        "transfer": {
+          "t1": 0.82,
+          "t2": 0.88,
+          "t3": 0.87
+        },
+        "overall": 0.8566666666666667,
+        "balanced": 0.6237135721096049,
+        "rare_balanced": 0.16666666666666666,
+        "nonrare_balanced": 0.7990196078431373,
+        "rare_accuracy": 0.22413793103448276,
+        "known_acc": 0.88,
+        "n_active": 0
+      },
+      "chance": {
+        "overall": 0.21769374127138647,
+        "balanced": 0.21769374127138647
+      },
+      "ceiling": {
+        "overall": 1.0,
+        "balanced": 1.0
+      }
+    },
+    "audit": {
+      "n_active": 103,
+      "n_total": 103,
+      "arity_histogram": {
+        "2": 2,
+        "4": 77,
+        "3": 24
+      },
+      "mean_arity": 3.7281553398058254,
+      "rare_discovered": {
+        "offer(('season', 'winter'), ('location', 'public'), ('time', 'night'))": true,
+        "ask(('location', 'school'), ('role', 'child'), ('mood', 'upset'))": true,
+        "approach(('friendliness', 'warm'), ('status', 'stranger'), ('season', 'spring'), ('time', 'dawn'))": true,
+        "offer(('role', 'adult'), ('context', 'greeting'), ('season', 'autumn'))": true
+      },
+      "simple_discovered": {
+        "approach(('status', 'insider'), ('mood', 'calm'))": true,
+        "avoid(('context', 'conflict'),)": false,
+        "obey(('friendliness', 'cold'), ('role', 'elder'))": false
+      },
+      "rule_recovery": {
+        "n_targets": 6,
+        "n_compositional_active": 103,
+        "n_active": 103,
+        "n_atomic": 0,
+        "n_consistent": 75,
+        "n_inconsistent": 28,
+        "precision": 0.7281553398058253,
+        "fdr": 0.27184466019417475,
+        "winner_accuracy": 0.8833683228364824,
+        "n_fire_contexts": 4287,
+        "mean_active_arity": 3.7281553398058254,
+        "exact_recovered": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          false
+        ],
+        "subset_recovered": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          false
+        ],
+        "n_exact_recovered": 5,
+        "n_subset_recovered": 5,
+        "exact_rate": 0.8333333333333334,
+        "subset_rate": 0.8333333333333334,
+        "targets": [
+          "offer[3]",
+          "ask[3]",
+          "approach[4]",
+          "offer[3]",
+          "approach[2]",
+          "obey[2]"
+        ],
+        "targets_exact": [
+          "offer_('season=winter', 'location=public', 'time=night')",
+          "ask_('location=school', 'role=child', 'mood=upset')",
+          "approach_('friendliness=warm', 'status=stranger', 'season=spring', 'time=dawn')",
+          "offer_('role=adult', 'context=greeting', 'season=autumn')",
+          "approach_('status=insider', 'mood=calm')",
+          "obey_('friendliness=cold', 'role=elder')"
+        ]
+      }
+    }
+  },
+  {
+    "seed": 13,
+    "train_size": 2500,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 13,
+        "transfer": {
+          "t1": 0.955,
+          "t2": 0.9,
+          "t3": 0.93
+        },
+        "overall": 0.9283333333333333,
+        "balanced": 0.8204041704041704,
+        "rare_balanced": 0.5564534231200898,
+        "nonrare_balanced": 0.923532196969697,
+        "rare_accuracy": 0.5882352941176471,
+        "known_acc": 0.93,
+        "n_active": 101
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 13,
+        "transfer": {
+          "t1": 0.355,
+          "t2": 0.38,
+          "t3": 0.375
+        },
+        "overall": 0.37,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.4411764705882353,
+        "known_acc": 0.36,
+        "n_active": 1
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 13,
+        "transfer": {
+          "t1": 0.355,
+          "t2": 0.38,
+          "t3": 0.375
+        },
+        "overall": 0.37,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.4411764705882353,
+        "known_acc": 0.365,
+        "n_active": 0
+      },
+      "ValueLogReg": {
+        "config": "ValueLogReg",
+        "seed": 13,
+        "transfer": {
+          "t1": 0.355,
+          "t2": 0.38,
+          "t3": 0.375
+        },
+        "overall": 0.37,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.4411764705882353,
+        "known_acc": 0.365,
+        "n_active": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 13,
+        "transfer": {
+          "t1": 0.865,
+          "t2": 0.88,
+          "t3": 0.885
+        },
+        "overall": 0.8766666666666667,
+        "balanced": 0.7104686045862516,
+        "rare_balanced": 0.36374859708193036,
+        "nonrare_balanced": 0.8663351558572147,
+        "rare_accuracy": 0.39705882352941174,
+        "known_acc": 0.865,
+        "n_active": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 13,
+        "transfer": {
+          "t1": 0.925,
+          "t2": 0.885,
+          "t3": 0.865
+        },
+        "overall": 0.8916666666666667,
+        "balanced": 0.7465432965432965,
+        "rare_balanced": 0.2506172839506173,
+        "nonrare_balanced": 0.9183238636363636,
+        "rare_accuracy": 0.3235294117647059,
+        "known_acc": 0.88,
+        "n_active": 0
+      },
+      "ValueDList": {
+        "config": "ValueDList",
+        "seed": 13,
+        "transfer": {
+          "t1": 0.355,
+          "t2": 0.38,
+          "t3": 0.375
+        },
+        "overall": 0.37,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.4411764705882353,
+        "known_acc": 0.365,
+        "n_active": 0
+      },
+      "ValueCompoLift": {
+        "config": "ValueCompoLift",
+        "seed": 13,
+        "transfer": {
+          "t1": 0.615,
+          "t2": 0.6,
+          "t3": 0.65
+        },
+        "overall": 0.6216666666666667,
+        "balanced": 0.6690532396414749,
+        "rare_balanced": 0.3962962962962963,
+        "nonrare_balanced": 0.7085211561314503,
+        "rare_accuracy": 0.5,
+        "known_acc": 0.675,
+        "n_active": 0
+      },
+      "ValueDListML": {
+        "config": "ValueDListML",
+        "seed": 13,
+        "transfer": {
+          "t1": 0.905,
+          "t2": 0.91,
+          "t3": 0.935
+        },
+        "overall": 0.9166666666666666,
+        "balanced": 0.7974622062857357,
+        "rare_balanced": 0.5156004489337823,
+        "nonrare_balanced": 0.9118657588326706,
+        "rare_accuracy": 0.5882352941176471,
+        "known_acc": 0.945,
+        "n_active": 0
+      },
+      "ValueForest": {
+        "config": "ValueForest",
+        "seed": 13,
+        "transfer": {
+          "t1": 0.87,
+          "t2": 0.845,
+          "t3": 0.875
+        },
+        "overall": 0.8633333333333333,
+        "balanced": 0.6330934830934831,
+        "rare_balanced": 0.18888888888888888,
+        "nonrare_balanced": 0.8238636363636364,
+        "rare_accuracy": 0.25,
+        "known_acc": 0.865,
+        "n_active": 0
+      },
+      "chance": {
+        "overall": 0.22894372600254953,
+        "balanced": 0.22894372600254953
+      },
+      "ceiling": {
+        "overall": 1.0,
+        "balanced": 1.0
+      }
+    },
+    "audit": {
+      "n_active": 101,
+      "n_total": 101,
+      "arity_histogram": {
+        "2": 1,
+        "4": 72,
+        "3": 28
+      },
+      "mean_arity": 3.702970297029703,
+      "rare_discovered": {
+        "offer(('season', 'winter'), ('location', 'public'), ('time', 'night'))": true,
+        "ask(('location', 'school'), ('role', 'child'), ('mood', 'upset'))": true,
+        "approach(('friendliness', 'warm'), ('status', 'stranger'), ('season', 'spring'), ('time', 'dawn'))": false,
+        "offer(('role', 'adult'), ('context', 'greeting'), ('season', 'autumn'))": true
+      },
+      "simple_discovered": {
+        "approach(('status', 'insider'), ('mood', 'calm'))": true,
+        "avoid(('context', 'conflict'),)": false,
+        "obey(('friendliness', 'cold'), ('role', 'elder'))": false
+      },
+      "rule_recovery": {
+        "n_targets": 6,
+        "n_compositional_active": 101,
+        "n_active": 101,
+        "n_atomic": 0,
+        "n_consistent": 75,
+        "n_inconsistent": 26,
+        "precision": 0.7425742574257426,
+        "fdr": 0.25742574257425743,
+        "winner_accuracy": 0.9268238434163701,
+        "n_fire_contexts": 4496,
+        "mean_active_arity": 3.702970297029703,
+        "exact_recovered": [
+          true,
+          true,
+          false,
+          true,
+          true,
+          false
+        ],
+        "subset_recovered": [
+          true,
+          true,
+          false,
+          true,
+          true,
+          false
+        ],
+        "n_exact_recovered": 4,
+        "n_subset_recovered": 4,
+        "exact_rate": 0.6666666666666666,
+        "subset_rate": 0.6666666666666666,
+        "targets": [
+          "offer[3]",
+          "ask[3]",
+          "approach[4]",
+          "offer[3]",
+          "approach[2]",
+          "obey[2]"
+        ],
+        "targets_exact": [
+          "offer_('season=winter', 'location=public', 'time=night')",
+          "ask_('location=school', 'role=child', 'mood=upset')",
+          "approach_('friendliness=warm', 'status=stranger', 'season=spring', 'time=dawn')",
+          "offer_('role=adult', 'context=greeting', 'season=autumn')",
+          "approach_('status=insider', 'mood=calm')",
+          "obey_('friendliness=cold', 'role=elder')"
+        ]
+      }
+    }
+  },
+  {
+    "seed": 14,
+    "train_size": 2500,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 14,
+        "transfer": {
+          "t1": 0.84,
+          "t2": 0.845,
+          "t3": 0.875
+        },
+        "overall": 0.8533333333333334,
+        "balanced": 0.7307630372847764,
+        "rare_balanced": 0.3490460157126824,
+        "nonrare_balanced": 0.8622512437810945,
+        "rare_accuracy": 0.5,
+        "known_acc": 0.86,
+        "n_active": 105
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 14,
+        "transfer": {
+          "t1": 0.1,
+          "t2": 0.055,
+          "t3": 0.07
+        },
+        "overall": 0.075,
+        "balanced": 0.2,
+        "rare_balanced": 0.0,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.0,
+        "known_acc": 0.065,
+        "n_active": 3
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 14,
+        "transfer": {
+          "t1": 0.1,
+          "t2": 0.055,
+          "t3": 0.07
+        },
+        "overall": 0.075,
+        "balanced": 0.2,
+        "rare_balanced": 0.0,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.0,
+        "known_acc": 0.07,
+        "n_active": 0
+      },
+      "ValueLogReg": {
+        "config": "ValueLogReg",
+        "seed": 14,
+        "transfer": {
+          "t1": 0.375,
+          "t2": 0.4,
+          "t3": 0.395
+        },
+        "overall": 0.39,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.5,
+        "known_acc": 0.36,
+        "n_active": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 14,
+        "transfer": {
+          "t1": 0.865,
+          "t2": 0.86,
+          "t3": 0.895
+        },
+        "overall": 0.8733333333333333,
+        "balanced": 0.6860906726124117,
+        "rare_balanced": 0.29797979797979796,
+        "nonrare_balanced": 0.8749765160212921,
+        "rare_accuracy": 0.3787878787878788,
+        "known_acc": 0.875,
+        "n_active": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 14,
+        "transfer": {
+          "t1": 0.92,
+          "t2": 0.92,
+          "t3": 0.945
+        },
+        "overall": 0.9283333333333333,
+        "balanced": 0.7827573392790784,
+        "rare_balanced": 0.23232323232323235,
+        "nonrare_balanced": 1.0,
+        "rare_accuracy": 0.3484848484848485,
+        "known_acc": 0.92,
+        "n_active": 0
+      },
+      "ValueDList": {
+        "config": "ValueDList",
+        "seed": 14,
+        "transfer": {
+          "t1": 0.1,
+          "t2": 0.055,
+          "t3": 0.07
+        },
+        "overall": 0.075,
+        "balanced": 0.2,
+        "rare_balanced": 0.0,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.0,
+        "known_acc": 0.07,
+        "n_active": 0
+      },
+      "ValueCompoLift": {
+        "config": "ValueCompoLift",
+        "seed": 14,
+        "transfer": {
+          "t1": 0.645,
+          "t2": 0.63,
+          "t3": 0.655
+        },
+        "overall": 0.6433333333333333,
+        "balanced": 0.6495788430571039,
+        "rare_balanced": 0.33108866442199775,
+        "nonrare_balanced": 0.7391125665379397,
+        "rare_accuracy": 0.4696969696969697,
+        "known_acc": 0.67,
+        "n_active": 0
+      },
+      "ValueDListML": {
+        "config": "ValueDListML",
+        "seed": 14,
+        "transfer": {
+          "t1": 0.85,
+          "t2": 0.89,
+          "t3": 0.92
+        },
+        "overall": 0.8866666666666667,
+        "balanced": 0.7008918617614269,
+        "rare_balanced": 0.32323232323232326,
+        "nonrare_balanced": 0.8868463625926313,
+        "rare_accuracy": 0.48484848484848486,
+        "known_acc": 0.89,
+        "n_active": 0
+      },
+      "ValueForest": {
+        "config": "ValueForest",
+        "seed": 14,
+        "transfer": {
+          "t1": 0.82,
+          "t2": 0.865,
+          "t3": 0.875
+        },
+        "overall": 0.8533333333333334,
+        "balanced": 0.5827573392790784,
+        "rare_balanced": 0.23232323232323235,
+        "nonrare_balanced": 0.75,
+        "rare_accuracy": 0.3484848484848485,
+        "known_acc": 0.85,
+        "n_active": 0
+      },
+      "chance": {
+        "overall": 0.23249597423510465,
+        "balanced": 0.23249597423510465
+      },
+      "ceiling": {
+        "overall": 1.0,
+        "balanced": 1.0
+      }
+    },
+    "audit": {
+      "n_active": 105,
+      "n_total": 105,
+      "arity_histogram": {
+        "3": 39,
+        "4": 66
+      },
+      "mean_arity": 3.6285714285714286,
+      "rare_discovered": {
+        "offer(('season', 'winter'), ('location', 'public'), ('time', 'night'))": false,
+        "ask(('location', 'school'), ('role', 'child'), ('mood', 'upset'))": true,
+        "approach(('friendliness', 'warm'), ('status', 'stranger'), ('season', 'spring'), ('time', 'dawn'))": true,
+        "offer(('role', 'adult'), ('context', 'greeting'), ('season', 'autumn'))": true
+      },
+      "simple_discovered": {
+        "approach(('status', 'insider'), ('mood', 'calm'))": false,
+        "avoid(('context', 'conflict'),)": false,
+        "obey(('friendliness', 'cold'), ('role', 'elder'))": false
+      },
+      "rule_recovery": {
+        "n_targets": 6,
+        "n_compositional_active": 105,
+        "n_active": 105,
+        "n_atomic": 0,
+        "n_consistent": 51,
+        "n_inconsistent": 54,
+        "precision": 0.48571428571428577,
+        "fdr": 0.5142857142857142,
+        "winner_accuracy": 0.9031242975949652,
+        "n_fire_contexts": 4449,
+        "mean_active_arity": 3.6285714285714286,
+        "exact_recovered": [
+          false,
+          true,
+          true,
+          true,
+          false,
+          false
+        ],
+        "subset_recovered": [
+          false,
+          true,
+          true,
+          true,
+          false,
+          false
+        ],
+        "n_exact_recovered": 3,
+        "n_subset_recovered": 3,
+        "exact_rate": 0.5,
+        "subset_rate": 0.5,
+        "targets": [
+          "offer[3]",
+          "ask[3]",
+          "approach[4]",
+          "offer[3]",
+          "approach[2]",
+          "obey[2]"
+        ],
+        "targets_exact": [
+          "offer_('season=winter', 'location=public', 'time=night')",
+          "ask_('location=school', 'role=child', 'mood=upset')",
+          "approach_('friendliness=warm', 'status=stranger', 'season=spring', 'time=dawn')",
+          "offer_('role=adult', 'context=greeting', 'season=autumn')",
+          "approach_('status=insider', 'mood=calm')",
+          "obey_('friendliness=cold', 'role=elder')"
+        ]
+      }
+    }
+  },
+  {
+    "seed": 15,
+    "train_size": 2500,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 15,
+        "transfer": {
+          "t1": 0.88,
+          "t2": 0.88,
+          "t3": 0.915
+        },
+        "overall": 0.8916666666666667,
+        "balanced": 0.7224878614834946,
+        "rare_balanced": 0.4631701631701632,
+        "nonrare_balanced": 0.822711770987633,
+        "rare_accuracy": 0.543859649122807,
+        "known_acc": 0.93,
+        "n_active": 120
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 15,
+        "transfer": {
+          "t1": 0.32,
+          "t2": 0.38,
+          "t3": 0.32
+        },
+        "overall": 0.34,
+        "balanced": 0.19096924909151985,
+        "rare_balanced": 0.3243589743589744,
+        "nonrare_balanced": 0.2240604223362844,
+        "rare_accuracy": 0.43859649122807015,
+        "known_acc": 0.315,
+        "n_active": 7
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 15,
+        "transfer": {
+          "t1": 0.36,
+          "t2": 0.415,
+          "t3": 0.37
+        },
+        "overall": 0.38166666666666665,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.45614035087719296,
+        "known_acc": 0.36,
+        "n_active": 0
+      },
+      "ValueLogReg": {
+        "config": "ValueLogReg",
+        "seed": 15,
+        "transfer": {
+          "t1": 0.36,
+          "t2": 0.415,
+          "t3": 0.37
+        },
+        "overall": 0.38166666666666665,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.45614035087719296,
+        "known_acc": 0.36,
+        "n_active": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 15,
+        "transfer": {
+          "t1": 0.895,
+          "t2": 0.865,
+          "t3": 0.905
+        },
+        "overall": 0.8883333333333333,
+        "balanced": 0.6743962296800724,
+        "rare_balanced": 0.4327505827505827,
+        "nonrare_balanced": 0.8448667711598746,
+        "rare_accuracy": 0.49122807017543857,
+        "known_acc": 0.885,
+        "n_active": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 15,
+        "transfer": {
+          "t1": 0.94,
+          "t2": 0.9,
+          "t3": 0.95
+        },
+        "overall": 0.93,
+        "balanced": 0.7762904489978726,
+        "rare_balanced": 0.1923076923076923,
+        "nonrare_balanced": 1.0,
+        "rare_accuracy": 0.2631578947368421,
+        "known_acc": 0.93,
+        "n_active": 0
+      },
+      "ValueDList": {
+        "config": "ValueDList",
+        "seed": 15,
+        "transfer": {
+          "t1": 0.36,
+          "t2": 0.415,
+          "t3": 0.37
+        },
+        "overall": 0.38166666666666665,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.45614035087719296,
+        "known_acc": 0.36,
+        "n_active": 0
+      },
+      "ValueCompoLift": {
+        "config": "ValueCompoLift",
+        "seed": 15,
+        "transfer": {
+          "t1": 0.765,
+          "t2": 0.725,
+          "t3": 0.795
+        },
+        "overall": 0.7616666666666667,
+        "balanced": 0.7805582190735029,
+        "rare_balanced": 0.5694638694638695,
+        "nonrare_balanced": 0.8323538530435082,
+        "rare_accuracy": 0.5964912280701754,
+        "known_acc": 0.77,
+        "n_active": 0
+      },
+      "ValueDListML": {
+        "config": "ValueDListML",
+        "seed": 15,
+        "transfer": {
+          "t1": 0.95,
+          "t2": 0.935,
+          "t3": 0.93
+        },
+        "overall": 0.9383333333333334,
+        "balanced": 0.8400699300699301,
+        "rare_balanced": 0.5772727272727273,
+        "nonrare_balanced": 0.9270104895104895,
+        "rare_accuracy": 0.6842105263157895,
+        "known_acc": 0.96,
+        "n_active": 0
+      },
+      "ValueForest": {
+        "config": "ValueForest",
+        "seed": 15,
+        "transfer": {
+          "t1": 0.84,
+          "t2": 0.8,
+          "t3": 0.895
+        },
+        "overall": 0.845,
+        "balanced": 0.5801366028440265,
+        "rare_balanced": 0.1923076923076923,
+        "nonrare_balanced": 0.7548076923076923,
+        "rare_accuracy": 0.2631578947368421,
+        "known_acc": 0.875,
+        "n_active": 0
+      },
+      "chance": {
+        "overall": 0.1903395730906648,
+        "balanced": 0.1903395730906648
+      },
+      "ceiling": {
+        "overall": 1.0,
+        "balanced": 1.0
+      }
+    },
+    "audit": {
+      "n_active": 120,
+      "n_total": 120,
+      "arity_histogram": {
+        "3": 29,
+        "4": 91
+      },
+      "mean_arity": 3.7583333333333333,
+      "rare_discovered": {
+        "offer(('season', 'winter'), ('location', 'public'), ('time', 'night'))": true,
+        "ask(('location', 'school'), ('role', 'child'), ('mood', 'upset'))": true,
+        "approach(('friendliness', 'warm'), ('status', 'stranger'), ('season', 'spring'), ('time', 'dawn'))": false,
+        "offer(('role', 'adult'), ('context', 'greeting'), ('season', 'autumn'))": true
+      },
+      "simple_discovered": {
+        "approach(('status', 'insider'), ('mood', 'calm'))": false,
+        "avoid(('context', 'conflict'),)": false,
+        "obey(('friendliness', 'cold'), ('role', 'elder'))": false
+      },
+      "rule_recovery": {
+        "n_targets": 6,
+        "n_compositional_active": 120,
+        "n_active": 120,
+        "n_atomic": 0,
+        "n_consistent": 83,
+        "n_inconsistent": 37,
+        "precision": 0.6916666666666667,
+        "fdr": 0.30833333333333335,
+        "winner_accuracy": 0.9098837209302325,
+        "n_fire_contexts": 4472,
+        "mean_active_arity": 3.7583333333333333,
+        "exact_recovered": [
+          true,
+          true,
+          false,
+          true,
+          false,
+          false
+        ],
+        "subset_recovered": [
+          true,
+          true,
+          false,
+          true,
+          false,
+          false
+        ],
+        "n_exact_recovered": 3,
+        "n_subset_recovered": 3,
+        "exact_rate": 0.5,
+        "subset_rate": 0.5,
+        "targets": [
+          "offer[3]",
+          "ask[3]",
+          "approach[4]",
+          "offer[3]",
+          "approach[2]",
+          "obey[2]"
+        ],
+        "targets_exact": [
+          "offer_('season=winter', 'location=public', 'time=night')",
+          "ask_('location=school', 'role=child', 'mood=upset')",
+          "approach_('friendliness=warm', 'status=stranger', 'season=spring', 'time=dawn')",
+          "offer_('role=adult', 'context=greeting', 'season=autumn')",
+          "approach_('status=insider', 'mood=calm')",
+          "obey_('friendliness=cold', 'role=elder')"
+        ]
+      }
+    }
+  },
+  {
+    "seed": 16,
+    "train_size": 2500,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 16,
+        "transfer": {
+          "t1": 0.905,
+          "t2": 0.92,
+          "t3": 0.9
+        },
+        "overall": 0.9083333333333333,
+        "balanced": 0.8548528618578943,
+        "rare_balanced": 0.5555555555555556,
+        "nonrare_balanced": 0.873042067576639,
+        "rare_accuracy": 0.6857142857142857,
+        "known_acc": 0.9,
+        "n_active": 115
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 16,
+        "transfer": {
+          "t1": 0.275,
+          "t2": 0.255,
+          "t3": 0.265
+        },
+        "overall": 0.265,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.14285714285714285,
+        "known_acc": 0.235,
+        "n_active": 3
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 16,
+        "transfer": {
+          "t1": 0.275,
+          "t2": 0.255,
+          "t3": 0.265
+        },
+        "overall": 0.265,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.14285714285714285,
+        "known_acc": 0.235,
+        "n_active": 0
+      },
+      "ValueLogReg": {
+        "config": "ValueLogReg",
+        "seed": 16,
+        "transfer": {
+          "t1": 0.44,
+          "t2": 0.42,
+          "t3": 0.38
+        },
+        "overall": 0.41333333333333333,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.42857142857142855,
+        "known_acc": 0.385,
+        "n_active": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 16,
+        "transfer": {
+          "t1": 0.895,
+          "t2": 0.895,
+          "t3": 0.865
+        },
+        "overall": 0.885,
+        "balanced": 0.6963900542440763,
+        "rare_balanced": 0.2888888888888889,
+        "nonrare_balanced": 0.891173264085167,
+        "rare_accuracy": 0.34285714285714286,
+        "known_acc": 0.845,
+        "n_active": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 16,
+        "transfer": {
+          "t1": 0.915,
+          "t2": 0.945,
+          "t3": 0.895
+        },
+        "overall": 0.9183333333333333,
+        "balanced": 0.7801633191316697,
+        "rare_balanced": 0.2333333333333333,
+        "nonrare_balanced": 1.0,
+        "rare_accuracy": 0.3,
+        "known_acc": 0.925,
+        "n_active": 0
+      },
+      "ValueDList": {
+        "config": "ValueDList",
+        "seed": 16,
+        "transfer": {
+          "t1": 0.275,
+          "t2": 0.255,
+          "t3": 0.265
+        },
+        "overall": 0.265,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.14285714285714285,
+        "known_acc": 0.235,
+        "n_active": 0
+      },
+      "ValueCompoLift": {
+        "config": "ValueCompoLift",
+        "seed": 16,
+        "transfer": {
+          "t1": 0.555,
+          "t2": 0.62,
+          "t3": 0.59
+        },
+        "overall": 0.5883333333333334,
+        "balanced": 0.688384222695584,
+        "rare_balanced": 0.48888888888888893,
+        "nonrare_balanced": 0.6756197588694342,
+        "rare_accuracy": 0.5428571428571428,
+        "known_acc": 0.63,
+        "n_active": 0
+      },
+      "ValueDListML": {
+        "config": "ValueDListML",
+        "seed": 16,
+        "transfer": {
+          "t1": 0.895,
+          "t2": 0.875,
+          "t3": 0.825
+        },
+        "overall": 0.865,
+        "balanced": 0.6460665906086338,
+        "rare_balanced": 0.37777777777777777,
+        "nonrare_balanced": 0.8206520144235884,
+        "rare_accuracy": 0.42857142857142855,
+        "known_acc": 0.86,
+        "n_active": 0
+      },
+      "ValueForest": {
+        "config": "ValueForest",
+        "seed": 16,
+        "transfer": {
+          "t1": 0.87,
+          "t2": 0.87,
+          "t3": 0.825
+        },
+        "overall": 0.855,
+        "balanced": 0.6020378397636685,
+        "rare_balanced": 0.2333333333333333,
+        "nonrare_balanced": 0.7771321001800622,
+        "rare_accuracy": 0.3,
+        "known_acc": 0.865,
+        "n_active": 0
+      },
+      "chance": {
+        "overall": 0.20180529898002253,
+        "balanced": 0.20180529898002253
+      },
+      "ceiling": {
+        "overall": 1.0,
+        "balanced": 1.0
+      }
+    },
+    "audit": {
+      "n_active": 115,
+      "n_total": 115,
+      "arity_histogram": {
+        "3": 52,
+        "4": 63
+      },
+      "mean_arity": 3.5478260869565217,
+      "rare_discovered": {
+        "offer(('season', 'winter'), ('location', 'public'), ('time', 'night'))": true,
+        "ask(('location', 'school'), ('role', 'child'), ('mood', 'upset'))": true,
+        "approach(('friendliness', 'warm'), ('status', 'stranger'), ('season', 'spring'), ('time', 'dawn'))": false,
+        "offer(('role', 'adult'), ('context', 'greeting'), ('season', 'autumn'))": true
+      },
+      "simple_discovered": {
+        "approach(('status', 'insider'), ('mood', 'calm'))": false,
+        "avoid(('context', 'conflict'),)": false,
+        "obey(('friendliness', 'cold'), ('role', 'elder'))": false
+      },
+      "rule_recovery": {
+        "n_targets": 6,
+        "n_compositional_active": 115,
+        "n_active": 115,
+        "n_atomic": 0,
+        "n_consistent": 67,
+        "n_inconsistent": 48,
+        "precision": 0.5826086956521739,
+        "fdr": 0.41739130434782606,
+        "winner_accuracy": 0.9163901791639018,
+        "n_fire_contexts": 4521,
+        "mean_active_arity": 3.5478260869565217,
+        "exact_recovered": [
+          true,
+          true,
+          false,
+          true,
+          false,
+          false
+        ],
+        "subset_recovered": [
+          true,
+          true,
+          false,
+          true,
+          false,
+          false
+        ],
+        "n_exact_recovered": 3,
+        "n_subset_recovered": 3,
+        "exact_rate": 0.5,
+        "subset_rate": 0.5,
+        "targets": [
+          "offer[3]",
+          "ask[3]",
+          "approach[4]",
+          "offer[3]",
+          "approach[2]",
+          "obey[2]"
+        ],
+        "targets_exact": [
+          "offer_('season=winter', 'location=public', 'time=night')",
+          "ask_('location=school', 'role=child', 'mood=upset')",
+          "approach_('friendliness=warm', 'status=stranger', 'season=spring', 'time=dawn')",
+          "offer_('role=adult', 'context=greeting', 'season=autumn')",
+          "approach_('status=insider', 'mood=calm')",
+          "obey_('friendliness=cold', 'role=elder')"
+        ]
+      }
+    }
+  },
+  {
+    "seed": 17,
+    "train_size": 2500,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 17,
+        "transfer": {
+          "t1": 0.88,
+          "t2": 0.875,
+          "t3": 0.89
+        },
+        "overall": 0.8816666666666667,
+        "balanced": 0.7590849815240178,
+        "rare_balanced": 0.641812865497076,
+        "nonrare_balanced": 0.8689175186869211,
+        "rare_accuracy": 0.5882352941176471,
+        "known_acc": 0.895,
+        "n_active": 121
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 17,
+        "transfer": {
+          "t1": 0.19,
+          "t2": 0.215,
+          "t3": 0.28
+        },
+        "overall": 0.22833333333333333,
+        "balanced": 0.2068734793187348,
+        "rare_balanced": 0.013888888888888888,
+        "nonrare_balanced": 0.24817518248175183,
+        "rare_accuracy": 0.0196078431372549,
+        "known_acc": 0.24,
+        "n_active": 3
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 17,
+        "transfer": {
+          "t1": 0.185,
+          "t2": 0.22,
+          "t3": 0.28
+        },
+        "overall": 0.22833333333333333,
+        "balanced": 0.2,
+        "rare_balanced": 0.0,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.0,
+        "known_acc": 0.225,
+        "n_active": 0
+      },
+      "ValueLogReg": {
+        "config": "ValueLogReg",
+        "seed": 17,
+        "transfer": {
+          "t1": 0.415,
+          "t2": 0.41,
+          "t3": 0.355
+        },
+        "overall": 0.3933333333333333,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.37254901960784315,
+        "known_acc": 0.35,
+        "n_active": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 17,
+        "transfer": {
+          "t1": 0.905,
+          "t2": 0.89,
+          "t3": 0.87
+        },
+        "overall": 0.8883333333333333,
+        "balanced": 0.7121186601704628,
+        "rare_balanced": 0.5241228070175438,
+        "nonrare_balanced": 0.8655850604080045,
+        "rare_accuracy": 0.49019607843137253,
+        "known_acc": 0.835,
+        "n_active": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 17,
+        "transfer": {
+          "t1": 0.905,
+          "t2": 0.89,
+          "t3": 0.905
+        },
+        "overall": 0.9,
+        "balanced": 0.7065738398208863,
+        "rare_balanced": 0.1929824561403509,
+        "nonrare_balanced": 0.9041524744540173,
+        "rare_accuracy": 0.21568627450980393,
+        "known_acc": 0.88,
+        "n_active": 0
+      },
+      "ValueDList": {
+        "config": "ValueDList",
+        "seed": 17,
+        "transfer": {
+          "t1": 0.185,
+          "t2": 0.22,
+          "t3": 0.28
+        },
+        "overall": 0.22833333333333333,
+        "balanced": 0.2,
+        "rare_balanced": 0.0,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.0,
+        "known_acc": 0.225,
+        "n_active": 0
+      },
+      "ValueCompoLift": {
+        "config": "ValueCompoLift",
+        "seed": 17,
+        "transfer": {
+          "t1": 0.63,
+          "t2": 0.695,
+          "t3": 0.695
+        },
+        "overall": 0.6733333333333333,
+        "balanced": 0.7345679761434775,
+        "rare_balanced": 0.5862573099415204,
+        "nonrare_balanced": 0.7521700502142282,
+        "rare_accuracy": 0.6666666666666666,
+        "known_acc": 0.63,
+        "n_active": 0
+      },
+      "ValueDListML": {
+        "config": "ValueDListML",
+        "seed": 17,
+        "transfer": {
+          "t1": 0.925,
+          "t2": 0.935,
+          "t3": 0.935
+        },
+        "overall": 0.9316666666666666,
+        "balanced": 0.8709713855735574,
+        "rare_balanced": 0.5102339181286549,
+        "nonrare_balanced": 0.9557515571824905,
+        "rare_accuracy": 0.6274509803921569,
+        "known_acc": 0.925,
+        "n_active": 0
+      },
+      "ValueForest": {
+        "config": "ValueForest",
+        "seed": 17,
+        "transfer": {
+          "t1": 0.905,
+          "t2": 0.9,
+          "t3": 0.89
+        },
+        "overall": 0.8983333333333333,
+        "balanced": 0.6917249083544161,
+        "rare_balanced": 0.1929824561403509,
+        "nonrare_balanced": 0.8858695652173914,
+        "rare_accuracy": 0.21568627450980393,
+        "known_acc": 0.86,
+        "n_active": 0
+      },
+      "chance": {
+        "overall": 0.1886918472623509,
+        "balanced": 0.1886918472623509
+      },
+      "ceiling": {
+        "overall": 1.0,
+        "balanced": 1.0
+      }
+    },
+    "audit": {
+      "n_active": 121,
+      "n_total": 121,
+      "arity_histogram": {
+        "3": 32,
+        "4": 89
+      },
+      "mean_arity": 3.7355371900826446,
+      "rare_discovered": {
+        "offer(('season', 'winter'), ('location', 'public'), ('time', 'night'))": true,
+        "ask(('location', 'school'), ('role', 'child'), ('mood', 'upset'))": true,
+        "approach(('friendliness', 'warm'), ('status', 'stranger'), ('season', 'spring'), ('time', 'dawn'))": true,
+        "offer(('role', 'adult'), ('context', 'greeting'), ('season', 'autumn'))": true
+      },
+      "simple_discovered": {
+        "approach(('status', 'insider'), ('mood', 'calm'))": false,
+        "avoid(('context', 'conflict'),)": false,
+        "obey(('friendliness', 'cold'), ('role', 'elder'))": false
+      },
+      "rule_recovery": {
+        "n_targets": 6,
+        "n_compositional_active": 121,
+        "n_active": 121,
+        "n_atomic": 0,
+        "n_consistent": 88,
+        "n_inconsistent": 33,
+        "precision": 0.7272727272727273,
+        "fdr": 0.2727272727272727,
+        "winner_accuracy": 0.9262725405158639,
+        "n_fire_contexts": 4381,
+        "mean_active_arity": 3.7355371900826446,
+        "exact_recovered": [
+          true,
+          true,
+          true,
+          true,
+          false,
+          false
+        ],
+        "subset_recovered": [
+          true,
+          true,
+          true,
+          true,
+          false,
+          false
+        ],
+        "n_exact_recovered": 4,
+        "n_subset_recovered": 4,
+        "exact_rate": 0.6666666666666666,
+        "subset_rate": 0.6666666666666666,
+        "targets": [
+          "offer[3]",
+          "ask[3]",
+          "approach[4]",
+          "offer[3]",
+          "approach[2]",
+          "obey[2]"
+        ],
+        "targets_exact": [
+          "offer_('season=winter', 'location=public', 'time=night')",
+          "ask_('location=school', 'role=child', 'mood=upset')",
+          "approach_('friendliness=warm', 'status=stranger', 'season=spring', 'time=dawn')",
+          "offer_('role=adult', 'context=greeting', 'season=autumn')",
+          "approach_('status=insider', 'mood=calm')",
+          "obey_('friendliness=cold', 'role=elder')"
+        ]
+      }
+    }
+  },
+  {
+    "seed": 18,
+    "train_size": 2500,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 18,
+        "transfer": {
+          "t1": 0.91,
+          "t2": 0.905,
+          "t3": 0.905
+        },
+        "overall": 0.9066666666666666,
+        "balanced": 0.7682326241134751,
+        "rare_balanced": 0.615079365079365,
+        "nonrare_balanced": 0.8431086424402184,
+        "rare_accuracy": 0.6792452830188679,
+        "known_acc": 0.92,
+        "n_active": 113
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 18,
+        "transfer": {
+          "t1": 0.235,
+          "t2": 0.245,
+          "t3": 0.215
+        },
+        "overall": 0.23166666666666666,
+        "balanced": 0.19857142857142857,
+        "rare_balanced": 0.0,
+        "nonrare_balanced": 0.24821428571428572,
+        "rare_accuracy": 0.0,
+        "known_acc": 0.19,
+        "n_active": 3
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 18,
+        "transfer": {
+          "t1": 0.24,
+          "t2": 0.245,
+          "t3": 0.215
+        },
+        "overall": 0.23333333333333334,
+        "balanced": 0.2,
+        "rare_balanced": 0.0,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.0,
+        "known_acc": 0.195,
+        "n_active": 0
+      },
+      "ValueLogReg": {
+        "config": "ValueLogReg",
+        "seed": 18,
+        "transfer": {
+          "t1": 0.39,
+          "t2": 0.43,
+          "t3": 0.43
+        },
+        "overall": 0.4166666666666667,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.4528301886792453,
+        "known_acc": 0.35,
+        "n_active": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 18,
+        "transfer": {
+          "t1": 0.905,
+          "t2": 0.9,
+          "t3": 0.895
+        },
+        "overall": 0.9,
+        "balanced": 0.7321146172975961,
+        "rare_balanced": 0.26515151515151514,
+        "nonrare_balanced": 0.9214747653319597,
+        "rare_accuracy": 0.3584905660377358,
+        "known_acc": 0.895,
+        "n_active": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 18,
+        "transfer": {
+          "t1": 0.92,
+          "t2": 0.93,
+          "t3": 0.935
+        },
+        "overall": 0.9283333333333333,
+        "balanced": 0.7739234042553191,
+        "rare_balanced": 0.25,
+        "nonrare_balanced": 0.9850746268656716,
+        "rare_accuracy": 0.33962264150943394,
+        "known_acc": 0.89,
+        "n_active": 0
+      },
+      "ValueDList": {
+        "config": "ValueDList",
+        "seed": 18,
+        "transfer": {
+          "t1": 0.24,
+          "t2": 0.245,
+          "t3": 0.215
+        },
+        "overall": 0.23333333333333334,
+        "balanced": 0.2,
+        "rare_balanced": 0.0,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.0,
+        "known_acc": 0.195,
+        "n_active": 0
+      },
+      "ValueCompoLift": {
+        "config": "ValueCompoLift",
+        "seed": 18,
+        "transfer": {
+          "t1": 0.61,
+          "t2": 0.61,
+          "t3": 0.72
+        },
+        "overall": 0.6466666666666666,
+        "balanced": 0.7023608731693838,
+        "rare_balanced": 0.4264069264069264,
+        "nonrare_balanced": 0.7274543842104271,
+        "rare_accuracy": 0.5094339622641509,
+        "known_acc": 0.675,
+        "n_active": 0
+      },
+      "ValueDListML": {
+        "config": "ValueDListML",
+        "seed": 18,
+        "transfer": {
+          "t1": 0.93,
+          "t2": 0.915,
+          "t3": 0.95
+        },
+        "overall": 0.9316666666666666,
+        "balanced": 0.8734143133462282,
+        "rare_balanced": 0.5151515151515151,
+        "nonrare_balanced": 0.9654409884300958,
+        "rare_accuracy": 0.6792452830188679,
+        "known_acc": 0.93,
+        "n_active": 0
+      },
+      "ValueForest": {
+        "config": "ValueForest",
+        "seed": 18,
+        "transfer": {
+          "t1": 0.925,
+          "t2": 0.91,
+          "t3": 0.91
+        },
+        "overall": 0.915,
+        "balanced": 0.7171858156028369,
+        "rare_balanced": 0.25,
+        "nonrare_balanced": 0.9148936170212766,
+        "rare_accuracy": 0.33962264150943394,
+        "known_acc": 0.86,
+        "n_active": 0
+      },
+      "chance": {
+        "overall": 0.199137293911762,
+        "balanced": 0.199137293911762
+      },
+      "ceiling": {
+        "overall": 1.0,
+        "balanced": 1.0
+      }
+    },
+    "audit": {
+      "n_active": 113,
+      "n_total": 113,
+      "arity_histogram": {
+        "3": 47,
+        "4": 66
+      },
+      "mean_arity": 3.584070796460177,
+      "rare_discovered": {
+        "offer(('season', 'winter'), ('location', 'public'), ('time', 'night'))": true,
+        "ask(('location', 'school'), ('role', 'child'), ('mood', 'upset'))": true,
+        "approach(('friendliness', 'warm'), ('status', 'stranger'), ('season', 'spring'), ('time', 'dawn'))": true,
+        "offer(('role', 'adult'), ('context', 'greeting'), ('season', 'autumn'))": true
+      },
+      "simple_discovered": {
+        "approach(('status', 'insider'), ('mood', 'calm'))": false,
+        "avoid(('context', 'conflict'),)": false,
+        "obey(('friendliness', 'cold'), ('role', 'elder'))": false
+      },
+      "rule_recovery": {
+        "n_targets": 6,
+        "n_compositional_active": 113,
+        "n_active": 113,
+        "n_atomic": 0,
+        "n_consistent": 66,
+        "n_inconsistent": 47,
+        "precision": 0.584070796460177,
+        "fdr": 0.415929203539823,
+        "winner_accuracy": 0.917427108835967,
+        "n_fire_contexts": 4493,
+        "mean_active_arity": 3.584070796460177,
+        "exact_recovered": [
+          true,
+          true,
+          true,
+          true,
+          false,
+          false
+        ],
+        "subset_recovered": [
+          true,
+          true,
+          true,
+          true,
+          false,
+          false
+        ],
+        "n_exact_recovered": 4,
+        "n_subset_recovered": 4,
+        "exact_rate": 0.6666666666666666,
+        "subset_rate": 0.6666666666666666,
+        "targets": [
+          "offer[3]",
+          "ask[3]",
+          "approach[4]",
+          "offer[3]",
+          "approach[2]",
+          "obey[2]"
+        ],
+        "targets_exact": [
+          "offer_('season=winter', 'location=public', 'time=night')",
+          "ask_('location=school', 'role=child', 'mood=upset')",
+          "approach_('friendliness=warm', 'status=stranger', 'season=spring', 'time=dawn')",
+          "offer_('role=adult', 'context=greeting', 'season=autumn')",
+          "approach_('status=insider', 'mood=calm')",
+          "obey_('friendliness=cold', 'role=elder')"
+        ]
+      }
+    }
+  },
+  {
+    "seed": 19,
+    "train_size": 2500,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 19,
+        "transfer": {
+          "t1": 0.91,
+          "t2": 0.915,
+          "t3": 0.905
+        },
+        "overall": 0.91,
+        "balanced": 0.8575459446214163,
+        "rare_balanced": 0.5750000000000001,
+        "nonrare_balanced": 0.9260075425581928,
+        "rare_accuracy": 0.7692307692307693,
+        "known_acc": 0.92,
+        "n_active": 98
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 19,
+        "transfer": {
+          "t1": 0.04,
+          "t2": 0.03,
+          "t3": 0.03
+        },
+        "overall": 0.03333333333333333,
+        "balanced": 0.2055944055944056,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.007518796992481203,
+        "rare_accuracy": 0.24615384615384617,
+        "known_acc": 0.03,
+        "n_active": 1
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 19,
+        "transfer": {
+          "t1": 0.035,
+          "t2": 0.025,
+          "t3": 0.02
+        },
+        "overall": 0.02666666666666667,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.0,
+        "rare_accuracy": 0.24615384615384617,
+        "known_acc": 0.02,
+        "n_active": 0
+      },
+      "ValueLogReg": {
+        "config": "ValueLogReg",
+        "seed": 19,
+        "transfer": {
+          "t1": 0.41,
+          "t2": 0.37,
+          "t3": 0.445
+        },
+        "overall": 0.4083333333333333,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.6,
+        "known_acc": 0.385,
+        "n_active": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 19,
+        "transfer": {
+          "t1": 0.9,
+          "t2": 0.915,
+          "t3": 0.87
+        },
+        "overall": 0.895,
+        "balanced": 0.7157104889719446,
+        "rare_balanced": 0.29743589743589743,
+        "nonrare_balanced": 0.9201500490909097,
+        "rare_accuracy": 0.4461538461538462,
+        "known_acc": 0.89,
+        "n_active": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 19,
+        "transfer": {
+          "t1": 0.92,
+          "t2": 0.95,
+          "t3": 0.93
+        },
+        "overall": 0.9333333333333333,
+        "balanced": 0.7745854145854146,
+        "rare_balanced": 0.2136752136752137,
+        "nonrare_balanced": 1.0,
+        "rare_accuracy": 0.38461538461538464,
+        "known_acc": 0.945,
+        "n_active": 0
+      },
+      "ValueDList": {
+        "config": "ValueDList",
+        "seed": 19,
+        "transfer": {
+          "t1": 0.035,
+          "t2": 0.025,
+          "t3": 0.02
+        },
+        "overall": 0.02666666666666667,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.0,
+        "rare_accuracy": 0.24615384615384617,
+        "known_acc": 0.02,
+        "n_active": 0
+      },
+      "ValueCompoLift": {
+        "config": "ValueCompoLift",
+        "seed": 19,
+        "transfer": {
+          "t1": 0.615,
+          "t2": 0.58,
+          "t3": 0.56
+        },
+        "overall": 0.585,
+        "balanced": 0.6660760667903525,
+        "rare_balanced": 0.45363247863247863,
+        "nonrare_balanced": 0.6817254666641483,
+        "rare_accuracy": 0.46153846153846156,
+        "known_acc": 0.625,
+        "n_active": 0
+      },
+      "ValueDListML": {
+        "config": "ValueDListML",
+        "seed": 19,
+        "transfer": {
+          "t1": 0.915,
+          "t2": 0.95,
+          "t3": 0.91
+        },
+        "overall": 0.925,
+        "balanced": 0.8404604627178751,
+        "rare_balanced": 0.359508547008547,
+        "nonrare_balanced": 0.9714233376076205,
+        "rare_accuracy": 0.49230769230769234,
+        "known_acc": 0.955,
+        "n_active": 0
+      },
+      "ValueForest": {
+        "config": "ValueForest",
+        "seed": 19,
+        "transfer": {
+          "t1": 0.905,
+          "t2": 0.945,
+          "t3": 0.92
+        },
+        "overall": 0.9233333333333333,
+        "balanced": 0.7519439051514524,
+        "rare_balanced": 0.2136752136752137,
+        "nonrare_balanced": 0.9716981132075472,
+        "rare_accuracy": 0.38461538461538464,
+        "known_acc": 0.935,
+        "n_active": 0
+      },
+      "chance": {
+        "overall": 0.26755746275288056,
+        "balanced": 0.26755746275288056
+      },
+      "ceiling": {
+        "overall": 1.0,
+        "balanced": 1.0
+      }
+    },
+    "audit": {
+      "n_active": 98,
+      "n_total": 98,
+      "arity_histogram": {
+        "2": 1,
+        "4": 77,
+        "3": 20
+      },
+      "mean_arity": 3.7755102040816326,
+      "rare_discovered": {
+        "offer(('season', 'winter'), ('location', 'public'), ('time', 'night'))": true,
+        "ask(('location', 'school'), ('role', 'child'), ('mood', 'upset'))": true,
+        "approach(('friendliness', 'warm'), ('status', 'stranger'), ('season', 'spring'), ('time', 'dawn'))": false,
+        "offer(('role', 'adult'), ('context', 'greeting'), ('season', 'autumn'))": true
+      },
+      "simple_discovered": {
+        "approach(('status', 'insider'), ('mood', 'calm'))": true,
+        "avoid(('context', 'conflict'),)": false,
+        "obey(('friendliness', 'cold'), ('role', 'elder'))": false
+      },
+      "rule_recovery": {
+        "n_targets": 6,
+        "n_compositional_active": 98,
+        "n_active": 98,
+        "n_atomic": 0,
+        "n_consistent": 67,
+        "n_inconsistent": 31,
+        "precision": 0.6836734693877551,
+        "fdr": 0.3163265306122449,
+        "winner_accuracy": 0.9315192743764172,
+        "n_fire_contexts": 4410,
+        "mean_active_arity": 3.7755102040816326,
+        "exact_recovered": [
+          true,
+          true,
+          false,
+          true,
+          true,
+          false
+        ],
+        "subset_recovered": [
+          true,
+          true,
+          false,
+          true,
+          true,
+          false
+        ],
+        "n_exact_recovered": 4,
+        "n_subset_recovered": 4,
+        "exact_rate": 0.6666666666666666,
+        "subset_rate": 0.6666666666666666,
+        "targets": [
+          "offer[3]",
+          "ask[3]",
+          "approach[4]",
+          "offer[3]",
+          "approach[2]",
+          "obey[2]"
+        ],
+        "targets_exact": [
+          "offer_('season=winter', 'location=public', 'time=night')",
+          "ask_('location=school', 'role=child', 'mood=upset')",
+          "approach_('friendliness=warm', 'status=stranger', 'season=spring', 'time=dawn')",
+          "offer_('role=adult', 'context=greeting', 'season=autumn')",
+          "approach_('status=insider', 'mood=calm')",
+          "obey_('friendliness=cold', 'role=elder')"
+        ]
+      }
+    }
+  },
+  {
+    "seed": 20,
+    "train_size": 2500,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 20,
+        "transfer": {
+          "t1": 0.865,
+          "t2": 0.865,
+          "t3": 0.9
+        },
+        "overall": 0.8766666666666667,
+        "balanced": 0.7223661842359321,
+        "rare_balanced": 0.47854106677636093,
+        "nonrare_balanced": 0.8012339683579854,
+        "rare_accuracy": 0.4827586206896552,
+        "known_acc": 0.94,
+        "n_active": 106
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 20,
+        "transfer": {
+          "t1": 0.055,
+          "t2": 0.065,
+          "t3": 0.05
+        },
+        "overall": 0.056666666666666664,
+        "balanced": 0.19498344792462438,
+        "rare_balanced": 0.3235294117647059,
+        "nonrare_balanced": 0.0011467889908256881,
+        "rare_accuracy": 0.5689655172413793,
+        "known_acc": 0.045,
+        "n_active": 1
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 20,
+        "transfer": {
+          "t1": 0.055,
+          "t2": 0.06,
+          "t3": 0.055
+        },
+        "overall": 0.056666666666666664,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.0,
+        "rare_accuracy": 0.5862068965517241,
+        "known_acc": 0.035,
+        "n_active": 0
+      },
+      "ValueLogReg": {
+        "config": "ValueLogReg",
+        "seed": 20,
+        "transfer": {
+          "t1": 0.345,
+          "t2": 0.455,
+          "t3": 0.355
+        },
+        "overall": 0.385,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.22413793103448276,
+        "known_acc": 0.415,
+        "n_active": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 20,
+        "transfer": {
+          "t1": 0.885,
+          "t2": 0.89,
+          "t3": 0.89
+        },
+        "overall": 0.8883333333333333,
+        "balanced": 0.7355546239474811,
+        "rare_balanced": 0.25641025641025644,
+        "nonrare_balanced": 0.9398739749379663,
+        "rare_accuracy": 0.1724137931034483,
+        "known_acc": 0.905,
+        "n_active": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 20,
+        "transfer": {
+          "t1": 0.855,
+          "t2": 0.815,
+          "t3": 0.845
+        },
+        "overall": 0.8383333333333334,
+        "balanced": 0.6816225441225441,
+        "rare_balanced": 0.2657342657342658,
+        "nonrare_balanced": 0.8684899952546663,
+        "rare_accuracy": 0.1724137931034483,
+        "known_acc": 0.885,
+        "n_active": 0
+      },
+      "ValueDList": {
+        "config": "ValueDList",
+        "seed": 20,
+        "transfer": {
+          "t1": 0.055,
+          "t2": 0.06,
+          "t3": 0.055
+        },
+        "overall": 0.056666666666666664,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.0,
+        "rare_accuracy": 0.5862068965517241,
+        "known_acc": 0.035,
+        "n_active": 0
+      },
+      "ValueCompoLift": {
+        "config": "ValueCompoLift",
+        "seed": 20,
+        "transfer": {
+          "t1": 0.615,
+          "t2": 0.57,
+          "t3": 0.6
+        },
+        "overall": 0.595,
+        "balanced": 0.6726111423590415,
+        "rare_balanced": 0.5573837926779103,
+        "nonrare_balanced": 0.6931799546772205,
+        "rare_accuracy": 0.5689655172413793,
+        "known_acc": 0.59,
+        "n_active": 0
+      },
+      "ValueDListML": {
+        "config": "ValueDListML",
+        "seed": 20,
+        "transfer": {
+          "t1": 0.915,
+          "t2": 0.905,
+          "t3": 0.925
+        },
+        "overall": 0.915,
+        "balanced": 0.8384275388477069,
+        "rare_balanced": 0.4300013711778418,
+        "nonrare_balanced": 0.9771577818093387,
+        "rare_accuracy": 0.41379310344827586,
+        "known_acc": 0.96,
+        "n_active": 0
+      },
+      "ValueForest": {
+        "config": "ValueForest",
+        "seed": 20,
+        "transfer": {
+          "t1": 0.9,
+          "t2": 0.895,
+          "t3": 0.92
+        },
+        "overall": 0.905,
+        "balanced": 0.7270500333000334,
+        "rare_balanced": 0.25641025641025644,
+        "nonrare_balanced": 0.9296875,
+        "rare_accuracy": 0.1724137931034483,
+        "known_acc": 0.955,
+        "n_active": 0
+      },
+      "chance": {
+        "overall": 0.20553576325635148,
+        "balanced": 0.20553576325635148
+      },
+      "ceiling": {
+        "overall": 1.0,
+        "balanced": 1.0
+      }
+    },
+    "audit": {
+      "n_active": 106,
+      "n_total": 106,
+      "arity_histogram": {
+        "2": 1,
+        "4": 68,
+        "3": 37
+      },
+      "mean_arity": 3.6320754716981134,
+      "rare_discovered": {
+        "offer(('season', 'winter'), ('location', 'public'), ('time', 'night'))": true,
+        "ask(('location', 'school'), ('role', 'child'), ('mood', 'upset'))": true,
+        "approach(('friendliness', 'warm'), ('status', 'stranger'), ('season', 'spring'), ('time', 'dawn'))": false,
+        "offer(('role', 'adult'), ('context', 'greeting'), ('season', 'autumn'))": true
+      },
+      "simple_discovered": {
+        "approach(('status', 'insider'), ('mood', 'calm'))": true,
+        "avoid(('context', 'conflict'),)": false,
+        "obey(('friendliness', 'cold'), ('role', 'elder'))": false
+      },
+      "rule_recovery": {
+        "n_targets": 6,
+        "n_compositional_active": 106,
+        "n_active": 106,
+        "n_atomic": 0,
+        "n_consistent": 59,
+        "n_inconsistent": 47,
+        "precision": 0.5566037735849056,
+        "fdr": 0.44339622641509435,
+        "winner_accuracy": 0.9000222172850477,
+        "n_fire_contexts": 4501,
+        "mean_active_arity": 3.6320754716981134,
+        "exact_recovered": [
+          true,
+          true,
+          false,
+          true,
+          true,
+          false
+        ],
+        "subset_recovered": [
+          true,
+          true,
+          false,
+          true,
+          true,
+          false
+        ],
+        "n_exact_recovered": 4,
+        "n_subset_recovered": 4,
+        "exact_rate": 0.6666666666666666,
+        "subset_rate": 0.6666666666666666,
+        "targets": [
+          "offer[3]",
+          "ask[3]",
+          "approach[4]",
+          "offer[3]",
+          "approach[2]",
+          "obey[2]"
+        ],
+        "targets_exact": [
+          "offer_('season=winter', 'location=public', 'time=night')",
+          "ask_('location=school', 'role=child', 'mood=upset')",
+          "approach_('friendliness=warm', 'status=stranger', 'season=spring', 'time=dawn')",
+          "offer_('role=adult', 'context=greeting', 'season=autumn')",
+          "approach_('status=insider', 'mood=calm')",
+          "obey_('friendliness=cold', 'role=elder')"
+        ]
+      }
+    }
+  },
+  {
+    "seed": 21,
+    "train_size": 2500,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 21,
+        "transfer": {
+          "t1": 0.895,
+          "t2": 0.85,
+          "t3": 0.86
+        },
+        "overall": 0.8683333333333333,
+        "balanced": 0.748430735930736,
+        "rare_balanced": 0.626984126984127,
+        "nonrare_balanced": 0.8244812252964426,
+        "rare_accuracy": 0.603448275862069,
+        "known_acc": 0.915,
+        "n_active": 111
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 21,
+        "transfer": {
+          "t1": 0.235,
+          "t2": 0.25,
+          "t3": 0.25
+        },
+        "overall": 0.245,
+        "balanced": 0.19342105263157894,
+        "rare_balanced": 0.0,
+        "nonrare_balanced": 0.24177631578947367,
+        "rare_accuracy": 0.0,
+        "known_acc": 0.225,
+        "n_active": 1
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 21,
+        "transfer": {
+          "t1": 0.245,
+          "t2": 0.265,
+          "t3": 0.25
+        },
+        "overall": 0.25333333333333335,
+        "balanced": 0.2,
+        "rare_balanced": 0.0,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.0,
+        "known_acc": 0.24,
+        "n_active": 0
+      },
+      "ValueLogReg": {
+        "config": "ValueLogReg",
+        "seed": 21,
+        "transfer": {
+          "t1": 0.365,
+          "t2": 0.315,
+          "t3": 0.36
+        },
+        "overall": 0.3466666666666667,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.41379310344827586,
+        "known_acc": 0.425,
+        "n_active": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 21,
+        "transfer": {
+          "t1": 0.9,
+          "t2": 0.895,
+          "t3": 0.915
+        },
+        "overall": 0.9033333333333333,
+        "balanced": 0.713617960986382,
+        "rare_balanced": 0.31746031746031744,
+        "nonrare_balanced": 0.894112752236322,
+        "rare_accuracy": 0.39655172413793105,
+        "known_acc": 0.885,
+        "n_active": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 21,
+        "transfer": {
+          "t1": 0.92,
+          "t2": 0.92,
+          "t3": 0.915
+        },
+        "overall": 0.9183333333333333,
+        "balanced": 0.7770604395604396,
+        "rare_balanced": 0.20833333333333334,
+        "nonrare_balanced": 0.9907407407407407,
+        "rare_accuracy": 0.25862068965517243,
+        "known_acc": 0.93,
+        "n_active": 0
+      },
+      "ValueDList": {
+        "config": "ValueDList",
+        "seed": 21,
+        "transfer": {
+          "t1": 0.245,
+          "t2": 0.265,
+          "t3": 0.25
+        },
+        "overall": 0.25333333333333335,
+        "balanced": 0.2,
+        "rare_balanced": 0.0,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.0,
+        "known_acc": 0.24,
+        "n_active": 0
+      },
+      "ValueCompoLift": {
+        "config": "ValueCompoLift",
+        "seed": 21,
+        "transfer": {
+          "t1": 0.585,
+          "t2": 0.595,
+          "t3": 0.615
+        },
+        "overall": 0.5983333333333334,
+        "balanced": 0.7194813957971853,
+        "rare_balanced": 0.6031746031746031,
+        "nonrare_balanced": 0.6758773695510919,
+        "rare_accuracy": 0.6551724137931034,
+        "known_acc": 0.58,
+        "n_active": 0
+      },
+      "ValueDListML": {
+        "config": "ValueDListML",
+        "seed": 21,
+        "transfer": {
+          "t1": 0.965,
+          "t2": 0.94,
+          "t3": 0.945
+        },
+        "overall": 0.95,
+        "balanced": 0.9258024869866975,
+        "rare_balanced": 0.5833333333333334,
+        "nonrare_balanced": 0.9763300915331807,
+        "rare_accuracy": 0.7758620689655172,
+        "known_acc": 0.95,
+        "n_active": 0
+      },
+      "ValueForest": {
+        "config": "ValueForest",
+        "seed": 21,
+        "transfer": {
+          "t1": 0.88,
+          "t2": 0.85,
+          "t3": 0.87
+        },
+        "overall": 0.8666666666666667,
+        "balanced": 0.6088536463536464,
+        "rare_balanced": 0.23611111111111113,
+        "nonrare_balanced": 0.7784090909090909,
+        "rare_accuracy": 0.29310344827586204,
+        "known_acc": 0.88,
+        "n_active": 0
+      },
+      "chance": {
+        "overall": 0.1853219149271781,
+        "balanced": 0.1853219149271781
+      },
+      "ceiling": {
+        "overall": 1.0,
+        "balanced": 1.0
+      }
+    },
+    "audit": {
+      "n_active": 111,
+      "n_total": 111,
+      "arity_histogram": {
+        "2": 1,
+        "4": 80,
+        "3": 30
+      },
+      "mean_arity": 3.7117117117117115,
+      "rare_discovered": {
+        "offer(('season', 'winter'), ('location', 'public'), ('time', 'night'))": true,
+        "ask(('location', 'school'), ('role', 'child'), ('mood', 'upset'))": true,
+        "approach(('friendliness', 'warm'), ('status', 'stranger'), ('season', 'spring'), ('time', 'dawn'))": true,
+        "offer(('role', 'adult'), ('context', 'greeting'), ('season', 'autumn'))": true
+      },
+      "simple_discovered": {
+        "approach(('status', 'insider'), ('mood', 'calm'))": true,
+        "avoid(('context', 'conflict'),)": false,
+        "obey(('friendliness', 'cold'), ('role', 'elder'))": false
+      },
+      "rule_recovery": {
+        "n_targets": 6,
+        "n_compositional_active": 111,
+        "n_active": 111,
+        "n_atomic": 0,
+        "n_consistent": 71,
+        "n_inconsistent": 40,
+        "precision": 0.6396396396396397,
+        "fdr": 0.36036036036036034,
+        "winner_accuracy": 0.921825576140985,
+        "n_fire_contexts": 4426,
+        "mean_active_arity": 3.7117117117117115,
+        "exact_recovered": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          false
+        ],
+        "subset_recovered": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          false
+        ],
+        "n_exact_recovered": 5,
+        "n_subset_recovered": 5,
+        "exact_rate": 0.8333333333333334,
+        "subset_rate": 0.8333333333333334,
+        "targets": [
+          "offer[3]",
+          "ask[3]",
+          "approach[4]",
+          "offer[3]",
+          "approach[2]",
+          "obey[2]"
+        ],
+        "targets_exact": [
+          "offer_('season=winter', 'location=public', 'time=night')",
+          "ask_('location=school', 'role=child', 'mood=upset')",
+          "approach_('friendliness=warm', 'status=stranger', 'season=spring', 'time=dawn')",
+          "offer_('role=adult', 'context=greeting', 'season=autumn')",
+          "approach_('status=insider', 'mood=calm')",
+          "obey_('friendliness=cold', 'role=elder')"
+        ]
+      }
+    }
+  },
+  {
+    "seed": 22,
+    "train_size": 2500,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 22,
+        "transfer": {
+          "t1": 0.895,
+          "t2": 0.92,
+          "t3": 0.935
+        },
+        "overall": 0.9166666666666666,
+        "balanced": 0.8211668643338248,
+        "rare_balanced": 0.6342328835582208,
+        "nonrare_balanced": 0.8664655605832077,
+        "rare_accuracy": 0.7096774193548387,
+        "known_acc": 0.925,
+        "n_active": 119
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 22,
+        "transfer": {
+          "t1": 0.385,
+          "t2": 0.41,
+          "t3": 0.425
+        },
+        "overall": 0.4066666666666667,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.3709677419354839,
+        "known_acc": 0.41,
+        "n_active": 1
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 22,
+        "transfer": {
+          "t1": 0.385,
+          "t2": 0.41,
+          "t3": 0.425
+        },
+        "overall": 0.4066666666666667,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.3709677419354839,
+        "known_acc": 0.41,
+        "n_active": 0
+      },
+      "ValueLogReg": {
+        "config": "ValueLogReg",
+        "seed": 22,
+        "transfer": {
+          "t1": 0.385,
+          "t2": 0.41,
+          "t3": 0.425
+        },
+        "overall": 0.4066666666666667,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.3709677419354839,
+        "known_acc": 0.41,
+        "n_active": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 22,
+        "transfer": {
+          "t1": 0.845,
+          "t2": 0.895,
+          "t3": 0.89
+        },
+        "overall": 0.8766666666666667,
+        "balanced": 0.6982366645984864,
+        "rare_balanced": 0.30869565217391304,
+        "nonrare_balanced": 0.8909450178944023,
+        "rare_accuracy": 0.3225806451612903,
+        "known_acc": 0.885,
+        "n_active": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 22,
+        "transfer": {
+          "t1": 0.805,
+          "t2": 0.875,
+          "t3": 0.87
+        },
+        "overall": 0.85,
+        "balanced": 0.625507339547841,
+        "rare_balanced": 0.2753623188405797,
+        "nonrare_balanced": 0.8008295625942685,
+        "rare_accuracy": 0.3064516129032258,
+        "known_acc": 0.86,
+        "n_active": 0
+      },
+      "ValueDList": {
+        "config": "ValueDList",
+        "seed": 22,
+        "transfer": {
+          "t1": 0.385,
+          "t2": 0.41,
+          "t3": 0.425
+        },
+        "overall": 0.4066666666666667,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.3709677419354839,
+        "known_acc": 0.41,
+        "n_active": 0
+      },
+      "ValueCompoLift": {
+        "config": "ValueCompoLift",
+        "seed": 22,
+        "transfer": {
+          "t1": 0.605,
+          "t2": 0.66,
+          "t3": 0.57
+        },
+        "overall": 0.6116666666666667,
+        "balanced": 0.6958624624954386,
+        "rare_balanced": 0.36766616691654175,
+        "nonrare_balanced": 0.7189794929193014,
+        "rare_accuracy": 0.45161290322580644,
+        "known_acc": 0.615,
+        "n_active": 0
+      },
+      "ValueDListML": {
+        "config": "ValueDListML",
+        "seed": 22,
+        "transfer": {
+          "t1": 0.9,
+          "t2": 0.955,
+          "t3": 0.925
+        },
+        "overall": 0.9266666666666666,
+        "balanced": 0.7813671916854174,
+        "rare_balanced": 0.3043478260869565,
+        "nonrare_balanced": 0.9947552447552448,
+        "rare_accuracy": 0.3387096774193548,
+        "known_acc": 0.93,
+        "n_active": 0
+      },
+      "ValueForest": {
+        "config": "ValueForest",
+        "seed": 22,
+        "transfer": {
+          "t1": 0.875,
+          "t2": 0.925,
+          "t3": 0.925
+        },
+        "overall": 0.9083333333333333,
+        "balanced": 0.7303160827172399,
+        "rare_balanced": 0.2753623188405797,
+        "nonrare_balanced": 0.9333333333333333,
+        "rare_accuracy": 0.3064516129032258,
+        "known_acc": 0.9,
+        "n_active": 0
+      },
+      "chance": {
+        "overall": 0.21282202798341432,
+        "balanced": 0.21282202798341432
+      },
+      "ceiling": {
+        "overall": 1.0,
+        "balanced": 1.0
+      }
+    },
+    "audit": {
+      "n_active": 119,
+      "n_total": 119,
+      "arity_histogram": {
+        "3": 36,
+        "4": 83
+      },
+      "mean_arity": 3.697478991596639,
+      "rare_discovered": {
+        "offer(('season', 'winter'), ('location', 'public'), ('time', 'night'))": true,
+        "ask(('location', 'school'), ('role', 'child'), ('mood', 'upset'))": true,
+        "approach(('friendliness', 'warm'), ('status', 'stranger'), ('season', 'spring'), ('time', 'dawn'))": true,
+        "offer(('role', 'adult'), ('context', 'greeting'), ('season', 'autumn'))": true
+      },
+      "simple_discovered": {
+        "approach(('status', 'insider'), ('mood', 'calm'))": false,
+        "avoid(('context', 'conflict'),)": false,
+        "obey(('friendliness', 'cold'), ('role', 'elder'))": false
+      },
+      "rule_recovery": {
+        "n_targets": 6,
+        "n_compositional_active": 119,
+        "n_active": 119,
+        "n_atomic": 0,
+        "n_consistent": 75,
+        "n_inconsistent": 44,
+        "precision": 0.6302521008403361,
+        "fdr": 0.3697478991596639,
+        "winner_accuracy": 0.9220399910132554,
+        "n_fire_contexts": 4451,
+        "mean_active_arity": 3.697478991596639,
+        "exact_recovered": [
+          true,
+          true,
+          true,
+          true,
+          false,
+          false
+        ],
+        "subset_recovered": [
+          true,
+          true,
+          true,
+          true,
+          false,
+          false
+        ],
+        "n_exact_recovered": 4,
+        "n_subset_recovered": 4,
+        "exact_rate": 0.6666666666666666,
+        "subset_rate": 0.6666666666666666,
+        "targets": [
+          "offer[3]",
+          "ask[3]",
+          "approach[4]",
+          "offer[3]",
+          "approach[2]",
+          "obey[2]"
+        ],
+        "targets_exact": [
+          "offer_('season=winter', 'location=public', 'time=night')",
+          "ask_('location=school', 'role=child', 'mood=upset')",
+          "approach_('friendliness=warm', 'status=stranger', 'season=spring', 'time=dawn')",
+          "offer_('role=adult', 'context=greeting', 'season=autumn')",
+          "approach_('status=insider', 'mood=calm')",
+          "obey_('friendliness=cold', 'role=elder')"
+        ]
+      }
+    }
+  },
+  {
+    "seed": 23,
+    "train_size": 2500,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 23,
+        "transfer": {
+          "t1": 0.915,
+          "t2": 0.87,
+          "t3": 0.885
+        },
+        "overall": 0.89,
+        "balanced": 0.8125543408888504,
+        "rare_balanced": 0.7083333333333334,
+        "nonrare_balanced": 0.8237680862680863,
+        "rare_accuracy": 0.7358490566037735,
+        "known_acc": 0.875,
+        "n_active": 96
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 23,
+        "transfer": {
+          "t1": 0.27,
+          "t2": 0.29,
+          "t3": 0.285
+        },
+        "overall": 0.2816666666666667,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.1509433962264151,
+        "known_acc": 0.24,
+        "n_active": 1
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 23,
+        "transfer": {
+          "t1": 0.27,
+          "t2": 0.29,
+          "t3": 0.285
+        },
+        "overall": 0.2816666666666667,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.1509433962264151,
+        "known_acc": 0.24,
+        "n_active": 0
+      },
+      "ValueLogReg": {
+        "config": "ValueLogReg",
+        "seed": 23,
+        "transfer": {
+          "t1": 0.385,
+          "t2": 0.345,
+          "t3": 0.36
+        },
+        "overall": 0.36333333333333334,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.37735849056603776,
+        "known_acc": 0.42,
+        "n_active": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 23,
+        "transfer": {
+          "t1": 0.91,
+          "t2": 0.855,
+          "t3": 0.875
+        },
+        "overall": 0.88,
+        "balanced": 0.6550353958540268,
+        "rare_balanced": 0.30833333333333335,
+        "nonrare_balanced": 0.8360596056248231,
+        "rare_accuracy": 0.2641509433962264,
+        "known_acc": 0.845,
+        "n_active": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 23,
+        "transfer": {
+          "t1": 0.95,
+          "t2": 0.91,
+          "t3": 0.93
+        },
+        "overall": 0.93,
+        "balanced": 0.7822756636447533,
+        "rare_balanced": 0.18333333333333335,
+        "nonrare_balanced": 1.0,
+        "rare_accuracy": 0.20754716981132076,
+        "known_acc": 0.92,
+        "n_active": 0
+      },
+      "ValueDList": {
+        "config": "ValueDList",
+        "seed": 23,
+        "transfer": {
+          "t1": 0.27,
+          "t2": 0.29,
+          "t3": 0.285
+        },
+        "overall": 0.2816666666666667,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.1509433962264151,
+        "known_acc": 0.24,
+        "n_active": 0
+      },
+      "ValueCompoLift": {
+        "config": "ValueCompoLift",
+        "seed": 23,
+        "transfer": {
+          "t1": 0.585,
+          "t2": 0.66,
+          "t3": 0.595
+        },
+        "overall": 0.6133333333333333,
+        "balanced": 0.6695807737056855,
+        "rare_balanced": 0.2833333333333333,
+        "nonrare_balanced": 0.7025218718153501,
+        "rare_accuracy": 0.37735849056603776,
+        "known_acc": 0.62,
+        "n_active": 0
+      },
+      "ValueDListML": {
+        "config": "ValueDListML",
+        "seed": 23,
+        "transfer": {
+          "t1": 0.955,
+          "t2": 0.915,
+          "t3": 0.93
+        },
+        "overall": 0.9333333333333333,
+        "balanced": 0.8342426857126928,
+        "rare_balanced": 0.51,
+        "nonrare_balanced": 0.8878463690963692,
+        "rare_accuracy": 0.6415094339622641,
+        "known_acc": 0.87,
+        "n_active": 0
+      },
+      "ValueForest": {
+        "config": "ValueForest",
+        "seed": 23,
+        "transfer": {
+          "t1": 0.9,
+          "t2": 0.85,
+          "t3": 0.865
+        },
+        "overall": 0.8716666666666667,
+        "balanced": 0.6072756636447533,
+        "rare_balanced": 0.18333333333333335,
+        "nonrare_balanced": 0.78125,
+        "rare_accuracy": 0.20754716981132076,
+        "known_acc": 0.815,
+        "n_active": 0
+      },
+      "chance": {
+        "overall": 0.21098650042475026,
+        "balanced": 0.21098650042475026
+      },
+      "ceiling": {
+        "overall": 1.0,
+        "balanced": 1.0
+      }
+    },
+    "audit": {
+      "n_active": 96,
+      "n_total": 96,
+      "arity_histogram": {
+        "2": 1,
+        "4": 69,
+        "3": 26
+      },
+      "mean_arity": 3.7083333333333335,
+      "rare_discovered": {
+        "offer(('season', 'winter'), ('location', 'public'), ('time', 'night'))": true,
+        "ask(('location', 'school'), ('role', 'child'), ('mood', 'upset'))": true,
+        "approach(('friendliness', 'warm'), ('status', 'stranger'), ('season', 'spring'), ('time', 'dawn'))": true,
+        "offer(('role', 'adult'), ('context', 'greeting'), ('season', 'autumn'))": true
+      },
+      "simple_discovered": {
+        "approach(('status', 'insider'), ('mood', 'calm'))": true,
+        "avoid(('context', 'conflict'),)": false,
+        "obey(('friendliness', 'cold'), ('role', 'elder'))": false
+      },
+      "rule_recovery": {
+        "n_targets": 6,
+        "n_compositional_active": 96,
+        "n_active": 96,
+        "n_atomic": 0,
+        "n_consistent": 68,
+        "n_inconsistent": 28,
+        "precision": 0.7083333333333333,
+        "fdr": 0.2916666666666667,
+        "winner_accuracy": 0.9377593360995851,
+        "n_fire_contexts": 4338,
+        "mean_active_arity": 3.7083333333333335,
+        "exact_recovered": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          false
+        ],
+        "subset_recovered": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          false
+        ],
+        "n_exact_recovered": 5,
+        "n_subset_recovered": 5,
+        "exact_rate": 0.8333333333333334,
+        "subset_rate": 0.8333333333333334,
+        "targets": [
+          "offer[3]",
+          "ask[3]",
+          "approach[4]",
+          "offer[3]",
+          "approach[2]",
+          "obey[2]"
+        ],
+        "targets_exact": [
+          "offer_('season=winter', 'location=public', 'time=night')",
+          "ask_('location=school', 'role=child', 'mood=upset')",
+          "approach_('friendliness=warm', 'status=stranger', 'season=spring', 'time=dawn')",
+          "offer_('role=adult', 'context=greeting', 'season=autumn')",
+          "approach_('status=insider', 'mood=calm')",
+          "obey_('friendliness=cold', 'role=elder')"
+        ]
+      }
+    }
+  },
+  {
+    "seed": 24,
+    "train_size": 2500,
+    "results": {
+      "full_bp": {
+        "config": "full_bp",
+        "seed": 24,
+        "transfer": {
+          "t1": 0.855,
+          "t2": 0.88,
+          "t3": 0.885
+        },
+        "overall": 0.8733333333333333,
+        "balanced": 0.7762597103618776,
+        "rare_balanced": 0.5898962148962149,
+        "nonrare_balanced": 0.8078962007823296,
+        "rare_accuracy": 0.6818181818181818,
+        "known_acc": 0.885,
+        "n_active": 117
+      },
+      "null_bp": {
+        "config": "null_bp",
+        "seed": 24,
+        "transfer": {
+          "t1": 0.02,
+          "t2": 0.015,
+          "t3": 0.035
+        },
+        "overall": 0.023333333333333334,
+        "balanced": 0.2008403361344538,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.0011682242990654205,
+        "rare_accuracy": 0.29545454545454547,
+        "known_acc": 0.045,
+        "n_active": 3
+      },
+      "ab_no_compose": {
+        "config": "ab_no_compose",
+        "seed": 24,
+        "transfer": {
+          "t1": 0.02,
+          "t2": 0.015,
+          "t3": 0.03
+        },
+        "overall": 0.021666666666666667,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.0,
+        "rare_accuracy": 0.29545454545454547,
+        "known_acc": 0.03,
+        "n_active": 0
+      },
+      "ValueLogReg": {
+        "config": "ValueLogReg",
+        "seed": 24,
+        "transfer": {
+          "t1": 0.415,
+          "t2": 0.385,
+          "t3": 0.39
+        },
+        "overall": 0.39666666666666667,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.25,
+        "rare_accuracy": 0.5454545454545454,
+        "known_acc": 0.425,
+        "n_active": 0
+      },
+      "ValuekNN": {
+        "config": "ValuekNN",
+        "seed": 24,
+        "transfer": {
+          "t1": 0.88,
+          "t2": 0.85,
+          "t3": 0.87
+        },
+        "overall": 0.8666666666666667,
+        "balanced": 0.6206707946336429,
+        "rare_balanced": 0.3115079365079365,
+        "nonrare_balanced": 0.7902879984363099,
+        "rare_accuracy": 0.45454545454545453,
+        "known_acc": 0.87,
+        "n_active": 0
+      },
+      "ValueTree": {
+        "config": "ValueTree",
+        "seed": 24,
+        "transfer": {
+          "t1": 0.95,
+          "t2": 0.96,
+          "t3": 0.96
+        },
+        "overall": 0.9566666666666667,
+        "balanced": 0.7857474568774878,
+        "rare_balanced": 0.25,
+        "nonrare_balanced": 1.0,
+        "rare_accuracy": 0.4090909090909091,
+        "known_acc": 0.94,
+        "n_active": 0
+      },
+      "ValueDList": {
+        "config": "ValueDList",
+        "seed": 24,
+        "transfer": {
+          "t1": 0.02,
+          "t2": 0.015,
+          "t3": 0.03
+        },
+        "overall": 0.021666666666666667,
+        "balanced": 0.2,
+        "rare_balanced": 0.3333333333333333,
+        "nonrare_balanced": 0.0,
+        "rare_accuracy": 0.29545454545454547,
+        "known_acc": 0.03,
+        "n_active": 0
+      },
+      "ValueCompoLift": {
+        "config": "ValueCompoLift",
+        "seed": 24,
+        "transfer": {
+          "t1": 0.59,
+          "t2": 0.615,
+          "t3": 0.675
+        },
+        "overall": 0.6266666666666667,
+        "balanced": 0.6468064391748602,
+        "rare_balanced": 0.3344017094017094,
+        "nonrare_balanced": 0.7020391475789054,
+        "rare_accuracy": 0.4318181818181818,
+        "known_acc": 0.69,
+        "n_active": 0
+      },
+      "ValueDListML": {
+        "config": "ValueDListML",
+        "seed": 24,
+        "transfer": {
+          "t1": 0.885,
+          "t2": 0.88,
+          "t3": 0.94
+        },
+        "overall": 0.9016666666666666,
+        "balanced": 0.8180863357488745,
+        "rare_balanced": 0.5641025641025641,
+        "nonrare_balanced": 0.8591592884079358,
+        "rare_accuracy": 0.75,
+        "known_acc": 0.915,
+        "n_active": 0
+      },
+      "ValueForest": {
+        "config": "ValueForest",
+        "seed": 24,
+        "transfer": {
+          "t1": 0.88,
+          "t2": 0.865,
+          "t3": 0.88
+        },
+        "overall": 0.875,
+        "balanced": 0.6158978328173375,
+        "rare_balanced": 0.25,
+        "nonrare_balanced": 0.787687969924812,
+        "rare_accuracy": 0.4090909090909091,
+        "known_acc": 0.88,
+        "n_active": 0
+      },
+      "chance": {
+        "overall": 0.17696724843783668,
+        "balanced": 0.17696724843783668
+      },
+      "ceiling": {
+        "overall": 1.0,
+        "balanced": 1.0
+      }
+    },
+    "audit": {
+      "n_active": 117,
+      "n_total": 117,
+      "arity_histogram": {
+        "3": 52,
+        "4": 65
+      },
+      "mean_arity": 3.5555555555555554,
+      "rare_discovered": {
+        "offer(('season', 'winter'), ('location', 'public'), ('time', 'night'))": true,
+        "ask(('location', 'school'), ('role', 'child'), ('mood', 'upset'))": true,
+        "approach(('friendliness', 'warm'), ('status', 'stranger'), ('season', 'spring'), ('time', 'dawn'))": true,
+        "offer(('role', 'adult'), ('context', 'greeting'), ('season', 'autumn'))": true
+      },
+      "simple_discovered": {
+        "approach(('status', 'insider'), ('mood', 'calm'))": false,
+        "avoid(('context', 'conflict'),)": false,
+        "obey(('friendliness', 'cold'), ('role', 'elder'))": false
+      },
+      "rule_recovery": {
+        "n_targets": 6,
+        "n_compositional_active": 117,
+        "n_active": 117,
+        "n_atomic": 0,
+        "n_consistent": 62,
+        "n_inconsistent": 55,
+        "precision": 0.5299145299145299,
+        "fdr": 0.4700854700854701,
+        "winner_accuracy": 0.9048365427675773,
+        "n_fire_contexts": 4466,
+        "mean_active_arity": 3.5555555555555554,
+        "exact_recovered": [
+          true,
+          true,
+          true,
+          true,
+          false,
+          false
+        ],
+        "subset_recovered": [
+          true,
+          true,
+          true,
+          true,
+          false,
+          false
+        ],
+        "n_exact_recovered": 4,
+        "n_subset_recovered": 4,
+        "exact_rate": 0.6666666666666666,
+        "subset_rate": 0.6666666666666666,
+        "targets": [
+          "offer[3]",
+          "ask[3]",
+          "approach[4]",
+          "offer[3]",
+          "approach[2]",
+          "obey[2]"
+        ],
+        "targets_exact": [
+          "offer_('season=winter', 'location=public', 'time=night')",
+          "ask_('location=school', 'role=child', 'mood=upset')",
+          "approach_('friendliness=warm', 'status=stranger', 'season=spring', 'time=dawn')",
+          "offer_('role=adult', 'context=greeting', 'season=autumn')",
+          "approach_('status=insider', 'mood=calm')",
+          "obey_('friendliness=cold', 'role=elder')"
+        ]
+      }
+    }
+  }
+]
