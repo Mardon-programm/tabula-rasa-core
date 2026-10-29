@@ -235,6 +235,37 @@ ceiling & 1.000 & 1.000 \\
 
 \paragraph{Future work.} Hierarchical planner over learned rules; transfer to continuous/POMDP environments; neural-symbolic baselines (GNN, NTP).
 
+
+\section{Limitations and Boundaries}
+\label{sec:limitations}
+
+\paragraph{Discreteness.} In v0.3, input data requires quantization (discretization of continuous features). The core expects structured predicates and requires an external encoder for raw signals (pixels, audio).
+
+\paragraph{Perceptual dependency.} The core operates on structured predicates. Working with raw signals requires an external encoder (perception layer), as planned in Alan Phase 1.
+
+\paragraph{Asymptotic complexity.} Without pruning: $O(2^N)$ worst-case. With pruning enabled: $O(N \log N)$ under the assumption of sparse data and subcritical branching (coverage floor $c_{\min}=4$). The actual complexity depends on data structure and attribute correlation.
+
+\paragraph{Scalability.} Stress benchmark results (Table~\ref{tab:stress}) show latency and memory scaling with attribute count $N$.
+
+\begin{table}[htbp]
+\centering
+\caption{Stress Benchmark: Attribute Scalability (N attrs, 1000 train samples, max arity 2)}
+\label{tab:stress}
+\begin{tabular}{lccc}
+\toprule
+$N$ (attrs) & Latency (ms) & Peak RAM (MB) & OOD Acc \\
+\midrule
+8 & 119.5 & 0.16 & 1.0000 \\
+16 & 688.8 & 0.55 & 1.0000 \\
+32 & 3303.7 & 2.32 & 1.0000 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Binomial filter sensitivity.} The filter weakens for rules with few samples in actively-chosen actions (e.g., \texttt{warm/stranger/spring/dawn} recovered 13/24 seeds).
+
+\paragraph{Arity limit.} Maximum arity $K=4$; arity $\geq 5$ and $\neq$ literals not yet supported.
+
 \section{Conclusion}
 
 TR-Core demonstrates that a tabula rasa architecture with Apriori induction and binomial filtering can autonomously discover compositional symbolic rules and generalize to structurally held-out contexts. The formal analysis establishes tractability (subcritical branching) and statistical control (exact binomial test). Empirical results on two controlled protocols with mechanistic controls isolate COMPOSE as the causal mechanism for compositional generalization.
